@@ -27,7 +27,9 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
+    "react-id-swiper": "^4.0.0",
     "react-waypoint": "^9.0.3",
+    "swiper": "^6.4.8",
     "theme-ui": "^0.3.5"
   },
   "devDependencies": {

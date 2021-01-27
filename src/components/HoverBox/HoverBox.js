@@ -12,7 +12,7 @@ const HoverBox = props => {
       <div className={styles.content}>
         <h4 className={styles.title}>{props.title}</h4>
         <p className={styles.metainfo}>
-          {props.date} {props.type ? "|" : ""} {props.type}
+          {props.date} {props.auth ? "|" : ""} {props.auth}
         </p>
       </div>
     </div>
