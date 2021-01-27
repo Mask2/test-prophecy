@@ -1,0 +1,11 @@
+* {
+  --lg: 1120px;
+  --header-height: 77px;
+  --padding: 30px;
+  --primary: #143b6d;
+  --hover: #ea5b29;
+}
+
+body {
+  min-height: 100vh;
+}
