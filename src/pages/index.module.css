@@ -48,4 +48,9 @@ p {
 .secTitle {
   padding-top: 50px;
   text-align: center;
+  padding-bottom: 48px;
+}
+
+.section1 {
+  /* height: 500px; */
 }

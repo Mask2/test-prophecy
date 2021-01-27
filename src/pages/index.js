@@ -67,7 +67,7 @@ const IndexPage = () => {
       </div>
       <div id="main" className={styles.main} sx={{ color: "text" }}>
         <div className={styles.wrapper}>
-          <section>
+          <section className={styles.section1}>
             <div className={styles.secTitle}>
               <h1>篩查四部曲</h1>
               <p>

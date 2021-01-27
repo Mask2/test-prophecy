@@ -8,7 +8,7 @@ import classnames from "classnames"
 import styles from "./ProphecySteps.module.css"
 
 const ProphecySteps = () => {
-  const [current, setCurrent] = useState(null)
+  const [current, setCurrent] = useState(0)
   const data = useStaticQuery(graphql`
     query {
       allProphecyStepsJson {
@@ -26,14 +26,22 @@ const ProphecySteps = () => {
       {data.allProphecyStepsJson.nodes.map((item, index) => (
         <div
           key={item.id}
-          className={classnames(
-            styles.stepCard,
-            current === index ? styles.active : ""
-          )}
+          className={styles.stepCard}
           onMouseEnter={e => setCurrent(index)}
           onMouseLeave={e => setCurrent(null)}
         >
-          index
+          <div
+            className={classnames(
+              styles.videoWrapper,
+              current === index ? styles.active : ""
+            )}
+          >
+            <video className={styles.videoItem} autoPlay loop muted playsInline>
+              <source src={item.video} type="video/mp4" />
+            </video>
+          </div>
+          <h2 className={styles.title}>{item.title}</h2>
+          <p className={styles.content}>{item.content}</p>
         </div>
       ))}
     </div>
