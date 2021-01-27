@@ -138,6 +138,15 @@ const IndexPage = () => {
             </div>
           </section>
         </div>
+        <section className={styles.locationInfo}>
+          <div className={styles.secTitle}>
+            <h2>服務覆蓋點</h2>
+            <p>
+              Take2 Prophecy™ 測試遍佈港九新界及離島，立即查看最近您的服務地點。
+            </p>
+            <div className={styles.checkLocation}>查看地址</div>
+          </div>
+        </section>
         <section className={styles.moreInfo}>
           <div className={styles.moreInfoWrapper}>
             <div className={styles.moreInfoContent}>

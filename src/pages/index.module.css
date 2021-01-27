@@ -99,9 +99,33 @@ p {
   justify-content: space-between;
 }
 
+.locationInfo {
+  background-color: #000000;
+  background-image: url(../../static/download.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-width: 0px 0px 0px 0px;
+  border-color: #ffffff;
+  border-style: solid;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.locationInfo .secTitle {
+  padding: 288px 0;
+}
+.checkLocation {
+  background-color: #ea5b29;
+  padding: 20px 100px;
+  margin-top: 1em;
+  display: inline-block;
+  cursor: pointer;
+}
 .moreInfo {
   background-color: #494949;
-  background-image: url(https://www.prophecy.health/wp-content/uploads/2020/12/bg_01.png);
+  background-image: url(../../static/bg_01.png);
   background-position: center center;
   background-repeat: no-repeat;
   border-width: 0px 0px 0px 0px;
