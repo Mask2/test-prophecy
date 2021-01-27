@@ -1,0 +1,20 @@
+[
+  {
+    "title": "革新科技",
+    "image": "/src/assets/images/download-1.png",
+    "video": "/src/assets/images/icon1.mp4"
+  },
+  {
+    "title": "Space Socks",
+    "slug": "space-socks",
+    "description": "<p>Get your feet into these spaced-out black socks with a Gatsby purple border and heel.</p>",
+    "price": "$10.00"
+  },
+  {
+    "title": "This Purple Hat Is Blazing Fast",
+    "slug": "purple-hat",
+    "description": "<p>Add more blazingly blazing speed to your wardrobe with this solid purple laundered chino twill hat.</p>",
+    "price": "$10.00",
+    "image": "/images/david-bailey-cat-hat.jpg"
+  }
+]
