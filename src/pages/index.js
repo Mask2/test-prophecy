@@ -73,6 +73,20 @@ const IndexPage = () => {
           src={mouseButton}
           alt=""
         />
+        <div className={styles.introWrapper}>
+          <div className={styles.introInner} sx={{ color: "text" }}>
+            <h1>
+              <span style={{ fontSize: 30 }}>Take2 Prophecy™</span>
+              <br />
+              無創早期鼻咽癌篩查
+            </h1>
+            <p>
+              利用嶄新次世代DNA測序分析技術（NGS: Next-generation
+              Sequencing），經世界頂尖大學研究團隊反覆測試和大規模臨床研究證實，能有效發現早期鼻咽癌患者，即使沒有明顯病徵，都能「預早知
+              ‧ 越早醫」。讓大家擁抱健康，一呼一吸都能感受生命的美好。
+            </p>
+          </div>
+        </div>
       </div>
       <div id="main" className={styles.main} sx={{ color: "text" }}>
         <div className={styles.wrapper}>

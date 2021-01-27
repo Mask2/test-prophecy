@@ -12,7 +12,7 @@ import logo from "../assets/images/taketwologo_2.png"
 
 const Header = ({ siteTitle }) => {
   const [bgColor, setBgColor] = useState("none")
-  const [menuState, setMenuState] = useState(true)
+  const [menuState, setMenuState] = useState(false)
   const [current, setCurrent] = useState(null)
   const [curSubMenu, setCurSubMenu] = useState([])
   return (
