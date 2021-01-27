@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React from "react"
+import React, { useState } from "react"
 // import { Link } from "gatsby"
 import { jsx } from "theme-ui"
 import { useStaticQuery, graphql } from "gatsby"
@@ -15,9 +15,10 @@ import HomeVideo from "../assets/videos/home_video_3.mp4"
 import mouseButton from "../assets/images/download.png"
 
 const IndexPage = () => {
-  const healthInfo = useStaticQuery(graphql`
+  const [playingGif, setPlayingGif] = useState(null)
+  const data = useStaticQuery(graphql`
     query MyQuery {
-      allHealthInfoJson {
+      healthInfo: allHealthInfoJson {
         nodes {
           image
           id
@@ -27,8 +28,17 @@ const IndexPage = () => {
           date
         }
       }
+      moreInfo: allMoreInfoJson {
+        nodes {
+          id
+          image
+          gif
+          title
+        }
+      }
     }
   `)
+  const pauseGif = {}
   const params = {
     pagination: {
       el: ".swiper-pagination",
@@ -76,10 +86,21 @@ const IndexPage = () => {
             </Swiper>
           </section>
           <sectioin>
-            {healthInfo.allHealthInfoJson.nodes.map(item => (
-              <PostCard {...item} />
+            {data.healthInfo.nodes.map(item => (
+              <PostCard key={item.id} {...item} />
             ))}
           </sectioin>
+          <section>
+            {data.moreInfo.nodes.map((item, index) => (
+              <img
+                key={item.id}
+                src={playingGif === index ? item.gif : item.image}
+                alt=""
+                onMouseEnter={e => setPlayingGif(index)}
+                onMouseLeave={e => setPlayingGif(null)}
+              />
+            ))}
+          </section>
         </div>
       </div>
     </>

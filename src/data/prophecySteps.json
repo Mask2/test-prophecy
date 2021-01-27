@@ -1,23 +1,22 @@
 [
   {
-    "title": "Vintage Purple Tee",
-    "slug": "vintage-purple-tee",
-    "description": "<p>Keep it simple with this vintage purple tee.</p>",
-    "price": "$10.00",
-    "image": "/images/amberley-romo-riggins.jpg"
+    "title": "步驟 1",
+    "content": "年度體檢，只需抽取血液樣本",
+    "video": "../../icon_1_animate_test_201104_1.mp4"
   },
   {
-    "title": "Space Socks",
-    "slug": "space-socks",
-    "description": "<p>Get your feet into these spaced-out black socks with a Gatsby purple border and heel.</p>",
-    "price": "$10.00",
-    "image": "/images/erin-fox-and-sullivan.jpg"
+    "title": "步驟 2",
+    "content": "結合PCR技術及次世代DNA測序",
+    "video": "../../icon_2_animate_test_201104_1"
   },
   {
-    "title": "This Purple Hat Is Blazing Fast",
-    "slug": "purple-hat",
-    "description": "<p>Add more blazingly blazing speed to your wardrobe with this solid purple laundered chino twill hat.</p>",
-    "price": "$10.00",
-    "image": "/images/david-bailey-cat-hat.jpg"
+    "title": "步驟 3",
+    "content": "3-7個工作天內有篩查結果",
+    "video": "../../icon_3_animate_test_201104_1"
+  },
+  {
+    "title": "步驟 4",
+    "content": "*陽性結果：諮詢耳鼻喉科專家\n*陰性結果：建議繼續進行年度檢查",
+    "video": "../../icon_4_animate_test_201207_2"
   }
 ]

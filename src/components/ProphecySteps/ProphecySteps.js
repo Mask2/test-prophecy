@@ -2,54 +2,40 @@
 import React, { useState } from "react"
 import { Link } from "gatsby"
 import { jsx } from "theme-ui"
+import { useStaticQuery, graphql } from "gatsby"
 import classnames from "classnames"
 
 import styles from "./ProphecySteps.module.css"
 
 const ProphecySteps = () => {
   const [current, setCurrent] = useState(null)
+  const data = useStaticQuery(graphql`
+    query {
+      allProphecyStepsJson {
+        nodes {
+          id
+          title
+          content
+          video
+        }
+      }
+    }
+  `)
   return (
     <div className={styles.wrapper}>
-      <div
-        className={classnames(
-          styles.stepCard,
-          current === 1 ? styles.active : ""
-        )}
-        onMouseEnter={e => setCurrent(1)}
-        onMouseLeave={e => setCurrent(null)}
-      >
-        1
-      </div>
-      <div
-        className={classnames(
-          styles.stepCard,
-          current === 2 ? styles.active : ""
-        )}
-        onMouseEnter={e => setCurrent(2)}
-        onMouseLeave={e => setCurrent(null)}
-      >
-        2
-      </div>{" "}
-      <div
-        className={classnames(
-          styles.stepCard,
-          current === 3 ? styles.active : ""
-        )}
-        onMouseEnter={e => setCurrent(3)}
-        onMouseLeave={e => setCurrent(null)}
-      >
-        3
-      </div>{" "}
-      <div
-        className={classnames(
-          styles.stepCard,
-          current === 4 ? styles.active : ""
-        )}
-        onMouseEnter={e => setCurrent(4)}
-        onMouseLeave={e => setCurrent(null)}
-      >
-        4
-      </div>
+      {data.allProphecyStepsJson.nodes.map((item, index) => (
+        <div
+          key={item.id}
+          className={classnames(
+            styles.stepCard,
+            current === index ? styles.active : ""
+          )}
+          onMouseEnter={e => setCurrent(index)}
+          onMouseLeave={e => setCurrent(null)}
+        >
+          index
+        </div>
+      ))}
     </div>
   )
 }
