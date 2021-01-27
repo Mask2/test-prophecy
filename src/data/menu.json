@@ -1,0 +1,79 @@
+[
+  {
+    "name": "企業背景",
+    "path": "/",
+    "children": [
+      {
+        "name": "品牌故事",
+        "path": "/"
+      },
+      {
+        "name": "團隊使命",
+        "path": "/"
+      },
+      {
+        "name": "團隊掠影",
+        "path": "/"
+      }
+    ]
+  },
+  {
+    "name": "早期鼻咽癌篩查",
+    "path": "/",
+    "children": [
+      {
+        "name": "甚麼是Take2 Prophecy™",
+        "path": "/"
+      },
+      {
+        "name": "篩查四部曲",
+        "path": "/"
+      },
+      {
+        "name": "「鼻」無可避？早期篩查的重要性",
+        "path": "/"
+      },
+      {
+        "name": "Take2 Prophecy™ 的特點",
+        "path": "/"
+      },
+      {
+        "name": "Take2 Prophecy™ 的革新科技",
+        "path": "/"
+      }
+    ]
+  },
+  {
+    "name": "健康資訊",
+    "path": "/",
+    "children": [
+      {
+        "name": "最新推廣活動",
+        "path": "/"
+      },
+      {
+        "name": "專題報導",
+        "path": "/"
+      }
+    ]
+  },
+  {
+    "name": "最新動態及推廣",
+    "path": "/",
+    "children": []
+  },
+  {
+    "name": "服務覆蓋點",
+    "path": "/",
+    "children": [
+      {
+        "name": "合作伙伴",
+        "path": "/"
+      },
+      {
+        "name": "篩查服務覆蓋點",
+        "path": "/"
+      }
+    ]
+  }
+]
