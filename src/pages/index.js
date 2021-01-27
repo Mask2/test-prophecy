@@ -5,6 +5,7 @@ import { jsx } from "theme-ui"
 import scrollTo from "gatsby-plugin-smoothscroll"
 import SEO from "../components/seo"
 import ProphecySteps from "../components/ProphecySteps/ProphecySteps"
+import HoverBox from "../components/HoverBox/HoverBox"
 import styles from "./index.module.css"
 
 import HomeVideo from "../assets/videos/home_video_3.mp4"
@@ -34,6 +35,7 @@ const IndexPage = () => (
             </p>
           </div>
           <ProphecySteps></ProphecySteps>
+          <HoverBox></HoverBox>
         </section>
       </div>
     </div>
