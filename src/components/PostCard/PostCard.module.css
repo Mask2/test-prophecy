@@ -4,6 +4,13 @@
   background: #fff;
 }
 
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
 .content {
   width: 100%;
   padding: 20px;

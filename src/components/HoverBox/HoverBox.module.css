@@ -11,19 +11,20 @@
   background-size: 200% 100%;
   background-position: 100%;
   transition: background-position 275ms ease;
-  line-height: 1.6;
 }
 
 .content:hover {
   background-position: 0%;
+  color: #fff;
 }
 
 .title {
   font-size: 16px;
-  margin: 0;
+  margin-bottom: 10px;
 }
 
 .metainfo {
   font-size: 12px;
   margin: 0;
+  line-height: 2;
 }

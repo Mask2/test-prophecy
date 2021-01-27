@@ -54,3 +54,97 @@ p {
 .section1 {
   /* height: 500px; */
 }
+
+.swiperWrapper {
+  width: 374px;
+}
+
+.containerWrapper {
+  width: 374px;
+  margin: 0 auto;
+}
+.prophecyResult {
+  width: calc(66.666666666667% - ((4% + 4%) * 0.66666666666667));
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #fff;
+  margin: 0 auto;
+}
+.prophecyResult p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 28px;
+}
+.divide {
+  border-color: rgba(255, 255, 255, 0.2);
+  border-top-width: 10px;
+}
+
+.postsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.largePostCard {
+  width: 60%;
+}
+.postCard {
+  width: 278px;
+}
+
+.postsRight {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.moreInfo {
+  background-color: #494949;
+  background-image: url(https://www.prophecy.health/wp-content/uploads/2020/12/bg_01.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-width: 0px 0px 0px 0px;
+  border-color: #ffffff;
+  border-style: solid;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  min-height: 800px;
+  padding-top: 48px;
+}
+
+.moreInfoWrapper {
+  max-width: var(--lg);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.moreInfoContent .secTitle {
+  text-align-last: left;
+  padding-bottom: 26px;
+}
+.moreInfoContent {
+  width: 40%;
+}
+.moreList {
+  display: flex;
+  flex-wrap: wrap;
+}
+.moreItem {
+  width: 50%;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.moreItem img {
+  display: block;
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
