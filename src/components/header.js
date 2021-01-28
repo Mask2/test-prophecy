@@ -14,7 +14,6 @@ const Header = ({ siteTitle }) => {
   const [bgColor, setBgColor] = useState("none")
   const [menuState, setMenuState] = useState(false)
   const [current, setCurrent] = useState(null)
-  const [curSubMenu, setCurSubMenu] = useState([])
   return (
     <>
       <Waypoint

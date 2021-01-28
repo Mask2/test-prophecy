@@ -1,6 +1,5 @@
 /** @jsx jsx */
 import React, { useState } from "react"
-import { Link } from "gatsby"
 import { jsx } from "theme-ui"
 import { useStaticQuery, graphql } from "gatsby"
 import classnames from "classnames"

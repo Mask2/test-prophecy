@@ -10,7 +10,6 @@ import PostCard from "../components/PostCard/PostCard"
 import Swiper from "react-id-swiper"
 import styles from "./index.module.css"
 import "swiper/swiper-bundle.min.css"
-import classnames from "classnames"
 
 import HomeVideo from "../assets/videos/home_video_3.mp4"
 import mouseButton from "../assets/images/download.png"
@@ -49,7 +48,6 @@ const IndexPage = () => {
       }
     }
   `)
-  const pauseGif = {}
   const params = {
     pagination: {
       el: ".swiper-pagination",

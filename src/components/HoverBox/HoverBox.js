@@ -1,8 +1,6 @@
 /** @jsx jsx */
 import React from "react"
-import { Link } from "gatsby"
 import { jsx } from "theme-ui"
-import classnames from "classnames"
 
 import styles from "./HoverBox.module.css"
 
