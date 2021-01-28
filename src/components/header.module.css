@@ -7,6 +7,7 @@
   left: 0;
   right: 0;
   transition: background 0.3s ease-in-out;
+  z-index: 1000;
 }
 
 .wrapper {
@@ -15,10 +16,81 @@
   justify-content: space-between;
   align-items: center;
   padding: 0 var(--padding);
+  margin: 0 auto;
 }
 
 .logo {
   display: block;
   height: var(--header-height);
   margin: 0;
+}
+
+.menu {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: -1000%;
+  bottom: 0;
+  height: 100vh;
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.4s ease 0s, top 0s ease 0s;
+}
+
+.showMenu {
+  opacity: 1;
+  top: 0;
+}
+
+.menuWrapper {
+  display: flex;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.menuWrapper {
+  max-width: var(--lg);
+  margin: 0 auto;
+  margin-top: 100px;
+}
+.menuWrapper li {
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.menuWrapper li a {
+  transition: color 0.3s ease-in-out;
+}
+
+.menuWrapper li a:hover {
+  color: #f87f17;
+}
+.mainMenu,
+.subMenu {
+  width: 40%;
+}
+
+.mainMenu {
+  font-size: 40px;
+}
+.subMenu {
+  font-size: 26px;
+}
+.contact {
+  font-size: 20px;
+}
+
+.menuBtn {
+  cursor: pointer;
+}
+
+.closeBtn {
+  position: absolute;
+  right: 30px;
+  top: 30px;
+  cursor: pointer;
 }

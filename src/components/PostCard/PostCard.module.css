@@ -1,0 +1,36 @@
+.wrapper {
+  width: 100%;
+  cursor: pointer;
+  background: #fff;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+.content {
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(to right, #f38e22, #ea5b29 50%, transparent 50%);
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 275ms ease;
+  line-height: 1.6;
+}
+
+.content:hover {
+  background-position: 0%;
+}
+
+.title {
+  font-size: 16px;
+  margin: 0;
+}
+
+.metainfo {
+  font-size: 12px;
+  margin: 0;
+}
