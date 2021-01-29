@@ -33,6 +33,7 @@
     "theme-ui": "^0.3.5"
   },
   "devDependencies": {
+    "eslint-config-react-app": "^6.0.0",
     "gatsby-plugin-eslint": "^2.0.8",
     "prettier": "2.2.1"
   },
