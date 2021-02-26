@@ -43,7 +43,7 @@ const Header = ({ siteTitle }) => {
         <div className={styles.menuWrapper}>
           <ul className={styles.mainMenu}>
             {JSONData.map((item, index) => (
-              <li onMouseEnter={() => setCurrent(index)}>
+              <li key={index} onMouseEnter={() => setCurrent(index)}>
                 <Link to={item.path}>{item.name}</Link>
               </li>
             ))}
@@ -51,7 +51,7 @@ const Header = ({ siteTitle }) => {
           <ul className={styles.subMenu}>
             {JSONData[current]?.children.length
               ? JSONData[current]?.children.map((item, index) => (
-                  <li>
+                  <li key={index}>
                     <Link to={item.path}>{item.name}</Link>
                   </li>
                 ))
@@ -59,10 +59,10 @@ const Header = ({ siteTitle }) => {
           </ul>
           <ul className={styles.contact}>
             <li>
-              <Link>加入我們</Link>
+              <Link to="/">加入我們</Link>
             </li>
             <li>
-              <Link>聯絡我們</Link>
+              <Link to="/">聯絡我們</Link>
             </li>
           </ul>
         </div>
