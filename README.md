@@ -97,3 +97,11 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/gatsbyjs/gatsby-starter-default)
 
 <!-- AUTO-GENERATED-CONTENT:END -->
+
+# Question Reason Solution
+
+Q：yarn install 报错 error: `pngquant failed to build, make sure that libpng is installed`  
+R：网络原因导致 pngquant 下载失败  
+S：[npm 设置代理访问国外站点](https://www.baobangdong.cn/resolve-pngquant-install-failed/)
+
+---

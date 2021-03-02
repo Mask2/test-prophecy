@@ -14,7 +14,6 @@ export const query = graphql`
 `
 
 const Product = ({ data }) => {
-  console.log("data:", data)
   const product = data.productsJson
 
   return (
