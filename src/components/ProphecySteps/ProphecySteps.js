@@ -26,8 +26,8 @@ const ProphecySteps = () => {
         <div
           key={item.id}
           className={styles.stepCard}
-          onMouseEnter={(e) => setCurrent(index)}
-          onMouseLeave={(e) => setCurrent(null)}
+          onMouseEnter={() => setCurrent(index)}
+          onMouseLeave={() => setCurrent(null)}
         >
           <div className={classnames(styles.videoWrapper, current === index ? styles.active : '')}>
             <video className={styles.videoItem} autoPlay loop muted playsInline>

@@ -14,5 +14,6 @@ module.exports = {
   extends: ['alloy', 'alloy/react'],
   rules: {
     'react/jsx-pascal-case': [0, { allowAllCaps: true }],
+    'no-unused-vars': ['error', { varsIgnorePattern: 'React' }],
   },
 };
