@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 // import { Link } from "gatsby"
 import { jsx } from 'theme-ui';
-import { useStaticQuery, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 import SEO from '../components/seo';
 import ProphecySteps from '../components/ProphecySteps/ProphecySteps';
@@ -14,40 +14,42 @@ import 'swiper/swiper-bundle.min.css';
 import HomeVideo from '../assets/videos/home_video_3.mp4';
 import mouseButton from '../assets/images/download.png';
 
-const IndexPage = () => {
-  const [playingGif, setPlayingGif] = useState(null);
-  const data = useStaticQuery(graphql`
-    query MyQuery {
-      healthInfo: allHealthInfoJson {
-        nodes {
-          image
-          id
-          path
-          title
-          auth
-          date
-        }
-      }
-      moreInfo: allMoreInfoJson {
-        nodes {
-          id
-          image
-          gif
-          title
-        }
-      }
-      activityInfo: allActivityInfoJson {
-        nodes {
-          image
-          id
-          path
-          title
-          auth
-          date
-        }
+export const query = graphql`
+  query MyQuery {
+    healthInfo: allHealthInfoJson {
+      nodes {
+        image
+        id
+        path
+        title
+        auth
+        date
       }
     }
-  `);
+    moreInfo: allMoreInfoJson {
+      nodes {
+        id
+        image
+        gif
+        title
+      }
+    }
+    activityInfo: allActivityInfoJson {
+      nodes {
+        image
+        id
+        path
+        title
+        auth
+        date
+      }
+    }
+  }
+`;
+
+const IndexPage = ({ data }) => {
+  const [playingGif, setPlayingGif] = useState(null);
+
   const params = {
     pagination: {
       el: '.swiper-pagination',
