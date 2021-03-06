@@ -5,13 +5,13 @@
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import React from 'react';
+import PropTypes from 'prop-types';
+import { useStaticQuery, graphql } from 'gatsby';
 
-import Header from "./header"
-import Footer from "./footer"
-import "./layout.css"
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
+import './Layout.module.css';
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -19,10 +19,14 @@ const Layout = ({ children }) => {
       site {
         siteMetadata {
           title
+          menuLinks {
+            name
+            link
+          }
         }
       }
     }
-  `)
+  `);
 
   return (
     <>
@@ -32,15 +36,16 @@ const Layout = ({ children }) => {
           margin: `0 auto`,
         }}
       >
+        {/* 如何动态获取当前页面的信息 */}
         <main>{children}</main>
       </div>
       <Footer />
     </>
-  )
-}
+  );
+};
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default Layout
+export default Layout;

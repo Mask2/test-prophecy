@@ -3,11 +3,11 @@ import { Link } from 'gatsby';
 import React, { useState } from 'react';
 import { jsx } from 'theme-ui';
 import { Waypoint } from 'react-waypoint';
-import styles from './header.module.css';
+import styles from './Header.module.css';
 import classnames from 'classnames';
-import JSONData from '../data/menu.json';
+import JSONData from '../../data/menu.json';
 
-import logo from '../assets/images/taketwologo_2.png';
+import logo from '../../assets/images/taketwologo_2.png';
 
 const Header = () => {
   const [bgColor, setBgColor] = useState('none');
@@ -37,7 +37,9 @@ const Header = () => {
           <ul className={styles.mainMenu}>
             {JSONData.map((item, index) => (
               <li key={index} onMouseEnter={() => setCurrent(index)}>
-                <Link to={item.path}>{item.name}</Link>
+                <Link to={item.path} onClick={() => setMenuState(false)}>
+                  {item.name}
+                </Link>
               </li>
             ))}
           </ul>
@@ -45,7 +47,9 @@ const Header = () => {
             {JSONData[current]?.children.length
               ? JSONData[current]?.children.map((item, index) => (
                   <li key={index}>
-                    <Link to={item.path}>{item.name}</Link>
+                    <Link to={item.path} onClick={() => setMenuState(false)}>
+                      {item.name}
+                    </Link>
                   </li>
                 ))
               : null}

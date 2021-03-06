@@ -4,6 +4,35 @@ module.exports = {
     title: `Gatsby Default Starter`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
     author: `@gatsbyjs`,
+    siteUrl: 'https://www.prophecy.health/',
+    menuLinks: [
+      {
+        name: '企業背景',
+        link: '/introduction',
+      },
+    ],
+    social: [
+      {
+        name: 'Facebook',
+        url: 'https://www.facebook.com/prophecy.health/',
+      },
+      {
+        name: 'Facebook messenger',
+        url: 'https://m.me/prophecy.health',
+      },
+      {
+        name: 'Instagram',
+        url: 'https://www.instagram.com/prophecyhealth/',
+      },
+      {
+        name: 'LinkedIn',
+        url: 'https://www.linkedin.com/company/take2-health',
+      },
+      {
+        name: 'Youtube',
+        url: 'https://www.youtube.com/channel/UCvZ29L5oDOpzIOJnGG-YZaA/',
+      },
+    ],
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -19,6 +48,13 @@ module.exports = {
       options: {
         name: 'data',
         path: `${__dirname}/src/data/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: 'data',
+        path: `${__dirname}/src/articles/`,
       },
     },
     `gatsby-plugin-smoothscroll`,

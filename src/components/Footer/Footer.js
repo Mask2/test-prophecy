@@ -3,8 +3,8 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { jsx } from 'theme-ui';
 
-import styles from './footer.module.css';
-import logo from '../assets/images/taketwologo_2.png';
+import styles from './Footer.module.css';
+import logo from '../../assets/images/taketwologo_2.png';
 
 const Footer = () => (
   <footer className={styles.footer} sx={{ bg: 'primary', color: 'text' }}>
