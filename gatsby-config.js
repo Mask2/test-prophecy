@@ -53,7 +53,13 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        name: 'data',
+        name: 'articles',
+        path: `${__dirname}/src/articles/`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-page-creator',
+      options: {
         path: `${__dirname}/src/articles/`,
       },
     },
@@ -61,7 +67,14 @@ module.exports = {
     `gatsby-transformer-json`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
-    `gatsby-plugin-mdx`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        defaultLayouts: {
+          default: require.resolve('./src/components/MdxLayout.js'),
+        },
+      },
+    },
     `gatsby-remark-images`,
     `gatsby-plugin-theme-ui`,
     {
