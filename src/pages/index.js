@@ -15,7 +15,7 @@ import HomeVideo from '../assets/videos/home_video_3.mp4';
 import mouseButton from '../assets/images/download.png';
 
 export const query = graphql`
-  query MyQuery {
+  {
     healthInfo: allHealthInfoJson {
       nodes {
         image
