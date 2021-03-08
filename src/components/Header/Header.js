@@ -10,22 +10,26 @@ import JSONData from '../../data/menu.json';
 import logo from '../../assets/images/taketwologo_2.png';
 
 const Header = () => {
-  const [bgColor, setBgColor] = useState('none');
+  const [bgColor, setBgColor] = useState(window.location.pathname === '/' ? '' : 'primary');
   const [menuState, setMenuState] = useState(false);
   const [current, setCurrent] = useState(null);
   return (
     <>
-      <Waypoint onEnter={() => setBgColor('')} onLeave={() => setBgColor('primary')} />
+      {window.location.pathname === '/' && (
+        <Waypoint onEnter={() => setBgColor('')} onLeave={() => setBgColor('primary')} />
+      )}
       <header
         className={styles.header}
         sx={{
-          bg: bgColor,
-          color: 'text',
+          height: window.location.pathname === '/' ? 0 : 'headerHeight',
         }}
       >
-        <div className={styles.wrapper}>
+        <div
+          className={styles.wrapper}
+          sx={{ maxWidth: 'maxWidth', height: 'headerHeight', px: 4, bg: bgColor, color: 'text' }}
+        >
           <Link to='/'>
-            <img className={styles.logo} src={logo} alt='logo' />
+            <img className={styles.logo} src={logo} alt='logo' sx={{ height: 'headerHeight' }} />
           </Link>
           <div className={styles.menuBtn} onClick={() => setMenuState(true)}>
             按钮
@@ -33,7 +37,7 @@ const Header = () => {
         </div>
       </header>
       <div className={classnames(styles.menu, menuState ? styles.showMenu : '')} sx={{ bg: 'primary', color: 'text' }}>
-        <div className={styles.menuWrapper}>
+        <div className={styles.menuWrapper} sx={{ maxWidth: 'maxWidth' }}>
           <ul className={styles.mainMenu}>
             {JSONData.map((item, index) => (
               <li key={index} onMouseEnter={() => setCurrent(index)}>

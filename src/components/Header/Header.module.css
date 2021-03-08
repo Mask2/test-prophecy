@@ -1,27 +1,24 @@
 /** @jsx jsx */
 .header {
-  height: var(--header-height);
   width: 100%;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   transition: background 0.3s ease-in-out;
   z-index: 1000;
-}
-
-.wrapper {
-  max-width: var(--lg);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 var(--padding);
-  margin: 0 auto;
+  box-shadow: 0 12px 14px 0 rgb(0 0 0 / 10%);
 }
 
 .logo {
   display: block;
-  height: var(--header-height);
   margin: 0;
 }
 
@@ -53,7 +50,6 @@ li {
   padding: 0;
 }
 .menuWrapper {
-  max-width: var(--lg);
   margin: 0 auto;
   margin-top: 100px;
 }
