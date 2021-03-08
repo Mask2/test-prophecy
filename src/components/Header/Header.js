@@ -26,13 +26,23 @@ const Header = () => {
       >
         <div
           className={styles.wrapper}
-          sx={{ maxWidth: 'maxWidth', height: 'headerHeight', px: 4, bg: bgColor, color: 'text' }}
+          sx={{ bg: bgColor, boxShadow: bgColor ? '0 12px 14px 0 rgb(0 0 0 / 10%)' : '' }}
         >
-          <Link to='/'>
-            <img className={styles.logo} src={logo} alt='logo' sx={{ height: 'headerHeight' }} />
-          </Link>
-          <div className={styles.menuBtn} onClick={() => setMenuState(true)}>
-            按钮
+          <div
+            className={styles.innerWrapper}
+            sx={{
+              maxWidth: 'maxWidth',
+              height: 'headerHeight',
+              px: 4,
+              color: 'text',
+            }}
+          >
+            <Link to='/'>
+              <img className={styles.logo} src={logo} alt='logo' sx={{ height: 'headerHeight' }} />
+            </Link>
+            <div className={styles.menuBtn} onClick={() => setMenuState(true)}>
+              按钮
+            </div>
           </div>
         </div>
       </header>

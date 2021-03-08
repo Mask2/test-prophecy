@@ -4,19 +4,19 @@
 }
 
 .wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 auto;
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   transition: background 0.3s ease-in-out;
   z-index: 1000;
-  box-shadow: 0 12px 14px 0 rgb(0 0 0 / 10%);
 }
-
+.innerWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
 .logo {
   display: block;
   margin: 0;
