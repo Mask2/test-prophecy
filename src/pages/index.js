@@ -68,7 +68,7 @@ const IndexPage = ({ data }) => {
           <source src={HomeVideo} type='video/mp4' />
         </video>
         <img className={styles.mouseButton} onClick={() => scrollTo('#main')} src={mouseButton} alt='' />
-        <div className={styles.introWrapper}>
+        <div className={styles.introWrapper} sx={{ maxWidth: 'maxWidth' }}>
           <div className={styles.introInner} sx={{ color: 'text' }}>
             <h1>
               <span style={{ fontSize: 30 }}>Take2 Prophecy™</span>

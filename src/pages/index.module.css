@@ -14,16 +14,11 @@
   transform: translate(-50%, -50%);
   display: flex;
   justify-content: flex-end;
-  width: var(--lg);
 }
 .introInner {
   width: 40%;
   padding: 16px;
-  background-image: radial-gradient(
-    circle at left bottom,
-    rgba(146, 183, 202, 0.75) 0%,
-    rgba(5, 91, 167, 0.75) 100%
-  );
+  background-image: radial-gradient(circle at left bottom, rgba(146, 183, 202, 0.75) 0%, rgba(5, 91, 167, 0.75) 100%);
   background-position: left top;
   background-repeat: no-repeat;
   -webkit-background-size: cover;
@@ -39,11 +34,7 @@
   position: relative;
   min-height: 100vh;
   background-color: rgba(255, 255, 255, 0);
-  background-image: radial-gradient(
-    circle at left center,
-    #92b7ca 0%,
-    #055ba7 100%
-  );
+  background-image: radial-gradient(circle at left center, #92b7ca 0%, #055ba7 100%);
   background-position: center center;
   background-repeat: no-repeat;
 }

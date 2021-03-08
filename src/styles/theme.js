@@ -1,5 +1,5 @@
 const theme = {
-  breakpoints: ['40em', '52em', '64em'],
+  breakpoints: ['1024px'],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   fonts: {
     body: '"微軟正黑體", "Microsoft JhengHei", sans-serif !important',
@@ -15,6 +15,7 @@ const theme = {
   sizes: {
     maxWidth: 1120,
     slideHeight: 400,
+    headerHeight: 76,
   },
   lineHeights: {
     body: 1.5,

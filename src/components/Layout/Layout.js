@@ -45,7 +45,7 @@ const Layout = ({ children, location }) => {
       >
         <main>
           <SEO title={curPageInfo.title} />
-          <Sliders title={curPageInfo.title} img={curPageInfo.img} />
+          {location.pathname !== '/' && <Sliders title={curPageInfo.title} img={curPageInfo.img} />}
           {children}
         </main>
       </div>
