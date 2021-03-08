@@ -92,12 +92,10 @@ const IndexPage = ({ data }) => {
             </div>
             <ProphecySteps />
           </section>
-
           <div className={styles.prophecyResult}>
             <p>*陽性：檢測到血漿中存在｢與鼻咽癌相關的人類和EB病毒DNA特徵｣，詳情請向醫護人員查詢。</p>
             <p>*陰性：檢測不到血漿中存在｢與鼻咽癌相關的人類和EB病毒DNA特徵｣，詳情請向醫護人員查詢。</p>
           </div>
-
           <section>
             <div className={styles.secTitle}>
               <h2>最新活動推廣</h2>
@@ -114,8 +112,8 @@ const IndexPage = ({ data }) => {
               <h2>健康資訊</h2>
               <p>緊貼最新健康資訊，提高個人生活質素。</p>
             </div>
-            <div className={styles.postsWrapper}>
-              <div className={styles.postsLeft} sx={{ width: ['100%', '75%'] }}>
+            <div className={styles.postsWrapper} sx={{ flexWrap: ['wrap', 'nowrap'] }}>
+              <div className={styles.postsLeft} sx={{ mr: [0, 3] }}>
                 <PostCard
                   className={styles.largePostCard}
                   key={data.healthInfo.nodes[0].id}
@@ -125,7 +123,7 @@ const IndexPage = ({ data }) => {
               <div
                 className={styles.postsRight}
                 sx={{
-                  width: ['100%', '24%'],
+                  width: ['100%', '32%'],
                 }}
               >
                 {data.healthInfo.nodes.map((item, index) =>

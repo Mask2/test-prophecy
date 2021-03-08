@@ -104,13 +104,11 @@ p {
   flex-wrap: wrap;
   justify-content: space-between;
   padding-bottom: 96px;
+  flex-wrap: nowrap;
 }
 
 .largePostCard {
   width: 60%;
-}
-.postCard {
-  width: 278px;
 }
 
 .postsRight {
