@@ -1,5 +1,8 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCoffee } from '@fortawesome/free-solid-svg-icons';
+import { faFacebookF } from '@fortawesome/free-brands-svg-icons';
 
 export const query = graphql`
   {
@@ -15,13 +18,18 @@ export const query = graphql`
     }
   }
 `;
-const newsPage = ({ data }) =>
-  data.allMdx.nodes.map((node) => (
-    <div key={node.id} style={{ paddingTop: '100px' }}>
-      <Link to={`/${node.slug}`} style={{ color: 'blue' }}>
-        {node.frontmatter.title}|{node.frontmatter.date}
-      </Link>
-    </div>
-  ));
+const newsPage = ({ data }) => (
+  <>
+    {data.allMdx.nodes.map((node) => (
+      <div key={node.id} style={{ paddingTop: '100px' }}>
+        <Link to={`/${node.slug}`} style={{ color: 'blue' }}>
+          <FontAwesomeIcon icon={faCoffee} />
+          <FontAwesomeIcon icon={faFacebookF} />
+          {node.frontmatter.title}|{node.frontmatter.date}
+        </Link>
+      </div>
+    ))}
+  </>
+);
 
 export default newsPage;
