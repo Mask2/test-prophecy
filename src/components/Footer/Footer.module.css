@@ -17,16 +17,16 @@
   padding-top: 20px;
 }
 
-a {
-  /* color: #fff; */
+.link {
+  color: #fff;
   text-decoration: none;
 }
-.content a:hover {
+.content .link:hover {
   color: #ea5b29;
   position: relative;
 }
 
-.content a:hover::after {
+.content .link:hover::after {
   content: '';
   position: absolute;
   width: 100%;

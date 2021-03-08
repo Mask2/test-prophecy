@@ -21,16 +21,16 @@ module.exports = {
         url: 'https://m.me/prophecy.health',
       },
       {
-        name: 'Instagram',
-        url: 'https://www.instagram.com/prophecyhealth/',
-      },
-      {
         name: 'LinkedIn',
         url: 'https://www.linkedin.com/company/take2-health',
       },
       {
         name: 'Youtube',
         url: 'https://www.youtube.com/channel/UCvZ29L5oDOpzIOJnGG-YZaA/',
+      },
+      {
+        name: 'Instagram',
+        url: 'https://www.instagram.com/prophecyhealth/',
       },
     ],
   },

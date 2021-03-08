@@ -16,6 +16,7 @@ const theme = {
     maxWidth: 1120,
     slideHeight: 400,
     headerHeight: 76,
+    icon: 32,
   },
   lineHeights: {
     body: 1.5,
@@ -25,7 +26,7 @@ const theme = {
     text: '#fff',
     background: '#fff',
     primary: '#143b6d',
-    secondary: '#30c',
+    secondary: '#ea5b29',
     muted: '#f6f6f6',
     border: '#f4f4f4',
   },
