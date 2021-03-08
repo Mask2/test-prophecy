@@ -57,6 +57,12 @@ module.exports = {
         path: `${__dirname}/src/articles`,
       },
     },
+    {
+      resolve: 'gatsby-plugin-page-creator',
+      options: {
+        path: `${__dirname}/src/articles/`,
+      },
+    },
     `gatsby-plugin-smoothscroll`,
     `gatsby-transformer-json`,
     `gatsby-transformer-sharp`,

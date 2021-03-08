@@ -46,11 +46,5 @@
     "description": "找不到该页面",
     "path": "/404",
     "img": "../../4-1.png"
-  },
-  {
-    "title": "文章详情",
-    "description": "找不到该页面",
-    "path": "/articles",
-    "img": "../../4-1.png"
   }
 ]

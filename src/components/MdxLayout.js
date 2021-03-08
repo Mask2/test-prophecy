@@ -1,4 +1,5 @@
 import React from 'react';
+import { navigate } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 import Video from './video';
 
@@ -16,6 +17,7 @@ const MdxLayout = ({ children, pageContext }) => (
     <h1>My Layout</h1>
     <div>{pageContext.frontmatter.date}</div>
     <div style={{ width: 400, margin: '0 auto' }}>
+      <div onClick={() => navigate(-1)}>返回</div>
       <MDXProvider components={components}>{children}</MDXProvider>
     </div>
   </div>
