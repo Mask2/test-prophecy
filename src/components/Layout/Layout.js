@@ -17,7 +17,7 @@ import './Layout.module.css';
 import JSONData from '../../data/pageInfo.json';
 
 const Layout = ({ children, location }) => {
-  const [curPageInfo, setCurPageInfo] = useState({});
+  const [curPageInfo, setCurPageInfo] = useState({ title: '' });
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
