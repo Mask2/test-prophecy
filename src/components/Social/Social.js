@@ -24,7 +24,7 @@ const Social = () => {
   return (
     <div className={styles.wrapper}>
       {site.siteMetadata.social.map((item) => (
-        <div key={item.name} sx={{ height: 'icon', width: 'icon', fontSize: 2, mr: 3 }}>
+        <div key={item.name} sx={{ fontSize: 2, mr: 3 }}>
           {item.name === 'Facebook' && (
             <a
               className={styles.link}
@@ -33,6 +33,8 @@ const Social = () => {
               title={item.name}
               rel='nofollow'
               sx={{
+                height: 'icon',
+                width: 'icon',
                 color: 'text',
                 ':hover': {
                   color: 'secondary',
@@ -43,17 +45,59 @@ const Social = () => {
             </a>
           )}
           {item.name === 'Facebook messenger' && (
-            <a className={styles.link} href={item.url} target='_blank' title={item.name} rel='nofollow'>
+            <a
+              className={styles.link}
+              href={item.url}
+              target='_blank'
+              title={item.name}
+              rel='nofollow'
+              sx={{
+                height: 'icon',
+                width: 'icon',
+                color: 'text',
+                ':hover': {
+                  color: 'secondary',
+                },
+              }}
+            >
               <FontAwesomeIcon key={item.name} icon={faFacebookMessenger} />
             </a>
           )}
           {item.name === 'LinkedIn' && (
-            <a className={styles.link} href={item.url} target='_blank' title={item.name} rel='nofollow'>
+            <a
+              className={styles.link}
+              href={item.url}
+              target='_blank'
+              title={item.name}
+              rel='nofollow'
+              sx={{
+                height: 'icon',
+                width: 'icon',
+                color: 'text',
+                ':hover': {
+                  color: 'secondary',
+                },
+              }}
+            >
               <FontAwesomeIcon key={item.name} icon={faLinkedinIn} />
             </a>
           )}
           {item.name === 'Youtube' && (
-            <a className={styles.link} href={item.url} target='_blank' title={item.name} rel='nofollow'>
+            <a
+              className={styles.link}
+              href={item.url}
+              target='_blank'
+              title={item.name}
+              rel='nofollow'
+              sx={{
+                height: 'icon',
+                width: 'icon',
+                color: 'text',
+                ':hover': {
+                  color: 'secondary',
+                },
+              }}
+            >
               <FontAwesomeIcon key={item.name} icon={faYoutube} />
             </a>
           )}

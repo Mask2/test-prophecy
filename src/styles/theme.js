@@ -1,6 +1,6 @@
 const theme = {
   breakpoints: ['1024px'],
-  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  space: [0, 4, 8, 16, 24, 32, 48, 64, 96, 128, 256, 512],
   fonts: {
     body: '"微軟正黑體", "Microsoft JhengHei", sans-serif !important',
     heading: 'inherit',
@@ -24,16 +24,18 @@ const theme = {
   },
   colors: {
     text: '#fff',
+    primaryText: '#2c2364',
+    normalText: '#444444',
     background: '#fff',
     primary: '#143b6d',
     secondary: '#ea5b29',
-    muted: '#f6f6f6',
+    muted: '#055BA7',
     border: '#f4f4f4',
   },
   text: {
     heading: {
       fontFamily: 'heading',
-      lineHeight: 'heading',
+      lineHeight: 'body',
       fontWeight: 'heading',
     },
   },
@@ -42,14 +44,17 @@ const theme = {
       fontFamily: 'body',
       lineHeight: 'body',
       fontWeight: 'body',
+      color: 'primary',
     },
     h1: {
       variant: 'text.heading',
       fontSize: 5,
+      color: 'primary',
     },
     h2: {
       variant: 'text.heading',
       fontSize: 4,
+      color: 'primary',
     },
     h3: {
       variant: 'text.heading',
@@ -66,6 +71,10 @@ const theme = {
     h6: {
       variant: 'text.heading',
       fontSize: 0,
+    },
+    p: {
+      color: 'primary',
+      lightHeight: 28,
     },
     pre: {
       fontFamily: 'monospace',

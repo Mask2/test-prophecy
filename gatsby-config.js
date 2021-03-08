@@ -32,6 +32,16 @@ module.exports = {
         name: 'Instagram',
         url: 'https://www.instagram.com/prophecyhealth/',
       },
+      {
+        name: 'Whatsapp',
+        url:
+          'https://api.whatsapp.com/send?text=https%3A%2F%2Fwww.prophecy.health%2F%25e4%25ba%2586%25e8%25a7%25a3%25e9%25bc%25bb%25e5%2592%25bd%25e7%2599%258c%25e6%2588%2590%25e5%259b%25a0%25e3%2580%2581%25e7%2597%2587%25e7%258b%2580%25e3%2580%2581%25e6%25aa%25a2%25e6%259f%25a5%25e5%258f%258a%25e9%25a0%2590%25e9%2598%25b2%25e6%2596%25b9%25e6%25b3%2595%25ef%25bc%2581%2F',
+      },
+      {
+        name: 'Email',
+        url:
+          'mailto:?subject=Post%3A%20%E4%BA%86%E8%A7%A3%E9%BC%BB%E5%92%BD%E7%99%8C%E6%88%90%E5%9B%A0%E3%80%81%E7%97%87%E7%8B%80%E5%8F%8A%E6%AA%A2%E6%B8%AC%E6%96%B9%E6%B3%95%EF%BC%81&body=https%3A%2F%2Fwww.prophecy.health%2F%25e4%25ba%2586%25e8%25a7%25a3%25e9%25bc%25bb%25e5%2592%25bd%25e7%2599%258c%25e6%2588%2590%25e5%259b%25a0%25e3%2580%2581%25e7%2597%2587%25e7%258b%2580%25e3%2580%2581%25e6%25aa%25a2%25e6%259f%25a5%25e5%258f%258a%25e9%25a0%2590%25e9%2598%25b2%25e6%2596%25b9%25e6%25b3%2595%25ef%25bc%2581%2F',
+      },
     ],
   },
   plugins: [
@@ -71,7 +81,7 @@ module.exports = {
       resolve: `gatsby-plugin-mdx`,
       options: {
         defaultLayouts: {
-          default: require.resolve('./src/components/MdxLayout.js'),
+          default: require.resolve('./src/components/MdxLayout/MdxLayout'),
         },
       },
     },

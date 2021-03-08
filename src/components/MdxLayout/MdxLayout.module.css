@@ -1,17 +1,18 @@
-.wrapper {
+.nav {
   display: flex;
+  justify-content: flex-end;
   align-items: center;
-  justify-content: flex-start;
 }
-
+.backBtn {
+  cursor: pointer;
+}
 .link {
   display: block;
-  color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform 0.3s;
 }
-.link:hover {
-  transform: scale(1.5);
+.author {
+  cursor: pointer;
+  margin-left: 2px;
 }
