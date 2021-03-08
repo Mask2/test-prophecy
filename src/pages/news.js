@@ -18,7 +18,7 @@ export const query = graphql`
 const newsPage = ({ data }) =>
   data.allMdx.nodes.map((node) => (
     <div key={node.id} style={{ paddingTop: '100px' }}>
-      <Link to={`/${node.slug}`} style={{ color: 'blue' }}>
+      <Link to={`/articles/${node.id}`} style={{ color: 'blue' }}>
         {node.frontmatter.title}|{node.frontmatter.date}
       </Link>
     </div>

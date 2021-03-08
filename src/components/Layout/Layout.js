@@ -32,8 +32,12 @@ const Layout = ({ children, location }) => {
     }
   `);
   useEffect(() => {
-    const curPageInfo = JSONData.find((item) => item.path === location.pathname);
-    setCurPageInfo(curPageInfo || {});
+    let curPageInfo = JSONData.find(
+      (item) =>
+        (item.path === '/' && location.pathname === '/') ||
+        (item.path !== '/' && location.pathname.indexOf(item.path) > -1),
+    );
+    setCurPageInfo(curPageInfo || { title: '' });
   }, [location.pathname]);
   return (
     <>

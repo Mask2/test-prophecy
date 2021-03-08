@@ -54,13 +54,7 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: 'articles',
-        path: `${__dirname}/src/articles/`,
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-page-creator',
-      options: {
-        path: `${__dirname}/src/articles/`,
+        path: `${__dirname}/src/articles`,
       },
     },
     `gatsby-plugin-smoothscroll`,
