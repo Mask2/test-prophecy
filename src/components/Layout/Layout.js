@@ -4,11 +4,11 @@
  *
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
-
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
-import SEO from '/src/components/seo';
+import SEO from '/src/components/Seo';
+import Sliders from '/src/components/Sliders/Sliders';
 
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
@@ -17,7 +17,7 @@ import './Layout.module.css';
 import JSONData from '../../data/pageInfo.json';
 
 const Layout = ({ children, location }) => {
-  const [currentTitle, setCurrentTitle] = useState('');
+  const [curPageInfo, setCurPageInfo] = useState({});
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -32,8 +32,8 @@ const Layout = ({ children, location }) => {
     }
   `);
   useEffect(() => {
-    const title = JSONData.find((item) => item.path === location.pathname)?.title;
-    setCurrentTitle(title);
+    const curPageInfo = JSONData.find((item) => item.path === location.pathname);
+    setCurPageInfo(curPageInfo || {});
   }, [location.pathname]);
   return (
     <>
@@ -44,7 +44,8 @@ const Layout = ({ children, location }) => {
         }}
       >
         <main>
-          <SEO title={currentTitle} />
+          <SEO title={curPageInfo.title} />
+          <Sliders title={curPageInfo.title} img={curPageInfo.img} />
           {children}
         </main>
       </div>
