@@ -4,16 +4,20 @@
  *
  * See: https://www.gatsbyjs.com/docs/use-static-query/
  */
-
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
+import SEO from '/src/components/Seo';
+import Sliders from '/src/components/Sliders/Sliders';
 
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import './Layout.module.css';
 
-const Layout = ({ children }) => {
+import JSONData from '../../data/pageInfo.json';
+
+const Layout = ({ children, location }) => {
+  const [curPageInfo, setCurPageInfo] = useState({});
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -27,7 +31,10 @@ const Layout = ({ children }) => {
       }
     }
   `);
-
+  useEffect(() => {
+    const curPageInfo = JSONData.find((item) => item.path === location.pathname);
+    setCurPageInfo(curPageInfo || {});
+  }, [location.pathname]);
   return (
     <>
       <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
@@ -36,8 +43,11 @@ const Layout = ({ children }) => {
           margin: `0 auto`,
         }}
       >
-        {/* 如何动态获取当前页面的信息 */}
-        <main>{children}</main>
+        <main>
+          <SEO title={curPageInfo.title} />
+          <Sliders title={curPageInfo.title} img={curPageInfo.img} />
+          {children}
+        </main>
       </div>
       <Footer />
     </>
