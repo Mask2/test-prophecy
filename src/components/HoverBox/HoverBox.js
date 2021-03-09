@@ -4,10 +4,9 @@ import { jsx } from 'theme-ui';
 
 import styles from './HoverBox.module.css';
 
-const HoverBox = ({ sx, children }) => {
+const HoverBox = ({ sx, children, ...rest }) => {
   return (
     <div
-      className={styles.wrapper}
       sx={{
         p: 3,
         color: 'primary',
@@ -17,6 +16,8 @@ const HoverBox = ({ sx, children }) => {
         bg: 'text',
         ...sx,
       }}
+      {...rest}
+      className={styles.wrapper}
     >
       {children}
     </div>
