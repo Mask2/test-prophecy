@@ -13,14 +13,24 @@ const introductionPage = ({ location }) => {
   }, [location.pathname]);
   return (
     <div className={styles.wrapper} sx={{ backgroundImage: 'gradientMuted' }}>
-      <div sx={{ display: 'flex', justifyContent: 'center' }}>
+      <div sx={{ display: 'flex', justifyContent: 'center', py: 6, mx: 'auto', maxWidth: 'maxWidth' }}>
         {curMenu.map((child) => (
           <HoverBox
             key={child.path}
+            sxx={{
+              height: '50px',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              fontSize: 2,
+              fontWeight: 'bold',
+              flexGrow: 1,
+              mx: 4,
+              boxShadow: '0 25px 25px 0 rgba(0, 0, 0, 0.1)',
+            }}
             onClick={() => {
               scrollTo(`#${child.id}`);
             }}
-            sx={{ px: 5 }}
           >
             {child.name}
           </HoverBox>

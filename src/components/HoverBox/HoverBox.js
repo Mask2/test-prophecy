@@ -4,9 +4,10 @@ import { jsx } from 'theme-ui';
 
 import styles from './HoverBox.module.css';
 
-const HoverBox = ({ sx, children, ...rest }) => {
+const HoverBox = ({ children, sxx, onClick }) => {
   return (
     <div
+      className={styles.wrapper}
       sx={{
         p: 3,
         color: 'primary',
@@ -14,10 +15,9 @@ const HoverBox = ({ sx, children, ...rest }) => {
           color: 'text',
         },
         bg: 'text',
-        ...sx,
+        ...sxx,
       }}
-      {...rest}
-      className={styles.wrapper}
+      onClick={onClick}
     >
       {children}
     </div>
