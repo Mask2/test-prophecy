@@ -7,6 +7,7 @@ import styles from './findourservices.module.css';
 import HoverBox from '/src/components/HoverBox/HoverBox';
 import MenusData from '/src/data/menu.json';
 import ServiceAreaData from '/src/data/serviceArea.json';
+import partnerData from '/src/data/partnerInfo.json';
 
 const introductionPage = ({ location }) => {
   const [curMenu, setCurMenu] = useState([]);
@@ -15,7 +16,7 @@ const introductionPage = ({ location }) => {
     setCurMenu(MenusData.find((menu) => menu.path === withPrefix(location.pathname))?.children || []);
   }, [location.pathname]);
   return (
-    <div className={styles.wrapper} sx={{ backgroundImage: 'gradientMuted' }}>
+    <div sx={{ bg: 'muted' }}>
       <div sx={{ display: 'flex', justifyContent: 'center', py: 6, mx: 'auto', maxWidth: 'maxWidth' }}>
         {curMenu.map((child) => (
           <HoverBox
@@ -39,8 +40,21 @@ const introductionPage = ({ location }) => {
           </HoverBox>
         ))}
       </div>
-      <section id={curMenu[0]?.id} sx={{ mx: 'auto', maxWidth: 'maxWidth', height: '100vh' }}>
-        test
+      <section id={curMenu[0]?.id} sx={{ mx: 'auto', maxWidth: 'maxWidth', py: 6 }}>
+        <div sx={{ fontSize: 5, color: 'text', textAlign: 'center' }}>{partnerData.title}</div>
+        <div className={styles.partnerWrapper} sx={{ pt: 7, pb: 8 }}>
+          {partnerData.data.map((item) => (
+            <div className={styles.partnerCard} key={item.name} sx={{ width: '25%', pt: '25%' }}>
+              <div className={styles.partnerFont}>
+                <img className={styles.partnerFontImg} src={item.img} alt='' />
+              </div>
+              <div className={styles.partnerBack} sx={{ fontSize: 2, color: 'text', p: 4, textAlign: 'center' }}>
+                <div sx={{ mb: 3 }}>{item.name}</div>
+                <div>{item.description}</div>
+              </div>
+            </div>
+          ))}
+        </div>
       </section>
       <section id={curMenu[1]?.id} sx={{ bg: 'primary', py: 8, color: 'text' }}>
         <div sx={{ mx: 'auto', maxWidth: 'maxWidth' }}>
