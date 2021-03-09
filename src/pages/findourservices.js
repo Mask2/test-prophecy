@@ -61,7 +61,7 @@ const introductionPage = ({ location }) => {
             ))}
           </div>
           <div sx={{ mt: 6, maxHeight: '400px', overflowX: 'auto' }}>
-            <table sx={{ fontSize: 3 }}>
+            <table sx={{ fontSize: 3, borderTop: '1px solid #dcdcdc' }}>
               <tbody>
                 {ServiceAreaData.data[curArea].list.map((service, index) => (
                   <tr key={`${curArea}_${index}_${service.name}`} className={styles.tableRow}>

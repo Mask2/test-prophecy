@@ -12,10 +12,17 @@
   width: 100%;
   background: var(--hover);
 }
+
 .tableRow {
-  border-top: 1px solid #dcdcdc;
-  border-bottom: 1px solid #dcdcdc;
+  box-shadow: 0 0 0 0.5px #dcdcdc;
+}
+.tableRow:hover {
+  background: var(--hover-gradient);
+  background-size: 200% 100%;
+  transition: background-position 275ms ease;
+  cursor: pointer;
 }
 .tableCell {
   padding: 20px 10px !important;
+  flex-shrink: 1;
 }
