@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import React from 'react';
-import { jsx, Styled } from 'theme-ui';
+import { jsx } from 'theme-ui';
 import { navigate, useStaticQuery, graphql } from 'gatsby';
 import { MDXProvider } from '@mdx-js/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -11,11 +11,6 @@ import Video from '../video';
 import styles from './MdxLayout.module.css';
 
 const components = {
-  h1: Styled.h1,
-  h2: Styled.h2,
-  h3: Styled.h3,
-  p: Styled.p,
-  a: Styled.a,
   Video,
 };
 
@@ -148,7 +143,7 @@ const MdxLayout = ({ children, pageContext }) => {
           )}
         </div>
         <header sx={{ my: 3 }}>
-          <h1 sx={{ fontWeight: 'body', fontSize: 5, color: 'primary' }}>{pageContext.frontmatter.title}</h1>
+          <h1 sx={{ fontWeight: 'light', fontSize: 5, color: 'primary' }}>{pageContext.frontmatter.title}</h1>
           <div sx={{ color: 'normalText', fontSize: 3, fontWeight: 300 }}>
             {pageContext.frontmatter.date}|
             <span className={styles.author} onClick={() => navigate(-1)}>

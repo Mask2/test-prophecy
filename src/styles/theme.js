@@ -87,6 +87,11 @@ const theme = {
       variant: 'text.link',
       fontSize: 3,
     },
+    img: {
+      display: 'block',
+      mx: 'auto',
+      textAlign: 'center',
+    },
     pre: {
       fontFamily: 'monospace',
       overflowX: 'auto',
