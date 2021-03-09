@@ -11,6 +11,7 @@ const theme = {
     body: 400,
     heading: 700,
     bold: 700,
+    light: 300,
   },
   sizes: {
     maxWidth: 1120,
@@ -21,6 +22,7 @@ const theme = {
   lineHeights: {
     body: 1.5,
     heading: 1.125,
+    link: 1.75,
   },
   colors: {
     text: '#fff',
@@ -37,6 +39,14 @@ const theme = {
       fontFamily: 'heading',
       lineHeight: 'body',
       fontWeight: 'heading',
+      color: 'primary',
+    },
+    link: {
+      fontFamily: 'body',
+      lineHeight: 'link',
+      fontWeight: 'light',
+      color: 'primary',
+      textDecoration: 'none',
     },
   },
   styles: {
@@ -44,17 +54,14 @@ const theme = {
       fontFamily: 'body',
       lineHeight: 'body',
       fontWeight: 'body',
-      color: 'primary',
     },
     h1: {
       variant: 'text.heading',
       fontSize: 5,
-      color: 'primary',
     },
     h2: {
       variant: 'text.heading',
       fontSize: 4,
-      color: 'primary',
     },
     h3: {
       variant: 'text.heading',
@@ -75,6 +82,10 @@ const theme = {
     p: {
       color: 'primary',
       lightHeight: 28,
+    },
+    a: {
+      variant: 'text.link',
+      fontSize: 3,
     },
     pre: {
       fontFamily: 'monospace',

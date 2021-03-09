@@ -13,7 +13,9 @@ import styles from './MdxLayout.module.css';
 const components = {
   h1: Styled.h1,
   h2: Styled.h2,
+  h3: Styled.h3,
   p: Styled.p,
+  a: Styled.a,
   Video,
 };
 
@@ -34,7 +36,7 @@ const MdxLayout = ({ children, pageContext }) => {
   );
 
   return (
-    <div sx={{ bg: 'muted', pb: 6 }}>
+    <div sx={{ bg: 'muted', pb: 6, display: 'flex' }}>
       <div
         className={styles.wrapper}
         sx={{
@@ -45,6 +47,7 @@ const MdxLayout = ({ children, pageContext }) => {
           py: 6,
           px: 4,
           fontSize: 3,
+          width: '100%',
         }}
       >
         <div
