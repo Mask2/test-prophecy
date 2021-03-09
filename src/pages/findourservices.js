@@ -3,11 +3,14 @@ import React, { useState, useEffect } from 'react';
 import { jsx } from 'theme-ui';
 import { withPrefix } from 'gatsby';
 import scrollTo from 'gatsby-plugin-smoothscroll';
-import styles from './take2introduction.module.css';
+import styles from './findourservices.module.css';
 import HoverBox from '/src/components/HoverBox/HoverBox';
 import MenusData from '/src/data/menu.json';
+import ServiceAreaData from '/src/data/serviceArea.json';
+
 const introductionPage = ({ location }) => {
   const [curMenu, setCurMenu] = useState([]);
+  const [curArea, setCurArea] = useState(0);
   useEffect(() => {
     setCurMenu(MenusData.find((menu) => menu.path === withPrefix(location.pathname))?.children || []);
   }, [location.pathname]);
@@ -39,8 +42,38 @@ const introductionPage = ({ location }) => {
       <section id={curMenu[0]?.id} sx={{ mx: 'auto', maxWidth: 'maxWidth', height: '100vh' }}>
         test
       </section>
-      <section id={curMenu[1]?.id} sx={{ mx: 'auto', maxWidth: 'maxWidth', height: '100vh' }}>
-        test
+      <section id={curMenu[1]?.id} sx={{ mx: 'auto', maxWidth: 'maxWidth' }}>
+        <div className=''>{ServiceAreaData.title}</div>
+        <div className=''>{ServiceAreaData.description}</div>
+        <div>
+          {ServiceAreaData.data.map((item, index) => (
+            <div
+              className={index === curArea ? styles.activeArea : ''}
+              key={item.area}
+              onClick={() => setCurArea(index)}
+              sx={{ position: 'relative' }}
+            >
+              {item.area}
+            </div>
+          ))}
+        </div>
+        <table>
+          <tbody>
+            {ServiceAreaData.data[curArea].list.map((service) => (
+              <tr key={service.name}>
+                <td colSpan='1' rowSpan='1'>
+                  <p>{service.name}</p>
+                </td>
+                <td colSpan='1' rowSpan='1'>
+                  <p>{service.location}</p>
+                </td>
+                <td colSpan='1' rowSpan='1'>
+                  <p>{service.phone}</p>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </section>
     </div>
   );

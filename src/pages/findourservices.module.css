@@ -1,0 +1,14 @@
+.wrapper {
+  background-image: var(--radio-gradient);
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.activeArea::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 4px;
+  width: 100%;
+  background: var(--hover);
+}
