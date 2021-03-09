@@ -8,7 +8,7 @@ import styles from './post.module.css';
 
 export const query = graphql`
   {
-    allMdx(filter: { slug: { regex: "/news/" } }, sort: { fields: frontmatter___date, order: DESC }) {
+    allMdx(filter: { slug: { regex: "/promotions/" } }, sort: { fields: frontmatter___date, order: DESC }) {
       nodes {
         id
         frontmatter {
