@@ -4,15 +4,21 @@ import { jsx } from 'theme-ui';
 
 import styles from './HoverBox.module.css';
 
-const HoverBox = (props) => {
+const HoverBox = ({ sx, children }) => {
   return (
-    <div className={styles.wrapper} sx={{ color: 'primary' }}>
-      <div className={styles.content}>
-        <h4 className={styles.title}>{props.title}</h4>
-        <p className={styles.metainfo}>
-          {props.date} {props.auth ? '|' : ''} {props.auth}
-        </p>
-      </div>
+    <div
+      className={styles.wrapper}
+      sx={{
+        p: 3,
+        color: 'primary',
+        ':hover': {
+          color: 'text',
+        },
+        bg: 'text',
+        ...sx,
+      }}
+    >
+      {children}
     </div>
   );
 };

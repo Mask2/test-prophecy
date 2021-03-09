@@ -23,6 +23,7 @@ const theme = {
     body: 1.5,
     heading: 1.125,
     link: 1.75,
+    info: 2,
   },
   colors: {
     text: '#fff',

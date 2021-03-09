@@ -1,31 +1,11 @@
 .wrapper {
-  width: 100%;
-  cursor: pointer;
-  background: #fff;
-}
-
-.content {
-  width: 100%;
-  padding: 20px;
-  background: linear-gradient(to right, #f38e22, #ea5b29 50%, transparent 50%);
+  background: var(--hover-gradient);
   background-size: 200% 100%;
   background-position: 100%;
   transition: background-position 275ms ease;
-  color: var(--primary);
+  cursor: pointer;
 }
 
-.content:hover {
+.wrapper:hover {
   background-position: 0%;
-  color: #fff;
-}
-
-.title {
-  font-size: 16px;
-  margin-bottom: 10px;
-}
-
-.metainfo {
-  font-size: 12px;
-  margin: 0;
-  line-height: 2;
 }

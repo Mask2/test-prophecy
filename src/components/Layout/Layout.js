@@ -6,7 +6,7 @@
  */
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery, graphql, withPrefix } from 'gatsby';
 import SEO from '/src/components/Seo';
 import Sliders from '/src/components/Sliders/Sliders';
 
@@ -32,11 +32,7 @@ const Layout = ({ children, location }) => {
     }
   `);
   useEffect(() => {
-    let curPageInfo = JSONData.find(
-      (item) =>
-        (item.path === '/' && location.pathname === '/') ||
-        (item.path !== '/' && location.pathname.indexOf(item.path) > -1),
-    );
+    let curPageInfo = JSONData.find((item) => withPrefix('/') || (item.path !== '/' && withPrefix(item.path)));
     setCurPageInfo(curPageInfo || { title: '' });
   }, [location.pathname]);
   return (
