@@ -1,14 +1,18 @@
+/** @jsx jsx */
 import React from 'react';
-import { graphql, Link } from 'gatsby';
+import { jsx } from 'theme-ui';
+import { graphql } from 'gatsby';
+import PostCard from '../components/PostCard/PostCard';
 
 export const query = graphql`
   {
-    allMdx(filter: { slug: { regex: "/news/" } }) {
+    allMdx(filter: { slug: { regex: "/news/" } }, sort: { fields: frontmatter___date, order: DESC }) {
       nodes {
         id
         frontmatter {
           title
-          date(fromNow: true)
+          date(locale: "YYYY-MM-DD")
+          image
         }
         slug
       }
@@ -16,15 +20,18 @@ export const query = graphql`
   }
 `;
 const newsPage = ({ data }) => (
-  <>
-    {data.allMdx.nodes.map((node) => (
-      <div key={node.id} style={{ paddingTop: '100px' }}>
-        <Link to={`/${node.slug}`} style={{ color: 'blue' }}>
-          {node.frontmatter.title}|{node.frontmatter.date}
-        </Link>
-      </div>
-    ))}
-  </>
+  <div sx={{ bg: 'muted', pt: 8, pb: 9 }}>
+    <div sx={{ maxWidth: 'maxWidth', mx: 'auto', display: 'flex', flexWrap: 'wrap' }}>
+      {data.allMdx.nodes.map((node) => (
+        <PostCard
+          sx={{ maxWidth: ['100%', '30.2%'], m: [2, '1.5%'] }}
+          key={node.id}
+          {...node.frontmatter}
+          path={`/${node.slug}`}
+        />
+      ))}
+    </div>
+  </div>
 );
 
 export default newsPage;
