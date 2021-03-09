@@ -12,3 +12,10 @@
   width: 100%;
   background: var(--hover);
 }
+.tableRow {
+  border-top: 1px solid #dcdcdc;
+  border-bottom: 1px solid #dcdcdc;
+}
+.tableCell {
+  padding: 20px 10px !important;
+}

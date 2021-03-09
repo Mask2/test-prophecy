@@ -42,38 +42,44 @@ const introductionPage = ({ location }) => {
       <section id={curMenu[0]?.id} sx={{ mx: 'auto', maxWidth: 'maxWidth', height: '100vh' }}>
         test
       </section>
-      <section id={curMenu[1]?.id} sx={{ mx: 'auto', maxWidth: 'maxWidth' }}>
-        <div className=''>{ServiceAreaData.title}</div>
-        <div className=''>{ServiceAreaData.description}</div>
-        <div>
-          {ServiceAreaData.data.map((item, index) => (
-            <div
-              className={index === curArea ? styles.activeArea : ''}
-              key={item.area}
-              onClick={() => setCurArea(index)}
-              sx={{ position: 'relative' }}
-            >
-              {item.area}
-            </div>
-          ))}
-        </div>
-        <table>
-          <tbody>
-            {ServiceAreaData.data[curArea].list.map((service) => (
-              <tr key={service.name}>
-                <td colSpan='1' rowSpan='1'>
-                  <p>{service.name}</p>
-                </td>
-                <td colSpan='1' rowSpan='1'>
-                  <p>{service.location}</p>
-                </td>
-                <td colSpan='1' rowSpan='1'>
-                  <p>{service.phone}</p>
-                </td>
-              </tr>
+      <section id={curMenu[1]?.id} sx={{ bg: 'primary', py: 8, color: 'text' }}>
+        <div sx={{ mx: 'auto', maxWidth: 'maxWidth' }}>
+          <div sx={{ textAlign: 'center', mb: 6 }}>
+            <div sx={{ fontSize: 5, mb: 4 }}>{ServiceAreaData.title}</div>
+            <div sx={{ fontSize: 3 }}>{ServiceAreaData.description}</div>
+          </div>
+          <div sx={{ display: 'flex' }}>
+            {ServiceAreaData.data.map((item, index) => (
+              <div
+                className={index === curArea ? styles.activeArea : ''}
+                key={item.area}
+                onClick={() => setCurArea(index)}
+                sx={{ position: 'relative', fontSize: 3, py: 2, fontWeight: 'bold', flexGrow: 1, textAlign: 'center' }}
+              >
+                {item.area}
+              </div>
             ))}
-          </tbody>
-        </table>
+          </div>
+          <div sx={{ mt: 6, maxHeight: '400px', overflowX: 'auto' }}>
+            <table sx={{ fontSize: 3 }}>
+              <tbody>
+                {ServiceAreaData.data[curArea].list.map((service, index) => (
+                  <tr key={`${curArea}_${index}_${service.name}`} className={styles.tableRow}>
+                    <td className={styles.tableCell} colSpan='1' rowSpan='1'>
+                      {service.name}
+                    </td>
+                    <td className={styles.tableCell} colSpan='1' rowSpan='1'>
+                      {service.location}
+                    </td>
+                    <td className={styles.tableCell} colSpan='1' rowSpan='1'>
+                      {service.phone}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
       </section>
     </div>
   );
