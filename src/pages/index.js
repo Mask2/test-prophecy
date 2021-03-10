@@ -4,7 +4,7 @@ import { jsx } from 'theme-ui';
 import { graphql } from 'gatsby';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 import SEO from '../components/seo';
-import ProphecySteps from '../components/ProphecySteps/ProphecySteps';
+import ProphecySteps from '/src/components/ProphecySteps/ProphecySteps';
 import PostCard from '../components/PostCard/PostCard';
 import Swiper from 'react-id-swiper';
 import styles from './index.module.css';
@@ -85,16 +85,8 @@ const IndexPage = ({ data }) => {
       <div id='main' className={styles.main} sx={{ color: 'text' }}>
         <div className={styles.wrapper}>
           <section>
-            <div className={styles.secTitle}>
-              <h1>篩查四部曲</h1>
-              <p>透過簡單篩查四部曲，讓人人有「鼻」無患，提高成功治愈鼻咽癌的機會。</p>
-            </div>
             <ProphecySteps />
           </section>
-          <div className={styles.prophecyResult}>
-            <p>*陽性：檢測到血漿中存在｢與鼻咽癌相關的人類和EB病毒DNA特徵｣，詳情請向醫護人員查詢。</p>
-            <p>*陰性：檢測不到血漿中存在｢與鼻咽癌相關的人類和EB病毒DNA特徵｣，詳情請向醫護人員查詢。</p>
-          </div>
           <section>
             <div className={styles.secTitle}>
               <h2>最新活動推廣</h2>

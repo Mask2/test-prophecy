@@ -5,7 +5,7 @@ import { withPrefix } from 'gatsby';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 import styles from './findourservices.module.css';
 import HoverBox from '/src/components/HoverBox/HoverBox';
-import MenusData from '/src/data/menu.json';
+import MenuData from '/src/data/menu.json';
 import ServiceAreaData from '/src/data/serviceArea.json';
 import partnerData from '/src/data/partnerInfo.json';
 
@@ -13,7 +13,7 @@ const introductionPage = ({ location }) => {
   const [curMenu, setCurMenu] = useState([]);
   const [curArea, setCurArea] = useState(0);
   useEffect(() => {
-    setCurMenu(MenusData.find((menu) => menu.path === withPrefix(location.pathname))?.children || []);
+    setCurMenu(MenuData.find((menu) => menu.path === withPrefix(location.pathname))?.children || []);
   }, [location.pathname]);
   return (
     <div sx={{ bg: 'muted' }}>

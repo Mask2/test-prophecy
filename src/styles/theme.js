@@ -32,6 +32,7 @@ const theme = {
     background: '#fff',
     primary: '#143b6d',
     secondary: '#ea5b29',
+    light: 'rgb(68, 132, 182)',
     muted: '#055BA7',
     border: '#f4f4f4',
   },

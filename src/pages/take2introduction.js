@@ -97,7 +97,7 @@ const introductionPage = ({ location }) => {
               className={styles.teamCardWrapper}
               sx={
                 index % 2 === 0
-                  ? { flexDirection: 'row-reverse', justifyContent: 'flex-right', background: 'rgb(68, 132, 182)' }
+                  ? { flexDirection: 'row-reverse', justifyContent: 'flex-right', bg: 'light' }
                   : {
                       flexDirection: 'reverse',
                       justifyContent: 'flex-left',

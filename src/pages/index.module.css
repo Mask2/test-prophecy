@@ -70,10 +70,6 @@ p {
   padding-bottom: 48px;
 }
 
-.section1 {
-  /* height: 500px; */
-}
-
 .swiperWrapper {
   width: 374px;
 }
@@ -82,18 +78,7 @@ p {
   width: 374px;
   margin: 0 auto;
 }
-.prophecyResult {
-  width: calc(66.666666666667% - ((4% + 4%) * 0.66666666666667));
-  padding: 20px;
-  border-radius: 12px;
-  border: 1px solid #fff;
-  margin: 0 auto;
-}
-.prophecyResult p {
-  margin: 0;
-  font-size: 13px;
-  line-height: 28px;
-}
+
 .divide {
   border-color: rgba(255, 255, 255, 0.2);
   border-top-width: 10px;

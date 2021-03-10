@@ -1,0 +1,57 @@
+.wrapper {
+  background-image: var(--radio-gradient);
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.progressWrapper {
+  display: flex;
+  margin-top: 32px;
+}
+
+.progressItem {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-shrink: 1;
+}
+
+.progressIcon {
+  display: block;
+  width: 120px;
+  height: 120px;
+  margin-bottom: 0;
+}
+
+.tecWrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.tecNav {
+  width: 50%;
+  display: flex;
+  padding-right: 2%;
+}
+
+.tecNavItem {
+  transition: transform 0.3s;
+}
+
+.tecNavItem:hover {
+  transform: scale(1.1);
+}
+
+.tecNavImg {
+  margin-bottom: 0;
+  display: block;
+  background: #fff;
+}
+
+.tecContent {
+  width: 50%;
+  height: 584px;
+  padding: 24px;
+  background: #fff;
+  overflow-y: auto;
+}
