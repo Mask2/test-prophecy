@@ -2,8 +2,8 @@
 import React, { useState } from 'react';
 import { jsx } from 'theme-ui';
 import { navigate } from 'gatsby';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classnames from 'classnames';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch, faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import styles from './SearchButton.module.css';
