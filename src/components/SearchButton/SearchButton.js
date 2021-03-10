@@ -38,6 +38,23 @@ const SearchButton = () => {
         <FontAwesomeIcon icon={faSearch} />
       </div>
       <div className={classnames(styles.cover, showCover ? styles.showCover : '')} sx={{ bg: 'text' }}>
+        <div
+          className={styles.icon}
+          sx={{
+            color: 'primary',
+            width: '32px',
+            height: '32px',
+            fontSize: 3,
+            mr: 1,
+            position: 'fixed',
+            right: 4,
+            top: 4,
+            zIndex: 10,
+          }}
+          onClick={() => setShowCover(false)}
+        >
+          <FontAwesomeIcon icon={faTimes} />
+        </div>
         <div className={styles.inputWrapper} sx={{ maxWidth: '580px', p: '50px', width: '580px' }}>
           <form onSubmit={handleSubmit} sx={{ width: '100%', m: 0 }}>
             <input
