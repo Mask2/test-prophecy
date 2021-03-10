@@ -68,7 +68,7 @@ const IndexPage = ({ data }) => {
         </video>
         <img className={styles.mouseButton} onClick={() => scrollTo('#main')} src={mouseButton} alt='' />
         <div className={styles.introWrapper} sx={{ mx: 'auto', maxWidth: 'maxWidth', width: '100%' }}>
-          <div className={styles.introInner}>
+          <div className={styles.introInner} sx={{ width: ['100%', '40%'], mx: 3 }}>
             <Link to='/take2prophecy' sx={{ color: 'text', textDecoration: 'none' }}>
               <h1>
                 <span style={{ fontSize: 30 }}>Take2 Prophecy™</span>
@@ -106,7 +106,7 @@ const IndexPage = ({ data }) => {
               <p>緊貼最新健康資訊，提高個人生活質素。</p>
             </div>
             <div className={styles.postsWrapper} sx={{ flexWrap: ['wrap', 'nowrap'] }}>
-              <div className={styles.postsLeft} sx={{ mr: [0, 3] }}>
+              <div className={styles.postsLeft} sx={{ mr: [0, 3], mb: [4, 0] }}>
                 <PostCard
                   className={styles.largePostCard}
                   key={data.healthInfo.nodes[0].id}
@@ -120,7 +120,7 @@ const IndexPage = ({ data }) => {
                 }}
               >
                 {data.healthInfo.nodes.map((item, index) =>
-                  index ? <PostCard className={styles.postCard} key={item.id} {...item} /> : null,
+                  index ? <PostCard className={styles.postCard} key={item.id} {...item} sx={{ mb: [4, 0] }} /> : null,
                 )}
               </div>
             </div>
@@ -137,7 +137,7 @@ const IndexPage = ({ data }) => {
         </section>
         <section className={styles.moreInfo}>
           <div className={styles.moreInfoWrapper}>
-            <div className={styles.moreInfoContent}>
+            <div className={styles.moreInfoContent} sx={{ width: ['auto', '40%'], mx: [3, 0] }}>
               <div className={styles.secTitle}>
                 <h2>探索更多</h2>
                 <p>
@@ -145,7 +145,7 @@ const IndexPage = ({ data }) => {
                   致力為您打造健康人生，分享與健康相關的最新資訊，讓大眾正確認識鼻咽癌，並助您安排專業早期鼻咽癌篩查服務。
                 </p>
               </div>
-              <div className={styles.moreList}>
+              <div className={styles.moreList} sx={{ mx: [3, 0] }}>
                 {data.moreInfo.nodes.map((item, index) => (
                   <div className={styles.moreItem} key={item.id}>
                     <img

@@ -73,7 +73,7 @@ const searchPage = ({ data }) => {
           </div>
         </div>
       </div>
-      <div sx={{ mx: 'auto', maxWidth: 'maxWidth' }}>
+      <div sx={{ mx: 'auto', maxWidth: 'maxWidth', display: 'none' }}>
         <div className={styles.resultsWrapper}>
           <div className={styles.results}>
             <div className={styles.result} />
