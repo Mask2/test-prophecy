@@ -92,7 +92,9 @@ const Footer = () => (
         }}
       >
         © {new Date().getFullYear()}, Take2 Prophecy™ 版權所有
-        <Link className={styles.link}>私隱政策</Link>
+        <Link className={styles.link} to='/'>
+          私隱政策
+        </Link>
       </div>
     </div>
   </footer>

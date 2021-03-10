@@ -64,7 +64,7 @@ const MdxLayout = ({ children, pageContext }) => {
           {site.siteMetadata.social.map(
             (item) =>
               (item.name === 'Facebook' && (
-                <div className={styles.icon}>
+                <div className={styles.icon} key={item.name}>
                   <a
                     href={item.url}
                     target='_blank'
@@ -83,7 +83,7 @@ const MdxLayout = ({ children, pageContext }) => {
                 </div>
               )) ||
               (item.name === 'LinkedIn' && (
-                <div className={styles.icon}>
+                <div className={styles.icon} key={item.name}>
                   <a
                     href={item.url}
                     target='_blank'
@@ -102,7 +102,7 @@ const MdxLayout = ({ children, pageContext }) => {
                 </div>
               )) ||
               (item.name === 'Whatsapp' && (
-                <div className={styles.icon}>
+                <div className={styles.icon} key={item.name}>
                   <a
                     href={item.url}
                     target='_blank'
@@ -121,7 +121,7 @@ const MdxLayout = ({ children, pageContext }) => {
                 </div>
               )) ||
               (item.name === 'Email' && (
-                <div className={styles.icon}>
+                <div className={styles.icon} key={item.name}>
                   <a
                     href={item.url}
                     target='_blank'

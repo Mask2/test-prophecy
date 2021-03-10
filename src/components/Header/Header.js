@@ -68,7 +68,7 @@ const Header = ({ pathname }) => {
               </li>
             ))}
           </ul>
-          <ul className={styles.subMenu} sx={{ display: ['none', 'display'] }}>
+          <ul className={styles.subMenu} sx={{ display: ['none', 'block'] }}>
             {JSONData[current]?.children.length
               ? JSONData[current]?.children.map((item, index) => (
                   <li key={index}>

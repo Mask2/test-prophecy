@@ -20,7 +20,7 @@ const Layout = ({ children, location }) => {
   const [curPageInfo, setCurPageInfo] = useState({ title: '' });
 
   useEffect(() => {
-    let curPageInfo = JSONData.find((item) => item.path === withPrefix(location.pathname));
+    let curPageInfo = JSONData.find((item) => location.pathname.indexOf(item.path) > -1 && item.path !== '/');
     setCurPageInfo(curPageInfo || { title: '' });
   }, [location.pathname]);
   return (
