@@ -29,12 +29,14 @@ const theme = {
     text: '#fff',
     primaryText: '#2c2364',
     normalText: '#444444',
+    errorText: '#c3c3c3',
     background: '#fff',
     primary: '#143b6d',
     secondary: '#ea5b29',
     light: 'rgb(68, 132, 182)',
     muted: '#055BA7',
     border: '#f4f4f4',
+    button: '#F87F17',
   },
   text: {
     heading: {

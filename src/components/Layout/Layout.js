@@ -32,7 +32,9 @@ const Layout = ({ children, location }) => {
     }
   `);
   useEffect(() => {
-    let curPageInfo = JSONData.find((item) => withPrefix('/') || (item.path !== '/' && withPrefix(item.path)));
+    let curPageInfo = JSONData.find(
+      (item) => withPrefix('/') || (item.path !== withPrefix('/') && withPrefix(item.path)),
+    );
     setCurPageInfo(curPageInfo || { title: '' });
   }, [location.pathname]);
   return (
@@ -45,7 +47,9 @@ const Layout = ({ children, location }) => {
       >
         <main>
           <SEO title={curPageInfo.title} />
-          {location.pathname !== '/' && <Sliders title={curPageInfo.title} img={curPageInfo.img} />}
+          {location.pathname !== withPrefix('/') && location.pathname !== withPrefix('/404') && (
+            <Sliders title={curPageInfo.title} img={curPageInfo.img} />
+          )}
           {children}
         </main>
       </div>
