@@ -37,7 +37,7 @@ const Header = () => {
               color: 'text',
             }}
           >
-            <Link to='/'>
+            <Link sx={{ color: 'text' }} to='/'>
               <img className={styles.logo} src={logo} alt='logo' sx={{ height: 'headerHeight' }} />
             </Link>
             <div className={styles.menuBtn} onClick={() => setMenuState(true)}>
@@ -51,7 +51,7 @@ const Header = () => {
           <ul className={styles.mainMenu}>
             {JSONData.map((item, index) => (
               <li key={index} onMouseEnter={() => setCurrent(index)}>
-                <Link to={item.path} onClick={() => setMenuState(false)}>
+                <Link sx={{ color: 'text' }} to={item.path} onClick={() => setMenuState(false)}>
                   {item.name}
                 </Link>
               </li>
@@ -61,7 +61,7 @@ const Header = () => {
             {JSONData[current]?.children.length
               ? JSONData[current]?.children.map((item, index) => (
                   <li key={index}>
-                    <Link to={item.path} onClick={() => setMenuState(false)}>
+                    <Link sx={{ color: 'text' }} to={item.path} onClick={() => setMenuState(false)}>
                       {item.name}
                     </Link>
                   </li>
@@ -70,10 +70,14 @@ const Header = () => {
           </ul>
           <ul className={styles.contact}>
             <li>
-              <Link to='/'>加入我們</Link>
+              <Link sx={{ color: 'text' }} to='/'>
+                加入我們
+              </Link>
             </li>
             <li>
-              <Link to='/'>聯絡我們</Link>
+              <Link sx={{ color: 'text' }} to='/'>
+                聯絡我們
+              </Link>
             </li>
           </ul>
         </div>
