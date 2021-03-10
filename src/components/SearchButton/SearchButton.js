@@ -19,7 +19,7 @@ const SearchButton = () => {
           value: e.target.search.value,
         },
       });
-      showCover(false);
+      setShowCover(false);
     }
   };
   return (

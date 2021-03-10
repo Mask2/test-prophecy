@@ -70,7 +70,7 @@ const introductionPage = ({ location }) => {
           <h2 sx={{ textAlign: 'center', fontWeight: 'body', my: 5 }}>{InevitableData.title}</h2>
           <p>{InevitableData.description}</p>
           {InevitableData.data.map((list, index) => (
-            <div key={`list_${index}`} className={styles.progressWrapper}>
+            <div key={`inevitable_${index}`} className={styles.progressWrapper}>
               {list.map((item) => (
                 <div key={item.name} className={styles.progressItem}>
                   <img className={styles.progressIcon} src={item.img} alt='' />
@@ -86,7 +86,7 @@ const introductionPage = ({ location }) => {
           <h1 sx={{ textAlign: 'center', fontWeight: 'body', my: 6 }}>{FeaturesData.title}</h1>
           <p>{FeaturesData.description}</p>
           {FeaturesData.data.map((list, index) => (
-            <div key={`list_${index}`} className={styles.progressWrapper} sx={{ my: 5 }}>
+            <div key={`features_${index}`} className={styles.progressWrapper} sx={{ my: 5 }}>
               {list.map((item) => (
                 <div key={item.name} className={styles.progressItem}>
                   <img className={styles.progressIcon} src={item.img} alt='' />

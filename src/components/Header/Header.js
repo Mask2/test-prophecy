@@ -1,6 +1,6 @@
 /** @jsx jsx */
-import { Link } from 'gatsby';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link, withPrefix } from 'gatsby';
 import { jsx } from 'theme-ui';
 import { Waypoint } from 'react-waypoint';
 import styles from './Header.module.css';
@@ -10,19 +10,22 @@ import JSONData from '../../data/menu.json';
 
 import logo from '../../assets/images/taketwologo_2.png';
 
-const Header = () => {
-  const [bgColor, setBgColor] = useState(window.location.pathname === '/' ? '' : 'primary');
+const Header = ({ pathname }) => {
+  const [bgColor, setBgColor] = useState('');
   const [menuState, setMenuState] = useState(false);
   const [current, setCurrent] = useState(null);
+  const [hasInitBg, setHasInitBg] = useState(false);
+  useEffect(() => {
+    setHasInitBg(pathname !== withPrefix('/'));
+    setBgColor(pathname === withPrefix('/') ? '' : 'primary');
+  }, [pathname]);
   return (
     <>
-      {window.location.pathname === '/' && (
-        <Waypoint onEnter={() => setBgColor('')} onLeave={() => setBgColor('primary')} />
-      )}
+      {!hasInitBg && <Waypoint onEnter={() => setBgColor('')} onLeave={() => setBgColor('primary')} />}
       <header
         className={styles.header}
         sx={{
-          height: window.location.pathname === '/' ? 0 : 'headerHeight',
+          height: !hasInitBg ? 0 : 'headerHeight',
         }}
       >
         <div

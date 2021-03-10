@@ -1,11 +1,13 @@
+/** @jsx jsx */
 import React, { useState, useEffect } from 'react';
+import { jsx } from 'theme-ui';
 import { graphql } from 'gatsby';
 import * as JsSearch from 'js-search';
 
 const searchPage = ({ data }) => {
   const [search, setSearch] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
-  const [searchQuery, setSearchQuery] = useState([]);
+  const [searchQuery, setSearchQuery] = useState('');
   const rebuildIndex = () => {
     const dataToSearch = new JsSearch.Search('id');
     /**
@@ -41,7 +43,7 @@ const searchPage = ({ data }) => {
   };
 
   return (
-    <>
+    <div sx={{ bg: 'muted' }}>
       <input
         id='Search'
         value={searchQuery}
@@ -50,7 +52,7 @@ const searchPage = ({ data }) => {
         style={{ margin: '0 auto', width: '400px', paddingTop: 400 }}
       />
       {JSON.stringify(searchResults, null, 4)}
-    </>
+    </div>
   );
 };
 

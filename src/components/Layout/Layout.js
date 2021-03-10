@@ -6,7 +6,7 @@
  */
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useStaticQuery, graphql, withPrefix } from 'gatsby';
+import { withPrefix } from 'gatsby';
 import SEO from '/src/components/Seo';
 import Sliders from '/src/components/Sliders/Sliders';
 
@@ -18,19 +18,7 @@ import JSONData from '../../data/pageInfo.json';
 
 const Layout = ({ children, location }) => {
   const [curPageInfo, setCurPageInfo] = useState({ title: '' });
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-          menuLinks {
-            name
-            link
-          }
-        }
-      }
-    }
-  `);
+
   useEffect(() => {
     let curPageInfo = JSONData.find(
       (item) => withPrefix('/') || (item.path !== withPrefix('/') && withPrefix(item.path)),
@@ -39,7 +27,7 @@ const Layout = ({ children, location }) => {
   }, [location.pathname]);
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <Header pathname={location.pathname} />
       <div
         style={{
           margin: `0 auto`,
@@ -47,9 +35,9 @@ const Layout = ({ children, location }) => {
       >
         <main>
           <SEO title={curPageInfo.title} />
-          {location.pathname !== withPrefix('/') && location.pathname !== withPrefix('/404') && (
-            <Sliders title={curPageInfo.title} img={curPageInfo.img} />
-          )}
+          {location.pathname !== withPrefix('/') &&
+            location.pathname !== withPrefix('/404') &&
+            location.pathname !== withPrefix('/search') && <Sliders title={curPageInfo.title} img={curPageInfo.img} />}
           {children}
         </main>
       </div>
