@@ -28,27 +28,27 @@ const Footer = () => (
           }}
         >
           <dd>
-            <Link className={styles.link} to='/'>
+            <Link className={styles.link} to='/take2introduction' activeStyle={{ color: '#f8ac17' }}>
               企業背景
             </Link>
           </dd>
           <dd>
-            <Link className={styles.link} to='/'>
+            <Link className={styles.link} to='/take2prophecy' activeStyle={{ color: '#f8ac17' }}>
               早期鼻咽癌篩查
             </Link>
           </dd>
           <dd>
-            <Link className={styles.link} to='/'>
+            <Link className={styles.link} to='/healthinfo' activeStyle={{ color: '#f8ac17' }}>
               健康資訊
             </Link>
           </dd>
           <dd>
-            <Link className={styles.link} to='/'>
+            <Link className={styles.link} to='/promotions' activeStyle={{ color: '#f8ac17' }}>
               最新動態及推廣
             </Link>
           </dd>
           <dd>
-            <Link className={styles.link} to='/'>
+            <Link className={styles.link} to='/findourservices' activeStyle={{ color: '#f8ac17' }}>
               服務覆蓋點
             </Link>
           </dd>
@@ -92,9 +92,7 @@ const Footer = () => (
         }}
       >
         © {new Date().getFullYear()}, Take2 Prophecy™ 版權所有
-        <Link className={styles.link} to='/'>
-          私隱政策
-        </Link>
+        <Link className={styles.link}>私隱政策</Link>
       </div>
     </div>
   </footer>

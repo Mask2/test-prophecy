@@ -42,6 +42,7 @@ const newsPage = ({ data }) => (
               key={item.path}
               to={item.path}
               activeClassName={styles.activeLink}
+              replace
             >
               {item.title}
             </Link>

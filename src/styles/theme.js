@@ -32,6 +32,7 @@ const theme = {
     errorText: '#c3c3c3',
     background: '#fff',
     primary: '#143b6d',
+    linkActive: '#f8ac17',
     secondary: '#ea5b29',
     light: 'rgb(68, 132, 182)',
     muted: '#055BA7',
