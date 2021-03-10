@@ -5,6 +5,7 @@ import { jsx } from 'theme-ui';
 import { Waypoint } from 'react-waypoint';
 import styles from './Header.module.css';
 import classnames from 'classnames';
+import SearchButton from '/src/components/SearchButton/SearchButton';
 import JSONData from '../../data/menu.json';
 
 import logo from '../../assets/images/taketwologo_2.png';
@@ -37,9 +38,10 @@ const Header = () => {
               color: 'text',
             }}
           >
-            <Link sx={{ color: 'text' }} to='/'>
+            <Link sx={{ color: 'text', mr: 'auto' }} to='/'>
               <img className={styles.logo} src={logo} alt='logo' sx={{ height: 'headerHeight' }} />
             </Link>
+            <SearchButton />
             <div className={styles.menuBtn} onClick={() => setMenuState(true)}>
               按钮
             </div>
