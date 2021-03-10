@@ -10,3 +10,20 @@
   padding-top: 6rem;
   padding-bottom: 6rem;
 }
+.teamCardWrapper {
+  background-image: url(https://www.prophecy.health/wp-content/uploads/2020/09/quota.png);
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 520px;
+  display: flex;
+}
+.teamCardImg {
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.teamCardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}

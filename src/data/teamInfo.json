@@ -1,0 +1,47 @@
+{
+  "title": "團隊掠影",
+  "data": [
+    {
+      "name": "Tony Yung",
+      "title": "行政總裁 領導企業及團隊整體發展",
+      "words": "我們矢志讓科技創新改變世界。以一顆熾熱的心和鉅細無遺的匠人精神，經千錘百煉，讓科技精粹「從象牙塔走進人間」，與世界共享科研碩果，轉化成溫暖人心的服務，更使人生豐盛，生機勃勃，是我們的不懈追求。",
+      "img": "https://www.prophecy.health/wp-content/uploads/2020/09/1.png",
+      "position": "left top"
+    },
+    {
+      "name": "Jaremi Lam",
+      "title": "專科護士 確保業務嚴守醫療程序及推動服務創新",
+      "words": "從前，我在生死邊緣拯救生命。 現在，我希望能協助大眾化危為機，讓頑疾在尚能馴服的階段被發現。",
+      "img": "https://www.prophecy.health/wp-content/uploads/2020/09/5-1.png",
+      "position": "right center"
+    },
+    {
+      "name": "Carmen Lee",
+      "title": "專科護士 確保業務嚴守醫療程序及推動服務創新",
+      "words": "從前，我在生死邊緣拯救生命。 現在，我希望能協助大眾化危為機，讓頑疾在尚能馴服的階段被發現。",
+      "img": "https://www.prophecy.health/wp-content/uploads/2020/09/2-2.png",
+      "position": "left top"
+    },
+    {
+      "name": "Yuan Gang",
+      "title": "商業戰略合作 建立健康服務的國際合作，包括互聯網醫療、醫療保險及 企業員工健康管理計劃",
+      "words": "成功來源於成就他人。",
+      "img": "https://www.prophecy.health/wp-content/uploads/2020/09/4-2.png",
+      "position": "left top"
+    },
+    {
+      "name": "Chris Jiang",
+      "title": "企業財務及合規監管 按照最高專業水平，完善及監督企業管治及合規",
+      "words": "成功從來不是終點，追求卓越的心從未停歇。",
+      "img": "https://www.prophecy.health/wp-content/uploads/2020/09/7.png",
+      "position": "right center"
+    },
+    {
+      "name": "Annebelle Tam",
+      "title": "醫療營業 開拓與專業醫療機構、醫生和護士之間的合作",
+      "words": "盡責、專注、注重品質，是我們用心服務的精神。",
+      "img": "https://www.prophecy.health/wp-content/uploads/2020/09/3.png",
+      "position": "left top"
+    }
+  ]
+}

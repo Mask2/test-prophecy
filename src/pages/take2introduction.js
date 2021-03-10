@@ -7,11 +7,13 @@ import Video from '/src/components/video';
 import EntryBox from '/src/components/EntryBox/EntryBox';
 import styles from './take2introduction.module.css';
 import HoverBox from '/src/components/HoverBox/HoverBox';
-import MenusData from '/src/data/menu.json';
+import MenuData from '/src/data/menu.json';
+import TeamInfoData from '/src/data/teamInfo.json';
+
 const introductionPage = ({ location }) => {
   const [curMenu, setCurMenu] = useState([]);
   useEffect(() => {
-    setCurMenu(MenusData.find((menu) => menu.path === withPrefix(location.pathname))?.children || []);
+    setCurMenu(MenuData.find((menu) => menu.path === withPrefix(location.pathname))?.children || []);
   }, [location.pathname]);
   return (
     <div className={styles.wrapper} sx={{ backgroundImage: 'gradientMuted' }}>
@@ -88,8 +90,37 @@ const introductionPage = ({ location }) => {
         </div>
       </section>
       <section id={curMenu[3]?.id} sx={{ color: 'text' }}>
-        <h1 sx={{ fontSize: 5, fontWeight: 'body', textAlign: 'center', py: 6, mb: 0 }}>團隊掠影</h1>
-        <EntryBox />
+        <h1 sx={{ fontSize: 5, fontWeight: 'body', textAlign: 'center', py: 6, mb: 0 }}>{TeamInfoData.title}</h1>
+        {TeamInfoData.data.map((item, index) => (
+          <EntryBox key={item.name} direction={index % 2 === 0 ? 'right' : 'left'}>
+            <div
+              className={styles.teamCardWrapper}
+              sx={
+                index % 2 === 0
+                  ? { flexDirection: 'row-reverse', justifyContent: 'flex-right', background: 'rgb(68, 132, 182)' }
+                  : {
+                      flexDirection: 'reverse',
+                      justifyContent: 'flex-left',
+                      backgroundImage:
+                        'linear-gradient(rgba(255, 255, 255, 0) 0%, rgb(146, 183, 202) 100%), url("https://www.prophecy.health/wp-content/uploads/2020/09/quota.png")',
+                    }
+              }
+            >
+              <div
+                className={styles.teamCardImg}
+                sx={{ width: '40%', backgroundImage: `url(${item.img})`, backgroundPosition: item.position }}
+              />
+              <div
+                className={styles.teamCardContent}
+                sx={{ maxWidth: '46%', mx: 4, alignItems: index % 2 === 0 ? 'flex-start' : 'flex-end' }}
+              >
+                <h2 sx={{ fontWeight: 'body' }}>{item.name}</h2>
+                <p sx={{ width: '60%', alignSelf: 'center', textAlign: 'center' }}>{item.title}</p>
+                <p>{item.words}</p>
+              </div>
+            </div>
+          </EntryBox>
+        ))}
       </section>
     </div>
   );
