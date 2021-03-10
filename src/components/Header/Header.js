@@ -6,6 +6,7 @@ import { Waypoint } from 'react-waypoint';
 import styles from './Header.module.css';
 import classnames from 'classnames';
 import SearchButton from '/src/components/SearchButton/SearchButton';
+import Social from '/src/components/Social/Social';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import JSONData from '../../data/menu.json';
@@ -53,9 +54,12 @@ const Header = ({ pathname }) => {
           </div>
         </div>
       </header>
-      <div className={classnames(styles.menu, menuState ? styles.showMenu : '')} sx={{ bg: 'primary', color: 'text' }}>
-        <div className={styles.menuWrapper} sx={{ maxWidth: 'maxWidth' }}>
-          <ul className={styles.mainMenu}>
+      <div
+        className={classnames(styles.menu, menuState ? styles.showMenu : '')}
+        sx={{ bg: 'primary', color: 'text', p: [4, 0] }}
+      >
+        <div className={styles.menuWrapper} sx={{ maxWidth: 'maxWidth', flexDirection: ['column', 'row'] }}>
+          <ul className={styles.mainMenu} sx={{ width: ['auto', '40%'], fontSize: ['32px', '40px'] }}>
             {JSONData.map((item, index) => (
               <li key={index} onMouseEnter={() => setCurrent(index)}>
                 <Link sx={{ color: 'text' }} to={item.path} onClick={() => setMenuState(false)}>
@@ -64,7 +68,7 @@ const Header = ({ pathname }) => {
               </li>
             ))}
           </ul>
-          <ul className={styles.subMenu}>
+          <ul className={styles.subMenu} sx={{ display: ['none', 'display'] }}>
             {JSONData[current]?.children.length
               ? JSONData[current]?.children.map((item, index) => (
                   <li key={index}>
@@ -85,6 +89,9 @@ const Header = ({ pathname }) => {
               <Link sx={{ color: 'text' }} to='/'>
                 聯絡我們
               </Link>
+            </li>
+            <li>
+              <Social />
             </li>
           </ul>
         </div>

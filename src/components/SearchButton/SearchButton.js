@@ -46,7 +46,7 @@ const SearchButton = () => {
             height: '32px',
             fontSize: 3,
             mr: 1,
-            position: 'fixed',
+            position: 'absolute',
             right: 4,
             top: 4,
             zIndex: 10,
