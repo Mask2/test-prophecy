@@ -27,7 +27,7 @@
     "gatsby"
   ],
   "license": "0BSD",
-  "pathPrefix": "/demo",
+  "pathPrefix": "/github-pages-demo",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
