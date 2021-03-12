@@ -20,12 +20,14 @@
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
+    "gh-pages": "^3.1.0",
     "prettier": "2.2.1"
   },
   "keywords": [
     "gatsby"
   ],
   "license": "0BSD",
+  "pathPrefix": "/demo",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -33,7 +35,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "repository": {
     "type": "git",
