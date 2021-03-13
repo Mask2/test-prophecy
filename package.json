@@ -27,7 +27,6 @@
     "gatsby"
   ],
   "license": "0BSD",
-  "pathPrefix": "/github-pages-demo",
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
@@ -36,7 +35,7 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public -r https://$GH_TOKEN@github.com/Mask2/github-pages-demo.git"
   },
   "repository": {
     "type": "git",
