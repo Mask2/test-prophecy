@@ -5,8 +5,8 @@ node_js:
   - "10"
 deploy:
   provider: script
-  script: cd / && yarn install && yarn run deploy
-  skip_cleanup: true
+  script: cd Mask2/github-pages-demo/ && yarn install && yarn run deploy
+  cleanup: true
   on:
     branch: master
 env:
