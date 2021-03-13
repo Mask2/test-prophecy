@@ -97,3 +97,13 @@ Looking for more guidance? Full documentation for Gatsby lives [on the website](
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/import/project?template=https://github.com/gatsbyjs/gatsby-starter-default)
 
 <!-- AUTO-GENERATED-CONTENT:END -->
+
+## 🤯 Q & A
+
+Q：`travis encrypt name=***` error: `repository not known to https://api.travis-ci.org:***`
+
+R：需要登陆 `.com` api endpoint `.org` 已经废弃
+
+S： `travis login --pro -g ***` 使用 GitHub token 登陆 `.com` api endpoint
+
+---
