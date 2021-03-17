@@ -9,7 +9,7 @@ import MenuData from '/src/data/menu.json';
 import ServiceAreaData from '/src/data/serviceArea.json';
 import partnerData from '/src/data/partnerInfo.json';
 
-const introductionPage = ({ location }) => {
+const FindourservicesPage = ({ location }) => {
   const [curMenu, setCurMenu] = useState([]);
   const [curArea, setCurArea] = useState(0);
   useEffect(() => {
@@ -99,4 +99,4 @@ const introductionPage = ({ location }) => {
   );
 };
 
-export default introductionPage;
+export default FindourservicesPage;

@@ -21,7 +21,7 @@ export const query = graphql`
     }
   }
 `;
-const newsPage = ({ data }) => (
+const NewsPage = ({ data }) => (
   <div sx={{ bg: 'muted', pt: 8, pb: 9 }}>
     <div sx={{ maxWidth: 'maxWidth', mx: 'auto' }}>
       <div sx={{ textAlign: 'center', pb: 5, fontWeight: 'bold', fontSize: 3 }}>
@@ -63,4 +63,4 @@ const newsPage = ({ data }) => (
   </div>
 );
 
-export default newsPage;
+export default NewsPage;

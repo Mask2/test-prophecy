@@ -19,7 +19,7 @@ export const pageQuery = graphql`
   }
 `;
 
-const searchG = ({ data }) => {
+const SearchG = ({ data }) => {
   const [query, setQuery] = useState(null);
   const results = useFlexSearch(query, data.localSearchPages.index, data.localSearchPages.store);
   useEffect(() => {
@@ -49,4 +49,4 @@ const searchG = ({ data }) => {
   );
 };
 
-export default searchG;
+export default SearchG;

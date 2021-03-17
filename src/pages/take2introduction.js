@@ -10,7 +10,7 @@ import HoverBox from '/src/components/HoverBox/HoverBox';
 import MenuData from '/src/data/menu.json';
 import TeamInfoData from '/src/data/teamInfo.json';
 
-const introductionPage = ({ location }) => {
+const IntroductionPage = ({ location }) => {
   const [curMenu, setCurMenu] = useState([]);
   useEffect(() => {
     setCurMenu(MenuData.find((menu) => menu.path === withPrefix(location.pathname))?.children || []);
@@ -92,7 +92,7 @@ const introductionPage = ({ location }) => {
       <section id={curMenu[3]?.id} sx={{ color: 'text' }}>
         <h1 sx={{ fontSize: 5, fontWeight: 'body', textAlign: 'center', py: 6, mb: 0 }}>{TeamInfoData.title}</h1>
         {TeamInfoData.data.map((item, index) => (
-          <EntryBox key={item.name} direction={index % 2 === 0 ? 'right' : 'left'}>
+          <EntryBox key={item.name} direction={index % 2 === 0 ? 'left' : 'right'}>
             <div
               className={styles.teamCardWrapper}
               sx={
@@ -126,4 +126,4 @@ const introductionPage = ({ location }) => {
   );
 };
 
-export default introductionPage;
+export default IntroductionPage;

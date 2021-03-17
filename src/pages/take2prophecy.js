@@ -11,7 +11,7 @@ import InevitableData from '/src/data/inevitableInfo.json';
 import FeaturesData from '/src/data/featuresInfo.json';
 import TechnologyData from '/src/data/technologyInfo.json';
 
-const introductionPage = ({ location }) => {
+const ProphecyPage = ({ location }) => {
   const [curMenu, setCurMenu] = useState([]);
   const [curTec, setCurTec] = useState(0);
   useEffect(() => {
@@ -153,4 +153,4 @@ const introductionPage = ({ location }) => {
   );
 };
 
-export default introductionPage;
+export default ProphecyPage;

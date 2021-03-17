@@ -7,7 +7,7 @@ import styles from './search.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
-const searchPage = ({ data }) => {
+const SearchPage = ({ data }) => {
   const [search, setSearch] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
@@ -100,4 +100,4 @@ export const query = graphql`
   }
 `;
 
-export default searchPage;
+export default SearchPage;
