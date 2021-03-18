@@ -143,7 +143,7 @@ const theme = {
     },
     h4: {
       variant: 'text.heading',
-      fontSize: 6,
+      fontSize: 5,
     },
     h5: {
       variant: 'text.heading',
@@ -188,7 +188,26 @@ const theme = {
       color: 'blue.primary',
     },
   },
-  buttons: {},
+  buttons: {
+    orange1: {
+      bg: 'orange.primary',
+      color: 'white',
+      fontSize: 1,
+      py: 3,
+      px: 10,
+    },
+    orange2: {
+      bg: 'orange.primary',
+      color: 'white',
+      fontSize: 1,
+      py: 3,
+      px: 10,
+    },
+  },
+  shadows: {
+    header: '0 12px 14px 0 rgb(0 0 0 / 10%)',
+    button: '0 25px 25px 0 rgb(0 0 0 / 10%)',
+  },
   styles: {
     root: {
       fontFamily: 'body',

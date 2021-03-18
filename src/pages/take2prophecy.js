@@ -17,7 +17,7 @@ const ProphecyPage = ({ location }) => {
     setCurMenu(MenuData.find((menu) => menu.path === withPrefix(location.pathname))?.children || []);
   }, [location.pathname]);
   return (
-    <div className={styles.wrapper} sx={{ backgroundImage: 'gradientMuted' }}>
+    <div className={styles.wrapper} sx={{ variant: 'gradients.blue2' }}>
       <div
         sx={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', py: 6, mx: 'auto', maxWidth: 'maxWidth' }}
       >
@@ -25,7 +25,7 @@ const ProphecyPage = ({ location }) => {
           <div
             key={child.path}
             sx={{
-              virant: 'hovers.orange1',
+              variant: 'hovers.orange1',
               height: '50px',
               display: 'flex',
               justifyContent: 'center',
@@ -36,7 +36,7 @@ const ProphecyPage = ({ location }) => {
               minWidth: '300px',
               mx: 4,
               mb: 6,
-              boxShadow: '0 25px 25px 0 rgba(0, 0, 0, 0.1)',
+              boxShadow: 'button',
             }}
             onClick={() => {
               scrollTo(`#${child.id}`);
@@ -107,13 +107,17 @@ const ProphecyPage = ({ location }) => {
               {TechnologyData.data.map((item, index) => (
                 <Box key={item.title} className={styles.tecNavItem} onClick={() => setCurTec(index)}>
                   <img className={styles.tecNavImg} src={item.img} alt='' />
-                  <div sxx={{ variant: 'hovers.orange1', py: 5, color: 'blue.primary', fontSize: 3 }}>{item.title}</div>
+                  <div sx={{ variant: 'hovers.orange1', py: 3, fontSize: 3 }}>{item.title}</div>
                 </Box>
               ))}
             </Grid>
             <div className={styles.tecContent}>
-              <div sx={{ color: 'secondary', fontSize: 4, mb: 3 }}>{TechnologyData.data[curTec].title}</div>
-              <div sx={{ color: 'normalText', fontSize: 3, lineHeight: 2 }}>{TechnologyData.data[curTec].content}</div>
+              <div sx={{ color: 'orange.primary', variant: 'texts.h4', mb: 3 }}>
+                {TechnologyData.data[curTec].title}
+              </div>
+              <div sx={{ color: 'gray.primary', fontSize: 3, lineHeight: 2 }}>
+                {TechnologyData.data[curTec].content}
+              </div>
             </div>
           </div>
         </div>

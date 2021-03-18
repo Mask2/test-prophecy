@@ -20,7 +20,7 @@ export const query = graphql`
   }
 `;
 const NewsPage = ({ data }) => (
-  <div sx={{ bg: 'muted', pt: 8, pb: 9 }}>
+  <div sx={{ bg: 'secondary', pt: 8, pb: 9 }}>
     <div sx={{ maxWidth: 'maxWidth', mx: 'auto' }}>
       <h1 sx={{ textAlign: 'center', pb: 5, color: 'white', fontWeight: 'body' }}>
         緊貼最新健康資訊，提高個人生活質素。

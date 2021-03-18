@@ -31,10 +31,7 @@ const Header = ({ pathname }) => {
           height: !hasInitBg ? 0 : 'headerHeight',
         }}
       >
-        <div
-          className={styles.wrapper}
-          sx={{ bg: bgColor, boxShadow: bgColor ? '0 12px 14px 0 rgb(0 0 0 / 10%)' : '' }}
-        >
+        <div className={styles.wrapper} sx={{ bg: bgColor, boxShadow: bgColor ? 'header' : '' }}>
           <div
             className={styles.innerWrapper}
             sx={{

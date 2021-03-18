@@ -30,7 +30,7 @@ const IntroductionPage = ({ location }) => {
               fontWeight: 'bold',
               flexGrow: 1,
               mx: 4,
-              boxShadow: '0 25px 25px 0 rgba(0, 0, 0, 0.1)',
+              boxShadow: 'button',
             }}
             onClick={() => {
               scrollTo(`#${child.id}`);

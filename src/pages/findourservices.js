@@ -30,7 +30,7 @@ const FindourservicesPage = ({ location }) => {
               fontWeight: 'bold',
               mx: 4,
               px: 9,
-              boxShadow: '0 25px 25px 0 rgba(0, 0, 0, 0.1)',
+              boxShadow: 'button',
             }}
             onClick={() => {
               scrollTo(`#${child.id}`);
