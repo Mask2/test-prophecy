@@ -9,13 +9,11 @@
   left: 0;
   right: 0;
   transition: background 0.3s ease-in-out;
-  z-index: 1000;
 }
 .innerWrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin: 0 auto;
 }
 .logo {
   display: block;
@@ -29,7 +27,6 @@
   top: -1000%;
   bottom: 0;
   height: 100vh;
-  z-index: 1000;
   opacity: 0;
   transition: opacity 0.4s ease 0s, top 0s ease 0s;
 }
@@ -43,10 +40,6 @@
   display: flex;
 }
 
-.menuWrapper {
-  margin: 0 auto;
-  margin-top: 100px;
-}
 .menuWrapper li {
   margin-bottom: 24px;
   line-height: 1.6;
@@ -55,19 +48,9 @@
 .mainMenu,
 .subMenu {
   width: 40%;
+  flex-shrink: 0;
 }
 
 .mainMenu {
   font-size: 40px;
-}
-
-.menuBtn {
-  cursor: pointer;
-}
-
-.closeBtn {
-  position: absolute;
-  right: 30px;
-  top: 30px;
-  cursor: pointer;
 }

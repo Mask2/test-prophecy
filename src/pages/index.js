@@ -72,17 +72,19 @@ const IndexPage = ({ data }) => {
             className={styles.introInner}
             sx={{
               width: ['100%', '40%'],
-              mx: 3,
               variant: 'gradients.blue1',
+              py: 3,
+              pl: 3,
+              pr: 4,
             }}
           >
             <Link to='/take2prophecy' sx={{ color: 'white', textDecoration: 'none' }}>
-              <h1>
+              <h2 sx={{ variant: 'texts.h2' }}>
                 <span style={{ fontSize: 30 }}>Take2 Prophecy™</span>
                 <br />
                 無創早期鼻咽癌篩查
-              </h1>
-              <p>
+              </h2>
+              <p sx={{ variant: 'texts.body2' }}>
                 利用嶄新次世代DNA測序分析技術（NGS: Next-generation
                 Sequencing），經世界頂尖大學研究團隊反覆測試和大規模臨床研究證實，能有效發現早期鼻咽癌患者，即使沒有明顯病徵，都能「預早知
                 ‧ 越早醫」。讓大家擁抱健康，一呼一吸都能感受生命的美好。

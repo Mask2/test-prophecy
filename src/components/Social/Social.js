@@ -6,6 +6,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import styles from './Social.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faFacebookMessenger, faLinkedinIn, faYoutube } from '@fortawesome/free-brands-svg-icons';
+const iconList = [faFacebookF, faFacebookMessenger, faLinkedinIn, faYoutube];
 const Social = () => {
   const { site } = useStaticQuery(
     graphql`
@@ -23,86 +24,29 @@ const Social = () => {
   );
   return (
     <div className={styles.wrapper}>
-      {site.siteMetadata.social.map((item) => (
-        <div key={item.name} sx={{ fontSize: 2, mr: 3 }}>
-          {item.name === 'Facebook' && (
-            <a
-              className={styles.link}
-              href={item.url}
-              target='_blank'
-              title={item.name}
-              rel='nofollow'
-              sx={{
-                height: 'icon',
-                width: 'icon',
-                color: 'white',
-                ':hover': {
-                  color: 'secondary',
-                },
-              }}
-            >
-              <FontAwesomeIcon icon={faFacebookF} />
-            </a>
-          )}
-          {item.name === 'Facebook messenger' && (
-            <a
-              className={styles.link}
-              href={item.url}
-              target='_blank'
-              title={item.name}
-              rel='nofollow'
-              sx={{
-                height: 'icon',
-                width: 'icon',
-                color: 'white',
-                ':hover': {
-                  color: 'secondary',
-                },
-              }}
-            >
-              <FontAwesomeIcon key={item.name} icon={faFacebookMessenger} />
-            </a>
-          )}
-          {item.name === 'LinkedIn' && (
-            <a
-              className={styles.link}
-              href={item.url}
-              target='_blank'
-              title={item.name}
-              rel='nofollow'
-              sx={{
-                height: 'icon',
-                width: 'icon',
-                color: 'white',
-                ':hover': {
-                  color: 'secondary',
-                },
-              }}
-            >
-              <FontAwesomeIcon key={item.name} icon={faLinkedinIn} />
-            </a>
-          )}
-          {item.name === 'Youtube' && (
-            <a
-              className={styles.link}
-              href={item.url}
-              target='_blank'
-              title={item.name}
-              rel='nofollow'
-              sx={{
-                height: 'icon',
-                width: 'icon',
-                color: 'white',
-                ':hover': {
-                  color: 'secondary',
-                },
-              }}
-            >
-              <FontAwesomeIcon key={item.name} icon={faYoutube} />
-            </a>
-          )}
-        </div>
-      ))}
+      {site.siteMetadata.social.map(
+        (item, index) =>
+          iconList[index] && (
+            <div key={item.name} sx={{ fontSize: 2, mr: 1 }}>
+              <a
+                className={styles.link}
+                href={item.url}
+                target='_blank'
+                title={item.name}
+                rel='nofollow'
+                sx={{
+                  variant: 'buttons.iconSmall',
+                  color: 'white',
+                  ':hover': {
+                    color: 'orange.primary',
+                  },
+                }}
+              >
+                <FontAwesomeIcon icon={iconList[index]} />
+              </a>
+            </div>
+          ),
+      )}
     </div>
   );
 };

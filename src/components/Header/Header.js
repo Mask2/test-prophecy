@@ -31,21 +31,24 @@ const Header = ({ pathname }) => {
           height: !hasInitBg ? 0 : 'headerHeight',
         }}
       >
-        <div className={styles.wrapper} sx={{ bg: bgColor, boxShadow: bgColor ? 'header' : '' }}>
+        <div
+          className={styles.wrapper}
+          sx={{ bg: bgColor, boxShadow: bgColor ? 'header' : '', px: 4, zIndex: 'header' }}
+        >
           <div
             className={styles.innerWrapper}
             sx={{
               maxWidth: 'maxWidth',
               height: 'headerHeight',
-              px: 4,
               color: 'white',
+              mx: 'auto',
             }}
           >
             <Link sx={{ mr: 'auto' }} to='/'>
               <img className={styles.logo} src={logo} alt='logo' sx={{ height: 'headerHeight' }} />
             </Link>
             <SearchButton />
-            <div className={styles.menuBtn} onClick={() => setMenuState(true)}>
+            <div className={styles.menuBtn} sx={{ variant: 'buttons.iconSmall' }} onClick={() => setMenuState(true)}>
               <FontAwesomeIcon icon={faBars} />
             </div>
           </div>
@@ -53,9 +56,12 @@ const Header = ({ pathname }) => {
       </header>
       <div
         className={classnames(styles.menu, menuState ? styles.showMenu : '')}
-        sx={{ bg: 'blue.primary', color: 'white', p: [4, 0] }}
+        sx={{ bg: 'blue.primary', color: 'white', zIndex: 'cover', p: [4, 0] }}
       >
-        <div className={styles.menuWrapper} sx={{ maxWidth: 'maxWidth', flexDirection: ['column', 'row'] }}>
+        <div
+          className={styles.menuWrapper}
+          sx={{ maxWidth: 'maxWidth', mx: 'auto', pt: 10, flexDirection: ['column', 'row'], position: 'relative' }}
+        >
           <ul className={styles.mainMenu} sx={{ width: ['auto', '40%'], variant: 'texts.h2' }}>
             {JSONData.map((item, index) => (
               <li key={index} onMouseEnter={() => setCurrent(index)}>
@@ -76,7 +82,7 @@ const Header = ({ pathname }) => {
                 ))
               : null}
           </ul>
-          <ul className={styles.contact} sx={{ variant: 'texts.h5' }}>
+          <ul sx={{ variant: 'texts.h5', display: 'flex', flexDirection: 'column' }}>
             <li>
               <Link sx={{ variant: 'hovers.orange3' }} to='/'>
                 加入我們
@@ -87,13 +93,17 @@ const Header = ({ pathname }) => {
                 聯絡我們
               </Link>
             </li>
-            <li>
+            <li sx={{ marginTop: 'auto' }}>
               <Social />
             </li>
           </ul>
-        </div>
-        <div className={styles.closeBtn} onClick={() => setMenuState(false)}>
-          <FontAwesomeIcon icon={faTimes} />
+          <div
+            className={styles.closeBtn}
+            sx={{ top: 3, right: 0, variant: 'buttons.iconSmall', zIndex: 'overCover', position: 'absolute' }}
+            onClick={() => setMenuState(false)}
+          >
+            <FontAwesomeIcon icon={faTimes} />
+          </div>
         </div>
       </div>
     </>

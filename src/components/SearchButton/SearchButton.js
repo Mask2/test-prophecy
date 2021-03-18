@@ -25,58 +25,55 @@ const SearchButton = () => {
   return (
     <>
       <div
-        className={styles.icon}
         sx={{
           color: 'white',
-          width: 'icon',
-          height: 'icon',
+          variant: 'buttons.iconSmall',
           fontSize: 1,
-          mr: 1,
         }}
         onClick={() => setShowCover(true)}
       >
         <FontAwesomeIcon icon={faSearch} />
       </div>
-      <div className={classnames(styles.cover, showCover ? styles.showCover : '')} sx={{ bg: 'text' }}>
+      <div
+        className={classnames(styles.cover, showCover ? styles.showCover : '')}
+        sx={{ bg: 'white', zIndex: 'cover' }}
+      >
         <div
-          className={styles.icon}
-          sx={{
-            color: 'primary',
-            width: '32px',
-            height: '32px',
-            fontSize: 3,
-            mr: 1,
-            position: 'absolute',
-            right: 4,
-            top: 4,
-            zIndex: 10,
-          }}
-          onClick={() => setShowCover(false)}
+          className={styles.innerCover}
+          sx={{ height: '100%', maxWidth: 'maxWidth', mx: 'auto', position: 'relative' }}
         >
-          <FontAwesomeIcon icon={faTimes} />
-        </div>
-        <div className={styles.inputWrapper} sx={{ maxWidth: '580px', p: '50px', width: '580px' }}>
-          <form onSubmit={handleSubmit} sx={{ width: '100%', m: 0 }}>
-            <input
-              name='search'
-              value={curValue}
-              onChange={(e) => setCurValue(e.target.value)}
-              className={styles.input}
-              sx={{ width: '100%', fontSize: 6 }}
-            />
-          </form>
           <div
-            className={styles.icon}
             sx={{
-              color: 'primary',
-              width: '64px',
-              height: '64px',
-              fontSize: 3,
-              mr: 1,
+              color: 'blue.primary',
+              variant: 'buttons.iconSmall',
+              position: 'absolute',
+              top: 3,
+              right: 4,
             }}
-            onClick={() => setCurValue('')}
+            onClick={() => setShowCover(false)}
           >
             <FontAwesomeIcon icon={faTimes} />
+          </div>
+          <div className={styles.inputWrapper} sx={{ maxWidth: '580px', p: '50px', width: '580px' }}>
+            <form onSubmit={handleSubmit} sx={{ width: '100%', m: 0 }}>
+              <input
+                name='search'
+                value={curValue}
+                onChange={(e) => setCurValue(e.target.value)}
+                className={styles.input}
+                sx={{ width: '100%', fontSize: 6 }}
+              />
+            </form>
+            <div
+              sx={{
+                color: 'blue.primary',
+                variant: 'buttons.iconNormal',
+                mr: 1,
+              }}
+              onClick={() => setCurValue('')}
+            >
+              <FontAwesomeIcon icon={faTimes} />
+            </div>
           </div>
         </div>
       </div>

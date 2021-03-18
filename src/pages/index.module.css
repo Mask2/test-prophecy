@@ -17,12 +17,8 @@
 }
 .introInner {
   width: 40%;
-  padding: 16px;
 }
 
-.introInner p {
-  font-size: 16px;
-}
 .main {
   position: relative;
   min-height: 100vh;

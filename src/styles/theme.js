@@ -14,6 +14,7 @@ const theme = {
     normal: 400,
     bold: 700,
   },
+  lineHeights: [0, 1.2, 1.4, 1.8, 2],
   sizes: {
     maxWidth: 1120,
     slideHeight: 400,
@@ -23,7 +24,11 @@ const theme = {
       normal: 64,
     },
   },
-  lineHeights: [1.2, 1.4, 1.8, 2],
+  zIndices: {
+    header: 10,
+    cover: 100,
+    overCover: 1000,
+  },
   colors: {
     white: '#fff',
     blue: {
@@ -44,6 +49,84 @@ const theme = {
     gray: {
       primary: '#444444',
       secondary: '#222222',
+    },
+  },
+  text: {
+    heading: {
+      fontFamily: 'body',
+      lineHeight: 1,
+      fontWeight: 'normal',
+    },
+    body: {
+      fontFamily: 'body',
+      lineHeight: 3,
+      fontWeight: 'normal',
+    },
+    link: {
+      fontFamily: 'body',
+      lineHeight: 3,
+      fontWeight: 'light',
+      textDecoration: 'none',
+    },
+  },
+  texts: {
+    h1: {
+      variant: 'text.heading',
+      fontSize: 10,
+    },
+    h2: {
+      variant: 'text.heading',
+      fontSize: 9,
+    },
+    h3: {
+      variant: 'text.heading',
+      fontSize: 8,
+    },
+    h4: {
+      variant: 'text.heading',
+      fontSize: 5,
+    },
+    h5: {
+      variant: 'text.heading',
+      fontSize: 3,
+    },
+    h6: {
+      variant: 'text.heading',
+      fontSize: 1,
+    },
+    subtitle: {
+      variant: 'text.heading',
+      fontSize: 5,
+    },
+    body1: {
+      variant: 'text.body',
+      fontSize: 4,
+    },
+    body2: {
+      variant: 'text.body',
+      fontSize: 2,
+    },
+    button: {
+      variant: 'text.body',
+      fontSize: 2,
+    },
+    caption: {
+      variant: 'text.body',
+      fontSize: 2,
+    },
+    overline: {
+      variant: 'text.body',
+      fontSize: 1,
+    },
+  },
+  mdxText: {
+    heading: {
+      variant: 'text.heading',
+      color: 'blue.primary',
+    },
+    link: {
+      variant: 'text.link',
+      color: 'blue.primary',
     },
   },
   gradients: {
@@ -110,84 +193,6 @@ const theme = {
       },
     },
   },
-  text: {
-    heading: {
-      fontFamily: 'body',
-      lineHeight: 1,
-      fontWeight: 'normal',
-    },
-    body: {
-      fontFamily: 'body',
-      lineHeight: 2,
-      fontWeight: 'normal',
-    },
-    link: {
-      fontFamily: 'body',
-      lineHeight: 3,
-      fontWeight: 'light',
-      textDecoration: 'none',
-    },
-  },
-  texts: {
-    h1: {
-      variant: 'text.heading',
-      fontSize: 10,
-    },
-    h2: {
-      variant: 'text.heading',
-      fontSize: 9,
-    },
-    h3: {
-      variant: 'text.heading',
-      fontSize: 8,
-    },
-    h4: {
-      variant: 'text.heading',
-      fontSize: 5,
-    },
-    h5: {
-      variant: 'text.heading',
-      fontSize: 3,
-    },
-    h6: {
-      variant: 'text.heading',
-      fontSize: 1,
-    },
-    subtitle: {
-      variant: 'text.heading',
-      fontSize: 5,
-    },
-    body1: {
-      variant: 'text.body',
-      fontSize: 6,
-    },
-    body2: {
-      variant: 'text.body',
-      fontSize: 4,
-    },
-    button: {
-      variant: 'text.body',
-      fontSize: 2,
-    },
-    caption: {
-      variant: 'text.body',
-      fontSize: 2,
-    },
-    overline: {
-      variant: 'text.body',
-      fontSize: 1,
-    },
-  },
-  mdxText: {
-    heading: {
-      variant: 'text.heading',
-      color: 'blue.primary',
-    },
-    link: {
-      variant: 'text.link',
-      color: 'blue.primary',
-    },
-  },
   buttons: {
     orange1: {
       bg: 'orange.primary',
@@ -202,6 +207,24 @@ const theme = {
       fontSize: 1,
       py: 3,
       px: 10,
+    },
+    iconSmall: {
+      width: 'icons.small',
+      height: 'icons.small',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      cursor: 'pointer',
+      fontSize: 3,
+    },
+    iconNormal: {
+      width: 'icons.normal',
+      height: 'icons.normal',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      cursor: 'pointer',
+      fontSize: 4,
     },
   },
   shadows: {
