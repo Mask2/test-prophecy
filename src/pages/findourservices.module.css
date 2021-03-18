@@ -67,11 +67,11 @@
 .tableRow {
   box-shadow: 0 0 0 0.5px #dcdcdc;
 }
-.tableRow:hover {
+/* .tableRow:hover {
   background: var(--hover-gradient);
   background-size: 200% 100%;
   cursor: pointer;
-}
+} */
 .tableCell {
   padding: 20px 10px !important;
   flex-shrink: 1;

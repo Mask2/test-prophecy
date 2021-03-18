@@ -15,13 +15,13 @@ const FindourservicesPage = ({ location }) => {
     setCurMenu(MenuData.find((menu) => menu.path === withPrefix(location.pathname))?.children || []);
   }, [location.pathname]);
   return (
-    <div sx={{ bg: 'muted' }}>
+    <div sx={{ bg: 'blue.secondary' }}>
       <div sx={{ display: 'flex', justifyContent: 'center', py: 6, mx: 'auto', maxWidth: 'maxWidth' }}>
         {curMenu.map((child) => (
           <div
             key={child.path}
             sx={{
-              variant: 'gradients.orange1',
+              variant: 'hovers.orange1',
               height: '50px',
               display: 'flex',
               justifyContent: 'center',
@@ -78,7 +78,11 @@ const FindourservicesPage = ({ location }) => {
             <table sx={{ fontSize: 3, borderTop: '1px solid #dcdcdc' }}>
               <tbody>
                 {ServiceAreaData.data[curArea].list.map((service, index) => (
-                  <tr key={`${curArea}_${index}_${service.name}`} className={styles.tableRow}>
+                  <tr
+                    key={`${curArea}_${index}_${service.name}`}
+                    className={styles.tableRow}
+                    sx={{ variant: 'hovers.orange2' }}
+                  >
                     <td className={styles.tableCell} colSpan='1' rowSpan='1'>
                       {service.name}
                     </td>

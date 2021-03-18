@@ -21,7 +21,7 @@ const IntroductionPage = ({ location }) => {
           <div
             key={child.path}
             sx={{
-              variant: 'gradients.orange1',
+              variant: 'hovers.orange1',
               height: '50px',
               display: 'flex',
               justifyContent: 'center',

@@ -25,7 +25,7 @@ const ProphecyPage = ({ location }) => {
           <div
             key={child.path}
             sx={{
-              virant: 'gradients.orange1',
+              virant: 'hovers.orange1',
               height: '50px',
               display: 'flex',
               justifyContent: 'center',
@@ -107,9 +107,7 @@ const ProphecyPage = ({ location }) => {
               {TechnologyData.data.map((item, index) => (
                 <Box key={item.title} className={styles.tecNavItem} onClick={() => setCurTec(index)}>
                   <img className={styles.tecNavImg} src={item.img} alt='' />
-                  <div sxx={{ variant: 'gradients.orange1', py: 5, color: 'blue.primary', fontSize: 3 }}>
-                    {item.title}
-                  </div>
+                  <div sxx={{ variant: 'hovers.orange1', py: 5, color: 'blue.primary', fontSize: 3 }}>{item.title}</div>
                 </Box>
               ))}
             </Grid>

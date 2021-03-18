@@ -74,14 +74,30 @@ const theme = {
           1,
         )(t)} 50%,transparent 50%)`,
       backgroundSize: '200% 100%',
+      backgroundPosition: '0%',
+    },
+  },
+  hovers: {
+    orange1: {
+      variant: 'gradients.orange1',
+      color: 'blue.primaryText',
       backgroundPosition: '100%',
       transition: 'background-position 275ms ease',
       cursor: 'pointer',
-      color: 'blue.primaryText',
       p: 3,
       ':hover': {
         backgroundPosition: '0%',
         color: 'white',
+      },
+    },
+    orange2: {
+      backgroundImage: 'none',
+      cursor: 'pointer',
+      p: 3,
+      transition: 'background-image 275ms ease',
+      ':hover': {
+        color: 'white',
+        variant: 'gradients.orange1',
       },
     },
   },
