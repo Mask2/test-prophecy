@@ -6,7 +6,6 @@ import scrollTo from 'gatsby-plugin-smoothscroll';
 import Video from '/src/components/video';
 import EntryBox from '/src/components/EntryBox/EntryBox';
 import styles from './take2introduction.module.css';
-import HoverBox from '/src/components/HoverBox/HoverBox';
 import MenuData from '/src/data/menu.json';
 import TeamInfoData from '/src/data/teamInfo.json';
 
@@ -19,9 +18,10 @@ const IntroductionPage = ({ location }) => {
     <div className={styles.wrapper} sx={{ backgroundImage: 'gradientMuted' }}>
       <div sx={{ display: 'flex', justifyContent: 'center', py: 6, mx: 'auto', maxWidth: 'maxWidth' }}>
         {curMenu.map((child) => (
-          <HoverBox
+          <div
             key={child.path}
-            sxx={{
+            sx={{
+              variant: 'gradients.orange1',
               height: '50px',
               display: 'flex',
               justifyContent: 'center',
@@ -37,7 +37,7 @@ const IntroductionPage = ({ location }) => {
             }}
           >
             {child.name}
-          </HoverBox>
+          </div>
         ))}
       </div>
       <section id={curMenu[0]?.id} sx={{ mx: 'auto', maxWidth: 'maxWidth', color: 'white' }}>

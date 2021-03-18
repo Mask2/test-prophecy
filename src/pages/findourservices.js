@@ -4,7 +4,6 @@ import { jsx } from 'theme-ui';
 import { withPrefix } from 'gatsby';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 import styles from './findourservices.module.css';
-import HoverBox from '/src/components/HoverBox/HoverBox';
 import MenuData from '/src/data/menu.json';
 import ServiceAreaData from '/src/data/serviceArea.json';
 import partnerData from '/src/data/partnerInfo.json';
@@ -19,9 +18,10 @@ const FindourservicesPage = ({ location }) => {
     <div sx={{ bg: 'muted' }}>
       <div sx={{ display: 'flex', justifyContent: 'center', py: 6, mx: 'auto', maxWidth: 'maxWidth' }}>
         {curMenu.map((child) => (
-          <HoverBox
+          <div
             key={child.path}
-            sxx={{
+            sx={{
+              variant: 'gradients.orange1',
               height: '50px',
               display: 'flex',
               justifyContent: 'center',
@@ -37,7 +37,7 @@ const FindourservicesPage = ({ location }) => {
             }}
           >
             {child.name}
-          </HoverBox>
+          </div>
         ))}
       </div>
       <section id={curMenu[0]?.id} sx={{ mx: 'auto', maxWidth: 'maxWidth', py: 6 }}>

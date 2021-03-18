@@ -5,7 +5,6 @@ import { withPrefix } from 'gatsby';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 import ProphecySteps from '/src/components/ProphecySteps/ProphecySteps';
 import styles from './take2prophecy.module.css';
-import HoverBox from '/src/components/HoverBox/HoverBox';
 import MenuData from '/src/data/menu.json';
 import InevitableData from '/src/data/inevitableInfo.json';
 import FeaturesData from '/src/data/featuresInfo.json';
@@ -23,9 +22,10 @@ const ProphecyPage = ({ location }) => {
         sx={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', py: 6, mx: 'auto', maxWidth: 'maxWidth' }}
       >
         {curMenu.map((child) => (
-          <HoverBox
+          <div
             key={child.path}
-            sxx={{
+            sx={{
+              virant: 'gradients.orange1',
               height: '50px',
               display: 'flex',
               justifyContent: 'center',
@@ -43,7 +43,7 @@ const ProphecyPage = ({ location }) => {
             }}
           >
             {child.name}
-          </HoverBox>
+          </div>
         ))}
       </div>
       <section id={curMenu[0]?.id} sx={{ mx: 'auto', maxWidth: 'maxWidth', color: 'white' }}>
@@ -107,7 +107,9 @@ const ProphecyPage = ({ location }) => {
               {TechnologyData.data.map((item, index) => (
                 <Box key={item.title} className={styles.tecNavItem} onClick={() => setCurTec(index)}>
                   <img className={styles.tecNavImg} src={item.img} alt='' />
-                  <HoverBox sxx={{ py: 5, color: 'primary', fontSize: 3 }}>{item.title}</HoverBox>
+                  <div sxx={{ variant: 'gradients.orange1', py: 5, color: 'blue.primary', fontSize: 3 }}>
+                    {item.title}
+                  </div>
                 </Box>
               ))}
             </Grid>
