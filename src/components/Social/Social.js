@@ -35,7 +35,7 @@ const Social = () => {
               sx={{
                 height: 'icon',
                 width: 'icon',
-                color: 'text',
+                color: 'white',
                 ':hover': {
                   color: 'secondary',
                 },
@@ -54,7 +54,7 @@ const Social = () => {
               sx={{
                 height: 'icon',
                 width: 'icon',
-                color: 'text',
+                color: 'white',
                 ':hover': {
                   color: 'secondary',
                 },
@@ -73,7 +73,7 @@ const Social = () => {
               sx={{
                 height: 'icon',
                 width: 'icon',
-                color: 'text',
+                color: 'white',
                 ':hover': {
                   color: 'secondary',
                 },
@@ -92,7 +92,7 @@ const Social = () => {
               sx={{
                 height: 'icon',
                 width: 'icon',
-                color: 'text',
+                color: 'white',
                 ':hover': {
                   color: 'secondary',
                 },

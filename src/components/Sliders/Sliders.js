@@ -13,7 +13,7 @@ const Sliders = ({ title, img }) => (
   >
     <div
       sx={{
-        color: 'text',
+        color: 'white',
         fontFamily: 'body',
         fontSize: 6,
       }}

@@ -41,14 +41,14 @@ const FindourservicesPage = ({ location }) => {
         ))}
       </div>
       <section id={curMenu[0]?.id} sx={{ mx: 'auto', maxWidth: 'maxWidth', py: 6 }}>
-        <div sx={{ fontSize: 5, color: 'text', textAlign: 'center' }}>{partnerData.title}</div>
+        <div sx={{ fontSize: 5, color: 'white', textAlign: 'center' }}>{partnerData.title}</div>
         <div className={styles.partnerWrapper} sx={{ pt: 7, pb: 8 }}>
           {partnerData.data.map((item) => (
             <div className={styles.partnerCard} key={item.name} sx={{ width: '25%', pt: '25%' }}>
               <div className={styles.partnerFont}>
                 <img className={styles.partnerFontImg} src={item.img} alt='' />
               </div>
-              <div className={styles.partnerBack} sx={{ fontSize: 2, color: 'text', p: 4, textAlign: 'center' }}>
+              <div className={styles.partnerBack} sx={{ fontSize: 2, color: 'white', p: 4, textAlign: 'center' }}>
                 <div sx={{ mb: 3 }}>{item.name}</div>
                 <div>{item.description}</div>
               </div>
@@ -56,7 +56,7 @@ const FindourservicesPage = ({ location }) => {
           ))}
         </div>
       </section>
-      <section id={curMenu[1]?.id} sx={{ bg: 'primary', py: 8, color: 'text' }}>
+      <section id={curMenu[1]?.id} sx={{ bg: 'primary', py: 8, color: 'white' }}>
         <div sx={{ mx: 'auto', maxWidth: 'maxWidth' }}>
           <div sx={{ textAlign: 'center', mb: 6 }}>
             <div sx={{ fontSize: 5, mb: 4 }}>{ServiceAreaData.title}</div>

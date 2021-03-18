@@ -4,8 +4,6 @@
   --padding: 30px;
   --primary: #143b6d;
   --hover: #ea5b29;
-  --hover-gradient: linear-gradient(to right, #f38e22, #ea5b29 50%, transparent 50%);
-  --radio-gradient: radial-gradient(circle at left center, #92b7ca 0%, #055ba7 100%);
 }
 
 body {

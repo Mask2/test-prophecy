@@ -68,8 +68,15 @@ const IndexPage = ({ data }) => {
         </video>
         <img className={styles.mouseButton} onClick={() => scrollTo('#main')} src={mouseButton} alt='' />
         <div className={styles.introWrapper} sx={{ mx: 'auto', maxWidth: 'maxWidth', width: '100%' }}>
-          <div className={styles.introInner} sx={{ width: ['100%', '40%'], mx: 3 }}>
-            <Link to='/take2prophecy' sx={{ color: 'text', textDecoration: 'none' }}>
+          <div
+            className={styles.introInner}
+            sx={{
+              width: ['100%', '40%'],
+              mx: 3,
+              variant: 'gradients.blue1',
+            }}
+          >
+            <Link to='/take2prophecy' sx={{ color: 'white', textDecoration: 'none' }}>
               <h1>
                 <span style={{ fontSize: 30 }}>Take2 Prophecy™</span>
                 <br />
@@ -84,7 +91,7 @@ const IndexPage = ({ data }) => {
           </div>
         </div>
       </div>
-      <div id='main' className={styles.main} sx={{ color: 'text' }}>
+      <div id='main' className={styles.main} sx={{ color: 'white', variant: 'gradients.blue2' }}>
         <div className={styles.wrapper}>
           <section>
             <ProphecySteps />
@@ -130,7 +137,11 @@ const IndexPage = ({ data }) => {
           <div className={styles.secTitle}>
             <h2>服務覆蓋點</h2>
             <p>Take2 Prophecy™ 測試遍佈港九新界及離島，立即查看最近您的服務地點。</p>
-            <Link to='/findourservices' className={styles.checkLocation} sx={{ color: 'text', textDecoration: 'none' }}>
+            <Link
+              to='/findourservices'
+              className={styles.checkLocation}
+              sx={{ color: 'white', textDecoration: 'none' }}
+            >
               查看地址
             </Link>
           </div>

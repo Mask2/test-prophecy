@@ -16,7 +16,9 @@ import './Layout.module.css';
 
 import JSONData from '../../data/pageInfo.json';
 
+const HideSlidesPaths = ['/', '/404', '/search', '/docs'];
 const Layout = ({ children, location }) => {
+  console.log('curent path:', location.pathname, withPrefix(location.pathname));
   const [curPageInfo, setCurPageInfo] = useState({ title: '' });
 
   useEffect(() => {
@@ -33,9 +35,9 @@ const Layout = ({ children, location }) => {
       >
         <main>
           <SEO title={curPageInfo.title} />
-          {location.pathname !== withPrefix('/') &&
-            location.pathname !== withPrefix('/404') &&
-            location.pathname !== withPrefix('/search') && <Sliders title={curPageInfo.title} img={curPageInfo.img} />}
+          {!HideSlidesPaths.find((item) => location.pathname === withPrefix(item)) && (
+            <Sliders title={curPageInfo.title} img={curPageInfo.img} />
+          )}
           {children}
         </main>
       </div>

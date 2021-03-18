@@ -40,14 +40,14 @@ const IntroductionPage = ({ location }) => {
           </HoverBox>
         ))}
       </div>
-      <section id={curMenu[0]?.id} sx={{ mx: 'auto', maxWidth: 'maxWidth', color: 'text' }}>
+      <section id={curMenu[0]?.id} sx={{ mx: 'auto', maxWidth: 'maxWidth', color: 'white' }}>
         <p>
           得易健康有限公司 (Take2 Health)
           致力於探索、開發和建立開拓性的醫療健康平台，藉此運用生物醫學科技及信息技術，讓大眾掌握具實用價值的健康資訊及新科技應用。Take2
           Health 致力推動醫療健康發展，讓最創新的醫療健康技術發明在中國以及亞洲其他地區造福普羅大眾。
         </p>
       </section>
-      <section id={curMenu[1]?.id} sx={{ mx: 'auto', maxWidth: 'maxWidth', color: 'text' }}>
+      <section id={curMenu[1]?.id} sx={{ mx: 'auto', maxWidth: 'maxWidth', color: 'white' }}>
         <h1
           sx={{
             fontWeight: 'body',
@@ -79,7 +79,7 @@ const IntroductionPage = ({ location }) => {
           />
         </div>
       </section>
-      <section className={styles.teammainSetion} id={curMenu[2]?.id} sx={{ color: 'text' }}>
+      <section className={styles.teammainSetion} id={curMenu[2]?.id} sx={{ color: 'white' }}>
         <div className={styles.teammainWrapper} sx={{ mx: 'auto', maxWidth: 'maxWidth', px: 4, fontSize: 3 }}>
           <h1 sx={{ fontSize: 5, fontWeight: 'body' }}>團隊使命</h1>
           <p sx={{ width: '50%', fontSize: 2 }}>
@@ -89,7 +89,7 @@ const IntroductionPage = ({ location }) => {
           <p>CEO</p>
         </div>
       </section>
-      <section id={curMenu[3]?.id} sx={{ color: 'text' }}>
+      <section id={curMenu[3]?.id} sx={{ color: 'white' }}>
         <h1 sx={{ fontSize: 5, fontWeight: 'body', textAlign: 'center', py: 6, mb: 0 }}>{TeamInfoData.title}</h1>
         {TeamInfoData.data.map((item, index) => (
           <EntryBox key={item.name} direction={index % 2 === 0 ? 'left' : 'right'}>

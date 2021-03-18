@@ -8,7 +8,7 @@ import styles from './Footer.module.css';
 import logo from '../../assets/images/taketwologo_2.png';
 
 const Footer = () => (
-  <footer className={styles.footer} sx={{ bg: 'primary', color: 'text' }}>
+  <footer className={styles.footer} sx={{ bg: 'primary', color: 'white' }}>
     <div className={styles.wrapper}>
       <dl className={styles.content}>
         <div

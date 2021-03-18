@@ -27,7 +27,7 @@ const SearchButton = () => {
       <div
         className={styles.icon}
         sx={{
-          color: 'text',
+          color: 'white',
           width: 'icon',
           height: 'icon',
           fontSize: 1,

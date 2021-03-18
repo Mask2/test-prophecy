@@ -46,7 +46,7 @@ const ProphecyPage = ({ location }) => {
           </HoverBox>
         ))}
       </div>
-      <section id={curMenu[0]?.id} sx={{ mx: 'auto', maxWidth: 'maxWidth', color: 'text' }}>
+      <section id={curMenu[0]?.id} sx={{ mx: 'auto', maxWidth: 'maxWidth', color: 'white' }}>
         <h1 sx={{ textAlign: 'center', pt: 7, fontWeight: 'body' }}>甚麼是 Take2 Prophecy™</h1>
         <p>Take2 Prophecy™ 是一項鼻咽癌早期篩查測試，適用群體包括常規體檢者、無症狀人士，及有疑似症狀人士等。</p>
         <p>
@@ -56,16 +56,16 @@ const ProphecyPage = ({ location }) => {
         </p>
         <p>透過此技術進行早期鼻咽癌篩查，能讓患者儘早發現，是大大提高患者成功治癒機會的一個有效方法¹。 Take2</p>
         <a
-          sx={{ color: 'text', fontSize: 1 }}
+          sx={{ color: 'white', fontSize: 1 }}
           href='https://www.prophecy.health/extracare%e7%9a%84%e7%a7%81%e9%9a%b1%e6%94%bf%e7%ad%96/'
         >
           ExtraCare的私隱政策
         </a>
       </section>
-      <section id={curMenu[1]?.id} sx={{ mx: 'auto', pt: 6, maxWidth: 'maxWidth', color: 'text' }}>
+      <section id={curMenu[1]?.id} sx={{ mx: 'auto', pt: 6, maxWidth: 'maxWidth', color: 'white' }}>
         <ProphecySteps />
       </section>
-      <section id={curMenu[2]?.id} sx={{ color: 'text', py: 7 }}>
+      <section id={curMenu[2]?.id} sx={{ color: 'white', py: 7 }}>
         <div sx={{ mx: 'auto', maxWidth: 'maxWidth' }}>
           <h2 sx={{ textAlign: 'center', fontWeight: 'body', my: 5 }}>{InevitableData.title}</h2>
           <p>{InevitableData.description}</p>
@@ -81,7 +81,7 @@ const ProphecyPage = ({ location }) => {
           ))}
         </div>
       </section>
-      <section id={curMenu[3]?.id} sx={{ color: 'text', bg: 'light', py: 7 }}>
+      <section id={curMenu[3]?.id} sx={{ color: 'white', bg: 'light', py: 7 }}>
         <div sx={{ mx: 'auto', maxWidth: 'maxWidth' }}>
           <h1 sx={{ textAlign: 'center', fontWeight: 'body', my: 6 }}>{FeaturesData.title}</h1>
           <p>{FeaturesData.description}</p>
@@ -99,7 +99,7 @@ const ProphecyPage = ({ location }) => {
           ))}
         </div>
       </section>
-      <section id={curMenu[4]?.id} sx={{ color: 'text', py: 7 }}>
+      <section id={curMenu[4]?.id} sx={{ color: 'white', py: 7 }}>
         <h1 sx={{ textAlign: 'center', fontWeight: 'body', my: 4 }}>{TechnologyData.title}</h1>
         <div sx={{ mx: 'auto', maxWidth: 'maxWidth' }}>
           <div className={styles.tecWrapper}>
@@ -118,7 +118,7 @@ const ProphecyPage = ({ location }) => {
           </div>
         </div>
       </section>
-      <section id={curMenu[5]?.id} sx={{ color: 'text', py: 6, mx: 'auto', maxWidth: 'maxWidth', fontSize: 1 }}>
+      <section id={curMenu[5]?.id} sx={{ color: 'white', py: 6, mx: 'auto', maxWidth: 'maxWidth', fontSize: 1 }}>
         <div sx={{ mb: 4 }}>參考資料</div>
         <ul sx={{ listStyle: 'decimal' }}>
           <li>

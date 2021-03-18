@@ -14,7 +14,7 @@ const NotFoundPage = () => (
       sx={{
         fontSize: 1,
         fontWeight: 'bold',
-        color: 'text',
+        color: 'white',
         bg: 'button',
         py: '12px',
         px: 7,

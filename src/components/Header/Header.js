@@ -20,11 +20,11 @@ const Header = ({ pathname }) => {
   const [hasInitBg, setHasInitBg] = useState(false);
   useEffect(() => {
     setHasInitBg(pathname !== withPrefix('/'));
-    setBgColor(pathname === withPrefix('/') ? '' : 'primary');
+    setBgColor(pathname === withPrefix('/') ? '' : 'blue.primary');
   }, [pathname]);
   return (
     <>
-      {!hasInitBg && <Waypoint onEnter={() => setBgColor('')} onLeave={() => setBgColor('primary')} />}
+      {!hasInitBg && <Waypoint onEnter={() => setBgColor('')} onLeave={() => setBgColor('blue.primary')} />}
       <header
         className={styles.header}
         sx={{
@@ -41,10 +41,10 @@ const Header = ({ pathname }) => {
               maxWidth: 'maxWidth',
               height: 'headerHeight',
               px: 4,
-              color: 'text',
+              color: 'white',
             }}
           >
-            <Link sx={{ color: 'text', mr: 'auto' }} to='/'>
+            <Link sx={{ mr: 'auto' }} to='/'>
               <img className={styles.logo} src={logo} alt='logo' sx={{ height: 'headerHeight' }} />
             </Link>
             <SearchButton />
@@ -56,37 +56,37 @@ const Header = ({ pathname }) => {
       </header>
       <div
         className={classnames(styles.menu, menuState ? styles.showMenu : '')}
-        sx={{ bg: 'primary', color: 'text', p: [4, 0] }}
+        sx={{ bg: 'blue.primary', color: 'white', p: [4, 0] }}
       >
         <div className={styles.menuWrapper} sx={{ maxWidth: 'maxWidth', flexDirection: ['column', 'row'] }}>
-          <ul className={styles.mainMenu} sx={{ width: ['auto', '40%'], fontSize: ['32px', '40px'] }}>
+          <ul className={styles.mainMenu} sx={{ width: ['auto', '40%'], variant: 'texts.h2' }}>
             {JSONData.map((item, index) => (
               <li key={index} onMouseEnter={() => setCurrent(index)}>
-                <Link sx={{ color: 'text' }} to={item.path} onClick={() => setMenuState(false)}>
+                <Link sx={{ color: 'white' }} to={item.path} onClick={() => setMenuState(false)}>
                   {item.name}
                 </Link>
               </li>
             ))}
           </ul>
-          <ul className={styles.subMenu} sx={{ display: ['none', 'block'] }}>
+          <ul className={styles.subMenu} sx={{ display: ['none', 'block'], variant: 'texts.subtitle' }}>
             {JSONData[current]?.children.length
               ? JSONData[current]?.children.map((item, index) => (
                   <li key={index}>
-                    <Link sx={{ color: 'text' }} to={item.path} onClick={() => setMenuState(false)}>
+                    <Link sx={{ color: 'white' }} to={item.path} onClick={() => setMenuState(false)}>
                       {item.name}
                     </Link>
                   </li>
                 ))
               : null}
           </ul>
-          <ul className={styles.contact}>
+          <ul className={styles.contact} sx={{ variant: 'texts.h5' }}>
             <li>
-              <Link sx={{ color: 'text' }} to='/'>
+              <Link sx={{ color: 'white' }} to='/'>
                 加入我們
               </Link>
             </li>
             <li>
-              <Link sx={{ color: 'text' }} to='/'>
+              <Link sx={{ color: 'white' }} to='/'>
                 聯絡我們
               </Link>
             </li>

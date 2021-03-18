@@ -55,7 +55,7 @@ const SearchPage = ({ data }) => {
     <div sx={{ bg: 'muted' }}>
       <div sx={{ bg: 'primary', py: 6 }}>
         <div className={styles.searchHeader} sx={{ mx: 'auto', maxWidth: 'maxWidth' }}>
-          <div className={styles.label} sx={{ color: 'text', fontSize: 3, my: 3 }}>
+          <div className={styles.label} sx={{ color: 'white', fontSize: 3, my: 3 }}>
             你搜索了{searchQuery}
           </div>
           <div className={styles.searchWrapper}>

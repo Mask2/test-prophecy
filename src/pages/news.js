@@ -29,7 +29,7 @@ const NewsPage = ({ data }) => (
           (item) => (
             <Link
               sx={{
-                color: 'text',
+                color: 'white',
                 mx: 5,
                 py: 2,
                 textDecoration: 'none',
