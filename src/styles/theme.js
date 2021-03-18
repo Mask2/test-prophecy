@@ -100,6 +100,15 @@ const theme = {
         variant: 'gradients.orange1',
       },
     },
+    orange3: {
+      color: 'white',
+      textDecoration: 'none',
+      transition: 'color 0.3s ease-in-out',
+      ':hover': {
+        color: 'orange.primary',
+        position: 'relative',
+      },
+    },
   },
   text: {
     heading: {

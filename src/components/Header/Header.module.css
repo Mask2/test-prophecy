@@ -52,14 +52,6 @@
   line-height: 1.6;
 }
 
-.menuWrapper li a {
-  text-decoration: none;
-  transition: color 0.3s ease-in-out;
-}
-
-.menuWrapper li a:hover {
-  color: #f87f17;
-}
 .mainMenu,
 .subMenu {
   width: 40%;

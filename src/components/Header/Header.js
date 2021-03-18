@@ -62,7 +62,7 @@ const Header = ({ pathname }) => {
           <ul className={styles.mainMenu} sx={{ width: ['auto', '40%'], variant: 'texts.h2' }}>
             {JSONData.map((item, index) => (
               <li key={index} onMouseEnter={() => setCurrent(index)}>
-                <Link sx={{ color: 'white' }} to={item.path} onClick={() => setMenuState(false)}>
+                <Link sx={{ variant: 'hovers.orange3' }} to={item.path} onClick={() => setMenuState(false)}>
                   {item.name}
                 </Link>
               </li>
@@ -72,7 +72,7 @@ const Header = ({ pathname }) => {
             {JSONData[current]?.children.length
               ? JSONData[current]?.children.map((item, index) => (
                   <li key={index}>
-                    <Link sx={{ color: 'white' }} to={item.path} onClick={() => setMenuState(false)}>
+                    <Link sx={{ variant: 'hovers.orange3' }} to={item.path} onClick={() => setMenuState(false)}>
                       {item.name}
                     </Link>
                   </li>
@@ -81,12 +81,12 @@ const Header = ({ pathname }) => {
           </ul>
           <ul className={styles.contact} sx={{ variant: 'texts.h5' }}>
             <li>
-              <Link sx={{ color: 'white' }} to='/'>
+              <Link sx={{ variant: 'hovers.orange3' }} to='/'>
                 加入我們
               </Link>
             </li>
             <li>
-              <Link sx={{ color: 'white' }} to='/'>
+              <Link sx={{ variant: 'hovers.orange3' }} to='/'>
                 聯絡我們
               </Link>
             </li>

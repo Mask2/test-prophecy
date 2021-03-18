@@ -8,7 +8,7 @@ import styles from './Footer.module.css';
 import logo from '../../assets/images/taketwologo_2.png';
 
 const Footer = () => (
-  <footer className={styles.footer} sx={{ bg: 'primary', color: 'white' }}>
+  <footer className={styles.footer} sx={{ bg: 'blue.primary', color: 'white' }}>
     <div className={styles.wrapper}>
       <dl className={styles.content}>
         <div
@@ -28,27 +28,52 @@ const Footer = () => (
           }}
         >
           <dd>
-            <Link className={styles.link} to='/take2introduction' activeStyle={{ color: '#f8ac17' }}>
+            <Link
+              className={styles.link}
+              sx={{ variant: 'hovers.orange3' }}
+              to='/take2introduction'
+              activeStyle={{ color: '#f8ac17' }}
+            >
               企業背景
             </Link>
           </dd>
           <dd>
-            <Link className={styles.link} to='/take2prophecy' activeStyle={{ color: '#f8ac17' }}>
+            <Link
+              className={styles.link}
+              sx={{ variant: 'hovers.orange3' }}
+              to='/take2prophecy'
+              activeStyle={{ color: '#f8ac17' }}
+            >
               早期鼻咽癌篩查
             </Link>
           </dd>
           <dd>
-            <Link className={styles.link} to='/healthinfo' activeStyle={{ color: '#f8ac17' }}>
+            <Link
+              className={styles.link}
+              sx={{ variant: 'hovers.orange3' }}
+              to='/healthinfo'
+              activeStyle={{ color: '#f8ac17' }}
+            >
               健康資訊
             </Link>
           </dd>
           <dd>
-            <Link className={styles.link} to='/promotions' activeStyle={{ color: '#f8ac17' }}>
+            <Link
+              className={styles.link}
+              sx={{ variant: 'hovers.orange3' }}
+              to='/promotions'
+              activeStyle={{ color: '#f8ac17' }}
+            >
               最新動態及推廣
             </Link>
           </dd>
           <dd>
-            <Link className={styles.link} to='/findourservices' activeStyle={{ color: '#f8ac17' }}>
+            <Link
+              className={styles.link}
+              sx={{ variant: 'hovers.orange3' }}
+              to='/findourservices'
+              activeStyle={{ color: '#f8ac17' }}
+            >
               服務覆蓋點
             </Link>
           </dd>
@@ -60,12 +85,12 @@ const Footer = () => (
           }}
         >
           <dd>
-            <Link className={styles.link} to='/'>
+            <Link sx={{ variant: 'hovers.orange3' }} className={styles.link} to='/'>
               加入我們
             </Link>
           </dd>
           <dd>
-            <Link className={styles.link} to='/'>
+            <Link sx={{ variant: 'hovers.orange3' }} className={styles.link} to='/'>
               聯絡我們
             </Link>
           </dd>
@@ -92,7 +117,7 @@ const Footer = () => (
         }}
       >
         © {new Date().getFullYear()}, Take2 Prophecy™ 版權所有
-        <Link className={styles.link} to='/'>
+        <Link sx={{ variant: 'hovers.orange3' }} className={styles.link} to='/'>
           私隱政策
         </Link>
       </div>
