@@ -32,7 +32,7 @@ const Footer = () => (
               className={styles.link}
               sx={{ variant: 'hovers.orange3' }}
               to='/take2introduction'
-              activeStyle={{ color: '#f8ac17' }}
+              activeStyle={{ color: 'var(--orange-muted)' }}
             >
               企業背景
             </Link>
@@ -42,7 +42,7 @@ const Footer = () => (
               className={styles.link}
               sx={{ variant: 'hovers.orange3' }}
               to='/take2prophecy'
-              activeStyle={{ color: '#f8ac17' }}
+              activeStyle={{ color: 'var(--orange-muted)' }}
             >
               早期鼻咽癌篩查
             </Link>
@@ -52,7 +52,7 @@ const Footer = () => (
               className={styles.link}
               sx={{ variant: 'hovers.orange3' }}
               to='/healthinfo'
-              activeStyle={{ color: '#f8ac17' }}
+              activeStyle={{ color: 'var(--orange-muted)' }}
             >
               健康資訊
             </Link>
@@ -62,7 +62,7 @@ const Footer = () => (
               className={styles.link}
               sx={{ variant: 'hovers.orange3' }}
               to='/promotions'
-              activeStyle={{ color: '#f8ac17' }}
+              activeStyle={{ color: 'var(--orange-muted)' }}
             >
               最新動態及推廣
             </Link>
@@ -72,7 +72,7 @@ const Footer = () => (
               className={styles.link}
               sx={{ variant: 'hovers.orange3' }}
               to='/findourservices'
-              activeStyle={{ color: '#f8ac17' }}
+              activeStyle={{ color: 'var(--orange-muted)' }}
             >
               服務覆蓋點
             </Link>
@@ -85,12 +85,22 @@ const Footer = () => (
           }}
         >
           <dd>
-            <Link sx={{ variant: 'hovers.orange3' }} className={styles.link} to='/joinus'>
+            <Link
+              sx={{ variant: 'hovers.orange3' }}
+              className={styles.link}
+              to='/joinus'
+              activeStyle={{ color: 'var(--orange-muted)' }}
+            >
               加入我們
             </Link>
           </dd>
           <dd>
-            <Link sx={{ variant: 'hovers.orange3' }} className={styles.link} to='/'>
+            <Link
+              sx={{ variant: 'hovers.orange3' }}
+              className={styles.link}
+              to='/contactus'
+              activeStyle={{ color: 'var(--orange-muted)' }}
+            >
               聯絡我們
             </Link>
           </dd>
@@ -117,7 +127,12 @@ const Footer = () => (
         }}
       >
         © {new Date().getFullYear()}, Take2 Prophecy™ 版權所有
-        <Link sx={{ variant: 'hovers.orange3' }} className={styles.link} to='/'>
+        <Link
+          sx={{ variant: 'hovers.orange3' }}
+          className={styles.link}
+          to='/'
+          activeStyle={{ color: 'var(--orange-muted)' }}
+        >
           私隱政策
         </Link>
       </div>

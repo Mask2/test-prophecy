@@ -46,7 +46,6 @@ const SearchPage = ({ data }) => {
 
   const searchData = (e) => {
     const queryResult = search.search(e.target.value);
-    console.log('queryResult', queryResult);
     setSearchQuery(e.target.value);
     setSearchResults(queryResult);
   };

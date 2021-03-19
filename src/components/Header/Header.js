@@ -71,7 +71,7 @@ const Header = ({ pathname }) => {
               </li>
             ))}
           </ul>
-          <ul className={styles.subMenu} sx={{ display: ['none', 'block'], variant: 'texts.subtitle' }}>
+          <ul className={styles.subMenu} sx={{ display: ['none', 'block'], variant: 'texts.subtitle1' }}>
             {JSONData[current]?.children.length
               ? JSONData[current]?.children.map((item, index) => (
                   <li key={index}>
@@ -84,12 +84,12 @@ const Header = ({ pathname }) => {
           </ul>
           <ul sx={{ variant: 'texts.h5', display: 'flex', flexDirection: 'column' }}>
             <li>
-              <Link sx={{ variant: 'hovers.orange3' }} to='/'>
+              <Link sx={{ variant: 'hovers.orange3' }} to='/joinus' onClick={() => setMenuState(false)}>
                 加入我們
               </Link>
             </li>
             <li>
-              <Link sx={{ variant: 'hovers.orange3' }} to='/'>
+              <Link sx={{ variant: 'hovers.orange3' }} to='/contactus' onClick={() => setMenuState(false)}>
                 聯絡我們
               </Link>
             </li>

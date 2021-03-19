@@ -23,7 +23,7 @@ const theme = {
     icons: {
       small: 32,
       normal: 64,
-      large: 130,
+      larger: 130,
     },
   },
   zIndices: {
@@ -51,6 +51,7 @@ const theme = {
       secondary: '#222222',
     },
   },
+  // ------ base styles and variant styles ------
   text: {
     heading: {
       fontFamily: 'body',
@@ -62,11 +63,16 @@ const theme = {
       lineHeight: 3,
       fontWeight: 'normal',
     },
-    link: {
+    link1: {
       fontFamily: 'body',
       lineHeight: 3,
       fontWeight: 'light',
       textDecoration: 'none',
+    },
+    link2: {
+      variant: 'texts.caption',
+      textDecoration: 'underLine',
+      cursor: 'pointer',
     },
   },
   texts: {
@@ -80,7 +86,7 @@ const theme = {
     },
     h3: {
       variant: 'text.heading',
-      fontSize: 8,
+      fontSize: 7,
     },
     h4: {
       variant: 'text.heading',
@@ -129,7 +135,7 @@ const theme = {
       color: 'blue.primary',
     },
     link: {
-      variant: 'text.link',
+      variant: 'text.link1',
       color: 'blue.primary',
     },
   },
@@ -191,9 +197,34 @@ const theme = {
       color: 'white',
       textDecoration: 'none',
       transition: 'color 0.3s ease-in-out',
+      cursor: 'pointer',
       ':hover': {
         color: 'orange.primary',
         position: 'relative',
+      },
+    },
+    orange4: {
+      color: 'white',
+      textDecoration: 'none',
+      transition: 'color 0.3s ease-in-out',
+      cursor: 'pointer',
+      ':hover': {
+        color: 'orange.muted',
+        position: 'relative',
+      },
+    },
+  },
+  form: {
+    input: {
+      variant: 'texts.body1',
+      fontWeight: 'bold',
+      borderRadius: 0,
+      ':focus': {
+        outline: 'none',
+        borderColor: 'gray.primary',
+      },
+      '::placeholder': {
+        opacity: 1,
       },
     },
   },
@@ -282,7 +313,7 @@ const theme = {
       lightHeight: 28,
     },
     a: {
-      variant: 'mdxText.link',
+      variant: 'mdxText.link1',
       fontSize: 3,
     },
     img: {

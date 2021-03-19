@@ -49,8 +49,14 @@
   },
   {
     "title": "加入我们",
-    "description": "找不到该页面",
+    "description": "",
     "path": "/joinus",
+    "img": "../../4-1.png"
+  },
+  {
+    "title": "联系我们",
+    "description": "",
+    "path": "/contactus",
     "img": "../../4-1.png"
   }
 ]
