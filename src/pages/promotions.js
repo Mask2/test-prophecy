@@ -22,17 +22,21 @@ export const query = graphql`
   }
 `;
 const PromotionsPage = ({ data }) => (
-  <div sx={{ bg: 'muted', pt: 8, pb: 9 }}>
+  <div sx={{ bg: 'blue.secondary', pt: 8, pb: 9 }}>
     <div sx={{ maxWidth: 'maxWidth', mx: 'auto' }}>
-      <div sx={{ textAlign: 'center', pb: 5, fontWeight: 'bold', fontSize: 3 }}>
+      <h2 sx={{ textAlign: 'center', pb: 3, color: 'white', variant: 'texts.h3' }}>
+        了解最新活動推廣，包括與各大專業機構的健康服務合作。
+      </h2>
+      <div sx={{ textAlign: 'center', pb: 5, variant: 'texts.button' }}>
         {JSONData.filter((item) => item.path === withPrefix('/promotions') || item.path === withPrefix('/news')).map(
           (item) => (
             <Link
               sx={{
                 color: 'white',
                 mx: 5,
-                py: 2,
+                py: '4px',
                 textDecoration: 'none',
+                fontWeight: 'bold',
               }}
               css={{
                 ':after': {

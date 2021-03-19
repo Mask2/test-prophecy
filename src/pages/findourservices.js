@@ -48,7 +48,10 @@ const FindourservicesPage = ({ location }) => {
               <div className={styles.partnerFont}>
                 <img className={styles.partnerFontImg} src={item.img} alt='' />
               </div>
-              <div className={styles.partnerBack} sx={{ fontSize: 2, color: 'white', p: 4, textAlign: 'center' }}>
+              <div
+                className={styles.partnerBack}
+                sx={{ variant: 'gradients.orange1', fontSize: 2, color: 'white', p: 4, textAlign: 'center' }}
+              >
                 <div sx={{ mb: 3 }}>{item.name}</div>
                 <div>{item.description}</div>
               </div>
@@ -56,7 +59,7 @@ const FindourservicesPage = ({ location }) => {
           ))}
         </div>
       </section>
-      <section id={curMenu[1]?.id} sx={{ bg: 'primary', py: 8, color: 'white' }}>
+      <section id={curMenu[1]?.id} sx={{ bg: 'blue.primary', py: 8, color: 'white' }}>
         <div sx={{ mx: 'auto', maxWidth: 'maxWidth' }}>
           <div sx={{ textAlign: 'center', mb: 6 }}>
             <div sx={{ fontSize: 5, mb: 4 }}>{ServiceAreaData.title}</div>

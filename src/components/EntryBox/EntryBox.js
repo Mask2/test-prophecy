@@ -10,7 +10,7 @@ const EntryBox = ({ children, direction = 'left', sxx }) => {
     <div
       sx={{
         transform: `translateX(${entered ? 0 : direction === 'right' ? 100 : -100}%)`,
-        transition: 'transform 0.6s ease',
+        transition: 'transform 0.8s ease-in-out',
         ...sxx,
       }}
     >

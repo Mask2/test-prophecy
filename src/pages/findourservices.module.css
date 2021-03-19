@@ -49,8 +49,6 @@
   align-items: center;
   justify-content: center;
   transform: rotateY(-180deg);
-  background: var(--hover-gradient);
-  background-size: 200% 100%;
   backface-visibility: hidden;
   box-sizing: border-boxs;
   transition: transform 0.4s cubic-bezier(0.2, 0.85, 0.4, 1.275);

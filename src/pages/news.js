@@ -22,7 +22,7 @@ export const query = graphql`
   }
 `;
 const NewsPage = ({ data }) => (
-  <div sx={{ bg: 'muted', pt: 8, pb: 9 }}>
+  <div sx={{ bg: 'blue.secondary', pt: 9, pb: 6 }}>
     <div sx={{ maxWidth: 'maxWidth', mx: 'auto' }}>
       <div sx={{ textAlign: 'center', pb: 5, fontWeight: 'bold', fontSize: 3 }}>
         {JSONData.filter((item) => item.path === withPrefix('/promotions') || item.path === withPrefix('/news')).map(
@@ -31,8 +31,9 @@ const NewsPage = ({ data }) => (
               sx={{
                 color: 'white',
                 mx: 5,
-                py: 2,
+                py: '4px',
                 textDecoration: 'none',
+                fontWeight: 'bold',
               }}
               css={{
                 ':after': {

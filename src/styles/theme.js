@@ -55,7 +55,7 @@ const theme = {
   text: {
     heading: {
       fontFamily: 'body',
-      lineHeight: 1,
+      lineHeight: 1.2,
       fontWeight: 'normal',
     },
     body: {
@@ -118,7 +118,7 @@ const theme = {
     },
     button: {
       variant: 'text.body',
-      fontSize: 2,
+      fontSize: 3,
     },
     caption: {
       variant: 'text.body',
@@ -132,11 +132,11 @@ const theme = {
   mdxText: {
     heading: {
       variant: 'text.heading',
-      color: 'blue.primary',
+      color: 'gray.primary',
     },
     link: {
       variant: 'text.link1',
-      color: 'blue.primary',
+      color: 'gray.primary',
     },
   },
   gradients: {
@@ -310,11 +310,15 @@ const theme = {
     },
     p: {
       variant: 'mdxText.heading',
-      lightHeight: 28,
+      lineHeight: 2,
     },
     a: {
-      variant: 'mdxText.link1',
+      variant: 'mdxText.link',
       fontSize: 3,
+    },
+    strong: {
+      variant: 'mdxText.heading',
+      fontWeight: 'bold',
     },
     img: {
       display: 'block',

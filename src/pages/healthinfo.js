@@ -20,11 +20,11 @@ export const query = graphql`
   }
 `;
 const NewsPage = ({ data }) => (
-  <div sx={{ bg: 'secondary', pt: 8, pb: 9 }}>
+  <div sx={{ bg: 'blue.secondary', pt: 8, pb: 9 }}>
     <div sx={{ maxWidth: 'maxWidth', mx: 'auto' }}>
-      <h1 sx={{ textAlign: 'center', pb: 5, color: 'white', fontWeight: 'body' }}>
+      <h2 sx={{ textAlign: 'center', pb: 5, color: 'white', variant: 'texts.h3' }}>
         緊貼最新健康資訊，提高個人生活質素。
-      </h1>
+      </h2>
       <div sx={{ display: 'flex', flexWrap: 'wrap' }}>
         {data.allMdx.nodes.map((node) => (
           <PostCard
