@@ -33,7 +33,7 @@ const Header = ({ pathname }) => {
       >
         <div
           className={styles.wrapper}
-          sx={{ bg: bgColor, boxShadow: bgColor ? 'header' : '', px: 4, zIndex: 'header' }}
+          sx={{ bg: bgColor, boxShadow: bgColor ? 'header' : '', px: 4, zIndex: 'cover' }}
         >
           <div
             className={styles.innerWrapper}

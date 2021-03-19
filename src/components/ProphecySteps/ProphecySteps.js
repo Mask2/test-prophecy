@@ -23,8 +23,8 @@ const ProphecySteps = () => {
   return (
     <>
       <div sx={{ py: 6, textAlign: 'center' }}>
-        <h1>篩查四部曲</h1>
-        <p>透過簡單篩查四部曲，讓人人有「鼻」無患，提高成功治愈鼻咽癌的機會。</p>
+        <h2 sx={{ variant: 'texts.h2' }}>篩查四部曲</h2>
+        <p sx={{ variant: 'texts.body1' }}>透過簡單篩查四部曲，讓人人有「鼻」無患，提高成功治愈鼻咽癌的機會。</p>
       </div>
       <div className={styles.wrapper} sx={{ flexDirection: ['column', 'row'] }}>
         {data.allProphecyStepsJson.nodes.map((item, index) => (

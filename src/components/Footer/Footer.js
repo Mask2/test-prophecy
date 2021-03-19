@@ -85,7 +85,7 @@ const Footer = () => (
           }}
         >
           <dd>
-            <Link sx={{ variant: 'hovers.orange3' }} className={styles.link} to='/'>
+            <Link sx={{ variant: 'hovers.orange3' }} className={styles.link} to='/joinus'>
               加入我們
             </Link>
           </dd>

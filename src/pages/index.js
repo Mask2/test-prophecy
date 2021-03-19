@@ -66,7 +66,13 @@ const IndexPage = ({ data }) => {
         <video className={styles.videoItem} autoPlay loop muted playsInline>
           <source src={HomeVideo} type='video/mp4' />
         </video>
-        <img className={styles.mouseButton} onClick={() => scrollTo('#main')} src={mouseButton} alt='' />
+        <img
+          className={styles.mouseButton}
+          sx={{ zIndex: 'base' }}
+          onClick={() => scrollTo('#main')}
+          src={mouseButton}
+          alt=''
+        />
         <div className={styles.introWrapper} sx={{ mx: 'auto', maxWidth: 'maxWidth', width: '100%' }}>
           <div
             className={styles.introInner}

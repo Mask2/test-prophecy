@@ -46,5 +46,11 @@
     "description": "找不到该页面",
     "path": "/404",
     "img": "../../4-1.png"
+  },
+  {
+    "title": "加入我们",
+    "description": "找不到该页面",
+    "path": "/joinus",
+    "img": "../../4-1.png"
   }
 ]

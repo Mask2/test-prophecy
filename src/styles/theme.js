@@ -14,18 +14,20 @@ const theme = {
     normal: 400,
     bold: 700,
   },
-  lineHeights: [0, 1.2, 1.4, 1.8, 2],
+  lineHeights: [1, 1.2, 1.4, 1.8, 2],
   sizes: {
     maxWidth: 1120,
     slideHeight: 400,
     headerHeight: 76,
+    trHeight: 64,
     icons: {
       small: 32,
       normal: 64,
+      large: 130,
     },
   },
   zIndices: {
-    header: 10,
+    base: 10,
     cover: 100,
     overCover: 1000,
   },
@@ -38,8 +40,6 @@ const theme = {
       muted2: '#92b7ca',
       primaryText: '#262262',
       secondaryText: '#143B6D',
-      gradient1: 'radial-gradient(circle at left center, #92b7ca 0%, #055ba7 100%)',
-      gradient2: 'radial-gradient(circle at left bottom, rgba(146, 183, 202, 0.75) 0%, rgba(5, 91, 167, 0.75) 100%)',
     },
     orange: {
       primary: '#ea5b29',
@@ -94,9 +94,13 @@ const theme = {
       variant: 'text.heading',
       fontSize: 1,
     },
-    subtitle: {
+    subtitle1: {
       variant: 'text.heading',
       fontSize: 5,
+    },
+    subtitle2: {
+      variant: 'text.heading',
+      fontSize: 4,
     },
     body1: {
       variant: 'text.body',
@@ -226,6 +230,18 @@ const theme = {
       cursor: 'pointer',
       fontSize: 4,
     },
+    normal: {
+      px: 8,
+      py: 2,
+      fontSize: 2,
+      fontWeight: 'bold',
+      lineHeight: 1,
+      border: 'white',
+      display: 'inline-block',
+    },
+  },
+  borders: {
+    white: ' 1px solid white',
   },
   shadows: {
     header: '0 12px 14px 0 rgb(0 0 0 / 10%)',

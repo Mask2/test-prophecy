@@ -15,7 +15,7 @@ const IntroductionPage = ({ location }) => {
     setCurMenu(MenuData.find((menu) => menu.path === withPrefix(location.pathname))?.children || []);
   }, [location.pathname]);
   return (
-    <div className={styles.wrapper} sx={{ backgroundImage: 'gradientMuted' }}>
+    <div className={styles.wrapper} sx={{ variant: 'gradients.blue2' }}>
       <div sx={{ display: 'flex', justifyContent: 'center', py: 6, mx: 'auto', maxWidth: 'maxWidth' }}>
         {curMenu.map((child) => (
           <div

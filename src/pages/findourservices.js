@@ -81,7 +81,7 @@ const FindourservicesPage = ({ location }) => {
                   <tr
                     key={`${curArea}_${index}_${service.name}`}
                     className={styles.tableRow}
-                    sx={{ variant: 'hovers.orange2' }}
+                    sx={{ variant: 'hovers.orange2', height: 'trHeight' }}
                   >
                     <td className={styles.tableCell} colSpan='1' rowSpan='1'>
                       {service.name}
