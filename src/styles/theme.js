@@ -47,8 +47,10 @@ const theme = {
       muted: '#f8ac17',
     },
     gray: {
-      primary: '#444444',
-      secondary: '#222222',
+      primary: '#22222',
+      secondary: '#444444',
+      muted1: '#d2d2d2',
+      muted2: '#777777',
     },
   },
   // ------ base styles and variant styles ------

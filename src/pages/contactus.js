@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import React from 'react';
-import { jsx, Link, Input, Select, Textarea, Label, Radio, Grid, Checkbox } from 'theme-ui';
+import { jsx, Input, Select, Textarea, Label, Radio, Grid, Checkbox } from 'theme-ui';
+import { Link } from 'gatsby';
 import ContactData from '/src/data/contactInfo.json';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope, faPhoneAlt } from '@fortawesome/free-solid-svg-icons';

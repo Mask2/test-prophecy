@@ -1,7 +1,9 @@
 /** @jsx jsx */
 import React, { useState } from 'react';
-import { jsx } from 'theme-ui';
+import { jsx, Input, Checkbox } from 'theme-ui';
 import { graphql, Link } from 'gatsby';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 import ProphecySteps from '/src/components/ProphecySteps/ProphecySteps';
 import PostCard from '../components/PostCard/PostCard';
@@ -176,6 +178,58 @@ const IndexPage = ({ data }) => {
                 ))}
               </div>
             </div>
+          </div>
+        </section>
+        <section className={styles.bookNews} sx={{ bg: 'white' }}>
+          <div sx={{ color: 'blue.primaryText', maxWidth: 'maxWidth', mx: 'auto', py: 10 }}>
+            <h2>訂閱最新資訊</h2>
+            <p sx={{ variant: 'texts.body1' }}>關愛自己及家人，立即訂閱，獲取健康資訊。</p>
+            <form action=''>
+              <div sx={{ mb: 2, display: 'flex', maxWidth: '800px' }}>
+                <Input
+                  name='email'
+                  placeholder='邮箱地址'
+                  sx={{
+                    variant: 'form.input',
+                    color: 'gray.secondary',
+                    borderColor: 'gray.muted1',
+                    fontSize: 1,
+                    py: 2,
+                  }}
+                />
+                <div
+                  sx={{
+                    variant: 'buttons.iconNormal',
+                    height: 'auto',
+                    bg: 'blue.primaryText',
+                    color: 'white',
+                    flexShrink: 0,
+                  }}
+                >
+                  <FontAwesomeIcon icon={faLongArrowAltRight} />
+                </div>
+              </div>
+              <div
+                sx={{
+                  variant: 'texts.caption',
+                  color: 'gray.muted2',
+                  display: 'flex',
+                  alignItems: 'center',
+                  mt: 2,
+                }}
+              >
+                <Checkbox name='agree' defaultChecked={false} sx={{ mr: 1 }} />
+                本人已明白及同意Take2 Health Limited 的網站於www.prophecy.health之
+                <Link to='/docs/post1/' sx={{ color: 'gray.muted2', variant: 'text.link2' }}>
+                  網站私隱政策
+                </Link>
+                及
+                <Link to='/docs/post2' sx={{ color: 'gray.muted2', variant: 'text.link2' }}>
+                  個人資料收集聲明
+                </Link>
+                。
+              </div>
+            </form>
           </div>
         </section>
       </div>

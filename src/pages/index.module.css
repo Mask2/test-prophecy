@@ -158,3 +158,8 @@ p {
   border-radius: 50%;
   margin-bottom: 10px;
 }
+.bookNews {
+  background-image: url(../../static/bg_02.png);
+  background-position: center center;
+  background-repeat: no-repeat;
+}
