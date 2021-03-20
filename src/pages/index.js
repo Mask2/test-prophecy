@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import { jsx } from 'theme-ui';
 import { graphql, Link } from 'gatsby';
 import scrollTo from 'gatsby-plugin-smoothscroll';
-import SEO from '../components/seo';
 import ProphecySteps from '/src/components/ProphecySteps/ProphecySteps';
 import PostCard from '../components/PostCard/PostCard';
 import Swiper from 'react-id-swiper';
@@ -61,7 +60,6 @@ const IndexPage = ({ data }) => {
   };
   return (
     <>
-      <SEO title='Home' />
       <div className={styles.slidersContainer}>
         <video className={styles.videoItem} autoPlay loop muted playsInline>
           <source src={HomeVideo} type='video/mp4' />

@@ -130,7 +130,7 @@ const Footer = () => (
         <Link
           sx={{ variant: 'hovers.orange3' }}
           className={styles.link}
-          to='/'
+          to='/docs/post1'
           activeStyle={{ color: 'var(--orange-muted)' }}
         >
           私隱政策

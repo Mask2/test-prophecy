@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React from 'react';
 import { jsx } from 'theme-ui';
-import { graphql, Link, withPrefix } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import PostCard from '../components/PostCard/PostCard';
 import JSONData from '/src/data/pageInfo.json';
 import styles from './post.module.css';
@@ -25,30 +25,28 @@ const NewsPage = ({ data }) => (
   <div sx={{ bg: 'blue.secondary', pt: 9, pb: 6 }}>
     <div sx={{ maxWidth: 'maxWidth', mx: 'auto' }}>
       <div sx={{ textAlign: 'center', pb: 5, fontWeight: 'bold', fontSize: 3 }}>
-        {JSONData.filter((item) => item.path === withPrefix('/promotions') || item.path === withPrefix('/news')).map(
-          (item) => (
-            <Link
-              sx={{
-                color: 'white',
-                mx: 5,
-                py: '4px',
-                textDecoration: 'none',
-                fontWeight: 'bold',
-              }}
-              css={{
-                ':after': {
-                  color: 'primary',
-                },
-              }}
-              key={item.path}
-              to={item.path}
-              activeClassName={styles.activeLink}
-              replace
-            >
-              {item.title}
-            </Link>
-          ),
-        )}
+        {JSONData.filter((item) => item.path === '/promotions' || item.path === '/news').map((item) => (
+          <Link
+            sx={{
+              color: 'white',
+              mx: 5,
+              py: '4px',
+              textDecoration: 'none',
+              fontWeight: 'bold',
+            }}
+            css={{
+              ':after': {
+                color: 'primary',
+              },
+            }}
+            key={item.path}
+            to={item.path}
+            activeClassName={styles.activeLink}
+            replace
+          >
+            {item.title}
+          </Link>
+        ))}
       </div>
       <div sx={{ display: 'flex', flexWrap: 'wrap' }}>
         {data.allMdx.nodes.map((node) => (

@@ -19,8 +19,8 @@ const FindourservicesPage = () => {
         <div
           sx={{ display: 'flex', justifyContent: 'space-between', variant: 'texts.body2', fontWeight: 'bold', py: 10 }}
         >
-          {ContactData.map((item) => (
-            <div key={item.type} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          {ContactData.map((item, index) => (
+            <div key={`${item.type}_${index}`} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <img src={item.icon} alt='' sx={{ height: 'icons.larger', width: 'icons.larger', display: 'block' }} />
               <div sx={{ variant: 'hovers.orange4' }}>
                 <FontAwesomeIcon icon={faPhoneAlt} sx={{ mr: 2 }} />
@@ -103,11 +103,11 @@ const FindourservicesPage = () => {
               <div sx={{ variant: 'texts.caption', display: 'flex', alignItems: 'center', mt: 2 }}>
                 <Checkbox name='agree' defaultChecked={false} sx={{ mr: 1 }} />
                 本人已明白及同意Take2 Health Limited 的網站於www.prophecy.health之
-                <Link to='/' sx={{ color: 'white', variant: 'text.link2' }}>
+                <Link to='/docs/post1/' sx={{ color: 'white', variant: 'text.link2' }}>
                   網站私隱政策
                 </Link>
                 及
-                <Link to='/' sx={{ color: 'white', variant: 'text.link2' }}>
+                <Link to='/docs/post2' sx={{ color: 'white', variant: 'text.link2' }}>
                   個人資料收集聲明
                 </Link>
                 。

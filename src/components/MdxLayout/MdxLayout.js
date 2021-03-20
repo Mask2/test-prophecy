@@ -97,9 +97,7 @@ const MdxLayout = ({ children, pageContext }) => {
             </span>
           </div>
         </header>
-        <div>
-          <MDXProvider components={components}>{children}</MDXProvider>
-        </div>
+        <MDXProvider components={components}>{children}</MDXProvider>
       </div>
     </div>
   );
