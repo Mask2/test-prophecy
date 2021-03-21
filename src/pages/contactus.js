@@ -10,7 +10,15 @@ const FindourservicesPage = () => {
   return (
     <div sx={{ bg: 'blue.secondary' }}>
       <section
-        sx={{ variant: 'texts.body2', mx: 'auto', maxWidth: 'maxWidth', py: 4, textAlign: 'center', color: 'white' }}
+        sx={{
+          variant: 'texts.body2',
+          mx: 'auto',
+          maxWidth: 'maxWidth',
+          py: 4,
+          px: [1, 0],
+          textAlign: 'center',
+          color: 'white',
+        }}
       >
         <p>
           我們十分樂意提供協助。
@@ -18,7 +26,14 @@ const FindourservicesPage = () => {
           如有任何意見或查詢，歡迎透過以下方式與我們聯絡，我們會儘快回覆。
         </p>
         <div
-          sx={{ display: 'flex', justifyContent: 'space-between', variant: 'texts.body2', fontWeight: 'bold', py: 10 }}
+          sx={{
+            display: 'flex',
+            flexWrap: 'wrap',
+            justifyContent: 'space-between',
+            variant: 'texts.body2',
+            fontWeight: 'bold',
+            py: 10,
+          }}
         >
           {ContactData.map((item, index) => (
             <div key={`${item.type}_${index}`} sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
@@ -35,9 +50,9 @@ const FindourservicesPage = () => {
           ))}
         </div>
       </section>
-      <section sx={{ bg: 'blue.muted1', color: 'white' }}>
+      <section sx={{ bg: 'blue.muted1', color: 'white', px: [1, 0] }}>
         <div sx={{ mx: 'auto', maxWidth: 'maxWidth', pb: 10 }}>
-          <div sx={{ textAlign: 'center', variant: 'texts.h3', fontWeight: 'light', py: 6 }}>
+          <div sx={{ textAlign: 'center', variant: ['texts.h4', 'texts.h3'], fontWeight: 'light', py: 6 }}>
             歡迎填寫以下資料，我們會安排專人盡快解答您的問題
           </div>
           <div sx={{ mt: 2 }}>
@@ -101,7 +116,7 @@ const FindourservicesPage = () => {
               <div sx={{ mb: 2 }}>
                 <Textarea name='query' placeholder='请输入您的查询' sx={{ variant: 'form.input' }} rows={4} />
               </div>
-              <div sx={{ variant: 'texts.caption', display: 'flex', alignItems: 'center', mt: 2 }}>
+              <div sx={{ variant: 'texts.caption', display: 'flex', flexWrap: 'wrap', alignItems: 'center', mt: 2 }}>
                 <Checkbox name='agree' defaultChecked={false} sx={{ mr: 1 }} />
                 本人已明白及同意Take2 Health Limited 的網站於www.prophecy.health之
                 <Link to='/docs/post1/' sx={{ color: 'white', variant: 'text.link2' }}>

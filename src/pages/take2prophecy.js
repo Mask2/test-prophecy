@@ -68,12 +68,12 @@ const ProphecyPage = ({ location }) => {
       <section id={curMenu[1]?.id} sx={{ mx: 'auto', pt: 6, maxWidth: 'maxWidth', color: 'white' }}>
         <ProphecySteps />
       </section>
-      <section id={curMenu[2]?.id} sx={{ color: 'white', py: 7 }}>
+      <section id={curMenu[2]?.id} sx={{ color: 'white', py: 7, px: [2, 0] }}>
         <div sx={{ mx: 'auto', maxWidth: 'maxWidth', variant: 'texts.body1' }}>
-          <h2 sx={{ textAlign: 'center', variant: 'texts.h2', my: 5 }}>{InevitableData.title}</h2>
+          <h2 sx={{ textAlign: 'center', variant: ['texts.h3', 'texts.h2'], my: 5 }}>{InevitableData.title}</h2>
           <p>{InevitableData.description}</p>
           {InevitableData.data.map((list, index) => (
-            <div key={`inevitable_${index}`} className={styles.progressWrapper}>
+            <div key={`inevitable_${index}`} sx={{ mt: 4, display: 'flex' }}>
               {list.map((item) => (
                 <div key={item.name} className={styles.progressItem}>
                   <img className={styles.progressIcon} src={item.img} alt='' />
@@ -102,11 +102,16 @@ const ProphecyPage = ({ location }) => {
           ))}
         </div>
       </section>
-      <section id={curMenu[4]?.id} sx={{ color: 'white', py: 7 }}>
-        <h2 sx={{ textAlign: 'center', variant: 'texts.h2', my: 4 }}>{TechnologyData.title}</h2>
+      <section id={curMenu[4]?.id} sx={{ color: 'white', py: 7, px: [1, 0] }}>
+        <h2 sx={{ textAlign: 'center', variant: ['texts.h3', 'texts.h2'], my: 4 }}>{TechnologyData.title}</h2>
         <div sx={{ mx: 'auto', maxWidth: 'maxWidth' }}>
           <div className={styles.tecWrapper}>
-            <Grid className={styles.tecNav} gap={3} columns={[2, null, 2]}>
+            <Grid
+              className={styles.tecNav}
+              gap={3}
+              columns={[2, null, 2]}
+              sx={{ width: ['100%', '50%'], pr: [0, '2%'] }}
+            >
               {TechnologyData.data.map((item, index) => (
                 <Box key={item.title} className={styles.tecNavItem} onClick={() => setCurTec(index)}>
                   <img className={styles.tecNavImg} src={item.img} alt='' />
@@ -114,7 +119,7 @@ const ProphecyPage = ({ location }) => {
                 </Box>
               ))}
             </Grid>
-            <div className={styles.tecContent}>
+            <div className={styles.tecContent} sx={{ position: ['relative', 'absolute'], mt: [4, 0] }}>
               <div sx={{ color: 'orange.primary', variant: 'texts.h4', mb: 3 }}>
                 {TechnologyData.data[curTec].title}
               </div>
@@ -125,7 +130,7 @@ const ProphecyPage = ({ location }) => {
           </div>
         </div>
       </section>
-      <section id={curMenu[5]?.id} sx={{ color: 'white', py: 6, mx: 'auto', maxWidth: 'maxWidth' }}>
+      <section id={curMenu[5]?.id} sx={{ color: 'white', py: 6, mx: 'auto', maxWidth: 'maxWidth', px: [2, 0] }}>
         <div sx={{ mb: 2, variant: 'texts.caption' }}>參考資料</div>
         <ul sx={{ listStyle: 'decimal', variant: 'texts.overline' }}>
           <li>

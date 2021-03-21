@@ -3,10 +3,6 @@
   background-position: center center;
   background-repeat: no-repeat;
 }
-.progressWrapper {
-  display: flex;
-  margin-top: 32px;
-}
 
 .progressItem {
   width: 100%;
@@ -27,12 +23,11 @@
   display: flex;
   justify-content: space-between;
   position: relative;
+  flex-wrap: wrap;
 }
 
 .tecNav {
-  width: 50%;
   display: flex;
-  padding-right: 2%;
 }
 
 .tecNavItem {
@@ -53,8 +48,7 @@
   padding: 24px;
   background: #fff;
   overflow-y: auto;
-  position: absolute;
-  left: 50%;
+  left: '50%';
   right: 0;
   top: 0;
   bottom: 0;

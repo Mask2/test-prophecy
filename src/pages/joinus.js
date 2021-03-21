@@ -15,7 +15,7 @@ const FindourservicesPage = ({ location }) => {
     <div sx={{ bg: 'blue.secondary' }}>
       <section
         id={curMenu[0]?.id}
-        sx={{ mx: 'auto', maxWidth: 'maxWidth', py: 10, textAlign: 'center', color: 'white' }}
+        sx={{ mx: 'auto', maxWidth: 'maxWidth', py: 10, textAlign: 'center', color: 'white', px: [1, 0] }}
       >
         <p>
           Take2 Health
@@ -26,7 +26,9 @@ const FindourservicesPage = ({ location }) => {
       </section>
       <section id={curMenu[1]?.id} sx={{ bg: 'primary', color: 'white' }}>
         <div sx={{ mx: 'auto', maxWidth: 'maxWidth' }}>
-          <div sx={{ textAlign: 'center', variant: 'texts.h2', fontWeight: 'light', mb: 8 }}>{JobsData.title}</div>
+          <div sx={{ textAlign: 'center', variant: ['texts.h3', 'texts.h2'], fontWeight: 'light', mb: 8 }}>
+            {JobsData.title}
+          </div>
           <div sx={{ display: 'flex', justifyContent: 'space-around' }}>
             {JobsData.areas.map((item, index) => (
               <div sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }} key={`area_${index}`}>
@@ -67,7 +69,16 @@ const FindourservicesPage = ({ location }) => {
                     </td>
                     <td className={styles.tableCell} colSpan='1' rowSpan='1'>
                       <a href='/src/assets/pdf/DMO_JD-1.pdf' target='_blank'>
-                        <div sx={{ variant: 'buttons.normal' }}>查看详情</div>
+                        <div
+                          sx={{
+                            color: 'white',
+                            variant: 'buttons.normal',
+                            px: [2, 8],
+                            my: [1, 0],
+                          }}
+                        >
+                          查看详情
+                        </div>
                       </a>
                     </td>
                   </tr>
