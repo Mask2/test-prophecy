@@ -46,11 +46,17 @@ const ProphecySteps = () => {
         ))}
       </div>
       <div
-        className={styles.prophecyResult}
-        sx={{ width: ['auto', 'calc(66.666666666667% - ((4% + 4%) * 0.66666666666667))'], mx: [3, 'auto'] }}
+        sx={{
+          width: ['auto', 'calc(66.666666666667% - ((4% + 4%) * 0.66666666666667))'],
+          mx: [3, 'auto'],
+          p: 3,
+          border: 'white',
+          borderRadius: '12px',
+          variant: 'texts.overline',
+        }}
       >
-        <p>*陽性：檢測到血漿中存在｢與鼻咽癌相關的人類和EB病毒DNA特徵｣，詳情請向醫護人員查詢。</p>
-        <p>*陰性：檢測不到血漿中存在｢與鼻咽癌相關的人類和EB病毒DNA特徵｣，詳情請向醫護人員查詢。</p>
+        <div>*陽性：檢測到血漿中存在｢與鼻咽癌相關的人類和EB病毒DNA特徵｣，詳情請向醫護人員查詢。</div>
+        <div>*陰性：檢測不到血漿中存在｢與鼻咽癌相關的人類和EB病毒DNA特徵｣，詳情請向醫護人員查詢。</div>
       </div>
     </>
   );

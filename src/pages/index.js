@@ -86,7 +86,7 @@ const IndexPage = ({ data }) => {
           >
             <Link to='/take2prophecy' sx={{ color: 'white', textDecoration: 'none' }}>
               <h2 sx={{ variant: 'texts.h2' }}>
-                <span style={{ fontSize: 30 }}>Take2 Prophecy™</span>
+                <span sx={{ variant: 'texts.h3' }}>Take2 Prophecy™</span>
                 <br />
                 無創早期鼻咽癌篩查
               </h2>
@@ -106,8 +106,8 @@ const IndexPage = ({ data }) => {
           </section>
           <section>
             <div className={styles.secTitle}>
-              <h2>最新活動推廣</h2>
-              <p>了解最新活動推廣，包括與各大專業機構的健康服務合作。</p>
+              <h2 sx={{ variant: 'texts.h2' }}>最新活動推廣</h2>
+              <p sx={{ variant: 'texts.body1' }}>了解最新活動推廣，包括與各大專業機構的健康服務合作。</p>
             </div>
             <Swiper {...params}>
               {data.activityInfo.nodes.map((item) => (
@@ -117,8 +117,8 @@ const IndexPage = ({ data }) => {
           </section>
           <section>
             <div className={styles.secTitle}>
-              <h2>健康資訊</h2>
-              <p>緊貼最新健康資訊，提高個人生活質素。</p>
+              <h2 sx={{ variant: 'texts.h2' }}>健康資訊</h2>
+              <p sx={{ variant: 'texts.body1' }}>緊貼最新健康資訊，提高個人生活質素。</p>
             </div>
             <div className={styles.postsWrapper} sx={{ flexWrap: ['wrap', 'nowrap'] }}>
               <div className={styles.postsLeft} sx={{ mr: [0, 3], mb: [4, 0] }}>
@@ -143,8 +143,8 @@ const IndexPage = ({ data }) => {
         </div>
         <section className={styles.locationInfo}>
           <div className={styles.secTitle}>
-            <h2>服務覆蓋點</h2>
-            <p>Take2 Prophecy™ 測試遍佈港九新界及離島，立即查看最近您的服務地點。</p>
+            <h2 sx={{ variant: 'texts.h2' }}>服務覆蓋點</h2>
+            <p sx={{ variant: 'texts.body1' }}>Take2 Prophecy™ 測試遍佈港九新界及離島，立即查看最近您的服務地點。</p>
             <Link
               to='/findourservices'
               className={styles.checkLocation}
@@ -158,8 +158,8 @@ const IndexPage = ({ data }) => {
           <div className={styles.moreInfoWrapper}>
             <div className={styles.moreInfoContent} sx={{ width: ['auto', '40%'], mx: [3, 0] }}>
               <div className={styles.secTitle}>
-                <h2>探索更多</h2>
-                <p>
+                <h2 sx={{ variant: 'texts.h2' }}>探索更多</h2>
+                <p sx={{ variant: 'texts.body1' }}>
                   Take2 Prophecy™
                   致力為您打造健康人生，分享與健康相關的最新資訊，讓大眾正確認識鼻咽癌，並助您安排專業早期鼻咽癌篩查服務。
                 </p>
@@ -182,7 +182,7 @@ const IndexPage = ({ data }) => {
         </section>
         <section className={styles.bookNews} sx={{ bg: 'white' }}>
           <div sx={{ color: 'blue.primaryText', maxWidth: 'maxWidth', mx: 'auto', py: 10 }}>
-            <h2>訂閱最新資訊</h2>
+            <h2 sx={{ variant: 'texts.h2' }}>訂閱最新資訊</h2>
             <p sx={{ variant: 'texts.body1' }}>關愛自己及家人，立即訂閱，獲取健康資訊。</p>
             <form action=''>
               <div sx={{ mb: 2, display: 'flex', maxWidth: '800px' }}>

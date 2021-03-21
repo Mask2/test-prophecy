@@ -14,7 +14,12 @@ const theme = {
     normal: 400,
     bold: 700,
   },
-  lineHeights: [1, 1.2, 1.4, 1.8, 2],
+  lineHeights: {
+    heading1: 1,
+    heading2: 1.2,
+    body1: 1.4,
+    body2: 1.8,
+  },
   sizes: {
     maxWidth: 1120,
     slideHeight: 400,
@@ -47,7 +52,7 @@ const theme = {
       muted: '#f8ac17',
     },
     gray: {
-      primary: '#22222',
+      primary: '#222222',
       secondary: '#444444',
       muted1: '#d2d2d2',
       muted2: '#777777',
@@ -57,17 +62,17 @@ const theme = {
   text: {
     heading: {
       fontFamily: 'body',
-      lineHeight: 1.2,
+      lineHeight: 'heading2',
       fontWeight: 'normal',
     },
     body: {
       fontFamily: 'body',
-      lineHeight: 3,
+      lineHeight: 'body1',
       fontWeight: 'normal',
     },
     link1: {
       fontFamily: 'body',
-      lineHeight: 3,
+      lineHeight: 'body1',
       fontWeight: 'light',
       textDecoration: 'none',
     },
@@ -268,7 +273,7 @@ const theme = {
       py: 2,
       fontSize: 2,
       fontWeight: 'bold',
-      lineHeight: 1,
+      lineHeight: 'heading1',
       border: 'white',
       display: 'inline-block',
     },
@@ -281,11 +286,7 @@ const theme = {
     button: '0 25px 25px 0 rgb(0 0 0 / 10%)',
   },
   styles: {
-    root: {
-      fontFamily: 'body',
-      lineHeight: 2,
-      fontWeight: 1,
-    },
+    root: {},
     h1: {
       variant: 'mdxText.heading',
       fontSize: 5,
