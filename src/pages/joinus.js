@@ -66,7 +66,9 @@ const FindourservicesPage = ({ location }) => {
                       {job.date}
                     </td>
                     <td className={styles.tableCell} colSpan='1' rowSpan='1'>
-                      <div sx={{ variant: 'buttons.normal' }}>查看详情</div>
+                      <a href='/src/assets/pdf/DMO_JD-1.pdf' target='_blank'>
+                        <div sx={{ variant: 'buttons.normal' }}>查看详情</div>
+                      </a>
                     </td>
                   </tr>
                 ))}
