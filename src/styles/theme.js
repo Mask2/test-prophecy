@@ -23,6 +23,7 @@ const theme = {
   sizes: {
     maxWidth: 1120,
     slideHeight: 400,
+    slideMobileHeight: 200,
     headerHeight: 76,
     trHeight: 64,
     icons: {

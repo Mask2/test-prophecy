@@ -33,7 +33,7 @@ const Header = ({ pathname }) => {
       >
         <div
           className={styles.wrapper}
-          sx={{ bg: bgColor, boxShadow: bgColor ? 'header' : '', px: 4, zIndex: 'cover' }}
+          sx={{ bg: bgColor, boxShadow: bgColor ? 'header' : '', px: [2, 4], zIndex: 'cover' }}
         >
           <div
             className={styles.innerWrapper}
@@ -99,7 +99,13 @@ const Header = ({ pathname }) => {
           </ul>
           <div
             className={styles.closeBtn}
-            sx={{ top: [-1, 3], right: 0, variant: 'buttons.iconSmall', zIndex: 'overCover', position: 'absolute' }}
+            sx={{
+              top: [-1, 3],
+              right: [-2, 0],
+              variant: 'buttons.iconSmall',
+              zIndex: 'overCover',
+              position: 'absolute',
+            }}
             onClick={() => setMenuState(false)}
           >
             <FontAwesomeIcon icon={faTimes} />

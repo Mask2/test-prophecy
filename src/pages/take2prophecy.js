@@ -34,8 +34,8 @@ const ProphecyPage = ({ location }) => {
               fontWeight: 'bold',
               flexGrow: 1,
               minWidth: '300px',
-              mx: 4,
-              mb: 6,
+              mx: [1, 4],
+              mb: [3, 6],
               boxShadow: 'button',
             }}
             onClick={() => {
@@ -46,8 +46,8 @@ const ProphecyPage = ({ location }) => {
           </div>
         ))}
       </div>
-      <section id={curMenu[0]?.id} sx={{ mx: 'auto', maxWidth: 'maxWidth', color: 'white' }}>
-        <h2 sx={{ textAlign: 'center', pt: 7, variant: 'texts.h2' }}>甚麼是 Take2 Prophecy™</h2>
+      <section id={curMenu[0]?.id} sx={{ mx: 'auto', maxWidth: 'maxWidth', color: 'white', px: [2, 0] }}>
+        <h2 sx={{ textAlign: 'center', pt: 7, variant: ['texts.h3', 'texts.h2'] }}>甚麼是 Take2 Prophecy™</h2>
         <div sx={{ variant: 'texts.body1' }}>
           <p>Take2 Prophecy™ 是一項鼻咽癌早期篩查測試，適用群體包括常規體檢者、無症狀人士，及有疑似症狀人士等。</p>
           <p>

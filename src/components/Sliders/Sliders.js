@@ -8,14 +8,14 @@ const Sliders = ({ title, img }) => (
     className={styles.wrapper}
     sx={{
       backgroundImage: `url(${img})`,
-      height: 'slideHeight',
+      height: ['slideMobileHeight', 'slideHeight'],
       bg: 'white',
       boxShadow: '0 0 1px 3px rgba(0, 0, 0, .125)',
     }}
   >
     <div
       sx={{
-        variant: 'texts.h1',
+        variant: ['texts.h3', 'texts.h1'],
         color: 'white',
       }}
     >

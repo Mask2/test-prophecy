@@ -31,8 +31,8 @@ const IntroductionPage = ({ location }) => {
               fontSize: 2,
               fontWeight: 'bold',
               flexGrow: 1,
-              mx: 4,
-              mb: 6,
+              mx: [1, 4],
+              mb: [3, 6],
               boxShadow: 'button',
               width: ['100%', 'auto'],
             }}

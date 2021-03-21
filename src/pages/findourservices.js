@@ -16,7 +16,9 @@ const FindourservicesPage = ({ location }) => {
   }, [location.pathname]);
   return (
     <div sx={{ bg: 'blue.secondary' }}>
-      <div sx={{ display: 'flex', justifyContent: 'center', py: 6, mx: 'auto', maxWidth: 'maxWidth' }}>
+      <div
+        sx={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', py: 6, mx: 'auto', maxWidth: 'maxWidth' }}
+      >
         {curMenu.map((child) => (
           <div
             key={child.path}
@@ -28,9 +30,10 @@ const FindourservicesPage = ({ location }) => {
               alignItems: 'center',
               fontSize: 2,
               fontWeight: 'bold',
-              mx: 4,
-              px: 9,
+              mx: [1, 4],
+              mb: [3, 6],
               boxShadow: 'button',
+              width: ['100%', 'auto'],
             }}
             onClick={() => {
               scrollTo(`#${child.id}`);
@@ -41,19 +44,23 @@ const FindourservicesPage = ({ location }) => {
         ))}
       </div>
       <section id={curMenu[0]?.id} sx={{ mx: 'auto', maxWidth: 'maxWidth', py: 6 }}>
-        <div sx={{ fontSize: 5, color: 'white', textAlign: 'center' }}>{partnerData.title}</div>
-        <div className={styles.partnerWrapper} sx={{ pt: 7, pb: 8 }}>
+        <h2 sx={{ color: 'white', textAlign: 'center', variant: ['texts.h3', 'texts.h2'] }}>{partnerData.title}</h2>
+        <div className={styles.partnerWrapper} sx={{ pt: [4, 7], pb: [4, 8], flexWrap: 'wrap' }}>
           {partnerData.data.map((item) => (
-            <div className={styles.partnerCard} key={item.name} sx={{ width: '25%', pt: '25%' }}>
+            <div
+              className={styles.partnerCard}
+              key={item.name}
+              sx={{ width: ['50%', '25%'], pt: ['50%', '25%'], m: [4, 0] }}
+            >
               <div className={styles.partnerFont}>
                 <img className={styles.partnerFontImg} src={item.img} alt='' />
               </div>
               <div
                 className={styles.partnerBack}
-                sx={{ variant: 'gradients.orange1', fontSize: 2, color: 'white', p: 4, textAlign: 'center' }}
+                sx={{ variant: 'gradients.orange1', fontSize: 2, color: 'white', p: [1, 4], textAlign: 'center' }}
               >
-                <div sx={{ mb: 3 }}>{item.name}</div>
-                <div>{item.description}</div>
+                <div sx={{ mb: 3, variant: ['texts.body2', 'texts.body1'] }}>{item.name}</div>
+                <div sx={{ variant: ['texts.overline', 'texts.body1'] }}>{item.description}</div>
               </div>
             </div>
           ))}
@@ -71,7 +78,14 @@ const FindourservicesPage = ({ location }) => {
                 className={index === curArea ? styles.activeArea : ''}
                 key={item.area}
                 onClick={() => setCurArea(index)}
-                sx={{ position: 'relative', fontSize: 3, py: 2, fontWeight: 'bold', flexGrow: 1, textAlign: 'center' }}
+                sx={{
+                  position: 'relative',
+                  variant: ['texts.body2', 'texts.body1'],
+                  py: 2,
+                  fontWeight: 'bold',
+                  flexGrow: 1,
+                  textAlign: 'center',
+                }}
               >
                 {item.area}
               </div>
