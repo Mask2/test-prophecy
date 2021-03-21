@@ -5,10 +5,7 @@
 }
 .teammainSetion {
   background-image: url(https://www.prophecy.health/wp-content/uploads/2020/09/ceo2.png);
-  background-position: center center;
   background-repeat: no-repeat;
-  padding-top: 6rem;
-  padding-bottom: 6rem;
 }
 .teamCardWrapper {
   background-position: right top;
@@ -16,6 +13,7 @@
   background-size: cover;
   min-height: 520px;
   display: flex;
+  flex-wrap: wrap;
 }
 .teamCardImg {
   background-repeat: no-repeat;

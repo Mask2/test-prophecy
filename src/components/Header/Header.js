@@ -60,9 +60,9 @@ const Header = ({ pathname }) => {
       >
         <div
           className={styles.menuWrapper}
-          sx={{ maxWidth: 'maxWidth', mx: 'auto', pt: 10, flexDirection: ['column', 'row'], position: 'relative' }}
+          sx={{ maxWidth: 'maxWidth', mx: 'auto', pt: [4, 10], flexDirection: ['column', 'row'], position: 'relative' }}
         >
-          <ul className={styles.mainMenu} sx={{ width: ['auto', '40%'], variant: 'texts.h2' }}>
+          <ul className={styles.mainMenu} sx={{ width: ['auto', '40%'], variant: ['texts.h3', 'texts.h2'] }}>
             {JSONData.map((item, index) => (
               <li key={index} onMouseEnter={() => setCurrent(index)}>
                 <Link sx={{ variant: 'hovers.orange3' }} to={item.path} onClick={() => setMenuState(false)}>
@@ -99,7 +99,7 @@ const Header = ({ pathname }) => {
           </ul>
           <div
             className={styles.closeBtn}
-            sx={{ top: 3, right: 0, variant: 'buttons.iconSmall', zIndex: 'overCover', position: 'absolute' }}
+            sx={{ top: [-1, 3], right: 0, variant: 'buttons.iconSmall', zIndex: 'overCover', position: 'absolute' }}
             onClick={() => setMenuState(false)}
           >
             <FontAwesomeIcon icon={faTimes} />
