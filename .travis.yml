@@ -2,13 +2,13 @@ language: node_js
 before_script:
   - npm install -g gatsby-cli
 node_js:
-  - "10"
+  - '10'
 deploy:
   provider: script
   script: yarn install && yarn run deploy
   cleanup: true
   on:
-    branch: master
+    branch: build
 env:
   global:
     secure: m5O/RT99VBhIyiMycrroEowv6qVzNC2x6IHWoZD5lC6SKErZPzZpY6YtFAV26UGqw4lt/WnICm9AwJhp+NaRC6oOhSfWjoC/iLAvoyEnfE8bdu3a4P4LN+6uwKy7sSMf8kOqrr4oOPamzEZJqAIU5ci/8M+CC+QCDH8Y3yaYwsblkfhJXrMGuMZutY0QVtmmk3Uq7j0Ww618LIGoRLF0MTxS01+4ceCWWHb7rFywJ2qD2dtiCh4NRV7fwmKdFZE/elV7zri7pfsg3OI2tCq8TD9Y6P32yDg+dNbrK04QEz8QqERctEbLe2n9NZkjFoeS6p5RHVzZLFkSeThDa+r7j9bPbAc+td5tiL9Mo70P3nCkwpLk56UpJ8KyYRolcfToyzwK8I8wvhGw02PG9KKt8OB8dQdH6sBq2Gt5O2tNikRTkJ/yQOBgLHdWKn/ElRpR0kFR8jLuRgeqGgRRwK5nZK3UMt8kfdZZJs9U+nDkJrF2UwB+zF0mpQc/LRFebqrkkmOANXTfmlKp7nv+xVCFI8lpZyLKqJL8rRvB7gmPjNkHUsuhC3XNpfSAd9zsS0v9lnTuEiiGJRS8xwSZUShfXD1szdV7mU9AzoaUv8qxYpZBERNJEFe36SA0p/eMycbDhwnBsEnbzpJtKqskx0YaqtQVvO46zNJW4GfTM2s2yJo=
