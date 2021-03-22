@@ -11,7 +11,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import JSONData from '../../data/menu.json';
 
-import logo from '../../assets/images/taketwologo_2.png';
+import logo from '/src/assets/images/taketwologo_2.png';
 
 const Header = ({ pathname }) => {
   const [bgColor, setBgColor] = useState('');
