@@ -83,7 +83,7 @@
 
 .locationInfo {
   background-color: #000000;
-  background-image: url(../../static/download.jpg);
+  background-image: url(/download.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   border-width: 0px 0px 0px 0px;
@@ -122,11 +122,9 @@
 }
 
 .moreInfoWrapper {
-  max-width: var(--lg);
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  margin: 0 auto;
 }
 
 .moreInfoContent .secTitle {
@@ -155,7 +153,7 @@
   margin-bottom: 10px;
 }
 .bookNews {
-  background-image: url(../../static/bg_02.png);
+  background-image: url(/bg_02.png);
   background-position: center center;
   background-repeat: no-repeat;
 }

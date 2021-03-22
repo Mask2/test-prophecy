@@ -155,7 +155,7 @@ const IndexPage = ({ data }) => {
           </div>
         </section>
         <section className={styles.moreInfo}>
-          <div className={styles.moreInfoWrapper}>
+          <div className={styles.moreInfoWrapper} sx={{ mx: 'auto', maxWidth: 'maxWidth' }}>
             <div className={styles.moreInfoContent} sx={{ width: ['auto', '40%'], mx: [3, 0] }}>
               <div className={styles.secTitle}>
                 <h2 sx={{ variant: 'texts.h2' }}>探索更多</h2>
