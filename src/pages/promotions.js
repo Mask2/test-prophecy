@@ -58,6 +58,7 @@ const PromotionsPage = ({ data }) => (
             key={node.id}
             {...node.frontmatter}
             path={`/${node.slug}`}
+            withCover
           />
         ))}
       </div>
