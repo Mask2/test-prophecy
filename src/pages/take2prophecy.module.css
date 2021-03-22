@@ -1,9 +1,3 @@
-.wrapper {
-  background-image: var(--radio-gradient);
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-
 .progressItem {
   width: 100%;
   display: flex;
@@ -48,9 +42,13 @@
   padding: 24px;
   background: #fff;
   overflow-y: auto;
-  left: '50%';
+
   right: 0;
   top: 0;
   bottom: 0;
   border: 10px solid #fff;
+}
+
+.referList li {
+  list-style: decimal;
 }

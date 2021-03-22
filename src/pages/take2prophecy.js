@@ -17,7 +17,7 @@ const ProphecyPage = ({ location }) => {
     setCurMenu(MenuData.find((menu) => menu.path === withPrefix(location.pathname))?.children || []);
   }, [location.pathname]);
   return (
-    <div className={styles.wrapper} sx={{ variant: 'gradients.blue2' }}>
+    <div sx={{ variant: 'gradients.blue2' }}>
       <div
         sx={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap', py: 6, mx: 'auto', maxWidth: 'maxWidth' }}
       >
@@ -85,17 +85,15 @@ const ProphecyPage = ({ location }) => {
         </div>
       </section>
       <section id={curMenu[3]?.id} sx={{ color: 'white', bg: 'light', py: 7 }}>
-        <div sx={{ mx: 'auto', maxWidth: 'maxWidth', variant: 'texts.body1' }}>
-          <h2 sx={{ textAlign: 'center', variant: 'texts.h2', my: 6 }}>{FeaturesData.title}</h2>
+        <div sx={{ mx: 'auto', maxWidth: 'maxWidth', variant: ['texts.body2', 'texts.body1'] }}>
+          <h2 sx={{ textAlign: 'center', variant: ['texts.h3', 'texts.h2'], my: 6 }}>{FeaturesData.title}</h2>
           <p>{FeaturesData.description}</p>
           {FeaturesData.data.map((list, index) => (
-            <div key={`features_${index}`} className={styles.progressWrapper} sx={{ my: 5 }}>
+            <div key={`features_${index}`} sx={{ my: 5, display: 'flex' }}>
               {list.map((item) => (
-                <div key={item.name} className={styles.progressItem}>
+                <div key={item.name} className={styles.progressItem} sx={{ mb: 2 }}>
                   <img className={styles.progressIcon} src={item.img} alt='' />
-                  <div className={styles.progressName} sx={{ fontSize: 3 }}>
-                    {item.name}
-                  </div>
+                  <div sx={{ textAlign: 'center' }}>{item.name}</div>
                 </div>
               ))}
             </div>
@@ -119,7 +117,10 @@ const ProphecyPage = ({ location }) => {
                 </Box>
               ))}
             </Grid>
-            <div className={styles.tecContent} sx={{ position: ['relative', 'absolute'], mt: [4, 0] }}>
+            <div
+              className={styles.tecContent}
+              sx={{ position: ['relative', 'absolute'], mt: [4, 0], left: [0, '50%'] }}
+            >
               <div sx={{ color: 'orange.primary', variant: 'texts.h4', mb: 3 }}>
                 {TechnologyData.data[curTec].title}
               </div>
@@ -132,7 +133,7 @@ const ProphecyPage = ({ location }) => {
       </section>
       <section id={curMenu[5]?.id} sx={{ color: 'white', py: 6, mx: 'auto', maxWidth: 'maxWidth', px: [2, 0] }}>
         <div sx={{ mb: 2, variant: 'texts.caption' }}>參考資料</div>
-        <ul sx={{ listStyle: 'decimal', variant: 'texts.overline' }}>
+        <ul className={styles.referList} sx={{ listStyle: 'decimal', variant: 'texts.overline' }}>
           <li>
             Chan KCA, Woo JKS, King A, et al. Analysis of Plasma Epstein-Barr Virus DNA to Screen for Nasopharyngeal
             Cancer. N Engl J Med. 2017; 377(6):513-522. doi:10.1056/NEJMoa1701717.
