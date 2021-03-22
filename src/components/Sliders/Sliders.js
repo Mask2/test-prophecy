@@ -6,16 +6,17 @@ import styles from './Sliders.module.css';
 const Sliders = ({ title, img }) => (
   <div
     className={styles.wrapper}
-    style={{
+    sx={{
       backgroundImage: `url(${img})`,
+      height: ['slideMobileHeight', 'slideHeight'],
+      bg: 'white',
+      boxShadow: '0 0 1px 3px rgba(0, 0, 0, .125)',
     }}
-    sx={{ height: 'slideHeight', bg: 'background', boxShadow: '0 0 1px 3px rgba(0, 0, 0, .125)' }}
   >
     <div
       sx={{
-        color: 'text',
-        fontFamily: 'body',
-        fontSize: 6,
+        variant: ['texts.h3', 'texts.h1'],
+        color: 'white',
       }}
     >
       {title}

@@ -14,38 +14,14 @@
   transform: translate(-50%, -50%);
   display: flex;
   justify-content: flex-end;
-  width: var(--lg);
 }
 .introInner {
   width: 40%;
-  padding: 16px;
-  background-image: radial-gradient(
-    circle at left bottom,
-    rgba(146, 183, 202, 0.75) 0%,
-    rgba(5, 91, 167, 0.75) 100%
-  );
-  background-position: left top;
-  background-repeat: no-repeat;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
 }
 
-.introInner p {
-  font-size: 16px;
-}
 .main {
   position: relative;
   min-height: 100vh;
-  background-color: rgba(255, 255, 255, 0);
-  background-image: radial-gradient(
-    circle at left center,
-    #92b7ca 0%,
-    #055ba7 100%
-  );
-  background-position: center center;
-  background-repeat: no-repeat;
 }
 .mouseButton {
   position: absolute;
@@ -55,17 +31,12 @@
   width: 22px;
   height: 66px;
   cursor: pointer;
-  z-index: 10;
   margin: 0;
 }
 .mouseButton img {
   display: block;
   width: 100%;
   height: 100%;
-}
-
-p {
-  font-size: 20px;
 }
 
 .wrapper {
@@ -79,10 +50,6 @@ p {
   padding-bottom: 48px;
 }
 
-.section1 {
-  /* height: 500px; */
-}
-
 .swiperWrapper {
   width: 374px;
 }
@@ -91,18 +58,7 @@ p {
   width: 374px;
   margin: 0 auto;
 }
-.prophecyResult {
-  width: calc(66.666666666667% - ((4% + 4%) * 0.66666666666667));
-  padding: 20px;
-  border-radius: 12px;
-  border: 1px solid #fff;
-  margin: 0 auto;
-}
-.prophecyResult p {
-  margin: 0;
-  font-size: 13px;
-  line-height: 28px;
-}
+
 .divide {
   border-color: rgba(255, 255, 255, 0.2);
   border-top-width: 10px;
@@ -117,9 +73,6 @@ p {
 
 .largePostCard {
   width: 60%;
-}
-.postCard {
-  width: 278px;
 }
 
 .postsRight {
@@ -200,4 +153,9 @@ p {
   height: 130px;
   border-radius: 50%;
   margin-bottom: 10px;
+}
+.bookNews {
+  background-image: url(../../static/bg_02.png);
+  background-position: center center;
+  background-repeat: no-repeat;
 }

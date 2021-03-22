@@ -9,28 +9,23 @@
   width: 100%;
   height: auto;
   margin: 0;
+  object-fit: cover;
 }
 
-.content {
-  width: 100%;
-  padding: 20px;
-  background: linear-gradient(to right, #f38e22, #ea5b29 50%, transparent 50%);
-  background-size: 200% 100%;
-  background-position: 100%;
-  transition: background-position 275ms ease;
-  line-height: 1.6;
+.cover {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.88));
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
-
-.content:hover {
-  background-position: 0%;
-}
-
-.title {
-  font-size: 16px;
-  margin: 0;
-}
-
-.metainfo {
-  font-size: 12px;
-  margin: 0;
+.cover:hover {
+  opacity: 1;
 }

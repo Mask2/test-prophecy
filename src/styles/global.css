@@ -4,14 +4,16 @@
   --padding: 30px;
   --primary: #143b6d;
   --hover: #ea5b29;
-  --hover-gradient: linear-gradient(
-    to right,
-    #f38e22,
-    #ea5b29 100%,
-    transparent 50%
-  );
+  --orange-muted: #f8ac17;
 }
 
 body {
   min-height: 100vh;
+}
+
+ul,
+li {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }

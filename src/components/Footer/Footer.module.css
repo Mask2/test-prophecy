@@ -17,17 +17,8 @@
   padding-top: 20px;
 }
 
-a {
-  color: #fff;
-  text-decoration: none;
-}
-.content a:hover {
-  color: #ea5b29;
-  position: relative;
-}
-
-.content a:hover::after {
-  content: "";
+.content .link:hover::after {
+  content: '';
   position: absolute;
   width: 100%;
   height: 3px;

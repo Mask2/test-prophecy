@@ -1,19 +1,27 @@
 [
   {
     "name": "企業背景",
-    "path": "/introduction",
+    "path": "/take2introduction",
     "children": [
       {
+        "name": "企業願景",
+        "path": "/take2introduction#Teamaim",
+        "id": "Teamaim"
+      },
+      {
         "name": "品牌故事",
-        "path": "/introduction/#BrandStory"
+        "path": "/take2introduction#BrandStory",
+        "id": "BrandStory"
       },
       {
         "name": "團隊使命",
-        "path": "/introduction/#TeamAim"
+        "path": "/take2introduction#TeamAim",
+        "id": "TeamAim"
       },
       {
         "name": "團隊掠影",
-        "path": "/introduction/#TeamIntro"
+        "path": "/take2introduction#TeamIntro",
+        "id": "TeamIntro"
       }
     ]
   },
@@ -23,23 +31,28 @@
     "children": [
       {
         "name": "甚麼是Take2 Prophecy™",
-        "path": "/take2prophecy/#WhatIsProphecy"
+        "path": "/take2prophecy#WhatIsProphecy",
+        "id": "WhatIsProphecy"
       },
       {
         "name": "篩查四部曲",
-        "path": "/take2prophecy/#4Steps"
+        "path": "/take2prophecy#FourSteps",
+        "id": "FourSteps"
       },
       {
         "name": "「鼻」無可避？早期篩查的重要性",
-        "path": "/take2prophecy/#NoseInevitable"
+        "path": "/take2prophecy#NoseInevitable",
+        "id": "NoseInevitable"
       },
       {
         "name": "Take2 Prophecy™ 的特點",
-        "path": "/take2prophecy/#Features"
+        "path": "/take2prophecy#Features",
+        "id": "Features"
       },
       {
         "name": "Take2 Prophecy™ 的革新科技",
-        "path": "/take2prophecy/#NewTechnology"
+        "path": "/take2prophecy#NewTechnology",
+        "id": "NewTechnology"
       }
     ]
   },
@@ -68,11 +81,13 @@
     "children": [
       {
         "name": "合作伙伴",
-        "path": "/take2prophecy/#Partner"
+        "path": "/findourservices#Partner",
+        "id": "Partner"
       },
       {
         "name": "篩查服務覆蓋點",
-        "path": "/take2prophecy/#ServiceArea"
+        "path": "/findourservices#ServiceArea",
+        "id": "ServiceArea"
       }
     ]
   }

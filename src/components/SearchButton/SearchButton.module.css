@@ -1,0 +1,36 @@
+.cover {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: -1000%;
+  bottom: 0;
+  height: 100vh;
+  opacity: 0;
+  transition: opacity 0.4s ease 0s, top 0s ease 0s;
+}
+.innerCover {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.showCover {
+  opacity: 1;
+  top: 0;
+}
+
+.inputWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.input {
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid #000;
+  outline: 0;
+  display: block;
+  width: 100%;
+  flex-shrink: 1;
+  margin: 0;
+}

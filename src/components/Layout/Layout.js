@@ -6,7 +6,7 @@
  */
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useStaticQuery, graphql } from 'gatsby';
+import { withPrefix } from 'gatsby';
 import SEO from '/src/components/Seo';
 import Sliders from '/src/components/Sliders/Sliders';
 
@@ -17,27 +17,17 @@ import './Layout.module.css';
 import JSONData from '../../data/pageInfo.json';
 
 const Layout = ({ children, location }) => {
-  const [curPageInfo, setCurPageInfo] = useState({});
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-          menuLinks {
-            name
-            link
-          }
-        }
-      }
-    }
-  `);
+  const [curPageInfo, setCurPageInfo] = useState({ title: '' });
+  console.log('Layout');
   useEffect(() => {
-    const curPageInfo = JSONData.find((item) => item.path === location.pathname);
-    setCurPageInfo(curPageInfo || {});
+    let curPageInfo = JSONData.find(
+      (item) => withPrefix(location.pathname).indexOf(item.path) > -1 && item.path !== '/',
+    );
+    setCurPageInfo(curPageInfo || { title: '' });
   }, [location.pathname]);
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata?.title || `Title`} />
+      <Header pathname={location.pathname} />
       <div
         style={{
           margin: `0 auto`,
@@ -45,7 +35,7 @@ const Layout = ({ children, location }) => {
       >
         <main>
           <SEO title={curPageInfo.title} />
-          <Sliders title={curPageInfo.title} img={curPageInfo.img} />
+          {curPageInfo.img && <Sliders title={curPageInfo.title} img={curPageInfo.img} />}
           {children}
         </main>
       </div>
