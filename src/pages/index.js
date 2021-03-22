@@ -180,9 +180,9 @@ const IndexPage = ({ data }) => {
             </div>
           </div>
         </section>
-        <section className={styles.bookNews} sx={{ bg: 'white' }}>
-          <div sx={{ color: 'blue.primaryText', maxWidth: 'maxWidth', mx: 'auto', py: 10 }}>
-            <h2 sx={{ variant: 'texts.h2' }}>訂閱最新資訊</h2>
+        <section className={styles.bookNews} sx={{ bg: 'white', px: [1, 0] }}>
+          <div sx={{ color: 'blue.primaryText', maxWidth: 'maxWidth', mx: 'auto', py: [6, 10] }}>
+            <h2 sx={{ variant: ['texts.h3', 'texts.h2'] }}>訂閱最新資訊</h2>
             <p sx={{ variant: 'texts.body1' }}>關愛自己及家人，立即訂閱，獲取健康資訊。</p>
             <form action=''>
               <div sx={{ mb: 2, display: 'flex', maxWidth: '800px' }}>
@@ -216,6 +216,7 @@ const IndexPage = ({ data }) => {
                   display: 'flex',
                   alignItems: 'center',
                   mt: 2,
+                  flexWrap: 'wrap',
                 }}
               >
                 <Checkbox name='agree' defaultChecked={false} sx={{ mr: 1 }} />

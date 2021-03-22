@@ -1,13 +1,15 @@
 /** @jsx jsx */
 import React, { useState, useEffect } from 'react';
-import { jsx, Button, Input } from 'theme-ui';
+import { jsx, Input } from 'theme-ui';
 import { graphql } from 'gatsby';
 import * as JsSearch from 'js-search';
 import styles from './search.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import PostCard from '../components/PostCard/PostCard';
 
 const SearchPage = ({ data }) => {
+  console.log('SearchPage', data);
   const [search, setSearch] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
@@ -35,7 +37,7 @@ const SearchPage = ({ data }) => {
     dataToSearch.addIndex(['frontmatter', 'autor']); // sets the index attribute for the data
     dataToSearch.addIndex(['frontmatter', 'date']); // sets the index attribute for the data
 
-    dataToSearch.addDocuments([...data.allMdx.nodes]); // adds the data to be searched
+    dataToSearch.addDocuments(data.allMdx.nodes); // adds the data to be searched
 
     setSearch(dataToSearch);
   };
@@ -46,14 +48,15 @@ const SearchPage = ({ data }) => {
 
   const searchData = (e) => {
     const queryResult = search.search(e.target.value);
+    console.log('queryResult', queryResult);
     setSearchQuery(e.target.value);
     setSearchResults(queryResult);
   };
 
   return (
-    <div sx={{ bg: 'muted' }}>
-      <div sx={{ bg: 'primary', py: 6 }}>
-        <div className={styles.searchHeader} sx={{ mx: 'auto', maxWidth: 'maxWidth' }}>
+    <>
+      <div sx={{ bg: 'blue.primary', py: 6 }}>
+        <div className={styles.searchHeader} sx={{ mx: 'auto', maxWidth: 'maxWidth', px: [2, 0] }}>
           <div className={styles.label} sx={{ color: 'white', fontSize: 3, my: 3 }}>
             你搜索了{searchQuery}
           </div>
@@ -64,23 +67,37 @@ const SearchPage = ({ data }) => {
               name='search'
               value={searchQuery}
               onChange={searchData}
-              sx={{ bg: 'text', border: 'none', borderRadius: 0 }}
+              sx={{ bg: 'white', border: 'none', borderRadius: 0 }}
             />
-            <Button className={styles.submitButton} sx={{ bg: '#000', width: '55px', height: '55px', borderRadius: 0 }}>
+            <div
+              className={styles.submitButton}
+              sx={{ bg: '#000', color: 'white', variant: 'buttons.iconNormal', height: 'auto' }}
+            >
               <FontAwesomeIcon icon={faSearch} />
-            </Button>
+            </div>
           </div>
         </div>
       </div>
-      <div sx={{ mx: 'auto', maxWidth: 'maxWidth', display: 'none' }}>
+      <div sx={{ mx: 'auto', maxWidth: 'maxWidth', bg: 'blue.muted1' }}>
         <div className={styles.resultsWrapper}>
           <div className={styles.results}>
             <div className={styles.result} />
           </div>
         </div>
-        {JSON.stringify(searchResults, null, 4)}
+        <div sx={{ bg: 'blue.muted2', px: [2, 0] }}>
+          {searchResults?.length
+            ? searchResults.map((item) => (
+                <PostCard
+                  sx={{ maxWidth: ['100%', '30.2%'], m: [2, '1.5%'] }}
+                  key={item.id}
+                  {...item.frontmatter}
+                  path={`/${item.slug}`}
+                />
+              ))
+            : null}
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
@@ -91,8 +108,10 @@ export const query = graphql`
         id
         frontmatter {
           title
-          date
+          date(locale: "YYYY-MM-DD")
+          image
         }
+        slug
         rawBody
       }
     }

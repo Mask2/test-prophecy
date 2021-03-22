@@ -23,14 +23,13 @@ const SearchG = ({ data }) => {
   const [query, setQuery] = useState(null);
   const results = useFlexSearch(query, data.localSearchPages.index, data.localSearchPages.store);
   useEffect(() => {
-    console.log('results:', results);
+    console.log('results:', query);
   }, [results]);
   return (
     <div>
       <Formik
         initialValues={{ query: '' }}
         onSubmit={(values, { setSubmitting }) => {
-          console.log('Formik:', values);
           setQuery(values.query);
           setSubmitting(false);
         }}
