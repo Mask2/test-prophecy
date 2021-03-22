@@ -83,7 +83,7 @@
 
 .locationInfo {
   background-color: #000000;
-  background-image: url(../../static/download.jpg);
+  background-image: url(/download.jpg);
   background-position: center center;
   background-repeat: no-repeat;
   border-width: 0px 0px 0px 0px;
@@ -107,7 +107,7 @@
 }
 .moreInfo {
   background-color: #494949;
-  background-image: url(../../static/bg_01.png);
+  background-image: url(/bg_01.png);
   background-position: center center;
   background-repeat: no-repeat;
   border-width: 0px 0px 0px 0px;
@@ -153,7 +153,7 @@
   margin-bottom: 10px;
 }
 .bookNews {
-  background-image: url(../../static/bg_02.png);
+  background-image: url(/bg_02.png);
   background-position: center center;
   background-repeat: no-repeat;
 }

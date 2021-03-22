@@ -45,7 +45,7 @@ module.exports = {
     ],
   },
   pathPrefix: '/github-pages-demo',
-  assetPrefix: `https://mask2.github.io`,
+  assetPrefix: `https://mask2.github.io/github-pages-demo`,
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
