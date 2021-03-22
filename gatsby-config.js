@@ -44,7 +44,7 @@ module.exports = {
       },
     ],
   },
-  pathPrefix: '/github-pages-demo',
+  pathPrefix: '/test-prophecy',
   assetPrefix: `https://mask2.github.io`,
   plugins: [
     `gatsby-plugin-react-helmet`,

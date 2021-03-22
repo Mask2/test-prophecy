@@ -1,22 +1,22 @@
 [
   {
     "title": "革新科技",
-    "image": "/download-1.png",
-    "gif": "/icon1.gif"
+    "image": "/test-prophecy/download-1.png",
+    "gif": "/test-prophecy/icon1.gif"
   },
   {
     "title": "團隊掠影",
-    "image": "/download-2.png",
-    "gif": "/icon2.gif"
+    "image": "/test-prophecy/download-2.png",
+    "gif": "/test-prophecy/icon2.gif"
   },
   {
     "title": "專題報導",
-    "image": "/download-3.png",
-    "gif": "/icon3.gif"
+    "image": "/test-prophecy/download-3.png",
+    "gif": "/test-prophecy/icon3.gif"
   },
   {
     "title": "聯絡我們",
-    "image": "/download-4.png",
-    "gif": "/icon4.gif"
+    "image": "/test-prophecy/download-4.png",
+    "gif": "/test-prophecy/icon4.gif"
   }
 ]
