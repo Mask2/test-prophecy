@@ -44,6 +44,7 @@ module.exports = {
       },
     ],
   },
+  pathPrefix: '/github-pages-demo',
   plugins: [
     `gatsby-plugin-react-helmet`,
     {
