@@ -50,6 +50,7 @@
     "eslint-plugin-react": "^7.22.0",
     "eslint-webpack-plugin": "^2.5.2",
     "gatsby-plugin-eslint": "^3.0.0",
+    "gh-pages": "^3.1.0",
     "prettier": "2.2.1"
   },
   "keywords": [
@@ -63,7 +64,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 0",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public -r https://$GH_TOKEN@github.com/Mask2/github-pages-demo.git"
   },
   "repository": {
     "type": "git",
