@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { jsx } from 'theme-ui';
 import { withPrefix } from 'gatsby';
 import scrollTo from 'gatsby-plugin-smoothscroll';
-import Video from '/src/components/video';
+import Video from '/src/components/Video/Video';
 import EntryBox from '/src/components/EntryBox/EntryBox';
 import styles from './take2introduction.module.css';
 import MenuData from '/src/data/menu.json';

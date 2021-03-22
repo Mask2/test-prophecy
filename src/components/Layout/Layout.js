@@ -7,7 +7,7 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { withPrefix } from 'gatsby';
-import SEO from '/src/components/Seo';
+import SEO from '/src/components/Seo/Seo';
 import Sliders from '/src/components/Sliders/Sliders';
 
 import Header from '../Header/Header';
@@ -18,7 +18,6 @@ import JSONData from '../../data/pageInfo.json';
 
 const Layout = ({ children, location }) => {
   const [curPageInfo, setCurPageInfo] = useState({ title: '' });
-  console.log('Layout');
   useEffect(() => {
     let curPageInfo = JSONData.find(
       (item) => withPrefix(location.pathname).indexOf(item.path) > -1 && item.path !== '/',

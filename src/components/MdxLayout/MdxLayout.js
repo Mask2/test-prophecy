@@ -6,7 +6,7 @@ import { MDXProvider } from '@mdx-js/react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 import { faFacebookF, faLinkedinIn, faWhatsapp } from '@fortawesome/free-brands-svg-icons';
-import Video from '../video';
+import Video from '../Video/Video';
 import styles from './MdxLayout.module.css';
 
 const components = {
