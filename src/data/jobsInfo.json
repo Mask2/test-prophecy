@@ -1,9 +1,9 @@
 {
   "title": "Take2 Health期望成為您的舞台。",
   "areas": [
-    { "area": "香港", "icon": "/download-3.png" },
-    { "area": "中国内地", "icon": "/download-3.png" },
-    { "area": "其他亚洲地区", "icon": "/download-3.png" }
+    { "area": "香港", "icon": "/test-prophecy/download-3.png" },
+    { "area": "中国内地", "icon": "/test-prophecy/download-3.png" },
+    { "area": "其他亚洲地区", "icon": "/test-prophecy/download-3.png" }
   ],
   "jobs": [
     {

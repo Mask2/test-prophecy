@@ -4,20 +4,20 @@
     "date": "23 Dec 2020",
     "auth": "健康資訊",
     "path": "/healthinfo/post1",
-    "image": "../../Dr_Amy_FB-health-tips_Dec-21_final-1024x576.jpg"
+    "image": "/test-prophecy/Dr_Amy_FB-health-tips_Dec-21_final-1024x576.jpg"
   },
   {
     "title": "您認識甚麼是廣東癌嗎？",
     "date": "21 Sep 2020",
     "auth": "健康資訊",
     "path": "/healthinfo/post2",
-    "image": "../../News_Img02-1024x576.jpg"
+    "image": "/test-prophecy/News_Img02-1024x576.jpg"
   },
   {
     "title": "鼻咽位置您要知！",
     "date": "21 Sep 2020",
     "auth": "健康資訊",
     "path": "/healthinfo/post3",
-    "image": "../../News_Img03-1024x576.jpg"
+    "image": "/test-prophecy/News_Img03-1024x576.jpg"
   }
 ]
