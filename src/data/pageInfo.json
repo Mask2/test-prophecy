@@ -9,55 +9,55 @@
     "title": "企業背景",
     "description": "品牌故事,團隊使命,團隊掠影",
     "path": "/take2introduction",
-    "img": "../../4-1.png"
+    "img": "/4-1.png"
   },
   {
     "title": "早期鼻咽癌篩查",
     "description": "甚麼是Take2 Prophecy,篩查四部曲,「鼻」無可避？早期篩查的重要性,「鼻」無可避？早期篩查的重要性",
     "path": "/take2prophecy",
-    "img": "../../tat_ming.png"
+    "img": "/tat_ming.png"
   },
   {
     "title": "健康資訊",
     "description": "",
     "path": "/healthinfo",
-    "img": "../../2-2.png"
+    "img": "/2-2.png"
   },
   {
     "title": "最新動態及推廣",
     "description": "最新推廣活動",
     "path": "/promotions",
-    "img": "../../6.png"
+    "img": "/6.png"
   },
   {
     "title": "專題報導",
     "description": "專題報導",
     "path": "/news",
-    "img": "../../6.png"
+    "img": "/6.png"
   },
   {
     "title": "服務覆蓋點",
     "description": "合作伙伴,篩查服務覆蓋點",
     "path": "/findourservices",
-    "img": "../../5.png"
+    "img": "/5.png"
   },
   {
     "title": "404",
     "description": "找不到该页面",
     "path": "/404",
-    "img": "../../4-1.png"
+    "img": "/4-1.png"
   },
   {
     "title": "加入我们",
     "description": "",
     "path": "/joinus",
-    "img": "../../4-1.png"
+    "img": "/4-1.png"
   },
   {
     "title": "联系我们",
     "description": "",
     "path": "/contactus",
-    "img": "../../4-1.png"
+    "img": "/4-1.png"
   },
   {
     "title": "联系我们",
