@@ -7,7 +7,7 @@ cache: yarn
 deploy:
   provider: script
   script: yarn install && yarn run deploy
-  cleanup: true
+  skip_cleanup: true
   on:
     branch: develop
 env:
