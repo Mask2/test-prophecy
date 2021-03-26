@@ -8,6 +8,7 @@ import styles from './ProphecySteps.module.css';
 
 const ProphecySteps = () => {
   const [current, setCurrent] = useState(0);
+
   const data = useStaticQuery(graphql`
     query {
       allProphecyStepsJson {
@@ -20,6 +21,7 @@ const ProphecySteps = () => {
       }
     }
   `);
+
   return (
     <>
       <div sx={{ py: 6, textAlign: 'center' }}>

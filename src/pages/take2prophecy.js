@@ -13,9 +13,11 @@ import TechnologyData from '/src/data/technologyInfo.json';
 const ProphecyPage = ({ location }) => {
   const [curMenu, setCurMenu] = useState([]);
   const [curTec, setCurTec] = useState(0);
+
   useEffect(() => {
-    setCurMenu(MenuData.find((menu) => menu.path === withPrefix(location.pathname))?.children || []);
+    setCurMenu(MenuData.find((menu) => location.pathname === withPrefix(menu.path))?.children || []);
   }, [location.pathname]);
+
   return (
     <div sx={{ variant: 'gradients.blue2' }}>
       <div

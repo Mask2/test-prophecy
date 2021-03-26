@@ -9,7 +9,6 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import PostCard from '../components/PostCard/PostCard';
 
 const SearchPage = ({ data }) => {
-  console.log('SearchPage', data);
   const [search, setSearch] = useState([]);
   const [searchResults, setSearchResults] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
@@ -48,7 +47,6 @@ const SearchPage = ({ data }) => {
 
   const searchData = (e) => {
     const queryResult = search.search(e.target.value);
-    console.log('queryResult', queryResult);
     setSearchQuery(e.target.value);
     setSearchResults(queryResult);
   };

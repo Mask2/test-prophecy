@@ -11,9 +11,11 @@ import TeamInfoData from '/src/data/teamInfo.json';
 
 const IntroductionPage = ({ location }) => {
   const [curMenu, setCurMenu] = useState([]);
+
   useEffect(() => {
-    setCurMenu(MenuData.find((menu) => menu.path === withPrefix(location.pathname))?.children || []);
+    setCurMenu(MenuData.find((menu) => location.pathname === withPrefix(menu.path))?.children || []);
   }, [location.pathname]);
+
   return (
     <div className={styles.wrapper} sx={{ variant: 'gradients.blue2' }}>
       <div

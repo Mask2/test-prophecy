@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useFlexSearch } from 'react-use-flexsearch';
 import { graphql } from 'gatsby';
 import { Formik, Form, Field } from 'formik';
@@ -22,9 +22,7 @@ export const pageQuery = graphql`
 const SearchG = ({ data }) => {
   const [query, setQuery] = useState(null);
   const results = useFlexSearch(query, data.localSearchPages.index, data.localSearchPages.store);
-  useEffect(() => {
-    console.log('results:', query);
-  }, [results]);
+
   return (
     <div>
       <Formik

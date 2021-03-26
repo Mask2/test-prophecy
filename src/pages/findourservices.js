@@ -12,7 +12,7 @@ const FindourservicesPage = ({ location }) => {
   const [curMenu, setCurMenu] = useState([]);
   const [curArea, setCurArea] = useState(0);
   useEffect(() => {
-    setCurMenu(MenuData.find((menu) => menu.path === withPrefix(location.pathname))?.children || []);
+    setCurMenu(MenuData.find((menu) => location.pathname === withPrefix(menu.path))?.children || []);
   }, [location.pathname]);
   return (
     <div sx={{ bg: 'blue.secondary' }}>
