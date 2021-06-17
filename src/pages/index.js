@@ -1,13 +1,13 @@
 /** @jsx jsx */
 import React, { useState } from 'react';
-import { jsx, Input, Checkbox } from 'theme-ui';
+import { jsx, Input } from 'theme-ui';
 import { graphql, Link } from 'gatsby';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons';
 import scrollTo from 'gatsby-plugin-smoothscroll';
 import ProphecySteps from '/src/components/ProphecySteps/ProphecySteps';
-import PostCard from '../components/PostCard/PostCard';
-import Swiper from 'react-id-swiper';
+// import PostCard from '../components/PostCard/PostCard';
+// import Swiper from 'react-id-swiper';
 import styles from './index.module.css';
 import 'swiper/swiper-bundle.min.css';
 
@@ -50,16 +50,16 @@ export const query = graphql`
 const IndexPage = ({ data }) => {
   const [playingGif, setPlayingGif] = useState(null);
 
-  const params = {
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true,
-    },
-    spaceBetween: 30,
-    containerClass: styles.containerWrapper,
-    wrapperClass: styles.swiperWrapper,
-  };
+  // const params = {
+  //   pagination: {
+  //     el: '.swiper-pagination',
+  //     type: 'bullets',
+  //     clickable: true,
+  //   },
+  //   spaceBetween: 30,
+  //   containerClass: styles.containerWrapper,
+  //   wrapperClass: styles.swiperWrapper,
+  // };
   return (
     <>
       <div className={styles.slidersContainer}>
@@ -104,7 +104,7 @@ const IndexPage = ({ data }) => {
           <section>
             <ProphecySteps />
           </section>
-          <section>
+          {/* <section>
             <div className={styles.secTitle}>
               <h2 sx={{ variant: 'texts.h2' }}>最新活動推廣</h2>
               <p sx={{ variant: 'texts.body1' }}>了解最新活動推廣，包括與各大專業機構的健康服務合作。</p>
@@ -114,9 +114,9 @@ const IndexPage = ({ data }) => {
                 <PostCard key={item.id} {...item} />
               ))}
             </Swiper>
-          </section>
-          <section>
-            <div className={styles.secTitle}>
+          </section> */}
+          <section sx={{ py: 2 }}>
+            {/* <div className={styles.secTitle}>
               <h2 sx={{ variant: 'texts.h2' }}>健康資訊</h2>
               <p sx={{ variant: 'texts.body1' }}>緊貼最新健康資訊，提高個人生活質素。</p>
             </div>
@@ -138,7 +138,7 @@ const IndexPage = ({ data }) => {
                   index ? <PostCard className={styles.postCard} key={item.id} {...item} sx={{ mb: [4, 0] }} /> : null,
                 )}
               </div>
-            </div>
+            </div> */}
           </section>
         </div>
         <section className={styles.locationInfo}>
@@ -209,7 +209,7 @@ const IndexPage = ({ data }) => {
                   <FontAwesomeIcon icon={faLongArrowAltRight} />
                 </div>
               </div>
-              <div
+              {/* <div
                 sx={{
                   variant: 'texts.caption',
                   color: 'gray.muted2',
@@ -229,7 +229,7 @@ const IndexPage = ({ data }) => {
                   個人資料收集聲明
                 </Link>
                 。
-              </div>
+              </div> */}
             </form>
           </div>
         </section>

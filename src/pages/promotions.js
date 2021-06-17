@@ -1,27 +1,27 @@
 /** @jsx jsx */
 import React from 'react';
 import { jsx } from 'theme-ui';
-import { graphql, Link } from 'gatsby';
-import PostCard from '../components/PostCard/PostCard';
+import { Link } from 'gatsby';
+// import PostCard from '../components/PostCard/PostCard';
 import JSONData from '/src/data/pageInfo.json';
 import styles from './post.module.css';
 
-export const query = graphql`
-  {
-    allMdx(filter: { slug: { regex: "/promotions/" } }, sort: { fields: frontmatter___date, order: DESC }) {
-      nodes {
-        id
-        frontmatter {
-          title
-          date(locale: "YYYY-MM-DD")
-          image
-        }
-        slug
-      }
-    }
-  }
-`;
-const PromotionsPage = ({ data }) => (
+// export const query = graphql`
+//   {
+//     allMdx(filter: { slug: { regex: "/promotions/" } }, sort: { fields: frontmatter___date, order: DESC }) {
+//       nodes {
+//         id
+//         frontmatter {
+//           title
+//           date(locale: "YYYY-MM-DD")
+//           image
+//         }
+//         slug
+//       }
+//     }
+//   }
+// `;
+const PromotionsPage = () => (
   <div sx={{ bg: 'blue.secondary', pt: 8, pb: 9 }}>
     <div sx={{ maxWidth: 'maxWidth', mx: 'auto' }}>
       <h2 sx={{ textAlign: 'center', pb: 3, color: 'white', variant: 'texts.h3' }}>
@@ -52,7 +52,7 @@ const PromotionsPage = ({ data }) => (
         ))}
       </div>
       <div sx={{ display: 'flex', flexWrap: 'wrap' }}>
-        {data.allMdx.nodes.map((node) => (
+        {/* {data.allMdx.nodes.map((node) => (
           <PostCard
             sx={{ maxWidth: ['100%', '30.2%'], m: [2, '1.5%'] }}
             key={node.id}
@@ -60,7 +60,7 @@ const PromotionsPage = ({ data }) => (
             path={`/${node.slug}`}
             withCover
           />
-        ))}
+        ))} */}
       </div>
     </div>
   </div>

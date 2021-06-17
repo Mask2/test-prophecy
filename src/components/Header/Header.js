@@ -5,7 +5,7 @@ import { jsx } from 'theme-ui';
 import { Waypoint } from 'react-waypoint';
 import styles from './Header.module.css';
 import classnames from 'classnames';
-import SearchButton from '/src/components/SearchButton/SearchButton';
+// import SearchButton from '/src/components/SearchButton/SearchButton';
 import Social from '/src/components/Social/Social';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
@@ -47,7 +47,7 @@ const Header = ({ pathname }) => {
             <Link sx={{ mr: 'auto' }} to='/'>
               <img className={styles.logo} src={logo} alt='logo' sx={{ height: 'headerHeight' }} />
             </Link>
-            <SearchButton />
+            {/* <SearchButton /> */}
             <div className={styles.menuBtn} sx={{ variant: 'buttons.iconSmall' }} onClick={() => setMenuState(true)}>
               <FontAwesomeIcon icon={faBars} />
             </div>

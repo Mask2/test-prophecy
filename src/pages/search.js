@@ -1,16 +1,16 @@
 /** @jsx jsx */
 import React, { useState, useEffect } from 'react';
 import { jsx, Input } from 'theme-ui';
-import { graphql } from 'gatsby';
+// import { graphql } from 'gatsby';
 import * as JsSearch from 'js-search';
 import styles from './search.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
-import PostCard from '../components/PostCard/PostCard';
+// import PostCard from '../components/PostCard/PostCard';
 
 const SearchPage = ({ data }) => {
-  const [search, setSearch] = useState([]);
-  const [searchResults, setSearchResults] = useState([]);
+  // const [search, setSearch] = useState([]);
+  // const [searchResults, setSearchResults] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
   const rebuildIndex = () => {
     const dataToSearch = new JsSearch.Search('id');
@@ -38,7 +38,7 @@ const SearchPage = ({ data }) => {
 
     dataToSearch.addDocuments(data.allMdx.nodes); // adds the data to be searched
 
-    setSearch(dataToSearch);
+    // setSearch(dataToSearch);
   };
 
   useEffect(() => {
@@ -46,9 +46,9 @@ const SearchPage = ({ data }) => {
   }, []);
 
   const searchData = (e) => {
-    const queryResult = search.search(e.target.value);
+    // const queryResult = search.search(e.target.value);
     setSearchQuery(e.target.value);
-    setSearchResults(queryResult);
+    // setSearchResults(queryResult);
   };
 
   return (
@@ -83,7 +83,7 @@ const SearchPage = ({ data }) => {
           </div>
         </div>
         <div sx={{ bg: 'blue.muted2', px: [2, 0] }}>
-          {searchResults?.length
+          {/* {searchResults?.length
             ? searchResults.map((item) => (
                 <PostCard
                   sx={{ maxWidth: ['100%', '30.2%'], m: [2, '1.5%'] }}
@@ -92,28 +92,28 @@ const SearchPage = ({ data }) => {
                   path={`/${item.slug}`}
                 />
               ))
-            : null}
+            : null} */}
         </div>
       </div>
     </>
   );
 };
 
-export const query = graphql`
-  {
-    allMdx {
-      nodes {
-        id
-        frontmatter {
-          title
-          date(locale: "YYYY-MM-DD")
-          image
-        }
-        slug
-        rawBody
-      }
-    }
-  }
-`;
+// export const query = graphql`
+//   {
+//     allMdx {
+//       nodes {
+//         id
+//         frontmatter {
+//           title
+//           date(locale: "YYYY-MM-DD")
+//           image
+//         }
+//         slug
+//         rawBody
+//       }
+//     }
+//   }
+// `;
 
 export default SearchPage;
