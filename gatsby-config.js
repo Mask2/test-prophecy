@@ -89,6 +89,7 @@ module.exports = {
     },
     `gatsby-remark-images`,
     `gatsby-plugin-theme-ui`,
+    `gatsby-plugin-material-ui`,
     {
       resolve: `gatsby-theme-blog`,
       options: {
@@ -191,6 +192,18 @@ module.exports = {
             slug: node.slug,
             body: node.rawBody,
           })),
+      },
+    },
+    {
+      resolve: `gatsby-source-strapi`,
+      options: {
+        apiURL: `http://localhost:1337`,
+        queryLimit: 1000, // Defaults to 100
+        collectionTypes: [`banner`],
+        loginData: {
+          identifier: 'ajaywu',
+          password: 'Take2ajaywu',
+        },
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
