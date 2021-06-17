@@ -152,11 +152,6 @@ module.exports = {
             allMdx {
               nodes {
                 id
-                frontmatter {
-                  date
-                  title
-                  author
-                }
                 slug
                 rawBody
               }
