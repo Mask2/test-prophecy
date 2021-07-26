@@ -1,30 +1,54 @@
-/** @jsx jsx */
-import React from 'react';
-import { Link } from 'gatsby';
+import * as React from "react"
+import { Link } from "gatsby"
 
-import { jsx } from 'theme-ui';
+// styles
+const pageStyles = {
+  color: "#232129",
+  padding: "96px",
+  fontFamily: "-apple-system, Roboto, sans-serif, serif",
+}
+const headingStyles = {
+  marginTop: 0,
+  marginBottom: 64,
+  maxWidth: 320,
+}
 
-const NotFoundPage = () => (
-  <div sx={{ mx: 'auto', maxWidth: 'maxWidth', textAlign: 'center', pt: 8, pb: 7, color: 'primary' }}>
-    <h1 sx={{ color: 'errorText', fontSize: 7, fontWeight: 'light', mb: 7 }}>404</h1>
-    <p sx={{ mb: 6 }}>對不起，未能找到頁面。返回首頁尋找更多。</p>
-    <p>Sorry, we can’t find the page you’re looking for. Go back to homepage for more information.</p>
-    <Link
-      to='/'
-      sx={{
-        fontSize: 1,
-        fontWeight: 'bold',
-        color: 'white',
-        bg: 'button',
-        py: '12px',
-        px: 7,
-        cursor: 'pointer',
-        textDecoration: 'none',
-      }}
-    >
-      返回首頁
-    </Link>
-  </div>
-);
+const paragraphStyles = {
+  marginBottom: 48,
+}
+const codeStyles = {
+  color: "#8A6534",
+  padding: 4,
+  backgroundColor: "#FFF4DB",
+  fontSize: "1.25rem",
+  borderRadius: 4,
+}
 
-export default NotFoundPage;
+// markup
+const NotFoundPage = () => {
+  return (
+    <main style={pageStyles}>
+      <title>Not found</title>
+      <h1 style={headingStyles}>Page not found</h1>
+      <p style={paragraphStyles}>
+        Sorry{" "}
+        <span role="img" aria-label="Pensive emoji">
+          😔
+        </span>{" "}
+        we couldn’t find what you were looking for.
+        <br />
+        {process.env.NODE_ENV === "development" ? (
+          <>
+            <br />
+            Try creating a page in <code style={codeStyles}>src/pages/</code>.
+            <br />
+          </>
+        ) : null}
+        <br />
+        <Link to="/">Go home</Link>.
+      </p>
+    </main>
+  )
+}
+
+export default NotFoundPage
