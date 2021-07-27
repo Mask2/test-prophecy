@@ -6,11 +6,9 @@ import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
-import Link from '@material-ui/core/Link'
 import classnames from 'classnames'
 import '../global.css'
 import Typography from '@material-ui/core/Typography'
-import Button from '@material-ui/core/Button'
 import Banner01 from '../images/banner_01.png'
 import Banner02 from '../images/banner_02.png'
 import Banner03 from '../images/banner_03.png'
@@ -246,7 +244,7 @@ const ParallaxDemo = () => {
       >
         <MenuItem onClick={scrollToHome}>Home</MenuItem>
         <MenuItem onClick={scrollToParallax}>Parallax</MenuItem>
-        <MenuItem onClick={scrollToList}>List</MenuItem>
+        <MenuItem onClick={scrollToList}>Features</MenuItem>
       </Menu>
       <Box className={classnames(classes.section, 'section-01')}>
         <Typography variant='h3' color='initial'>
