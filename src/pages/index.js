@@ -1,18 +1,56 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 import { makeStyles, createStyles } from '@material-ui/core/styles'
 import { gsap, ScrollTrigger, ScrollToPlugin } from 'gsap/all'
 import Box from '@material-ui/core/Box'
+import IconButton from '@material-ui/core/IconButton'
+import MenuIcon from '@material-ui/icons/Menu'
+import Menu from '@material-ui/core/Menu'
+import MenuItem from '@material-ui/core/MenuItem'
+import Link from '@material-ui/core/Link'
 import classnames from 'classnames'
 import '../global.css'
 import Typography from '@material-ui/core/Typography'
 import Button from '@material-ui/core/Button'
+import Banner01 from '../images/banner_01.png'
+import Banner02 from '../images/banner_02.png'
+import Banner03 from '../images/banner_03.png'
+import Parallax01 from '../images/parallax_01.png'
+import Parallax02 from '../images/parallax_02.png'
+import Parallax03 from '../images/parallax_03.png'
+import Parallax04 from '../images/parallax_04.png'
+import Parallax05 from '../images/parallax_05.png'
+import ParallaxBottom from '../images/parallax_bottom.png'
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
+
+const bannerList = [
+  {
+    title: '国内の貴重性の高い脳外科手術を厳選',
+    subtitle:
+      '日本国内でもまだ貴重な次世代のスマート治療室(SCOT®)で行われる手術は、日本国内においても難しい手術であったり、貴重な症例のものが多く含まれます。そういった貴重性の高い手術を厳選して配信しています。',
+    img: Banner01,
+  },
+  {
+    title: '手術経過が分かる無編集動画',
+    subtitle:
+      '無修正の手術動画を配信しているので、術野がはっきりと見ることができるためこれまで見ることのできなかった細かい部分までしっかりと学ぶことができ、あらゆる医師のニーズに応えることができます。',
+    img: Banner02,
+  },
+  {
+    title: '執刀医の判断がコメントで見える',
+    subtitle:
+      'OPeLinkの技術により手術動画とともに、その時どのように医師が判断を下したのかがコメントされているため、どういった理由で判断を下したのか、離れた画面越しからでも追体験することが可能です。',
+    img: Banner03,
+  },
+]
 
 const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
+      color: '#0c2f9e',
       overflowX: 'hidden',
+      fontFamily:
+        'YuGothic, "Yu Gothic", Hiragino Kaku Gothic ProN, Hiragino Sans, BIZ UDPGothic, Meiryo, Arial, sans-serif',
       '& .box': {
         height: 30,
         width: 30,
@@ -21,10 +59,49 @@ const useStyles = makeStyles((theme) =>
       '& .container': {
         display: 'flex',
         height: '100vh',
+        position: 'relative',
+        '& img': {
+          width: '50vw',
+          maxWidth: theme.spacing(52),
+          marginBottom: theme.spacing(4),
+        },
       },
       '& .panel': {
         width: '100%',
         flexShrink: 0,
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        padding: theme.spacing(0, 6.5),
+        boxSizing: 'border-box',
+        position: 'relative',
+        zIndex: 2,
+      },
+      '& .parallax-wrapper': {
+        position: 'relative',
+        height: '80vh',
+        overflow: 'hidden',
+        '& img': {
+          position: 'absolute',
+        },
+        '& .parallax-01': {},
+        '& .parallax-02': {},
+        '& .parallax-03': {},
+        '& .parallax-04': {
+          bottom: '-50%',
+          zIndex: 10,
+        },
+        '& .parallax-05': {
+          zIndex: 9,
+        },
+        '& .parallax-bottom': {
+          width: '100%',
+          left: '50%',
+          transform: 'translateX(-50%)',
+          bottom: -2,
+          zIndex: theme.zIndex.snackbar,
+        },
       },
     },
     section: {
@@ -45,8 +122,38 @@ const useStyles = makeStyles((theme) =>
     navButton: {
       position: 'fixed',
       top: theme.spacing(2),
-      left: theme.spacing(2),
-      zIndex: theme.zIndex.tooltip,
+      right: theme.spacing(2),
+      zIndex: theme.zIndex.appBar,
+    },
+    title: {
+      fontWeight: 'bold',
+      whiteSpace: 'pre-line',
+      fontSize: '2em',
+    },
+    subTitle: { maxWidth: theme.spacing(120) },
+    menuPaper: {
+      background: theme.palette.grey[100],
+      boxShadow: 'none',
+      color: theme.palette.grey[800],
+    },
+    iconButton: {
+      background: theme.palette.grey[100],
+    },
+    featureBg: {
+      position: 'absolute',
+      left: 0,
+      right: 0,
+      top: 0,
+      bottom: 0,
+      zIndex: 1,
+      backgroundColor: '#f2f5fb',
+      color: '#e7ebf4',
+      fontSize: '8.75vw',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      fontWeight: 'lighter',
+      fontFamily: "'Manrope', sans-serif",
     },
   })
 )
@@ -54,6 +161,8 @@ const useStyles = makeStyles((theme) =>
 const ParallaxDemo = () => {
   const classes = useStyles()
   const containerRef = useRef(null)
+  const [anchorEl, setAnchorEl] = useState(null)
+
   useEffect(() => {
     let sections = gsap.utils.toArray('.panel')
     gsap.to(sections, {
@@ -63,80 +172,124 @@ const ParallaxDemo = () => {
         trigger: '.container',
         pin: true,
         scrub: true,
-        snap: 1 / (sections.length - 1),
+        // snap: 1 / (sections.length - 1),
         start: 'top top',
         end: () => `+=${containerRef.current.offsetHeight}`,
         // markers: true,
       },
     })
-    gsap.to('.circle1', {
-      y: 100,
+    gsap.to('.parallax-05', {
+      y: -200,
       ease: 'none',
       scrollTrigger: {
-        trigger: '.section',
+        trigger: '.parallax-wrapper',
+        scrub: 4,
+      },
+    })
+    gsap.to('.parallax-04', {
+      y: -100,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.parallax-wrapper',
         scrub: true,
       },
     })
-    gsap.to('.circle2', {
-      y: 300,
+    gsap.to('.parallax-03', {
+      y: -400,
       ease: 'none',
       scrollTrigger: {
-        trigger: '.section',
+        trigger: '.parallax-wrapper',
         scrub: true,
       },
     })
   }, [])
 
-  const handleScrollTo = () => {
+  const handleClick = (event) => {
+    setAnchorEl(event.currentTarget)
+  }
+
+  const handleClose = () => {
+    setAnchorEl(null)
+  }
+
+  const scrollToHome = () => {
+    gsap.to(window, { duration: 1, scrollTo: '.section-01' })
+  }
+
+  const scrollToParallax = () => {
+    gsap.to(window, { duration: 1, scrollTo: '.parallax-wrapper' })
+  }
+
+  const scrollToList = () => {
     gsap.to(window, { duration: 1, scrollTo: '.container' })
   }
 
   return (
     <div className={classes.root}>
-      <Button
+      <IconButton
         className={classes.navButton}
-        variant='contained'
-        color='default'
-        onClick={handleScrollTo}
+        aria-label='menu'
+        aria-haspopup='true'
+        onClick={handleClick}
+        size='small'
+        classes={{ root: classes.iconButton }}
       >
-        test scroll to panel
-      </Button>
-      <Box className={classnames(classes.section, 'section')}>
-        <Typography variant='h5' color='initial'>
+        <MenuIcon />
+      </IconButton>
+      <Menu
+        id='simple-menu'
+        anchorEl={anchorEl}
+        keepMounted
+        open={Boolean(anchorEl)}
+        onClose={handleClose}
+        classes={{ paper: classes.menuPaper }}
+      >
+        <MenuItem onClick={scrollToHome}>Home</MenuItem>
+        <MenuItem onClick={scrollToParallax}>Parallax</MenuItem>
+        <MenuItem onClick={scrollToList}>List</MenuItem>
+      </Menu>
+      <Box className={classnames(classes.section, 'section-01')}>
+        <Typography variant='h3' color='initial'>
           section one
         </Typography>
-        <Box className={classnames(classes.circle, 'circle1')} bgcolor='yellow'>
-          <Typography variant='caption' color='initial'>
-            circle
-          </Typography>
-        </Box>
-        <Box className={classnames(classes.circle, 'circle2')} bgcolor='orange'>
-          <Typography variant='caption' color='initial'>
-            circle
-          </Typography>
-        </Box>
+      </Box>
+      <Box
+        className={classnames(classes.section, 'section', 'parallax-wrapper')}
+      >
+        <img className={classnames('parallax-01')} src={Parallax01} alt='' />
+        <img className={classnames('parallax-02')} src={Parallax02} alt='' />
+        <img className={classnames('parallax-03')} src={Parallax03} alt='' />
+        <img className={classnames('parallax-04')} src={Parallax04} alt='' />
+        <img className={classnames('parallax-05')} src={Parallax05} alt='' />
+        <img
+          className={classnames('parallax-bottom')}
+          src={ParallaxBottom}
+          alt=''
+        />
       </Box>
       <Box className={classnames(classes.section)}>
-        <Typography variant='h5' color='initial'>
+        <Typography variant='h3' color='initial'>
           section two
         </Typography>
       </Box>
       <Box ref={containerRef} className='container'>
-        <Box className='panel' bgcolor='pink'>
-          panel one
-        </Box>
-        <Box className='panel' bgcolor='yellow'>
-          panel tow
-        </Box>
-        <Box className='panel' bgcolor='orange'>
-          panel three
-        </Box>
-        <Box className='panel' bgcolor='purple'>
-          panel four
-        </Box>
+        <Box className={classes.featureBg}>Features of oprXpark</Box>
+        {bannerList.map((banner) => (
+          <Box key={banner.title} className='panel'>
+            <img src={banner.img} alt='' />
+            <Box className={classes.title} textAlign='center' paddingTop={2}>
+              {banner.title}
+            </Box>
+            <Box className={classes.subTitle} paddingTop={2}>
+              <Typography variant='subtitle1' color='initial'>
+                {banner.subtitle}
+              </Typography>
+            </Box>
+          </Box>
+        ))}
       </Box>
       <Box className={classnames(classes.section, 'footer')}>
-        <Typography variant='h5' color='initial'>
+        <Typography variant='h3' color='initial'>
           footer
         </Typography>
       </Box>
