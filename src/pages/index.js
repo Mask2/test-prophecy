@@ -6,9 +6,11 @@ import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
+// import Link from '@material-ui/core/Link'
 import classnames from 'classnames'
 import '../global.css'
 import Typography from '@material-ui/core/Typography'
+// import Button from '@material-ui/core/Button'
 import Banner01 from '../images/banner_01.png'
 import Banner02 from '../images/banner_02.png'
 import Banner03 from '../images/banner_03.png'
@@ -121,7 +123,7 @@ const useStyles = makeStyles((theme) =>
       position: 'fixed',
       top: theme.spacing(2),
       right: theme.spacing(2),
-      zIndex: theme.zIndex.appBar,
+      zIndex: theme.zIndex.appBar + 1,
     },
     title: {
       fontWeight: 'bold',
@@ -152,6 +154,38 @@ const useStyles = makeStyles((theme) =>
       alignItems: 'center',
       fontWeight: 'lighter',
       fontFamily: "'Manrope', sans-serif",
+    },
+    mainToolBar: {
+      height: 80,
+      background: theme.palette.grey[200],
+      color: theme.palette.primary.main,
+      textAlign: 'center',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      position: 'fixed',
+      width: '100%',
+      left: 0,
+      top: 0,
+      transition: 'ease 0.4s',
+      '& --scrolled': {
+        height: 40,
+      },
+      zIndex: theme.zIndex.appBar,
+    },
+    fadeInWrapper: {
+      display: 'flex',
+      justifyContent: 'space-around',
+      '& .fade-in': {
+        width: 150,
+        height: 200,
+        backgroundColor: theme.palette.grey[300],
+        borderRadius: theme.spacing(1),
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        cursor: 'pointer',
+      },
     },
   })
 )
@@ -200,6 +234,36 @@ const ParallaxDemo = () => {
         scrub: true,
       },
     })
+
+    const showAnim = gsap
+      .from('.main-tool-bar', {
+        yPercent: -100,
+        paused: true,
+        duration: 0.1,
+      })
+      .progress(1)
+
+    ScrollTrigger.create({
+      start: 'top top',
+      end: 99999,
+      onUpdate: (self) => {
+        self.direction === -1 ? showAnim.play() : showAnim.reverse()
+      },
+    })
+
+    const anim = gsap.fromTo(
+      '.fade-in',
+      { autoAlpha: 0, y: -50 },
+      { duration: 1, autoAlpha: 1, y: 0, stagger: 0.3 }
+    )
+    ScrollTrigger.create({
+      trigger: '.fade-in',
+      start: 'center center',
+      animation: anim,
+      toggleActions: 'play none none none',
+      once: true,
+      // markers: true,
+    })
   }, [])
 
   const handleClick = (event) => {
@@ -246,6 +310,9 @@ const ParallaxDemo = () => {
         <MenuItem onClick={scrollToParallax}>Parallax</MenuItem>
         <MenuItem onClick={scrollToList}>Features</MenuItem>
       </Menu>
+      <div className={classnames('main-tool-bar', classes.mainToolBar)}>
+        Header
+      </div>
       <Box className={classnames(classes.section, 'section-01')}>
         <Typography variant='h3' color='initial'>
           section one
@@ -264,6 +331,12 @@ const ParallaxDemo = () => {
           src={ParallaxBottom}
           alt=''
         />
+      </Box>
+      <Box className={classnames(classes.section, classes.fadeInWrapper)}>
+        <div className='fade-in'>1</div>
+        <div className='fade-in'>2</div>
+        <div className='fade-in'>3</div>
+        <div className='fade-in'>4</div>
       </Box>
       <Box className={classnames(classes.section)}>
         <Typography variant='h3' color='initial'>
