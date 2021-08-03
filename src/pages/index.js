@@ -258,7 +258,6 @@ const ParallaxDemo = () => {
     )
     ScrollTrigger.create({
       trigger: '.fade-in',
-      start: 'top center',
       animation: anim,
       toggleActions: 'play none none none',
       once: true,
