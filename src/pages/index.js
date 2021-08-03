@@ -6,11 +6,11 @@ import IconButton from '@material-ui/core/IconButton'
 import MenuIcon from '@material-ui/icons/Menu'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
-import Link from '@material-ui/core/Link'
+// import Link from '@material-ui/core/Link'
 import classnames from 'classnames'
 import '../global.css'
 import Typography from '@material-ui/core/Typography'
-import Button from '@material-ui/core/Button'
+// import Button from '@material-ui/core/Button'
 import Banner01 from '../images/banner_01.png'
 import Banner02 from '../images/banner_02.png'
 import Banner03 from '../images/banner_03.png'
@@ -173,6 +173,20 @@ const useStyles = makeStyles((theme) =>
       },
       zIndex: theme.zIndex.appBar,
     },
+    fadeInWrapper: {
+      display: 'flex',
+      justifyContent: 'space-around',
+      '& .fade-in': {
+        width: 150,
+        height: 200,
+        backgroundColor: theme.palette.grey[300],
+        borderRadius: theme.spacing(1),
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        cursor: 'pointer',
+      },
+    },
   })
 )
 
@@ -235,6 +249,20 @@ const ParallaxDemo = () => {
       onUpdate: (self) => {
         self.direction === -1 ? showAnim.play() : showAnim.reverse()
       },
+    })
+
+    const anim = gsap.fromTo(
+      '.fade-in',
+      { autoAlpha: 0, y: -50 },
+      { duration: 1, autoAlpha: 1, y: 0, stagger: 0.3 }
+    )
+    ScrollTrigger.create({
+      trigger: '.fade-in',
+      start: 'center center',
+      animation: anim,
+      toggleActions: 'play none none none',
+      once: true,
+      // markers: true,
     })
   }, [])
 
@@ -303,6 +331,12 @@ const ParallaxDemo = () => {
           src={ParallaxBottom}
           alt=''
         />
+      </Box>
+      <Box className={classnames(classes.section, classes.fadeInWrapper)}>
+        <div className='fade-in'>1</div>
+        <div className='fade-in'>2</div>
+        <div className='fade-in'>3</div>
+        <div className='fade-in'>4</div>
       </Box>
       <Box className={classnames(classes.section)}>
         <Typography variant='h3' color='initial'>
