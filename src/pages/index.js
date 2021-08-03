@@ -123,7 +123,7 @@ const useStyles = makeStyles((theme) =>
       position: 'fixed',
       top: theme.spacing(2),
       right: theme.spacing(2),
-      zIndex: theme.zIndex.appBar,
+      zIndex: theme.zIndex.appBar + 1,
     },
     title: {
       fontWeight: 'bold',
@@ -154,6 +154,24 @@ const useStyles = makeStyles((theme) =>
       alignItems: 'center',
       fontWeight: 'lighter',
       fontFamily: "'Manrope', sans-serif",
+    },
+    mainToolBar: {
+      height: 80,
+      background: theme.palette.grey[200],
+      color: theme.palette.primary.main,
+      textAlign: 'center',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      position: 'fixed',
+      width: '100%',
+      left: 0,
+      top: 0,
+      transition: 'ease 0.4s',
+      '& --scrolled': {
+        height: 40,
+      },
+      zIndex: theme.zIndex.appBar,
     },
   })
 )
@@ -202,6 +220,22 @@ const ParallaxDemo = () => {
         scrub: true,
       },
     })
+
+    const showAnim = gsap
+      .from('.main-tool-bar', {
+        yPercent: -100,
+        paused: true,
+        duration: 0.1,
+      })
+      .progress(1)
+
+    ScrollTrigger.create({
+      start: 'top top',
+      end: 99999,
+      onUpdate: (self) => {
+        self.direction === -1 ? showAnim.play() : showAnim.reverse()
+      },
+    })
   }, [])
 
   const handleClick = (event) => {
@@ -248,6 +282,9 @@ const ParallaxDemo = () => {
         <MenuItem onClick={scrollToParallax}>Parallax</MenuItem>
         <MenuItem onClick={scrollToList}>List</MenuItem>
       </Menu>
+      <div className={classnames('main-tool-bar', classes.mainToolBar)}>
+        Header
+      </div>
       <Box className={classnames(classes.section, 'section-01')}>
         <Typography variant='h3' color='initial'>
           section one
