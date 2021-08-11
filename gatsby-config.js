@@ -4,7 +4,7 @@ module.exports = {
     title: 'campaign-test',
   },
   pathPrefix: '/test-prophecy',
-  assetPrefix: `https://mask2.github.io`,
+  // assetPrefix: `https://mask2.github.io`,
   plugins: [
     'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',

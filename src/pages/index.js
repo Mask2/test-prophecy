@@ -1,12 +1,12 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { makeStyles, createStyles } from '@material-ui/core/styles'
 import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
 import Icon from '@material-ui/core/Icon'
+import Typography from '@material-ui/core/Typography'
 
 import classnames from 'classnames'
-import Annotate from '../components/Annotate'
 
 import MingO1 from '../images/ming_01.png'
 import MingO2 from '../images/ming_02.png'
@@ -26,11 +26,7 @@ import {
   symptomListData,
   serviceListData,
 } from '../utils/constant'
-
-import { gsap, ScrollTrigger, ScrollToPlugin } from 'gsap/all'
-import Typography from '@material-ui/core/Typography'
-
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
+import Annotate from '../components/Annotate'
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -217,8 +213,6 @@ const useStyles = makeStyles((theme) =>
 
 const ParallaxDemo = () => {
   const classes = useStyles()
-
-  useEffect(() => {}, [])
 
   const flipCards = (params) =>
     cardListData.map((card) => (

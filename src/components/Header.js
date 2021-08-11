@@ -6,14 +6,12 @@ import MenuIcon from '@material-ui/icons/Menu'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
 import Typography from '@material-ui/core/Typography'
+import classnames from 'classnames'
 
 import Logo from '../images/logo.png'
 import { menuListData } from '../utils/constant'
 
-import classnames from 'classnames'
-import { gsap, ScrollTrigger, ScrollToPlugin } from 'gsap/all'
-
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
+import { gsap, ScrollTrigger } from '../utils/initGsap'
 
 const useStyles = makeStyles((theme) =>
   createStyles({
