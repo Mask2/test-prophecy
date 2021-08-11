@@ -39,27 +39,27 @@ const useStyles = makeStyles((theme) =>
     },
     sectionOne: {
       height: theme.spacing(90),
-      background: theme.palette.gradient.main,
+      background: theme.palette.background.main,
       position: 'relative',
       overflow: 'hidden',
     },
     sectionTwo: {
-      backgroundImage: `url(${WaveDots}),${theme.palette.gradient.dark}`,
+      backgroundImage: `url(${WaveDots}),${theme.palette.background.dark}`,
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'contain',
       backgroundPositionY: 'center',
       backgroundPositionX: 'center',
     },
     sectionThree: {
-      background: theme.palette.gradient.light,
+      background: theme.palette.background.light,
       position: 'relative',
     },
     sectionFour: {
-      background: theme.palette.gradient.light,
+      background: theme.palette.background.light,
       overflowX: 'hidden',
     },
     sectionFive: {
-      background: theme.palette.gradient.light,
+      background: theme.palette.background.light,
       position: 'relative',
     },
     sectionSix: {
@@ -94,7 +94,7 @@ const useStyles = makeStyles((theme) =>
       width: theme.spacing(56),
       height: theme.spacing(56),
       borderRadius: '50%',
-      background: theme.palette.gradient.main180,
+      background: theme.palette.background.main180,
       zIndex: 1,
     },
 

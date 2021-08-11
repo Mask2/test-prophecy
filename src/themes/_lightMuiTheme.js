@@ -31,12 +31,12 @@ const theme = createTheme({
     //   dark: '#113162',
     //   light: 'rgba(218, 235, 255, 0.2)',
     // },
-    gradient: {
-      main: 'linear-gradient(77.5deg, #408CBB 0%, #CDEAFA 110.27%)',
-      dark: 'linear-gradient(150.62deg, #1B295D 11.31%, #1C4170 81.99%)',
-      light: 'linear-gradient(150.62deg, #1E517E 11.31%, #4182A2 81.99%)',
-      main180: 'linear-gradient(180deg, #428DBC 0%, #BBDEF2 100%)',
-    },
+    // gradient: {
+    //   main: 'linear-gradient(77.5deg, #408CBB 0%, #CDEAFA 110.27%)',
+    //   dark: 'linear-gradient(150.62deg, #1B295D 11.31%, #1C4170 81.99%)',
+    //   light: 'linear-gradient(150.62deg, #1E517E 11.31%, #4182A2 81.99%)',
+    //   main180: 'linear-gradient(180deg, #428DBC 0%, #BBDEF2 100%)',
+    // },
     text: {
       primary: '#2E3192',
       secondary: '#F05923',
@@ -46,6 +46,10 @@ const theme = createTheme({
     background: {
       default: '#7BB8C8',
       menu: 'rgba(255, 255, 255, 0.9)',
+      main: 'linear-gradient(77.5deg, #408CBB 0%, #CDEAFA 110.27%)',
+      dark: 'linear-gradient(150.62deg, #1B295D 11.31%, #1C4170 81.99%)',
+      light: 'linear-gradient(150.62deg, #1E517E 11.31%, #4182A2 81.99%)',
+      main180: 'linear-gradient(180deg, #428DBC 0%, #BBDEF2 100%)',
     },
     divider: 'rgba(37, 33, 59, 0.3)',
     tonalOffset: 0.4,
