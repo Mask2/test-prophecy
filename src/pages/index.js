@@ -587,7 +587,11 @@ const ParallaxDemo = () => {
                 variant='outlined'
                 startIcon={
                   <Icon classes={{ root: classes.iconRoot }}>
-                    <img className={classes.imageIcon} src={IconCalendar} />
+                    <img
+                      className={classes.imageIcon}
+                      src={IconCalendar}
+                      alt='calendar'
+                    />
                   </Icon>
                 }
               >
@@ -602,7 +606,11 @@ const ParallaxDemo = () => {
                 variant='outlined'
                 startIcon={
                   <Icon classes={{ root: classes.iconRoot }}>
-                    <img className={classes.imageIcon} src={IconFavorite} />
+                    <img
+                      className={classes.imageIcon}
+                      src={IconFavorite}
+                      alt='favorite'
+                    />
                   </Icon>
                 }
               >
@@ -617,7 +625,11 @@ const ParallaxDemo = () => {
                 variant='outlined'
                 startIcon={
                   <Icon classes={{ root: classes.iconRoot }}>
-                    <img className={classes.imageIcon} src={IconLocation} />
+                    <img
+                      className={classes.imageIcon}
+                      src={IconLocation}
+                      alt='location'
+                    />
                   </Icon>
                 }
               >

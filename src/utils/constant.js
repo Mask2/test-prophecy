@@ -78,9 +78,9 @@ export const cardListData = [
   },
   {
     label: '饮食习惯',
-    icon: Question01,
+    icon: Question05,
     question: '有无会怕？',
-    answer: AnswerO1,
+    answer: AnswerO5,
   },
 ]
 

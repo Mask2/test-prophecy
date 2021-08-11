@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { makeStyles, createStyles } from '@material-ui/core/styles'
 import Box from '@material-ui/core/Box'
 import IconButton from '@material-ui/core/IconButton'
@@ -12,7 +12,7 @@ import { menuListData } from '../utils/constant'
 
 import classnames from 'classnames'
 import { gsap, ScrollTrigger, ScrollToPlugin } from 'gsap/all'
-import Button from '@material-ui/core/Button'
+
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin)
 
 const useStyles = makeStyles((theme) =>
@@ -74,7 +74,6 @@ const useStyles = makeStyles((theme) =>
 
 const Header = () => {
   const classes = useStyles()
-  const containerRef = useRef(null)
   const [anchorEl, setAnchorEl] = useState(null)
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget)
