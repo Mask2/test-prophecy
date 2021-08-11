@@ -53,33 +53,33 @@ export const menuListData = [
 
 export const cardListData = [
   {
-    label: '年轻',
+    label: '年輕',
     icon: Question01,
-    question: '有无会怕？',
+    question: '就無有怕？',
     answer: AnswerO1,
   },
   {
-    label: '男士专利',
+    label: '男士「專利」？',
     icon: Question02,
-    question: '有无会怕？',
+    question: '',
     answer: AnswerO2,
   },
   {
-    label: '七老八十',
+    label: '「七老八十」',
     icon: Question03,
-    question: '才会患上',
+    question: '才會患上？',
     answer: AnswerO3,
   },
   {
-    label: '鼻咽癌',
+    label: '鼻咽癌病微',
     icon: Question04,
-    question: '有无会怕？',
+    question: '一睇就知？',
     answer: AnswerO4,
   },
   {
-    label: '饮食习惯',
+    label: '飲食習慣',
     icon: Question05,
-    question: '有无会怕？',
+    question: '都能引致鼻咽癌？',
     answer: AnswerO5,
   },
 ]
