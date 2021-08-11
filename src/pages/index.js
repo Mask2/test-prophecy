@@ -6,6 +6,7 @@ import Button from '@material-ui/core/Button'
 import Icon from '@material-ui/core/Icon'
 
 import classnames from 'classnames'
+import Annotate from '../components/Annotate'
 
 import MingO1 from '../images/ming_01.png'
 import MingO2 from '../images/ming_02.png'
@@ -14,7 +15,10 @@ import IconCalendar from '../images/svg/icon_calendar.svg'
 import IconFavorite from '../images/svg/icon_favorite.svg'
 import IconLocation from '../images/svg/icon_location.svg'
 import TemVideo from '../images/tem_video.png'
-import Annotate from '../components/Annotate'
+import LineDots from '../images/bg_line_dots.png'
+import WaveDots from '../images/bg_wave_dots.png'
+import CellTop from '../images/bg_cell_top.png'
+import CellBottom from '../images/bg_cell_bottom.png'
 
 import {
   menuListData,
@@ -40,7 +44,11 @@ const useStyles = makeStyles((theme) =>
       overflow: 'hidden',
     },
     sectionTwo: {
-      background: theme.palette.gradient.dark,
+      backgroundImage: `url(${WaveDots}),${theme.palette.gradient.dark}`,
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'contain',
+      backgroundPositionY: 'center',
+      backgroundPositionX: 'center',
     },
     sectionThree: {
       background: theme.palette.gradient.light,
@@ -110,6 +118,11 @@ const useStyles = makeStyles((theme) =>
       transform: 'rotateY(0deg)',
       transformStyle: 'preserve-3d',
       perspective: 1000,
+      cursor: 'pointer',
+      transition: 'transform 0.7s ease-in-out',
+      '&:hover': {
+        transform: 'rotateY(-180deg)',
+      },
     },
     questionContent: {
       width: '100%',
@@ -159,9 +172,24 @@ const useStyles = makeStyles((theme) =>
       display: 'block',
       mb: theme.spacing(2),
     },
+    serviceWrapper: {
+      backgroundImage: `url(${CellTop}),url(${CellBottom})`,
+      backgroundRepeat: 'no-repeat,no-repeat',
+      backgroundSize: '60%,70%',
+      backgroundPositionY: 'top,bottom',
+      backgroundPositionX: 'left,right',
+      borderRadius: theme.spacing(1),
+    },
     serviceCard: {
       display: 'block',
       height: theme.spacing(30),
+    },
+    footerTitle: {
+      backgroundImage: `url(${LineDots})`,
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+      backgroundPositionY: 'center',
+      backgroundPositionX: 'left',
     },
     buttonRoot: {
       width: '32%',
@@ -476,21 +504,25 @@ const ParallaxDemo = () => {
                 令患者存活率可高達9成⁸。
               </Box>
             </Typography>
-            <Box py={10} px={8} bgcolor='background.paper'>
+            <Box
+              className={classes.serviceWrapper}
+              py={10}
+              px={8}
+              mt={8}
+              bgcolor='background.paper'
+            >
               <Typography component='div'>
                 <Box
-                  fontSize='h5.fontSize'
+                  fontSize='h4.fontSize'
                   fontWeight='fontWeightBold'
                   color='text.secondary'
-                  lineHeight={2}
                 >
                   Take2 Prophecy™
                 </Box>
                 <Box
-                  fontSize='h5.fontSize'
+                  fontSize='h4.fontSize'
                   fontWeight='fontWeightBold'
                   color='text.disabled'
-                  lineHeight={2}
                 >
                   早期鼻咽癌篩查服務特色
                 </Box>
@@ -523,6 +555,7 @@ const ParallaxDemo = () => {
           fontSize='h5.fontSize'
           fontWeight='fontWeightBold'
           py={4}
+          className={classes.footerTitle}
         >
           <Container maxWidth='lg'>联系我们</Container>
         </Box>
