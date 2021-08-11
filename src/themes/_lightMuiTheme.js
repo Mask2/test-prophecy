@@ -35,9 +35,10 @@ const theme = createTheme({
       main: 'linear-gradient(77.5deg, #408CBB 0%, #CDEAFA 110.27%)',
       dark: 'linear-gradient(150.62deg, #1B295D 11.31%, #1C4170 81.99%)',
       light: 'linear-gradient(150.62deg, #1E517E 11.31%, #4182A2 81.99%)',
+      main180: 'linear-gradient(180deg, #428DBC 0%, #BBDEF2 100%)',
     },
     text: {
-      primary: '#2E4095',
+      primary: '#2E3192',
       secondary: '#F05923',
       disabled: '#6BA8D7',
       hint: '#007FB2',
