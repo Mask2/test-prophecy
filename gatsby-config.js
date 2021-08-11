@@ -3,7 +3,7 @@ module.exports = {
     siteUrl: 'https://www.yourdomain.tld',
     title: 'campaign-test',
   },
-  pathPrefix: '/test-prophecy/',
+  pathPrefix: '/test-prophecy',
   assetPrefix: `https://mask2.github.io`,
   plugins: [
     'gatsby-plugin-image',
