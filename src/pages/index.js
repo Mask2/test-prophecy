@@ -74,7 +74,7 @@ const useStyles = makeStyles((theme) =>
     },
     sectionOneInfo: {
       bottom: theme.spacing(32),
-      left: '20%',
+      left: '10%',
       zIndex: 2,
     },
     sectionOneImg: {
@@ -320,13 +320,13 @@ const ParallaxDemo = () => {
         </Typography>
         <Box
           className={classnames(classes.sectionMotion, classes.circle)}
-          left='30%'
-          bottom='-10%'
+          left='15%'
+          bottom='-5%'
         ></Box>
         <Box
           className={classnames(classes.sectionMotion, classes.circle)}
-          left='50%'
-          bottom='10%'
+          left='55%'
+          bottom='12%'
         ></Box>
         <img
           className={classnames(classes.sectionMotion, classes.sectionOneImg)}
