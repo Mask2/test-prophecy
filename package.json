@@ -1,8 +1,8 @@
 {
-  "name": "campagin-test",
+  "name": "campaign-test",
   "version": "1.0.0",
   "private": true,
-  "description": "campagin-test",
+  "description": "campaign-test",
   "author": "Mask2",
   "keywords": [
     "gatsby"
@@ -11,7 +11,7 @@
     "develop": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build --prefix-paths",
-    "serve": "gatsby serve",
+    "serve": "gatsby serve --prefix-paths",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 0",
     "deploy": "gatsby build --prefix-paths && gh-pages -d public -r https://$GH_TOKEN@github.com/Mask2/github-pages-demo.git"
@@ -22,7 +22,7 @@
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "classnames": "^2.3.1",
-    "gatsby": "3.11.0",
+    "gatsby": "^3.10.1",
     "gatsby-plugin-image": "^1.10.1",
     "gatsby-plugin-manifest": "^3.10.0",
     "gatsby-plugin-material-ui": "^3.0.1",
