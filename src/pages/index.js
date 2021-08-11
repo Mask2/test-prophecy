@@ -4,9 +4,12 @@ import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
 
+import classnames from 'classnames'
+
 import MingO1 from '../images/ming_01.png'
 import MingO2 from '../images/ming_02.png'
 import MingO3 from '../images/ming_03.png'
+import { menuListData } from '../utils/constant'
 
 import { gsap, ScrollTrigger, ScrollToPlugin } from 'gsap/all'
 
@@ -55,31 +58,28 @@ const ParallaxDemo = () => {
 
   return (
     <Box className={classes.root}>
-      <Box>
-        {/* <Container maxWidth='lg'>
-          <Box bgcolor=''>header</Box>
-        </Container> */}
-      </Box>
-      <Box className={classes.sectionOne}></Box>
-      <Box className={classes.sectionTwo}></Box>
-      <Box className={classes.sectionThree}>
+      <Box className={classnames(classes.sectionOne, menuListData[0].id)}></Box>
+      <Box className={classnames(classes.sectionTwo, menuListData[1].id)}></Box>
+      <Box className={classnames(classes.sectionThree, menuListData[2].id)}>
         <img
           className={classes.mingImage}
           src={MingO2}
           alt='Cheung Tat Ming 02'
         />
       </Box>
-      <Box className={classes.sectionFour}></Box>
-      <Box className={classes.sectionFive}>
+      <Box
+        className={classnames(classes.sectionFour, menuListData[3].id)}
+      ></Box>
+      <Box className={classnames(classes.sectionFive, menuListData[4].id)}>
         <img
-          className={classes.mingImage}
+          className={classnames(classes.mingImage, menuListData[5].id)}
           src={MingO3}
           alt='Cheung Tat Ming 03'
         />
       </Box>
-      <Box className={classes.sectionSix}></Box>
+      <Box className={classnames(classes.sectionSix, menuListData[6].id)}></Box>
       <footer>
-        <Box className={classes.footer}></Box>
+        <Box className={classnames(classes.footer, menuListData[7].id)}></Box>
       </footer>
     </Box>
   )

@@ -44,6 +44,7 @@ const theme = createTheme({
     },
     background: {
       default: '#7BB8C8',
+      menu: 'rgba(255, 255, 255, 0.9)',
     },
     divider: 'rgba(37, 33, 59, 0.3)',
     tonalOffset: 0.4,
