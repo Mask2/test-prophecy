@@ -51,6 +51,7 @@ const theme = createTheme({
       light: 'linear-gradient(150.62deg, #1E517E 11.31%, #4182A2 81.99%)',
       main140: 'linear-gradient(140deg, #428DBC 0%, #BBDEF2 100%)',
       main124: 'linear-gradient(124deg, #428DBC 0%, #BBDEF2 100%)',
+      secondaryLight: '#FFBD6D',
     },
     divider: 'rgba(37, 33, 59, 0.3)',
     tonalOffset: 0.4,

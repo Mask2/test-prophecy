@@ -155,10 +155,11 @@ const useStyles = makeStyles((theme) =>
       width: '100%',
     },
     sectionText: {
-      fontSize: theme.typography.h2.fontSize,
+      fontSize: theme.typography.h3.fontSize,
       fontWeight: 'bolder',
       zIndex: 2,
       position: 'absolute',
+      overflow: 'hidden',
     },
     cardWrapper: {},
     questionWrapper: {
@@ -315,6 +316,75 @@ const ParallaxDemo = () => {
     })
   }, [])
 
+  // section three text motion
+  useEffect(() => {
+    const t1 = gsap.timeline()
+    t1.fromTo(
+      // text one motion
+      '.section-three-text-one-cover',
+      { xPercent: -100 },
+      { xPercent: -96, duration: 0.2 }
+    )
+      .fromTo(
+        '.section-three-text-one',
+        { opacity: 0 },
+        { opacity: 1, duration: 1 }
+      )
+      .to('.section-three-text-one-cover', { xPercent: 0, duration: 0.2 }, '<')
+      .to(
+        '.section-three-text-one-cover',
+        { xPercent: -96, duration: 0.2 },
+        '<0.2'
+      )
+      .to(
+        '.section-three-text-one-cover',
+        {
+          xPercent: -100,
+          opacity: 0,
+          duration: 0.2,
+        },
+        '<0.2'
+      )
+      .fromTo(
+        // text two motion
+        '.section-three-text-two-cover',
+        { xPercent: -100 },
+        { xPercent: -96, duration: 0.2 },
+        '<-0.2'
+      )
+      .fromTo(
+        '.section-three-text-two',
+        { opacity: 0 },
+        { opacity: 1, duration: 1 },
+        '<'
+      )
+      .to('.section-three-text-two-cover', { xPercent: 0, duration: 0.2 }, '<')
+      .to(
+        '.section-three-text-two-cover',
+        { xPercent: -96, duration: 0.2 },
+        '<0.2'
+      )
+      .to(
+        '.section-three-text-two-cover',
+        {
+          xPercent: -100,
+          opacity: 0,
+          duration: 0.2,
+        },
+        '<0.2'
+      )
+
+    ScrollTrigger.create({
+      trigger: '.section-three',
+      animation: t1,
+      start: 'top 20%',
+      // toggleActions: 'play none none none',
+      // once: true,
+      scrub: true,
+      markers: true,
+    })
+  }, [])
+
   // section four flip cards motion
   useEffect(() => {
     let flipCards = gsap.utils.toArray('.flip-card')
@@ -351,7 +421,31 @@ const ParallaxDemo = () => {
     })
   }, [])
 
-  // section five symptoms fade in motion
+  // section five text motion
+  useEffect(() => {
+    const t1 = gsap.timeline()
+    t1.fromTo(
+      '.section-five-text-one-line',
+      { xPercent: -100 },
+      { xPercent: 0, duration: 1 }
+    ).fromTo(
+      '.section-five-text-two-line',
+      { xPercent: 100 },
+      { xPercent: 0, duration: 1 },
+      '<'
+    )
+    ScrollTrigger.create({
+      trigger: '.section-five',
+      animation: t1,
+      start: 'top 20%',
+      // toggleActions: 'play none none none',
+      // once: true,
+      scrub: true,
+      markers: true,
+    })
+  }, [])
+
+  // section six symptoms fade in motion
   useEffect(() => {
     const symptomsFadeIn = gsap.fromTo(
       '.symptom-card',
@@ -564,27 +658,53 @@ const ParallaxDemo = () => {
           </Box>
         </Container>
       </Box>
-      <Box className={classnames(classes.sectionThree, menuListData[2].id)}>
+      <Box
+        className={classnames(
+          classes.sectionThree,
+          menuListData[2].id,
+          'section-three'
+        )}
+      >
         <img
           className={classes.mingImage}
           src={matches ? MobileMing02 : Ming02}
           alt='Cheung Tat Ming 02'
         />
         <Box
-          left='20%'
-          bottom='35%'
-          color='secondary.light'
+          left='18%'
+          bottom='40%'
+          color='background.secondaryLight'
           className={classes.sectionText}
+          px={2}
         >
-          鼻咽癌
+          <div className='section-three-text-one'>鼻咽癌</div>
+          <Box
+            position='absolute'
+            left='0'
+            top='0'
+            bottom='0'
+            right='0'
+            bgcolor='background.secondaryLight'
+            className='section-three-text-one-cover'
+          ></Box>
         </Box>
         <Box
-          left='55%'
-          bottom='35%'
+          right='16%'
+          bottom='40%'
           color='primary.contrastText'
           className={classes.sectionText}
+          px={2}
         >
-          真的離你很遠？
+          <div className='section-three-text-two'>真的離你很遠？</div>
+          <Box
+            position='absolute'
+            left='0'
+            top='0'
+            bottom='0'
+            right='0'
+            bgcolor='background.paper'
+            className='section-three-text-two-cover'
+          ></Box>
         </Box>
       </Box>
       <Box
@@ -635,7 +755,13 @@ const ParallaxDemo = () => {
           {dots()}
         </Box>
       </Box>
-      <Box className={classnames(classes.sectionFive, menuListData[4].id)}>
+      <Box
+        className={classnames(
+          classes.sectionFive,
+          menuListData[4].id,
+          'section-five'
+        )}
+      >
         <img
           className={classnames(classes.mingImage, menuListData[5].id)}
           src={matches ? MobileMing03 : Ming03}
@@ -643,19 +769,33 @@ const ParallaxDemo = () => {
         />
         <Box
           className={classes.sectionText}
-          left='20%'
-          bottom='50%'
+          left='13%'
+          bottom='48%'
           color='primary.contrastText'
         >
           鼻咽癌不能「預防」
+          <Box
+            width='100%'
+            height={8}
+            mt={1}
+            bgcolor='secondary.main'
+            className='section-five-text-one-line'
+          ></Box>
         </Box>
         <Box
           className={classes.sectionText}
           right='10%'
-          bottom='30%'
+          bottom='24%'
           color='primary.contrastText'
         >
           卻能「提防」
+          <Box
+            width='100%'
+            height={8}
+            mt={1}
+            bgcolor='secondary.main'
+            className='section-five-text-two-line'
+          ></Box>
         </Box>
       </Box>
       <Box
