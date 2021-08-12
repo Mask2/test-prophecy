@@ -130,7 +130,7 @@ const Header = () => {
           gsap.to(window, { duration: 1, scrollTo: `.${menu.id}` })
         }
       >
-        <Typography variant='body1' color='text.primary' component='div'>
+        <Typography variant='body1' color='textPrimary' component='div'>
           <Box textAlign='center'>{menu.label}</Box>
         </Typography>
       </MenuItem>

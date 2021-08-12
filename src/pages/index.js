@@ -1,16 +1,20 @@
-import React from 'react'
-import { makeStyles, createStyles } from '@material-ui/core/styles'
+import React, { useEffect } from 'react'
+import { makeStyles, createStyles, useTheme } from '@material-ui/core/styles'
 import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
 import Icon from '@material-ui/core/Icon'
 import Typography from '@material-ui/core/Typography'
+import useMediaQuery from '@material-ui/core/useMediaQuery'
 
 import classnames from 'classnames'
 
-import MingO1 from '../images/ming_01.png'
-import MingO2 from '../images/ming_02.png'
-import MingO3 from '../images/ming_03.png'
+import Ming01 from '../images/ming_01.png'
+import Ming02 from '../images/ming_02.png'
+import Ming03 from '../images/ming_03.png'
+import MobileMing01 from '../images/mobile_ming_01.png'
+import MobileMing02 from '../images/mobile_ming_02.png'
+import MobileMing03 from '../images/mobile_ming_03.png'
 import IconCalendar from '../images/svg/icon_calendar.svg'
 import IconFavorite from '../images/svg/icon_favorite.svg'
 import IconLocation from '../images/svg/icon_location.svg'
@@ -27,17 +31,93 @@ import {
   serviceListData,
 } from '../utils/constant'
 import Annotate from '../components/Annotate'
+import { gsap, ScrollTrigger } from '../utils/initGsap'
 
 const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
       fontFamily: theme.typography.body1.fontFamily,
+      overflowX: 'hidden',
     },
     sectionOne: {
       height: theme.spacing(90),
       background: theme.palette.background.main,
       position: 'relative',
+      [theme.breakpoints.only('xs')]: {
+        height: '140vw',
+      },
+    },
+    sectionOneContainer: {
+      height: '100%',
+      position: 'relative',
       overflow: 'hidden',
+      display: 'flex',
+      justifyContent: 'center',
+    },
+    sectionOneInfo: {
+      left: theme.spacing(2),
+      bottom: theme.spacing(35),
+      zIndex: 4,
+      lineHeight: 2,
+      fontWeight: '600',
+      [theme.breakpoints.only('xs')]: {
+        lineHeight: 1.4,
+        fontWeight: '500',
+        left: theme.spacing(2.5),
+        bottom: theme.spacing(12),
+      },
+    },
+    sectionOneImg: {
+      position: 'relative',
+      zIndex: 3,
+      marginTop: 'auto',
+      display: 'block',
+      maxHeight: '100%',
+      [theme.breakpoints.only('xs')]: {
+        width: '100%',
+      },
+    },
+    sectionOneTitle: {
+      left: 0,
+      right: 0,
+      textAlign: 'center',
+      zIndex: 4,
+      bottom: theme.spacing(10),
+      fontSize: theme.typography.h1.fontSize,
+      fontWeight: 'lighter',
+      [theme.breakpoints.down('sm')]: {
+        fontSize: theme.typography.h3.fontSize,
+        bottom: theme.spacing(2.25),
+      },
+    },
+    circle: {
+      width: theme.spacing(49.25),
+      height: theme.spacing(49.25),
+      borderRadius: '50%',
+      [theme.breakpoints.only('xs')]: {
+        width: theme.spacing(56),
+        height: theme.spacing(56),
+      },
+    },
+    circleOne: {
+      background: theme.palette.background.main124,
+      left: theme.spacing(19),
+      bottom: theme.spacing(-5),
+      zIndex: '2',
+      [theme.breakpoints.only('xs')]: {
+        left: theme.spacing(-30),
+        bottom: theme.spacing(-14.5),
+      },
+    },
+    circleTwo: {
+      background: theme.palette.background.main140,
+      right: theme.spacing(21.5),
+      bottom: theme.spacing(16),
+      zIndex: '1',
+      [theme.breakpoints.only('xs')]: {
+        right: theme.spacing(-10),
+        bottom: theme.spacing(-2),
+      },
     },
     sectionTwo: {
       backgroundImage: `url(${WaveDots}),${theme.palette.background.dark}`,
@@ -45,6 +125,8 @@ const useStyles = makeStyles((theme) =>
       backgroundSize: 'contain',
       backgroundPositionY: 'center',
       backgroundPositionX: 'center',
+      position: 'relative',
+      zIndex: 10,
     },
     sectionThree: {
       background: theme.palette.background.light,
@@ -68,32 +150,6 @@ const useStyles = makeStyles((theme) =>
     sectionMotion: {
       position: 'absolute',
     },
-    sectionOneInfo: {
-      bottom: theme.spacing(32),
-      left: '10%',
-      zIndex: 2,
-    },
-    sectionOneImg: {
-      width: theme.spacing(120),
-      transform: 'translateX(-50%)',
-      bottom: 0,
-      left: '50%',
-      zIndex: 3,
-    },
-    sectionOneTitle: {
-      left: 0,
-      right: 0,
-      textAlign: 'center',
-      zIndex: 4,
-    },
-    circle: {
-      width: theme.spacing(56),
-      height: theme.spacing(56),
-      borderRadius: '50%',
-      background: theme.palette.background.main180,
-      zIndex: 1,
-    },
-
     temVideo: {
       display: 'block',
       width: '100%',
@@ -213,6 +269,50 @@ const useStyles = makeStyles((theme) =>
 
 const ParallaxDemo = () => {
   const classes = useStyles()
+  const theme = useTheme()
+  const matches = useMediaQuery(theme.breakpoints.only('xs'))
+
+  // section one parallax motion
+  useEffect(() => {
+    gsap.to('.section-one-info', {
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.section-one-info',
+        start: 'top center',
+        end: 'bottom top',
+        pin: true,
+        scrub: true,
+        pinSpacing: false,
+      },
+    })
+    gsap.to('.section-one-circle-one', {
+      y: -400,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.section-one',
+        start: 'top top',
+        scrub: true,
+      },
+    })
+    gsap.to('.section-one-circle-two', {
+      y: -400,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.section-one',
+        start: 'top top',
+        scrub: true,
+      },
+    })
+    gsap.to('.section-one-ming', {
+      y: 400,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: '.section-one',
+        scrub: true,
+        start: 'top top',
+      },
+    })
+  }, [])
 
   const flipCards = (params) =>
     cardListData.map((card) => (
@@ -295,49 +395,74 @@ const ParallaxDemo = () => {
 
   return (
     <Box className={classes.root}>
-      <Box className={classnames(classes.sectionOne, menuListData[0].id)}>
-        <Typography
-          className={classnames(classes.sectionMotion, classes.sectionOneInfo)}
-          component='div'
-        >
+      <Box
+        className={classnames(
+          classes.sectionOne,
+          menuListData[0].id,
+          'section-one'
+        )}
+      >
+        <Container className={classes.sectionOneContainer} maxWidth='lg'>
+          <Typography
+            className={classnames(
+              classes.sectionMotion,
+              classes.sectionOneInfo,
+              'section-one-info'
+            )}
+            component='div'
+          >
+            <Box
+              fontSize='h6.fontSize'
+              color='primary.contrastText'
+              letterSpacing='1px'
+            >
+              張達明
+              <br />
+              鼻咽癌康復者」
+              <br />
+              早期鼻咽癌存活率：
+              {matches ? (
+                <Box fontSize='h5.fontSize' component='div' fontWeight='600'>
+                  90%+
+                </Box>
+              ) : (
+                <Box fontSize='h5.fontSize' component='span'>
+                  90%+
+                </Box>
+              )}
+            </Box>
+          </Typography>
           <Box
-            fontSize='body1.fontSize'
-            fontWeight='600'
-            lineHeight='2'
+            className={classnames(
+              classes.sectionMotion,
+              classes.circle,
+              classes.circleOne,
+              'section-one-circle-one'
+            )}
+          ></Box>
+          <Box
+            className={classnames(
+              classes.sectionMotion,
+              classes.circle,
+              classes.circleTwo,
+              'section-one-circle-two'
+            )}
+          ></Box>
+          <img
+            className={classnames(classes.sectionOneImg, 'section-one-ming')}
+            src={matches ? MobileMing01 : Ming01}
+            alt='Cheung Tat Ming 01'
+          />
+          <Box
+            className={classnames(
+              classes.sectionMotion,
+              classes.sectionOneTitle
+            )}
             color='primary.contrastText'
           >
-            張達明
-            <br />
-            鼻咽癌康復者」
-            <br />
-            早期鼻咽癌存活率：
-            <Box fontSize='h5.fontSize' component='span'>
-              90%+
-            </Box>
+            GO LIVE AGAIN
           </Box>
-        </Typography>
-        <Box
-          className={classnames(classes.sectionMotion, classes.circle)}
-          left='15%'
-          bottom='-5%'
-        ></Box>
-        <Box
-          className={classnames(classes.sectionMotion, classes.circle)}
-          left='55%'
-          bottom='12%'
-        ></Box>
-        <img
-          className={classnames(classes.sectionMotion, classes.sectionOneImg)}
-          src={MingO1}
-          alt='Cheung Tat Ming 01'
-        />
-        <Box
-          className={classnames(classes.sectionMotion, classes.sectionOneTitle)}
-          bottom='10%'
-          color='primary.contrastText'
-        >
-          <Typography variant='h1'>GO LIVE AGAIN</Typography>
-        </Box>
+        </Container>
       </Box>
       <Box
         className={classnames(classes.sectionTwo, menuListData[1].id)}
@@ -369,7 +494,7 @@ const ParallaxDemo = () => {
       <Box className={classnames(classes.sectionThree, menuListData[2].id)}>
         <img
           className={classes.mingImage}
-          src={MingO2}
+          src={matches ? MobileMing02 : Ming02}
           alt='Cheung Tat Ming 02'
         />
         <Box
@@ -430,7 +555,7 @@ const ParallaxDemo = () => {
       <Box className={classnames(classes.sectionFive, menuListData[4].id)}>
         <img
           className={classnames(classes.mingImage, menuListData[5].id)}
-          src={MingO3}
+          src={matches ? MobileMing03 : Ming03}
           alt='Cheung Tat Ming 03'
         />
         <Box
