@@ -87,7 +87,7 @@ export const cardListData = [
 export const symptomListData = [
   {
     label: '頭痛',
-    icon: Question04,
+    icon: Question05,
   },
   {
     label: '鼻塞',

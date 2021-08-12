@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { makeStyles, createStyles, useTheme } from '@material-ui/core/styles'
 import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
@@ -271,6 +271,7 @@ const ParallaxDemo = () => {
   const classes = useStyles()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.only('xs'))
+  const flipCardsContainerRef = useRef(null)
 
   // section one parallax motion
   useEffect(() => {
@@ -314,9 +315,80 @@ const ParallaxDemo = () => {
     })
   }, [])
 
+  // section four flip cards motion
+  useEffect(() => {
+    let flipCards = gsap.utils.toArray('.flip-card')
+
+    // gsap.to(flipCards, {
+    //   x: -400 * (flipCards.length - 1),
+    //   ease: 'none',
+    //   scrollTrigger: {
+    //     trigger: '.flip-cards-container',
+    //     pin: true,
+    //     scrub: true,
+    //     // snap: 1 / (flipCards.length - 1),
+    //     start: 'center center',
+    //     end: () => `end +=${flipCardsContainerRef.current.offsetHeight}`,
+    //     pinSpacing: false,
+    //     markers: true,
+    //   },
+    // })
+    const t1 = gsap.timeline(flipCards, {
+      scrollTrigger: {
+        trigger: '.section-four',
+        pin: true,
+        scrub: true,
+        start: 'top 200px',
+        end: '+=398',
+        pinSpacing: false,
+        markers: true,
+      },
+    })
+    flipCards.forEach((flipCard) => {
+      t1.fromTo(flipCard, { rotateY: 0 }, { rotateY: 180, duration: 1 })
+        .to('.flip-cards-container', { x: '-=398', duration: 2 })
+        .fromTo(flipCard, { rotateY: 180 }, { rotateY: 0, duration: 1 })
+    })
+  }, [])
+
+  // section five symptoms fade in motion
+  useEffect(() => {
+    const symptomsFadeIn = gsap.fromTo(
+      '.symptom-card',
+      { autoAlpha: 0, y: -100 },
+      { duration: 2, autoAlpha: 1, y: 0, stagger: 0.6 }
+    )
+    ScrollTrigger.create({
+      trigger: '.symptom-card-wrapper',
+      animation: symptomsFadeIn,
+      start: 'top center',
+      toggleActions: 'play none none none',
+      once: true,
+    })
+  }, [])
+
+  // section six services fade in motion
+  useEffect(() => {
+    const servicesFadeIn = gsap.fromTo(
+      '.service-card',
+      { autoAlpha: 0, y: -50 },
+      { duration: 1, autoAlpha: 1, y: 0, stagger: 0.3 }
+    )
+    ScrollTrigger.create({
+      trigger: '.service-card-wrapper',
+      animation: servicesFadeIn,
+      start: 'top center',
+      toggleActions: 'play none none none',
+      once: true,
+    })
+  }, [])
+
   const flipCards = (params) =>
     cardListData.map((card) => (
-      <Box className={classes.questionWrapper} key={card.label}>
+      <Box
+        className={classnames(classes.questionWrapper, 'flip-card')}
+        key={card.label}
+      >
         <Box className={classes.questionContent}>
           <Box
             fontSize='h5.fontSize'
@@ -375,6 +447,7 @@ const ParallaxDemo = () => {
         flexDirection='column'
         alignItems='center'
         key={symptom.label}
+        className='symptom-card'
       >
         <img
           className={classes.symptomIcon}
@@ -515,7 +588,11 @@ const ParallaxDemo = () => {
         </Box>
       </Box>
       <Box
-        className={classnames(classes.sectionFour, menuListData[3].id)}
+        className={classnames(
+          classes.sectionFour,
+          menuListData[3].id,
+          'section-four'
+        )}
         py={15}
       >
         <Container maxWidth='sm'>
@@ -548,7 +625,13 @@ const ParallaxDemo = () => {
           >
             齊來認清真相!
           </Box>
-          <Box display='flex'>{flipCards()}</Box>
+          <Box
+            className='flip-cards-container'
+            display='flex'
+            ref={flipCardsContainerRef}
+          >
+            {flipCards()}
+          </Box>
           {dots()}
         </Box>
       </Box>
@@ -600,7 +683,7 @@ const ParallaxDemo = () => {
                 鼻咽癌與感冒相似的徵狀包括：
               </Box>
             </Typography>
-            <Box display='flex' mt={2}>
+            <Box display='flex' mt={2} className='symptom-card-wrapper'>
               {symptoms()}
             </Box>
             <Typography component='div'>
@@ -654,9 +737,10 @@ const ParallaxDemo = () => {
                   display='flex'
                   flexWrap='wrap'
                   justifyContent='space-around'
+                  className='service-card-wrapper'
                 >
                   {serviceListData.map((service) => (
-                    <Box key={service.label} my={2}>
+                    <Box key={service.label} my={2} className='service-card'>
                       <img
                         className={classes.serviceCard}
                         src={service.img}
