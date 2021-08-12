@@ -294,14 +294,18 @@ const ParallaxDemo = () => {
     ))
 
   return (
-    <Box className={classes.root} fontFamily='Noto Sans CJK TC'>
+    <Box className={classes.root}>
       <Box className={classnames(classes.sectionOne, menuListData[0].id)}>
         <Typography
           className={classnames(classes.sectionMotion, classes.sectionOneInfo)}
-          variant='body1'
           component='div'
         >
-          <Box fontWeight='600' lineHeight='2' color='primary.contrastText'>
+          <Box
+            fontSize='body1.fontSize'
+            fontWeight='600'
+            lineHeight='2'
+            color='primary.contrastText'
+          >
             張達明
             <br />
             鼻咽癌康復者」
@@ -543,13 +547,12 @@ const ParallaxDemo = () => {
       </Box>
       <footer>
         <Box
-          className={menuListData[7].id}
           bgcolor='primary.main'
           color='primary.contrastText'
           fontSize='h5.fontSize'
           fontWeight='fontWeightBold'
           py={4}
-          className={classes.footerTitle}
+          className={classnames(classes.footerTitle, menuListData[7].id)}
         >
           <Container maxWidth='lg'>联系我们</Container>
         </Box>
