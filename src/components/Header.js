@@ -31,28 +31,9 @@ const useStyles = makeStyles((theme) =>
         height: 40,
       },
       zIndex: theme.zIndex.appBar,
-    },
-    navButton: {},
-    iconButton: {
-      background: theme.palette.grey[100],
-      marginRight: theme.spacing(6),
-      flexShrink: 0,
-    },
-    menuPaper: {
-      background: theme.palette.background.menu,
-      boxShadow: 'none',
-      color: theme.palette.grey[800],
-      borderRadius: `0 0 ${theme.spacing(4)}px ${theme.spacing(4)}px`,
-      padding: theme.spacing(6),
-      paddingBottom: theme.spacing(3),
-      top: '0 !important',
-      right: 0,
-      left: 'auto !important',
-    },
-    menuItem: {
-      minHeight: theme.spacing(9),
-      borderBottom: '1px solid #86BDDA',
-      justifyContent: 'center',
+      [theme.breakpoints.only('xs')]: {
+        height: theme.spacing(6.5),
+      },
     },
     logoContainer: {
       height: '100%',
@@ -61,11 +42,56 @@ const useStyles = makeStyles((theme) =>
         'linear-gradient(90deg, #F5FBFC 0%, rgba(255, 255, 255, 0) 100%)',
       display: 'flex',
       alignItems: 'center',
+      [theme.breakpoints.only('xs')]: {
+        width: theme.spacing(32.5),
+      },
     },
     logo: {
       display: 'block',
       height: theme.spacing(5),
       paddingLeft: theme.spacing(6),
+      [theme.breakpoints.only('xs')]: {
+        paddingLeft: theme.spacing(2),
+        height: theme.spacing(3.25),
+      },
+    },
+    navButton: {
+      [theme.breakpoints.only('xs')]: {
+        fontSize: 30,
+      },
+    },
+    iconButton: {
+      background: theme.palette.grey[100],
+      marginRight: theme.spacing(6),
+      flexShrink: 0,
+      [theme.breakpoints.only('xs')]: {
+        marginRight: theme.spacing(2),
+      },
+    },
+    menuPaper: {
+      background: theme.palette.background.menu,
+      boxShadow: 'none',
+      borderRadius: `0 0 ${theme.spacing(4)}px ${theme.spacing(4)}px`,
+      padding: theme.spacing(6),
+      paddingBottom: theme.spacing(3),
+      top: '0 !important',
+      right: 0,
+      left: 'auto !important',
+      [theme.breakpoints.only('xs')]: {
+        maxWidth: theme.spacing(31.5),
+        padding: theme.spacing(2),
+        paddingTop: theme.spacing(8.5),
+        borderRadius: `0 0 ${theme.spacing(1)}px ${theme.spacing(1)}px`,
+      },
+    },
+    menuItem: {
+      minHeight: theme.spacing(9),
+      borderBottom: '1px solid #86BDDA',
+      justifyContent: 'center',
+      [theme.breakpoints.only('xs')]: {
+        minHeight: theme.spacing(6),
+        whiteSpace: 'normal',
+      },
     },
   })
 )
@@ -104,7 +130,7 @@ const Header = () => {
           gsap.to(window, { duration: 1, scrollTo: `.${menu.id}` })
         }
       >
-        <Typography variant='body1' color='primary' component='div'>
+        <Typography variant='body1' color='text.primary' component='div'>
           <Box textAlign='center'>{menu.label}</Box>
         </Typography>
       </MenuItem>
