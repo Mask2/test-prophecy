@@ -64,7 +64,6 @@ const useStyles = makeStyles((theme) =>
         lineHeight: 1.4,
         fontWeight: '500',
         left: theme.spacing(2.5),
-        bottom: theme.spacing(12),
       },
     },
     sectionOneImg: {
@@ -122,7 +121,7 @@ const useStyles = makeStyles((theme) =>
     sectionTwo: {
       backgroundImage: `url(${WaveDots}),${theme.palette.background.dark}`,
       backgroundRepeat: 'no-repeat',
-      backgroundSize: 'contain',
+      backgroundSize: 'cover',
       backgroundPositionY: 'center',
       backgroundPositionX: 'center',
       position: 'relative',
@@ -160,6 +159,16 @@ const useStyles = makeStyles((theme) =>
       zIndex: 2,
       position: 'absolute',
       overflow: 'hidden',
+      [theme.breakpoints.down('sm')]: {
+        fontSize: theme.typography.h6.fontSize,
+        letterSpacing: 2,
+      },
+    },
+    sectionFiveText: {
+      [theme.breakpoints.down('sm')]: {
+        fontSize: theme.typography.body1.fontSize,
+        letterSpacing: 2,
+      },
     },
     cardWrapper: {},
     questionWrapper: {
@@ -167,7 +176,7 @@ const useStyles = makeStyles((theme) =>
       height: theme.spacing(49),
       position: 'relative',
       flexShrink: 0,
-      margin: theme.spacing(2),
+      margin: theme.spacing(0, 2),
       transform: 'rotateY(0deg)',
       transformStyle: 'preserve-3d',
       perspective: 1000,
@@ -175,6 +184,11 @@ const useStyles = makeStyles((theme) =>
       transition: 'transform 0.7s ease-in-out',
       '&:hover': {
         transform: 'rotateY(-180deg)',
+      },
+      [theme.breakpoints.only('xs')]: {
+        width: theme.spacing(26.25),
+        height: theme.spacing(27.5),
+        margin: theme.spacing(0, 1),
       },
     },
     questionContent: {
@@ -190,10 +204,16 @@ const useStyles = makeStyles((theme) =>
       backfaceVisibility: 'hidden',
       position: 'absolute',
       zIndex: 1,
+      [theme.breakpoints.only('xs')]: {
+        border: `3px solid ${theme.palette.primary.main}`,
+      },
     },
     questionIcon: {
       width: theme.spacing(30),
       display: 'block',
+      [theme.breakpoints.only('xs')]: {
+        width: theme.spacing(16.5),
+      },
     },
     answerWrapper: {
       left: 0,
@@ -208,6 +228,9 @@ const useStyles = makeStyles((theme) =>
       position: 'absolute',
       zIndex: -1,
       transform: 'rotateY(180deg) translateZ(1px)',
+      [theme.breakpoints.only('xs')]: {
+        border: `3px solid ${theme.palette.primary.main}`,
+      },
     },
     answerImg: {
       display: 'block',
@@ -220,10 +243,18 @@ const useStyles = makeStyles((theme) =>
       margin: theme.spacing(0, 1.5),
       backgroundColor: theme.palette.background.paper,
       borderRadius: '50%',
+      [theme.breakpoints.only('xs')]: {
+        width: theme.spacing(1),
+        height: theme.spacing(1),
+        margin: theme.spacing(0, 1),
+      },
     },
     symptomIcon: {
       display: 'block',
       mb: theme.spacing(2),
+      [theme.breakpoints.only('xs')]: {
+        width: theme.spacing(12.5),
+      },
     },
     serviceWrapper: {
       backgroundImage: `url(${CellTop}),url(${CellBottom})`,
@@ -236,13 +267,16 @@ const useStyles = makeStyles((theme) =>
     serviceCard: {
       display: 'block',
       height: theme.spacing(30),
+      [theme.breakpoints.only('xs')]: {
+        height: theme.spacing(18),
+      },
     },
     footerTitle: {
       backgroundImage: `url(${LineDots})`,
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
       backgroundPositionY: 'center',
-      backgroundPositionX: 'left',
+      backgroundPositionX: 'right',
     },
     buttonRoot: {
       width: '32%',
@@ -251,6 +285,10 @@ const useStyles = makeStyles((theme) =>
       borderColor: theme.palette.primary.light,
       fontSize: theme.typography.h6.fontSize,
       fontWeight: 'bolder',
+      [theme.breakpoints.only('xs')]: {
+        width: '100%',
+        marginBottom: theme.spacing(2),
+      },
     },
     buttonOutlined: {
       '&:hover': {
@@ -268,25 +306,27 @@ const useStyles = makeStyles((theme) =>
   })
 )
 
-const ParallaxDemo = () => {
+const App = () => {
   const classes = useStyles()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.only('xs'))
+  const sectionOneRef = useRef(null)
   const flipCardsContainerRef = useRef(null)
 
   // section one parallax motion
   useEffect(() => {
-    gsap.to('.section-one-info', {
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '.section-one-info',
-        start: 'top center',
-        end: 'bottom top',
-        pin: true,
-        scrub: true,
-        pinSpacing: false,
-      },
-    })
+    sectionOneRef.current &&
+      gsap.to('.section-one-info', {
+        ease: 'none',
+        scrollTrigger: {
+          trigger: '.section-one-info',
+          start: 'top center',
+          end: 'bottom top',
+          pin: true,
+          scrub: true,
+          pinSpacing: false,
+        },
+      })
     gsap.to('.section-one-circle-one', {
       y: -400,
       ease: 'none',
@@ -314,7 +354,7 @@ const ParallaxDemo = () => {
         start: 'top top',
       },
     })
-  }, [])
+  }, [sectionOneRef])
 
   // section three text motion
   useEffect(() => {
@@ -377,11 +417,11 @@ const ParallaxDemo = () => {
     ScrollTrigger.create({
       trigger: '.section-three',
       animation: t1,
-      start: 'top 20%',
-      // toggleActions: 'play none none none',
-      // once: true,
-      scrub: true,
-      markers: true,
+      start: 'top 40%',
+      toggleActions: 'play none none none',
+      once: true,
+      // scrub: true,
+      // markers: true,
     })
   }, [])
 
@@ -403,22 +443,22 @@ const ParallaxDemo = () => {
     //     markers: true,
     //   },
     // })
-    const t1 = gsap.timeline(flipCards, {
-      scrollTrigger: {
-        trigger: '.section-four',
-        pin: true,
-        scrub: true,
-        start: 'top 200px',
-        end: '+=398',
-        pinSpacing: false,
-        markers: true,
-      },
-    })
-    flipCards.forEach((flipCard) => {
-      t1.fromTo(flipCard, { rotateY: 0 }, { rotateY: 180, duration: 1 })
-        .to('.flip-cards-container', { x: '-=398', duration: 2 })
-        .fromTo(flipCard, { rotateY: 180 }, { rotateY: 0, duration: 1 })
-    })
+    // const t1 = gsap.timeline(flipCards, {
+    //   scrollTrigger: {
+    //     trigger: '.section-four',
+    //     pin: true,
+    //     scrub: true,
+    //     start: 'top 200px',
+    //     end: '+=398',
+    //     pinSpacing: false,
+    //     // markers: true,
+    //   },
+    // })
+    // flipCards.forEach((flipCard) => {
+    //   t1.fromTo(flipCard, { rotateY: 0 }, { rotateY: 180, duration: 1 })
+    //     .to('.flip-cards-container', { x: '-=398', duration: 2 })
+    //     .fromTo(flipCard, { rotateY: 180 }, { rotateY: 0, duration: 1 })
+    // })
   }, [])
 
   // section five text motion
@@ -434,12 +474,13 @@ const ParallaxDemo = () => {
       { xPercent: 0, duration: 1 },
       '<'
     )
+
     ScrollTrigger.create({
-      trigger: '.section-five',
+      trigger: '.section-five-text-one-line',
+      start: 'top center',
       animation: t1,
-      start: 'top 20%',
-      // toggleActions: 'play none none none',
-      // once: true,
+      toggleActions: 'play none none none',
+      once: true,
       scrub: true,
       markers: true,
     })
@@ -485,12 +526,11 @@ const ParallaxDemo = () => {
       >
         <Box className={classes.questionContent}>
           <Box
-            fontSize='h5.fontSize'
+            fontSize={matches ? 'h6.fontSize' : 'h5.fontSize'}
             fontWeight='fontWeightBolder'
             color='secondary.main'
-            component='h5'
             m={0}
-            mt={4}
+            mt={matches ? 1.5 : 4}
           >
             {card.label}
           </Box>
@@ -500,10 +540,9 @@ const ParallaxDemo = () => {
             alt={card.label}
           />
           <Box
-            fontSize='h5.fontSize'
+            fontSize={matches ? 'h6.fontSize' : 'h5.fontSize'}
             fontWeight='fontWeightBolder'
             color='primary.light'
-            component='h5'
             m={0}
           >
             {card.question}
@@ -550,7 +589,7 @@ const ParallaxDemo = () => {
         />
         <Typography component='div'>
           <Box
-            fontSize='h6.fontSize'
+            fontSize={matches ? 'body1.fontSize' : 'h6.fontSize'}
             fontWeight='fontWeightBold'
             color='text.primary'
           >
@@ -571,6 +610,7 @@ const ParallaxDemo = () => {
       >
         <Container className={classes.sectionOneContainer} maxWidth='lg'>
           <Typography
+            ref={sectionOneRef}
             className={classnames(
               classes.sectionMotion,
               classes.sectionOneInfo,
@@ -633,7 +673,7 @@ const ParallaxDemo = () => {
       </Box>
       <Box
         className={classnames(classes.sectionTwo, menuListData[1].id)}
-        py={15}
+        py={matches ? 7.5 : 15}
       >
         <Container maxWidth='sm'>
           <Box
@@ -645,15 +685,19 @@ const ParallaxDemo = () => {
           >
             根據世界衛生組織2018年的數據顯示，香港鼻咽癌發病率是世界主要城市的5-6倍¹。
             <br />
+            {matches && <br />}
             其實不論年紀、性別及背景，任何人士都有機會患上鼻咽癌。
             <br />
+            {matches && <br />}
             作為鼻咽癌康復者兼香港著名喜劇演員，張達明先生曾因忽略身體警號而延誤求醫。
             <br />
+            {matches && <br />}
             想掌握健康，即使不幸患癌都能積極開展第二人生?
             <br />
+            {matches && <br />}
             觀看以下影片，由達明親述進行「早期鼻咽癌篩查」的重要性！
           </Box>
-          <Box mt={8}>
+          <Box mt={matches ? 3 : 8}>
             <img className={classes.temVideo} src={TemVideo} alt='tem video' />
           </Box>
         </Container>
@@ -671,8 +715,8 @@ const ParallaxDemo = () => {
           alt='Cheung Tat Ming 02'
         />
         <Box
-          left='18%'
-          bottom='40%'
+          left={matches ? '5%' : '18%'}
+          bottom={matches ? '44%' : '40%'}
           color='background.secondaryLight'
           className={classes.sectionText}
           px={2}
@@ -689,8 +733,8 @@ const ParallaxDemo = () => {
           ></Box>
         </Box>
         <Box
-          right='16%'
-          bottom='40%'
+          right={matches ? '8%' : '18%'}
+          bottom={matches ? '44%' : '40%'}
           color='primary.contrastText'
           className={classes.sectionText}
           px={2}
@@ -713,11 +757,11 @@ const ParallaxDemo = () => {
           menuListData[3].id,
           'section-four'
         )}
-        py={15}
+        py={matches ? 4 : 15}
       >
         <Container maxWidth='sm'>
           <Box
-            fontSize='h5.fontSize'
+            fontSize={matches ? 'h6.fontSize' : 'h5.fontSize'}
             fontWeight='fontWeightBold'
             color='primary.contrastText'
             component='h5'
@@ -729,7 +773,7 @@ const ParallaxDemo = () => {
             fontWeight='fontWeightLight'
             lineHeight={2}
             color='primary.contrastText'
-            mt={4}
+            mt={matches ? 3 : 4}
             component='p'
           >
             鼻咽癌的高發地區為東南亞和南中國。當中在香港、廣東和廣西的發病率特別高，因此也被稱為「廣東癌」。本港每年有六百至八百宗鼻咽癌病例，因此鼻咽癌是不可忽視的十大癌症之一，它更是過去十年間45-64歲男士五大常見癌症之一²。
@@ -737,7 +781,7 @@ const ParallaxDemo = () => {
         </Container>
         <Box>
           <Box
-            fontSize='h4.fontSize'
+            fontSize={matches ? 'h6.fontSize' : 'h4.fontSize'}
             fontWeight='fontWeightBold'
             color='primary.contrastText'
             component='h4'
@@ -768,7 +812,7 @@ const ParallaxDemo = () => {
           alt='Cheung Tat Ming 03'
         />
         <Box
-          className={classes.sectionText}
+          className={classnames(classes.sectionText, classes.sectionFiveText)}
           left='13%'
           bottom='48%'
           color='primary.contrastText'
@@ -776,14 +820,14 @@ const ParallaxDemo = () => {
           鼻咽癌不能「預防」
           <Box
             width='100%'
-            height={8}
+            height={matches ? 4 : 8}
             mt={1}
             bgcolor='secondary.main'
             className='section-five-text-one-line'
           ></Box>
         </Box>
         <Box
-          className={classes.sectionText}
+          className={classnames(classes.sectionText, classes.sectionFiveText)}
           right='10%'
           bottom='24%'
           color='primary.contrastText'
@@ -791,7 +835,7 @@ const ParallaxDemo = () => {
           卻能「提防」
           <Box
             width='100%'
-            height={8}
+            height={matches ? 4 : 8}
             mt={1}
             bgcolor='secondary.main'
             className='section-five-text-two-line'
@@ -800,7 +844,7 @@ const ParallaxDemo = () => {
       </Box>
       <Box
         className={classnames(classes.sectionSix, menuListData[6].id)}
-        py={10}
+        py={matches ? 4 : 10}
       >
         <Container maxWidth='md'>
           <Box display='flex' flexDirection='column' alignItems='center'>
@@ -808,16 +852,16 @@ const ParallaxDemo = () => {
               <Box
                 fontSize='body1.fontSize'
                 fontWeight='fontWeightLight'
-                textAlign='center'
+                textAlign={matches ? 'left' : 'center'}
                 color='primary.contrastText'
               >
                 鼻咽癌的症狀容易與傷風感冒混淆而令人忽略，80%患者在初診時已是晚期⁷。
               </Box>
               <Box
-                fontSize='h5.fontSize'
+                fontSize={matches ? 'h6.fontSize' : 'h5.fontSize'}
                 fontWeight='fontWeightBold'
                 color='primary.contrastText'
-                textAlign='center'
+                textAlign={matches ? 'left' : 'center'}
                 mt={3}
               >
                 鼻咽癌與感冒相似的徵狀包括：
@@ -828,21 +872,21 @@ const ParallaxDemo = () => {
             </Box>
             <Typography component='div'>
               <Box
-                fontSize='h5.fontSize'
+                fontSize={matches ? 'h6.fontSize' : 'h5.fontSize'}
                 fontWeight='fontWeightBold'
                 color='primary.contrastText'
-                textAlign='center'
-                mt={10}
+                textAlign={matches ? 'left' : 'center'}
+                mt={matches ? 3 : 10}
               >
                 怎樣才能「提防」患癌？
               </Box>
               <Box
                 fontSize='body1.fontSize'
                 fontWeight='fontWeightLight'
-                textAlign='center'
+                textAlign={matches ? 'left' : 'center'}
                 color='primary.contrastText'
-                lineHeight={2}
-                mt={3}
+                lineHeight={matches ? 1.5 : 3}
+                mt={matches ? 2 : 3}
               >
                 研究顯示，進行早期鼻咽癌篩查能有效找出「隱形」患者，
                 儘早接受適當治療，
@@ -852,35 +896,41 @@ const ParallaxDemo = () => {
             </Typography>
             <Box
               className={classes.serviceWrapper}
-              py={10}
-              px={8}
+              py={matches ? 2 : 10}
+              pb={matches ? 6 : 10}
+              px={matches ? 2 : 8}
               mt={8}
+              my={matches ? 2 : 0}
               bgcolor='background.paper'
             >
               <Typography component='div'>
                 <Box
-                  fontSize='h4.fontSize'
+                  fontSize={matches ? 'h6.fontSize' : 'h4.fontSize'}
                   fontWeight='fontWeightBold'
                   color='text.secondary'
                 >
                   Take2 Prophecy™
                 </Box>
                 <Box
-                  fontSize='h4.fontSize'
+                  fontSize={matches ? 'h6.fontSize' : 'h4.fontSize'}
                   fontWeight='fontWeightBold'
-                  color='text.disabled'
+                  color='background.default'
                 >
                   早期鼻咽癌篩查服務特色
                 </Box>
                 <Box
-                  mt={4}
+                  mt={matches ? 2 : 4}
                   display='flex'
                   flexWrap='wrap'
                   justifyContent='space-around'
                   className='service-card-wrapper'
                 >
                   {serviceListData.map((service) => (
-                    <Box key={service.label} my={2} className='service-card'>
+                    <Box
+                      key={service.label}
+                      my={matches ? 1 : 2}
+                      className='service-card'
+                    >
                       <img
                         className={classes.serviceCard}
                         src={service.img}
@@ -898,18 +948,19 @@ const ParallaxDemo = () => {
         <Box
           bgcolor='primary.main'
           color='primary.contrastText'
-          fontSize='h5.fontSize'
+          fontSize={matches ? 'h6.fontSize' : 'h5.fontSize'}
           fontWeight='fontWeightBold'
-          py={4}
+          py={matches ? 2 : 4}
           className={classnames(classes.footerTitle, menuListData[7].id)}
         >
           <Container maxWidth='lg'>联系我们</Container>
         </Box>
-        <Box py={6} pb={10}>
+        <Box py={matches ? 4 : 6} pb={matches ? 6 : 10}>
           <Container maxWidth='lg'>
             <Typography component='div'>
               <Box
                 fontSize='h5.fontSize'
+                fontSize={matches ? 'h6.fontSize' : 'h5.fontSize'}
                 fontWeight='fontWeightBold'
                 color='text.disabled'
               >
@@ -920,9 +971,9 @@ const ParallaxDemo = () => {
             </Typography>
             <Box
               width='100%'
-              display='flex'
+              display={matches ? 'block' : 'flex'}
               justifyContent='space-between'
-              my={4}
+              my={matches ? 2 : 4}
             >
               <Button
                 classes={{
@@ -984,16 +1035,16 @@ const ParallaxDemo = () => {
             </Box>
             <Typography component='div'>
               <Box
-                fontSize='subtitle1.fontSize'
-                fontWeight='fontWeightBold'
+                fontSize={matches ? 'subtitle2.fontSize' : 'subtitle1.fontSize'}
+                fontWeight={!matches && 'fontWeightBold'}
                 color='primary.light'
-                lineHeight={3}
+                lineHeight={matches ? 2 : 3}
               >
                 聯絡資料
               </Box>
               <Box
                 fontSize='overline.fontSize'
-                fontWeight='fontWeightBold'
+                fontWeight={!matches && 'fontWeightBold'}
                 lineHeight={2}
                 color='primary.light'
               >
@@ -1006,7 +1057,11 @@ const ParallaxDemo = () => {
                 網站: take2health.net
               </Box>
             </Typography>
-            <Box my={6} bgcolor='text.disabled' height='1px'></Box>
+            <Box
+              my={matches ? 4 : 6}
+              bgcolor='text.disabled'
+              height='1px'
+            ></Box>
             <Annotate></Annotate>
           </Container>
         </Box>
@@ -1015,4 +1070,4 @@ const ParallaxDemo = () => {
   )
 }
 
-export default ParallaxDemo
+export default App
