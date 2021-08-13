@@ -427,8 +427,7 @@ const App = () => {
 
   // section four flip cards motion
   useEffect(() => {
-    let flipCards = gsap.utils.toArray('.flip-card')
-
+    // let flipCards = gsap.utils.toArray('.flip-card')
     // gsap.to(flipCards, {
     //   x: -400 * (flipCards.length - 1),
     //   ease: 'none',
@@ -959,7 +958,6 @@ const App = () => {
           <Container maxWidth='lg'>
             <Typography component='div'>
               <Box
-                fontSize='h5.fontSize'
                 fontSize={matches ? 'h6.fontSize' : 'h5.fontSize'}
                 fontWeight='fontWeightBold'
                 color='text.disabled'
