@@ -153,7 +153,7 @@ const FlipCardsSwiper = () => {
 
   return (
     <Swiper
-      spaceBetween={matches ? '-40%' : '13%'}
+      spaceBetween={matches ? '-40%' : '-13%'}
       slidesPerView={matches ? 1 : 3}
       pagination={{ clickable: true }}
       navigation
