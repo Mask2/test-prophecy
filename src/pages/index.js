@@ -26,12 +26,16 @@ import CellBottom from '../images/bg_cell_bottom.png'
 
 import {
   menuListData,
-  cardListData,
   symptomListData,
   serviceListData,
 } from '../utils/constant'
 import Annotate from '../components/Annotate'
 import { gsap, ScrollTrigger } from '../utils/initGsap'
+
+// import FlipCards from '../components/FlipCards'
+import FlipCardsSwiper from '../components/FlipCardsSwiper'
+
+// install Swiper modules
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -162,91 +166,6 @@ const useStyles = makeStyles((theme) =>
       [theme.breakpoints.down('sm')]: {
         fontSize: theme.typography.h6.fontSize,
         letterSpacing: 2,
-      },
-    },
-    sectionFiveText: {
-      [theme.breakpoints.down('sm')]: {
-        fontSize: theme.typography.body1.fontSize,
-        letterSpacing: 2,
-      },
-    },
-    cardWrapper: {},
-    questionWrapper: {
-      width: theme.spacing(48),
-      height: theme.spacing(49),
-      position: 'relative',
-      flexShrink: 0,
-      margin: theme.spacing(0, 2),
-      transform: 'rotateY(0deg)',
-      transformStyle: 'preserve-3d',
-      perspective: 1000,
-      cursor: 'pointer',
-      transition: 'transform 0.7s ease-in-out',
-      '&:hover': {
-        transform: 'rotateY(-180deg)',
-      },
-      [theme.breakpoints.only('xs')]: {
-        width: theme.spacing(26.25),
-        height: theme.spacing(27.5),
-        margin: theme.spacing(0, 1),
-      },
-    },
-    questionContent: {
-      width: '100%',
-      height: '100%',
-      borderRadius: theme.spacing(4),
-      border: `6px solid ${theme.palette.primary.main}`,
-      backgroundColor: theme.palette.background.paper,
-      display: 'flex',
-      alignItems: 'center',
-      boxSizing: 'border-box',
-      flexDirection: 'column',
-      backfaceVisibility: 'hidden',
-      position: 'absolute',
-      zIndex: 1,
-      [theme.breakpoints.only('xs')]: {
-        border: `3px solid ${theme.palette.primary.main}`,
-      },
-    },
-    questionIcon: {
-      width: theme.spacing(30),
-      display: 'block',
-      [theme.breakpoints.only('xs')]: {
-        width: theme.spacing(16.5),
-      },
-    },
-    answerWrapper: {
-      left: 0,
-      right: 0,
-      bottom: 0,
-      top: 0,
-      borderRadius: theme.spacing(4),
-      border: `6px solid ${theme.palette.primary.main}`,
-      backgroundColor: theme.palette.background.default,
-      display: 'flex',
-      alignItems: 'center',
-      position: 'absolute',
-      zIndex: -1,
-      transform: 'rotateY(180deg) translateZ(1px)',
-      [theme.breakpoints.only('xs')]: {
-        border: `3px solid ${theme.palette.primary.main}`,
-      },
-    },
-    answerImg: {
-      display: 'block',
-      width: '100%',
-    },
-    dotsWrapper: {},
-    dot: {
-      width: theme.spacing(1.5),
-      height: theme.spacing(1.5),
-      margin: theme.spacing(0, 1.5),
-      backgroundColor: theme.palette.background.paper,
-      borderRadius: '50%',
-      [theme.breakpoints.only('xs')]: {
-        width: theme.spacing(1),
-        height: theme.spacing(1),
-        margin: theme.spacing(0, 1),
       },
     },
     symptomIcon: {
@@ -517,61 +436,6 @@ const App = () => {
     })
   }, [])
 
-  const flipCards = (params) =>
-    cardListData.map((card) => (
-      <Box
-        className={classnames(classes.questionWrapper, 'flip-card')}
-        key={card.label}
-      >
-        <Box className={classes.questionContent}>
-          <Box
-            fontSize={matches ? 'h6.fontSize' : 'h5.fontSize'}
-            fontWeight='fontWeightBolder'
-            color='secondary.main'
-            m={0}
-            mt={matches ? 1.5 : 4}
-          >
-            {card.label}
-          </Box>
-          <img
-            className={classes.questionIcon}
-            src={card.icon}
-            alt={card.label}
-          />
-          <Box
-            fontSize={matches ? 'h6.fontSize' : 'h5.fontSize'}
-            fontWeight='fontWeightBolder'
-            color='primary.light'
-            m={0}
-          >
-            {card.question}
-          </Box>
-        </Box>
-        <Box className={classes.answerWrapper}>
-          <img
-            className={classes.answerImg}
-            src={card.answer}
-            alt={card.label}
-          />
-        </Box>
-      </Box>
-    ))
-
-  const dots = () => (
-    <Box
-      mt={4}
-      display='flex'
-      justifyContent='center'
-      className={classes.dotsWrapper}
-    >
-      {[...Array(5)].map((dot, index) => (
-        <Box className={classes.dot} key={index}>
-          {dot}
-        </Box>
-      ))}
-    </Box>
-  )
-
   const symptoms = (params) =>
     symptomListData.map((symptom) => (
       <Box
@@ -756,7 +620,7 @@ const App = () => {
           menuListData[3].id,
           'section-four'
         )}
-        py={matches ? 4 : 15}
+        py={matches ? 0 : 7}
       >
         <Container maxWidth='sm'>
           <Box
@@ -793,9 +657,9 @@ const App = () => {
             display='flex'
             ref={flipCardsContainerRef}
           >
-            {flipCards()}
+            {/* <FlipCards></FlipCards> */}
+            <FlipCardsSwiper></FlipCardsSwiper>
           </Box>
-          {dots()}
         </Box>
       </Box>
       <Box
