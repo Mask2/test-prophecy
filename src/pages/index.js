@@ -481,8 +481,8 @@ const App = () => {
       animation: t1,
       toggleActions: 'play none none none',
       once: true,
-      scrub: true,
-      markers: true,
+      // scrub: true,
+      // markers: true,
     })
   }, [])
 
