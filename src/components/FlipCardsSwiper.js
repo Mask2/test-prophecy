@@ -10,6 +10,7 @@ import 'swiper/swiper-bundle.min.css'
 import 'swiper/components/pagination/pagination.min.css'
 import 'swiper/components/navigation/navigation.min.css'
 import { cardListData } from '../utils/constant'
+import IconArrow from '../images/svg/icon_arrow.svg'
 
 SwiperCore.use([Pagination, Navigation])
 
@@ -115,6 +116,32 @@ const useStyles = makeStyles((theme) =>
       '& .swiper-pagination-bullet-active': {
         backgroundColor: theme.palette.secondary.main,
       },
+      '& .swiper-button-next': {
+        '&:after': {
+          backgroundImage: `url(${IconArrow})`,
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: '150%',
+          backgroundPositionY: 'center',
+          backgroundPositionX: 'center',
+          transform: 'rotate(-90deg)',
+          content: '""',
+          width: '100%',
+          height: theme.spacing(6),
+        },
+      },
+      '& .swiper-button-prev': {
+        '&:after': {
+          backgroundImage: `url(${IconArrow})`,
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: '150%',
+          backgroundPositionY: 'center',
+          backgroundPositionX: 'center',
+          transform: 'rotate(90deg)',
+          content: '""',
+          width: '100%',
+          height: theme.spacing(6),
+        },
+      },
     },
     slideHover: {
       '&:hover': {
@@ -162,7 +189,6 @@ const FlipCardsSwiper = () => {
       onSlideChange={(swiper) => {
         setActiveSlide(swiper.realIndex)
       }}
-      onSwiper={(swiper) => console.log(swiper)}
       className={classes.swiper}
       initialSlide={matches ? 0 : 2}
       onInit={(swiper) => {
@@ -184,7 +210,7 @@ const FlipCardsSwiper = () => {
               ></Box>
               <Box
                 fontSize={matches ? 'body1.fontSize' : 'h5.fontSize'}
-                fontWeight='fontWeightBolder'
+                fontWeight='fontWeightBold'
                 color='secondary.main'
                 m={0}
                 mt={matches ? 1.5 : 4}

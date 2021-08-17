@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { makeStyles, createStyles } from '@material-ui/core/styles'
 import Box from '@material-ui/core/Box'
 import IconButton from '@material-ui/core/IconButton'
-import MenuIcon from '@material-ui/icons/Menu'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
 import Typography from '@material-ui/core/Typography'
@@ -10,7 +9,8 @@ import classnames from 'classnames'
 
 import Logo from '../images/logo.png'
 import { menuListData } from '../utils/constant'
-
+import IconMenu from '../images/icon_menu.png'
+import IconClose from '../images/icon_close.png'
 import { gsap, ScrollTrigger } from '../utils/initGsap'
 
 const useStyles = makeStyles((theme) =>
@@ -93,10 +93,32 @@ const useStyles = makeStyles((theme) =>
         whiteSpace: 'normal',
       },
     },
+    menuIcon: {
+      display: 'block',
+      width: theme.spacing(4),
+    },
+    closeButton: {
+      position: 'fixed',
+      right: theme.spacing(6),
+      top: theme.spacing(3) - 3,
+      zIndex: theme.zIndex.tooltip,
+      [theme.breakpoints.only('xs')]: {
+        right: theme.spacing(2),
+      },
+    },
+    closeIcon: {
+      display: 'block',
+      width: theme.spacing(4),
+    },
+    activeSection: {
+      color: theme.palette.text.secondary,
+      fontWeight: 'bolder',
+    },
   })
 )
 
-const Header = () => {
+const Header = (props) => {
+  console.log('props', props.active)
   const classes = useStyles()
   const [anchorEl, setAnchorEl] = useState(null)
   const handleClick = (event) => {
@@ -111,7 +133,6 @@ const Header = () => {
         duration: 0.1,
       })
       .progress(1)
-
     ScrollTrigger.create({
       start: 'top top',
       end: 99999,
@@ -130,8 +151,15 @@ const Header = () => {
           gsap.to(window, { duration: 1, scrollTo: `.${menu.id}` })
         }
       >
-        <Typography variant='body1' color='textPrimary' component='div'>
-          <Box textAlign='center'>{menu.label}</Box>
+        <Typography variant='body1' component='div'>
+          <Box
+            className={classnames({
+              [classes.activeSection]: props.active === menu.id,
+            })}
+            textAlign='center'
+          >
+            {menu.label}
+          </Box>
         </Typography>
       </MenuItem>
     ))
@@ -153,7 +181,7 @@ const Header = () => {
         size='small'
         classes={{ root: classes.iconButton }}
       >
-        <MenuIcon />
+        <img className={classes.menuIcon} src={IconMenu} alt='menu' />
       </IconButton>
       <Menu
         id='simple-menu'
@@ -168,6 +196,15 @@ const Header = () => {
           horizontal: 'center',
         }}
       >
+        {anchorEl && (
+          <IconButton
+            className={classes.closeButton}
+            size='small'
+            onClick={handleClose}
+          >
+            <img className={classes.closeIcon} src={IconClose} alt='close' />
+          </IconButton>
+        )}
         {MenuList()}
       </Menu>
     </Box>

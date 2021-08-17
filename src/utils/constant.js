@@ -19,35 +19,35 @@ import Symptom03 from '../images/svg/symptom_03.svg'
 export const menuListData = [
   {
     label: 'HOME',
-    id: 'section-01',
+    id: 'section-one',
   },
   {
     label: 'GO LIVE AGAIN 達明分享',
-    id: 'section-02',
+    id: 'section-two',
   },
   {
     label: '鼻咽癌，真的離你很遠？',
-    id: 'section-03',
+    id: 'section-three',
   },
   {
     label: '鼻咽癌不能「預防」，卻能「提防」',
-    id: 'section-04',
+    id: 'section-five',
   },
   {
     label: 'Take2 Prophecy™ 早期鼻咽癌篩查服務特色',
-    id: 'section-05',
+    id: 'section-six',
   },
   {
     label: '立即預約',
-    id: 'section-06',
+    id: 'section-seven',
   },
   {
     label: '查看服務覆蓋點',
-    id: 'section-06',
+    id: 'section-seven',
   },
   {
     label: '聯絡我們',
-    id: 'section-06',
+    id: 'section-seven',
   },
 ]
 

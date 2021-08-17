@@ -3,6 +3,15 @@ import { createTheme } from '@material-ui/core/styles'
 
 // TODO ! complete theme
 const theme = createTheme({
+  breakpoints: {
+    values: {
+      xs: 0,
+      sm: 784,
+      md: 960,
+      lg: 1280,
+      xl: 1920,
+    },
+  },
   overrides: {},
   palette: {
     type: 'light',
