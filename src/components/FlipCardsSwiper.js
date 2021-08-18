@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { makeStyles, createStyles, useTheme } from '@material-ui/core/styles'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 import Box from '@material-ui/core/Box'
@@ -11,6 +11,7 @@ import 'swiper/components/pagination/pagination.min.css'
 import 'swiper/components/navigation/navigation.min.css'
 import { cardListData } from '../utils/constant'
 import IconArrow from '../images/svg/icon_arrow.svg'
+import { gsap } from '../utils/initGsap'
 
 SwiperCore.use([Pagination, Navigation])
 
@@ -40,6 +41,7 @@ const useStyles = makeStyles((theme) =>
         width: '56vw',
         maxWidth: theme.spacing(26.25),
         height: '55vw',
+        maxHeight: theme.spacing(26),
       },
     },
     questionContent: {
@@ -143,6 +145,7 @@ const useStyles = makeStyles((theme) =>
         },
       },
     },
+
     slideHover: {
       '&:hover': {
         transform: 'rotateY(-180deg)',
@@ -173,6 +176,57 @@ const FlipCardsSwiper = () => {
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.only('xs'))
   const [activeSlide, setActiveSlide] = useState(0)
+
+  useEffect(() => {
+    gsap.fromTo(
+      '.swiper-button-next',
+      {
+        opacity: 1,
+        scale: 1,
+        x: -12,
+        repeat: -1,
+      },
+      {
+        opacity: 0.8,
+        scale: 0.8,
+        x: 12,
+        duration: 1,
+        repeat: -1,
+        ease: 'power1.inOut',
+        yoyo: true,
+      }
+    )
+    gsap.fromTo(
+      '.swiper-button-prev',
+      {
+        opacity: 1,
+        scale: 1,
+        x: 12,
+        repeat: -1,
+      },
+      {
+        opacity: 0.8,
+        scale: 0.8,
+        x: -12,
+        duration: 1,
+        repeat: -1,
+        ease: 'power1.inOut',
+        yoyo: true,
+      }
+    )
+    // t1.fromTo(ruleAfter, { x: 12 }, { x: 32, duration: 1 })
+    //   .fromTo(
+    //     ruleBefore,
+    //     { scale: 1, opacity: 1 },
+    //     {
+    //       scale: 0.3,
+    //       opacity: 0.6,
+    //       duration: 1,
+    //     },
+    //     '<'
+    //   )
+    //   .repeat(-1)
+  }, [])
 
   const fakeActive = (index) =>
     index ===

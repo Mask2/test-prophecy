@@ -31,7 +31,7 @@ export const menuListData = [
   },
   {
     label: '鼻咽癌不能「預防」，卻能「提防」',
-    id: 'section-five',
+    id: 'section-six',
   },
   {
     label: 'Take2 Prophecy™ 早期鼻咽癌篩查服務特色',

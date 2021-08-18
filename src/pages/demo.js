@@ -124,7 +124,7 @@ const useStyles = makeStyles((theme) =>
       zIndex: theme.zIndex.appBar + 1,
     },
     title: {
-      fontWeight: 'bold',
+      fontWeight: 'bolder',
       whiteSpace: 'pre-line',
       fontSize: '2em',
     },

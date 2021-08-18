@@ -9,7 +9,6 @@ import useMediaQuery from '@material-ui/core/useMediaQuery'
 
 import YouTube from 'react-youtube'
 import classnames from 'classnames'
-// import { Waypoint } from 'react-waypoint'
 
 import Ming01 from '../images/ming_01.png'
 import Ming02 from '../images/ming_02.png'
@@ -29,7 +28,7 @@ import IconArrow from '../images/svg/icon_arrow.svg'
 import Header from '../components/Header'
 
 import {
-  // menuListData,
+  menuListData,
   symptomListData,
   serviceListData,
 } from '../utils/constant'
@@ -43,6 +42,7 @@ import FlipCardsSwiper from '../components/FlipCardsSwiper'
 const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
+      // fontFamily: 'Noto Sans CJK TC !important',
       fontFamily: theme.typography.body1.fontFamily,
       overflowX: 'hidden',
     },
@@ -220,6 +220,7 @@ const useStyles = makeStyles((theme) =>
       fontWeight: 'bolder',
       marginRight: theme.spacing(2),
       [theme.breakpoints.only('xs')]: {
+        maxWidth: '100%',
         marginBottom: theme.spacing(2),
         marginRight: 0,
       },
@@ -240,6 +241,14 @@ const useStyles = makeStyles((theme) =>
   })
 )
 
+const sectionList = [
+  'section-one',
+  'section-two',
+  'section-three',
+  'section-six',
+  'section-seven',
+]
+
 const App = () => {
   const classes = useStyles()
   const theme = useTheme()
@@ -247,6 +256,16 @@ const App = () => {
   const sectionOneRef = useRef(null)
   const flipCardsContainerRef = useRef(null)
   const [activeSection, setActiveSection] = useState('section-one')
+
+  const updateActiveSection = (sectionName) => {
+    ScrollTrigger.create({
+      trigger: `.${sectionName}`,
+      start: 'top center',
+      onEnter: () => setActiveSection(sectionName),
+      onEnterBack: () => setActiveSection(sectionName),
+      // markers: true,
+    })
+  }
 
   // section one parallax motion
   useEffect(() => {
@@ -289,13 +308,20 @@ const App = () => {
         start: 'top top',
       },
     })
-  }, [sectionOneRef])
+    sectionList.forEach((section) => {
+      updateActiveSection(section)
+    })
+  }, [])
 
   // section two arrow motion
   useEffect(() => {
     const t1 = gsap.timeline()
 
-    t1.fromTo('.arrow-one', { y: 12 }, { y: 32, duration: 1 })
+    t1.fromTo(
+      '.arrow-one',
+      { y: 12 },
+      { y: 32, duration: 1, ease: 'power1.inOut', yoyo: true }
+    )
       .fromTo(
         '.arrow-two',
         { scale: 1, opacity: 1 },
@@ -303,6 +329,8 @@ const App = () => {
           scale: 0.3,
           opacity: 0.6,
           duration: 1,
+          ease: 'power1.inOut',
+          yoyo: true,
         },
         '<'
       )
@@ -501,7 +529,6 @@ const App = () => {
     <>
       <Header active={activeSection}>{activeSection}</Header>
       <Box className={classes.root}>
-        {/* {setWaypoint(0)} */}
         <Box className={classnames(classes.sectionOne, 'section-one')}>
           <Container className={classes.sectionOneContainer} maxWidth='lg'>
             <Typography
@@ -566,7 +593,6 @@ const App = () => {
             </Box>
           </Container>
         </Box>
-        {/* {setWaypoint(1)} */}
         <Box
           className={classnames(classes.sectionTwo, 'section-two')}
           pb={matches ? 7.5 : 15}
@@ -622,7 +648,6 @@ const App = () => {
             </Box>
           </Container>
         </Box>
-        {/* {setWaypoint(2)} */}
         <Box className={classnames(classes.sectionThree, 'section-three')}>
           <img
             className={classes.mingImage}
@@ -666,7 +691,6 @@ const App = () => {
             ></Box>
           </Box>
         </Box>
-        {/* {setWaypoint(3)} */}
         <Box
           className={classnames(classes.sectionFour, 'section-four')}
           py={matches ? 0 : 7}
@@ -711,7 +735,6 @@ const App = () => {
             </Box>
           </Box>
         </Box>
-        {/* {setWaypoint(4)} */}
         <Box className={classnames(classes.sectionFive, 'section-five')}>
           <img
             className={classes.mingImage}
@@ -749,7 +772,6 @@ const App = () => {
             ></Box>
           </Box>
         </Box>
-        {/* {setWaypoint(5)} */}
         <Box
           className={classnames(classes.sectionSix, 'section-six')}
           py={matches ? 4 : 10}
@@ -852,15 +874,14 @@ const App = () => {
             </Box>
           </Container>
         </Box>
-        {/* {setWaypoint(6)} */}
-        <footer>
+        <footer className='section-seven'>
           <Box
             bgcolor='primary.main'
             color='primary.contrastText'
             fontSize={matches ? 'h6.fontSize' : 'h5.fontSize'}
             fontWeight='fontWeightBold'
             py={matches ? 2 : 4}
-            className={classnames(classes.footerTitle, 'section-seven')}
+            className={classnames(classes.footerTitle)}
           >
             <Container maxWidth='lg'>聯繫我們</Container>
           </Box>
@@ -949,7 +970,7 @@ const App = () => {
                   fontSize={
                     matches ? 'subtitle2.fontSize' : 'subtitle1.fontSize'
                   }
-                  fontWeight={!matches && 'fontWeightBold'}
+                  fontWeight={matches ? 'normal' : 'fontWeightBold'}
                   color='primary.light'
                   lineHeight={matches ? 2 : 3}
                 >
@@ -957,7 +978,7 @@ const App = () => {
                 </Box>
                 <Box
                   fontSize='overline.fontSize'
-                  fontWeight={!matches && 'fontWeightBold'}
+                  fontWeight={matches ? 'normal' : 'fontWeightBold'}
                   lineHeight={2}
                   color='primary.light'
                 >

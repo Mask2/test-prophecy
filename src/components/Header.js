@@ -118,7 +118,6 @@ const useStyles = makeStyles((theme) =>
 )
 
 const Header = (props) => {
-  console.log('props', props.active)
   const classes = useStyles()
   const [anchorEl, setAnchorEl] = useState(null)
   const handleClick = (event) => {
