@@ -7,6 +7,7 @@ import Icon from '@material-ui/core/Icon'
 import Typography from '@material-ui/core/Typography'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 
+import YouTube from 'react-youtube'
 import classnames from 'classnames'
 // import { Waypoint } from 'react-waypoint'
 
@@ -19,7 +20,7 @@ import MobileMing03 from '../images/mobile_ming_03.png'
 import IconCalendar from '../images/svg/icon_calendar.svg'
 import IconFavorite from '../images/svg/icon_favorite.svg'
 import IconLocation from '../images/svg/icon_location.svg'
-import TemVideo from '../images/tem_video.png'
+// import TemVideo from '../images/tem_video.png'
 import LineDots from '../images/bg_line_dots.png'
 import WaveDots from '../images/bg_wave_dots.png'
 import CellTop from '../images/bg_cell_top.png'
@@ -211,15 +212,16 @@ const useStyles = makeStyles((theme) =>
       backgroundPositionX: 'right',
     },
     buttonRoot: {
-      width: '32%',
+      maxWidth: theme.spacing(37),
       borderRadius: theme.spacing(1),
       color: theme.palette.primary.light,
       borderColor: theme.palette.primary.light,
       fontSize: theme.typography.h6.fontSize,
       fontWeight: 'bolder',
+      marginRight: theme.spacing(2),
       [theme.breakpoints.only('xs')]: {
-        width: '100%',
         marginBottom: theme.spacing(2),
+        marginRight: 0,
       },
     },
     buttonOutlined: {
@@ -465,6 +467,7 @@ const App = () => {
       start: 'top center',
       toggleActions: 'play none none none',
       once: true,
+      // markers: true,
     })
   }, [])
 
@@ -610,10 +613,11 @@ const App = () => {
               觀看以下影片，由達明親述進行「早期鼻咽癌篩查」的重要性！
             </Box>
             <Box mt={matches ? 3 : 8}>
-              <img
-                className={classes.temVideo}
-                src={TemVideo}
-                alt='tem video'
+              <YouTube
+                videoId='ph8uceFASzA'
+                opts={{
+                  width: '100%',
+                }}
               />
             </Box>
           </Container>
@@ -858,7 +862,7 @@ const App = () => {
             py={matches ? 2 : 4}
             className={classnames(classes.footerTitle, 'section-seven')}
           >
-            <Container maxWidth='lg'>联系我们</Container>
+            <Container maxWidth='lg'>聯繫我們</Container>
           </Box>
           <Box py={matches ? 4 : 6} pb={matches ? 6 : 10}>
             <Container maxWidth='lg'>
@@ -866,7 +870,7 @@ const App = () => {
                 <Box
                   fontSize={matches ? 'h6.fontSize' : 'h5.fontSize'}
                   fontWeight='fontWeightBold'
-                  color='text.disabled'
+                  color='text.hint'
                 >
                   要掌握健康，就要立即行動！
                   <br />
@@ -876,7 +880,6 @@ const App = () => {
               <Box
                 width='100%'
                 display={matches ? 'block' : 'flex'}
-                justifyContent='space-between'
                 my={matches ? 2 : 4}
               >
                 <Button
@@ -886,6 +889,7 @@ const App = () => {
                   }}
                   size='large'
                   variant='outlined'
+                  fullWidth
                   startIcon={
                     <Icon classes={{ root: classes.iconRoot }}>
                       <img
@@ -895,6 +899,7 @@ const App = () => {
                       />
                     </Icon>
                   }
+                  href='https://api.whatsapp.com/send/?phone=85253770823&text=Halo%2C+I+want+to+know+more+about+Prophecy+Test%21+&app_absent=0'
                 >
                   立即預約
                 </Button>
@@ -905,6 +910,7 @@ const App = () => {
                   }}
                   size='large'
                   variant='outlined'
+                  fullWidth
                   startIcon={
                     <Icon classes={{ root: classes.iconRoot }}>
                       <img
@@ -914,10 +920,11 @@ const App = () => {
                       />
                     </Icon>
                   }
+                  href='https://take2health.net/%e7%af%a9%e6%9f%a5%e6%9c%8d%e5%8b%99%e8%a6%86%e8%93%8b%e9%bb%9e/'
                 >
                   查看服務覆蓋點
                 </Button>
-                <Button
+                {/* <Button
                   classes={{
                     root: classes.buttonRoot,
                     outlined: classes.buttonOutlined,
@@ -934,8 +941,8 @@ const App = () => {
                     </Icon>
                   }
                 >
-                  成為會員
-                </Button>
+                  成為會員。
+                </Button> */}
               </Box>
               <Typography component='div'>
                 <Box

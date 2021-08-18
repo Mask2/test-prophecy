@@ -138,6 +138,10 @@ export const annotateListData = [
   },
   {
     content:
+      'Hong Kong Cancer Fund. Cancer Booklets. Understanding Nasopharyngeal Cancer. URL: https://www.cancer-fund.org/wp-content/uploads/2019/02/NPC-Apr19E-Web.pdf. Accessed on 17 Jun 2021.',
+  },
+  {
+    content:
       'Lam WKJ, Jiang P, Chan KCA, et al. Sequencing-based counting and size profiling of plasma Epstein–Barr virus DNA enhance population screening of nasopharyngeal carcinoma. Proc Natl Acad Sci U S A. 2018;115(22):E5115-E5124. doi:10.1073/pnas.1804184115.',
   },
   {
