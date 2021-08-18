@@ -5,6 +5,7 @@ import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
 import Icon from '@material-ui/core/Icon'
 import Typography from '@material-ui/core/Typography'
+import Grid from '@material-ui/core/Grid'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 
 import YouTube from 'react-youtube'
@@ -199,10 +200,7 @@ const useStyles = makeStyles((theme) =>
     },
     serviceCard: {
       display: 'block',
-      height: theme.spacing(30),
-      [theme.breakpoints.only('xs')]: {
-        height: theme.spacing(18),
-      },
+      width: '100%',
     },
     footerTitle: {
       backgroundImage: `url(${LineDots})`,
@@ -855,19 +853,22 @@ const App = () => {
                     justifyContent='space-around'
                     className='service-card-wrapper'
                   >
-                    {serviceListData.map((service) => (
-                      <Box
-                        key={service.label}
-                        my={matches ? 1 : 2}
-                        className='service-card'
-                      >
-                        <img
-                          className={classes.serviceCard}
-                          src={service.img}
-                          alt={service.label}
-                        />
-                      </Box>
-                    ))}
+                    <Grid container spacing={matches ? 2 : 3}>
+                      {serviceListData.map((service, index) => (
+                        <Grid
+                          className='service-card'
+                          item
+                          xs={serviceListData.length - 1 === index ? 12 : 6}
+                          sm={serviceListData.length - 1 === index ? 8 : 4}
+                        >
+                          <img
+                            className={classes.serviceCard}
+                            src={service.img}
+                            alt={service.label}
+                          />
+                        </Grid>
+                      ))}
+                    </Grid>
                   </Box>
                 </Typography>
               </Box>
