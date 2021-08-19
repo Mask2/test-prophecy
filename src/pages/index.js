@@ -153,6 +153,28 @@ const useStyles = makeStyles((theme) =>
       background: theme.palette.background.main,
       position: 'relative',
     },
+    sectionThreeTextLeft: {
+      left: '16%',
+      bottom: '40%',
+      [theme.breakpoints.down('md')]: {
+        left: '12%',
+      },
+      [theme.breakpoints.only('xs')]: {
+        left: '5%',
+        bottom: '44%',
+      },
+    },
+    sectionThreeTextRight: {
+      right: '12%',
+      bottom: '40%',
+      [theme.breakpoints.down('md')]: {
+        right: '2%',
+      },
+      [theme.breakpoints.only('xs')]: {
+        right: '8%',
+        bottom: '44%',
+      },
+    },
     sectionFour: {
       background: theme.palette.background.light,
       overflowX: 'hidden',
@@ -675,10 +697,11 @@ const App = () => {
               alt='Cheung Tat Ming 02'
             />
             <Box
-              left={matches ? '5%' : '18%'}
-              bottom={matches ? '44%' : '40%'}
               color='background.secondaryLight'
-              className={classes.sectionText}
+              className={classnames(
+                classes.sectionText,
+                classes.sectionThreeTextLeft
+              )}
               px={2}
             >
               <div className='section-three-text-one'>鼻咽癌</div>
@@ -693,10 +716,11 @@ const App = () => {
               ></Box>
             </Box>
             <Box
-              right={matches ? '8%' : '18%'}
-              bottom={matches ? '44%' : '40%'}
               color='primary.contrastText'
-              className={classes.sectionText}
+              className={classnames(
+                classes.sectionText,
+                classes.sectionThreeTextRight
+              )}
               px={2}
             >
               <div className='section-three-text-two'>真的離你很遠？</div>
