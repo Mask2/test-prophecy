@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useLayoutEffect, useRef } from 'react'
 import { makeStyles, createStyles, useTheme } from '@material-ui/core/styles'
 import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
@@ -37,8 +37,6 @@ import Annotate from '../components/Annotate'
 import { gsap, ScrollTrigger } from '../utils/initGsap'
 
 import FlipCardsSwiper from '../components/FlipCardsSwiper'
-
-// install Swiper modules
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -260,25 +258,28 @@ const useStyles = makeStyles((theme) =>
   })
 )
 
-const sectionList = [
-  'section-one',
-  'section-two',
-  'section-three',
-  'section-six',
-  'section-seven',
-]
+// const sectionList = [
+//   'section-one',
+//   'section-two',
+//   'section-three',
+//   'section-six',
+//   'section-seven',
+// ]
 
 const App = () => {
   const classes = useStyles()
   const theme = useTheme()
   const matches = useMediaQuery(theme.breakpoints.only('xs'))
-  const sectionOneRef = useRef(null)
-  const flipCardsContainerRef = useRef(null)
+  const el = useRef()
+  const q = gsap.utils.selector(el)
+  const t1 = useRef()
+  const t2 = useRef()
+  const t3 = useRef()
   const [activeSection, setActiveSection] = useState('section-one')
 
   const updateActiveSection = (sectionName) => {
     ScrollTrigger.create({
-      trigger: `.${sectionName}`,
+      trigger: q(`.${sectionName}`),
       start: 'top center',
       onEnter: () => setActiveSection(sectionName),
       onEnterBack: () => setActiveSection(sectionName),
@@ -287,62 +288,52 @@ const App = () => {
   }
 
   // section one parallax motion
-  useEffect(() => {
-    sectionOneRef.current &&
-      gsap.to('.section-one-info', {
-        ease: 'none',
-        scrollTrigger: {
-          trigger: '.section-one-info',
-          start: 'top center',
-          end: 'bottom top',
-          pin: true,
-          scrub: true,
-          pinSpacing: false,
-        },
-      })
-    gsap.to('.section-one-circle-one', {
+  useLayoutEffect(() => {
+    console.timeStamp()
+
+    // section one parallax motion
+    gsap.to(q('.section-one-info'), {
+      ease: 'none',
+      scrollTrigger: {
+        trigger: q('.section-one-info'),
+        start: 'top center',
+        end: 'bottom top',
+        pin: true,
+        scrub: true,
+        pinSpacing: false,
+      },
+    })
+    gsap.to(q('.section-one-circle-one,.section-one-circle-two'), {
       y: -400,
       ease: 'none',
       scrollTrigger: {
-        trigger: '.section-one',
+        trigger: q('.section-one'),
         start: 'top top',
         scrub: true,
       },
     })
-    gsap.to('.section-one-circle-two', {
-      y: -400,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: '.section-one',
-        start: 'top top',
-        scrub: true,
-      },
-    })
-    gsap.to('.section-one-ming', {
+    gsap.to(q('.section-one-ming'), {
       y: 400,
       ease: 'none',
       scrollTrigger: {
-        trigger: '.section-one',
+        trigger: q('.section-one'),
         scrub: true,
         start: 'top top',
       },
     })
-    sectionList.forEach((section) => {
-      updateActiveSection(section)
+    menuListData.forEach((menuItem) => {
+      updateActiveSection(menuItem.id)
     })
-  }, [])
-
-  // section two arrow motion
-  useEffect(() => {
-    const t1 = gsap.timeline()
-
-    t1.fromTo(
-      '.arrow-one',
-      { y: 12 },
-      { y: 32, duration: 1, ease: 'power1.inOut', yoyo: true }
-    )
+    // section two arrow motion
+    t1.current = gsap.timeline()
+    t1.current
       .fromTo(
-        '.arrow-two',
+        q('.arrow-one'),
+        { y: 12 },
+        { y: 32, duration: 1, ease: 'power1.inOut', yoyo: true }
+      )
+      .fromTo(
+        q('.arrow-two'),
         { scale: 1, opacity: 1 },
         {
           scale: 0.3,
@@ -354,30 +345,32 @@ const App = () => {
         '<'
       )
       .repeat(-1)
-  }, [])
-
-  // section three text motion
-  useEffect(() => {
-    const t1 = gsap.timeline()
-    t1.fromTo(
-      // text one motion
-      '.section-three-text-one-cover',
-      { xPercent: -100 },
-      { xPercent: -96, duration: 0.2 }
-    )
+    // section three text motion
+    t2.current = gsap.timeline()
+    t2.current
       .fromTo(
-        '.section-three-text-one',
+        // text one motion
+        q('.section-three-text-one-cover'),
+        { xPercent: -100 },
+        { xPercent: -96, duration: 0.2 }
+      )
+      .fromTo(
+        q('.section-three-text-one'),
         { opacity: 0 },
         { opacity: 1, duration: 1 }
       )
-      .to('.section-three-text-one-cover', { xPercent: 0, duration: 0.2 }, '<')
       .to(
-        '.section-three-text-one-cover',
+        q('.section-three-text-one-cover'),
+        { xPercent: 0, duration: 0.2 },
+        '<'
+      )
+      .to(
+        q('.section-three-text-one-cover'),
         { xPercent: -96, duration: 0.2 },
         '<0.2'
       )
       .to(
-        '.section-three-text-one-cover',
+        q('.section-three-text-one-cover'),
         {
           xPercent: -100,
           opacity: 0,
@@ -387,25 +380,29 @@ const App = () => {
       )
       .fromTo(
         // text two motion
-        '.section-three-text-two-cover',
+        q('.section-three-text-two-cover'),
         { xPercent: -100 },
         { xPercent: -96, duration: 0.2 },
         '<-0.2'
       )
       .fromTo(
-        '.section-three-text-two',
+        q('.section-three-text-two'),
         { opacity: 0 },
         { opacity: 1, duration: 1 },
         '<'
       )
-      .to('.section-three-text-two-cover', { xPercent: 0, duration: 0.2 }, '<')
       .to(
-        '.section-three-text-two-cover',
+        q('.section-three-text-two-cover'),
+        { xPercent: 0, duration: 0.2 },
+        '<'
+      )
+      .to(
+        q('.section-three-text-two-cover'),
         { xPercent: -96, duration: 0.2 },
         '<0.2'
       )
       .to(
-        '.section-three-text-two-cover',
+        q('.section-three-text-two-cover'),
         {
           xPercent: -100,
           opacity: 0,
@@ -415,108 +412,82 @@ const App = () => {
       )
 
     ScrollTrigger.create({
-      trigger: '.section-three',
-      animation: t1,
+      trigger: q('.section-three'),
+      animation: t2.current,
       start: 'top 40%',
       toggleActions: 'play none none none',
       once: true,
       // scrub: true,
       // markers: true,
     })
-  }, [])
-
-  // section four flip cards motion
-  useEffect(() => {
-    // let flipCards = gsap.utils.toArray('.flip-card')
-    // gsap.to(flipCards, {
-    //   x: -400 * (flipCards.length - 1),
-    //   ease: 'none',
-    //   scrollTrigger: {
-    //     trigger: '.flip-cards-container',
-    //     pin: true,
-    //     scrub: true,
-    //     // snap: 1 / (flipCards.length - 1),
-    //     start: 'center center',
-    //     end: () => `end +=${flipCardsContainerRef.current.offsetHeight}`,
-    //     pinSpacing: false,
-    //     markers: true,
-    //   },
-    // })
-    // const t1 = gsap.timeline(flipCards, {
-    //   scrollTrigger: {
-    //     trigger: '.section-four',
-    //     pin: true,
-    //     scrub: true,
-    //     start: 'top 200px',
-    //     end: '+=398',
-    //     pinSpacing: false,
-    //     // markers: true,
-    //   },
-    // })
-    // flipCards.forEach((flipCard) => {
-    //   t1.fromTo(flipCard, { rotateY: 0 }, { rotateY: 180, duration: 1 })
-    //     .to('.flip-cards-container', { x: '-=398', duration: 2 })
-    //     .fromTo(flipCard, { rotateY: 180 }, { rotateY: 0, duration: 1 })
-    // })
-  }, [])
-
-  // section five text motion
-  useEffect(() => {
-    const t1 = gsap.timeline()
-    t1.fromTo(
-      '.section-five-text-one-line',
-      { xPercent: -100 },
-      { xPercent: 0, duration: 1 }
-    ).fromTo(
-      '.section-five-text-two-line',
-      { xPercent: 100 },
-      { xPercent: 0, duration: 1 },
-      '<'
-    )
+    // section five text motion
+    t3.current = gsap.timeline()
+    t3.current
+      .fromTo(
+        q('.section-five-text-one-line'),
+        { xPercent: -100 },
+        { xPercent: 0, duration: 1 }
+      )
+      .fromTo(
+        q('.section-five-text-two-line'),
+        { xPercent: 100 },
+        { xPercent: 0, duration: 1 },
+        '<'
+      )
 
     ScrollTrigger.create({
-      trigger: '.section-five-text-one-line',
+      trigger: q('.section-five-text-one-line'),
       start: 'top center',
-      animation: t1,
+      animation: t3.current,
       toggleActions: 'play none none none',
       once: true,
       // scrub: true,
       // markers: true,
     })
-  }, [])
-
-  // section six symptoms fade in motion
-  useEffect(() => {
+    // section six symptoms fade in motion
     const symptomsFadeIn = gsap.fromTo(
-      '.symptom-card',
+      q('.symptom-card'),
       { autoAlpha: 0, y: 100 },
       { duration: 1, autoAlpha: 1, y: 0, stagger: 0.6 }
     )
     ScrollTrigger.create({
-      trigger: '.symptom-card-wrapper',
+      trigger: q('.symptom-card-wrapper'),
       animation: symptomsFadeIn,
       start: 'top center',
       toggleActions: 'play none none none',
       once: true,
     })
-  }, [])
-
-  // section six services fade in motion
-  useEffect(() => {
+    // section six services fade in motion
     const servicesFadeIn = gsap.fromTo(
-      '.service-card',
+      q('.service-card'),
       { autoAlpha: 0, y: -50 },
       { duration: 0.6, autoAlpha: 1, y: 0, stagger: 0.3 }
     )
     ScrollTrigger.create({
-      trigger: '.service-card-wrapper',
+      trigger: q('.service-card-wrapper'),
       animation: servicesFadeIn,
       start: 'top center',
       toggleActions: 'play none none none',
       once: true,
       // markers: true,
     })
+    return () => ScrollTrigger.kill()
   }, [])
+
+  // // section two arrow motion
+  // useLayoutEffect(() => {}, [])
+
+  // // section three text motion
+  // useLayoutEffect(() => {}, [])
+
+  // // section five text motion
+  // useLayoutEffect(() => {}, [])
+
+  // // section six symptoms fade in motion
+  // useLayoutEffect(() => {}, [])
+
+  // // section six services fade in motion
+  // useLayoutEffect(() => {}, [])
 
   const symptoms = (params) =>
     symptomListData.map((symptom) => (
@@ -545,13 +516,12 @@ const App = () => {
     ))
 
   return (
-    <>
+    <div ref={el}>
       <Header active={activeSection}>{activeSection}</Header>
       <Box className={classes.root}>
         <Box className={classnames(classes.sectionOne, 'section-one')}>
           <Container className={classes.sectionOneContainer} maxWidth='lg'>
             <Typography
-              ref={sectionOneRef}
               className={classnames(
                 classes.sectionMotion,
                 classes.sectionOneInfo,
@@ -744,11 +714,7 @@ const App = () => {
           >
             齊來認清真相!
           </Box>
-          <Box
-            className='flip-cards-container'
-            display='flex'
-            ref={flipCardsContainerRef}
-          >
+          <Box className='flip-cards-container' display='flex'>
             <FlipCardsSwiper></FlipCardsSwiper>
           </Box>
         </Box>
@@ -887,6 +853,7 @@ const App = () => {
                     <Grid container spacing={matches ? 2 : 3}>
                       {serviceListData.map((service, index) => (
                         <Grid
+                          key={service.label}
                           className='service-card'
                           item
                           xs={serviceListData.length - 1 === index ? 12 : 6}
@@ -1028,7 +995,7 @@ const App = () => {
           </Box>
         </footer>
       </Box>
-    </>
+    </div>
   )
 }
 
