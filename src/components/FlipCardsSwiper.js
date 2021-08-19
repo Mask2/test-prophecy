@@ -12,6 +12,7 @@ import 'swiper/components/navigation/navigation.min.css'
 import { cardListData } from '../utils/constant'
 import IconArrow from '../images/svg/icon_arrow.svg'
 import { gsap } from '../utils/initGsap'
+import Container from '@material-ui/core/Container'
 
 SwiperCore.use([Pagination, Navigation])
 
@@ -27,11 +28,11 @@ const useStyles = makeStyles((theme) =>
     cardWrapper: {},
     questionWrapper: {
       width: '27vw',
-      maxWidth: theme.spacing(50),
+      maxWidth: theme.spacing(47),
       height: '28vw',
+      maxHeight: theme.spacing(48.75),
       position: 'relative',
       flexShrink: 0,
-      // margin: theme.spacing(0, 2),
       transform: 'rotateY(0deg)',
       transformStyle: 'preserve-3d',
       perspective: 1000,
@@ -74,9 +75,6 @@ const useStyles = makeStyles((theme) =>
     questionIcon: {
       width: '60%',
       display: 'block',
-      // [theme.breakpoints.only('xs')]: {
-      //   width: theme.spacing(16.5),
-      // },
     },
     answerWrapper: {
       left: 0,
@@ -152,7 +150,6 @@ const useStyles = makeStyles((theme) =>
         },
       },
     },
-
     slideHover: {
       '&:hover': {
         transform: 'rotateY(-180deg)',
@@ -160,10 +157,10 @@ const useStyles = makeStyles((theme) =>
     },
     cover: {
       position: 'absolute',
-      left: 0,
-      right: 0,
-      top: 0,
-      bottom: 0,
+      left: -2,
+      right: -2,
+      top: -2,
+      bottom: -2,
       backgroundColor: 'rgba(0, 0, 0, 0.4)',
       borderRadius: theme.spacing(3.25),
       transition: 'opacity 0.3s ease',
@@ -174,6 +171,9 @@ const useStyles = makeStyles((theme) =>
     },
     hideCover: {
       opacity: 0,
+    },
+    container: {
+      padding: 0,
     },
   })
 )
@@ -221,18 +221,6 @@ const FlipCardsSwiper = () => {
         yoyo: true,
       }
     )
-    // t1.fromTo(ruleAfter, { x: 12 }, { x: 32, duration: 1 })
-    //   .fromTo(
-    //     ruleBefore,
-    //     { scale: 1, opacity: 1 },
-    //     {
-    //       scale: 0.3,
-    //       opacity: 0.6,
-    //       duration: 1,
-    //     },
-    //     '<'
-    //   )
-    //   .repeat(-1)
   }, [])
 
   const fakeActive = (index) =>
@@ -240,69 +228,71 @@ const FlipCardsSwiper = () => {
     (activeSlide + (matches ? 0 : 1) >= 5 ? 0 : activeSlide + (matches ? 0 : 1))
 
   return (
-    <Swiper
-      spaceBetween={matches ? '-40%' : '-13%'}
-      slidesPerView={matches ? 1 : 3}
-      pagination={{ clickable: true }}
-      navigation
-      grabCursor
-      loop={true}
-      onSlideChange={(swiper) => {
-        setActiveSlide(swiper.realIndex)
-      }}
-      className={classes.swiper}
-      initialSlide={matches ? 0 : 2}
-      onInit={(swiper) => {
-        setActiveSlide(swiper.realIndex)
-      }}
-    >
-      {cardListData.map((card, index) => (
-        <SwiperSlide className={classes.swiperSlide} key={card.label}>
-          <Box
-            className={classnames(classes.questionWrapper, 'flip-card', {
-              [classes.slideHover]: fakeActive(index),
-            })}
-          >
-            <Box className={classes.questionContent}>
-              <Box
-                className={classnames(classes.cover, {
-                  [classes.hideCover]: fakeActive(index),
-                })}
-              ></Box>
-              <Box
-                fontWeight='fontWeightBold'
-                color='secondary.main'
-                m={0}
-                mt={matches ? 1.5 : 4}
-              >
-                {card.label}
+    <Container className={classes.container} maxWidth='xl'>
+      <Swiper
+        spaceBetween={matches ? '-40%' : '-13%'}
+        slidesPerView={matches ? 1 : 3}
+        pagination={{ clickable: true }}
+        navigation
+        grabCursor
+        loop={true}
+        onSlideChange={(swiper) => {
+          setActiveSlide(swiper.realIndex)
+        }}
+        className={classes.swiper}
+        initialSlide={matches ? 0 : 2}
+        onInit={(swiper) => {
+          setActiveSlide(swiper.realIndex)
+        }}
+      >
+        {cardListData.map((card, index) => (
+          <SwiperSlide className={classes.swiperSlide} key={card.label}>
+            <Box
+              className={classnames(classes.questionWrapper, 'flip-card', {
+                [classes.slideHover]: fakeActive(index),
+              })}
+            >
+              <Box className={classes.questionContent}>
+                <Box
+                  className={classnames(classes.cover, {
+                    [classes.hideCover]: fakeActive(index),
+                  })}
+                ></Box>
+                <Box
+                  fontWeight='fontWeightBold'
+                  color='secondary.main'
+                  m={0}
+                  mt={matches ? 1.5 : 4}
+                >
+                  {card.label}
+                </Box>
+                <img
+                  className={classes.questionIcon}
+                  src={card.icon}
+                  alt={card.label}
+                />
+                <Box
+                  fontWeight='fontWeightBold'
+                  color='primary.light'
+                  m={0}
+                  mt='auto'
+                  mb={matches ? 3 : 4}
+                >
+                  {card.question}
+                </Box>
               </Box>
-              <img
-                className={classes.questionIcon}
-                src={card.icon}
-                alt={card.label}
-              />
-              <Box
-                fontWeight='fontWeightBold'
-                color='primary.light'
-                m={0}
-                mt='auto'
-                mb={matches ? 3 : 4}
-              >
-                {card.question}
+              <Box className={classes.answerWrapper}>
+                <img
+                  className={classes.answerImg}
+                  src={card.answer}
+                  alt={card.label}
+                />
               </Box>
             </Box>
-            <Box className={classes.answerWrapper}>
-              <img
-                className={classes.answerImg}
-                src={card.answer}
-                alt={card.label}
-              />
-            </Box>
-          </Box>
-        </SwiperSlide>
-      ))}
-    </Swiper>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </Container>
   )
 }
 

@@ -12,16 +12,11 @@ import { menuListData } from '../utils/constant'
 import IconMenu from '../images/icon_menu.png'
 import IconClose from '../images/icon_close.png'
 import { gsap, ScrollTrigger } from '../utils/initGsap'
+import Container from '@material-ui/core/Container'
 
 const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
-      height: theme.spacing(10),
-      color: theme.palette.primary.main,
-      textAlign: 'center',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
       position: 'fixed',
       width: '100%',
       left: 0,
@@ -31,6 +26,15 @@ const useStyles = makeStyles((theme) =>
         height: 40,
       },
       zIndex: theme.zIndex.appBar,
+    },
+    container: {
+      padding: 0,
+      height: theme.spacing(10),
+      color: theme.palette.primary.main,
+      textAlign: 'center',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
       [theme.breakpoints.only('xs')]: {
         height: theme.spacing(6.5),
       },
@@ -173,48 +177,50 @@ const Header = (props) => {
 
   return (
     <Box className={classnames('root', classes.root)}>
-      <Box
-        className={classes.logoContainer}
-        onClick={() =>
-          gsap.to(window, { duration: 1, scrollTo: `.section-one` })
-        }
-      >
-        <img className={classes.logo} src={Logo} alt='take2 logo' />
-      </Box>
-      <IconButton
-        className={classes.navButton}
-        aria-label='menu'
-        aria-haspopup='true'
-        onClick={handleClick}
-        size='small'
-        classes={{ root: classes.iconButton }}
-      >
-        <img className={classes.menuIcon} src={IconMenu} alt='menu' />
-      </IconButton>
-      <Menu
-        id='simple-menu'
-        anchorEl={anchorEl}
-        keepMounted
-        open={Boolean(anchorEl)}
-        onClose={handleClose}
-        classes={{ paper: classes.menuPaper }}
-        getContentAnchorEl={null}
-        anchorOrigin={{
-          vertical: 'top',
-          horizontal: 'center',
-        }}
-      >
-        {anchorEl && (
-          <IconButton
-            className={classes.closeButton}
-            size='small'
-            onClick={handleClose}
-          >
-            <img className={classes.closeIcon} src={IconClose} alt='close' />
-          </IconButton>
-        )}
-        {MenuList()}
-      </Menu>
+      <Container className={classes.container} maxWidth='xl'>
+        <Box
+          className={classes.logoContainer}
+          onClick={() =>
+            gsap.to(window, { duration: 1, scrollTo: `.section-one` })
+          }
+        >
+          <img className={classes.logo} src={Logo} alt='take2 logo' />
+        </Box>
+        <IconButton
+          className={classes.navButton}
+          aria-label='menu'
+          aria-haspopup='true'
+          onClick={handleClick}
+          size='small'
+          classes={{ root: classes.iconButton }}
+        >
+          <img className={classes.menuIcon} src={IconMenu} alt='menu' />
+        </IconButton>
+        <Menu
+          id='simple-menu'
+          anchorEl={anchorEl}
+          keepMounted
+          open={Boolean(anchorEl)}
+          onClose={handleClose}
+          classes={{ paper: classes.menuPaper }}
+          getContentAnchorEl={null}
+          anchorOrigin={{
+            vertical: 'top',
+            horizontal: 'center',
+          }}
+        >
+          {anchorEl && (
+            <IconButton
+              className={classes.closeButton}
+              size='small'
+              onClick={handleClose}
+            >
+              <img className={classes.closeIcon} src={IconClose} alt='close' />
+            </IconButton>
+          )}
+          {MenuList()}
+        </Menu>
+      </Container>
     </Box>
   )
 }

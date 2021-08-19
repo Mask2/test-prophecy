@@ -63,7 +63,7 @@ const useStyles = makeStyles((theme) =>
       justifyContent: 'center',
     },
     sectionOneInfo: {
-      left: theme.spacing(3),
+      left: theme.spacing(6),
       bottom: theme.spacing(35),
       zIndex: 4,
       lineHeight: 1.5,
@@ -147,7 +147,7 @@ const useStyles = makeStyles((theme) =>
       alignItems: 'center',
     },
     sectionThree: {
-      background: theme.palette.background.light,
+      background: theme.palette.background.main,
       position: 'relative',
     },
     sectionFour: {
@@ -155,7 +155,7 @@ const useStyles = makeStyles((theme) =>
       overflowX: 'hidden',
     },
     sectionFive: {
-      background: theme.palette.background.light,
+      background: theme.palette.background.main,
       position: 'relative',
     },
     sectionSix: {
@@ -173,13 +173,13 @@ const useStyles = makeStyles((theme) =>
       width: '100%',
     },
     sectionText: {
-      fontSize: theme.spacing(6),
+      fontSize: theme.spacing(8),
       fontWeight: 'bolder',
       zIndex: 2,
       position: 'absolute',
       overflow: 'hidden',
       [theme.breakpoints.down('sm')]: {
-        fontSize: theme.typography.h5.fontSize,
+        fontSize: '22px',
         letterSpacing: 2,
       },
     },
@@ -191,7 +191,7 @@ const useStyles = makeStyles((theme) =>
     },
     symptomIcon: {
       display: 'block',
-      mb: theme.spacing(2),
+      width: theme.spacing(35.75),
       [theme.breakpoints.only('xs')]: {
         width: theme.spacing(12.5),
       },
@@ -249,6 +249,10 @@ const useStyles = makeStyles((theme) =>
     container: {
       boxSizing: 'content-box',
       width: 'auto',
+    },
+    containerXl: {
+      padding: 0,
+      position: 'relative',
     },
   })
 )
@@ -527,7 +531,7 @@ const App = () => {
         />
         <Typography component='div'>
           <Box
-            fontSize={matches ? 'body1.fontSize' : 'h6.fontSize'}
+            fontSize={matches ? 'body1.fontSize' : '32px'}
             fontWeight='fontWeightBold'
             color='text.primary'
           >
@@ -559,7 +563,7 @@ const App = () => {
               >
                 張達明
                 <br />
-                鼻咽癌康復者」
+                「鼻咽癌康復者」
                 <br />
                 早期鼻咽癌存活率：
                 {matches ? (
@@ -661,47 +665,49 @@ const App = () => {
           </Container>
         </Box>
         <Box className={classnames(classes.sectionThree, 'section-three')}>
-          <img
-            className={classes.mingImage}
-            src={matches ? MobileMing02 : Ming02}
-            alt='Cheung Tat Ming 02'
-          />
-          <Box
-            left={matches ? '5%' : '18%'}
-            bottom={matches ? '44%' : '40%'}
-            color='background.secondaryLight'
-            className={classes.sectionText}
-            px={2}
-          >
-            <div className='section-three-text-one'>鼻咽癌</div>
+          <Container className={classes.containerXl} maxWidth='xl'>
+            <img
+              className={classes.mingImage}
+              src={matches ? MobileMing02 : Ming02}
+              alt='Cheung Tat Ming 02'
+            />
             <Box
-              position='absolute'
-              left='0'
-              top='0'
-              bottom='0'
-              right='0'
-              bgcolor='background.secondaryLight'
-              className='section-three-text-one-cover'
-            ></Box>
-          </Box>
-          <Box
-            right={matches ? '8%' : '18%'}
-            bottom={matches ? '44%' : '40%'}
-            color='primary.contrastText'
-            className={classes.sectionText}
-            px={2}
-          >
-            <div className='section-three-text-two'>真的離你很遠？</div>
+              left={matches ? '5%' : '18%'}
+              bottom={matches ? '44%' : '40%'}
+              color='background.secondaryLight'
+              className={classes.sectionText}
+              px={2}
+            >
+              <div className='section-three-text-one'>鼻咽癌</div>
+              <Box
+                position='absolute'
+                left='0'
+                top='0'
+                bottom='0'
+                right='0'
+                bgcolor='background.secondaryLight'
+                className='section-three-text-one-cover'
+              ></Box>
+            </Box>
             <Box
-              position='absolute'
-              left='0'
-              top='0'
-              bottom='0'
-              right='0'
-              bgcolor='background.paper'
-              className='section-three-text-two-cover'
-            ></Box>
-          </Box>
+              right={matches ? '8%' : '18%'}
+              bottom={matches ? '44%' : '40%'}
+              color='primary.contrastText'
+              className={classes.sectionText}
+              px={2}
+            >
+              <div className='section-three-text-two'>真的離你很遠？</div>
+              <Box
+                position='absolute'
+                left='0'
+                top='0'
+                bottom='0'
+                right='0'
+                bgcolor='background.paper'
+                className='section-three-text-two-cover'
+              ></Box>
+            </Box>
+          </Container>
         </Box>
         <Box
           className={classnames(classes.sectionFour, 'section-four')}
@@ -744,41 +750,49 @@ const App = () => {
           </Box>
         </Box>
         <Box className={classnames(classes.sectionFive, 'section-five')}>
-          <img
-            className={classes.mingImage}
-            src={matches ? MobileMing03 : Ming03}
-            alt='Cheung Tat Ming 03'
-          />
-          <Box
-            className={classnames(classes.sectionText, classes.sectionFiveText)}
-            left='8%'
-            bottom='47%'
-            color='primary.contrastText'
-          >
-            鼻咽癌不能「預防」
+          <Container className={classes.containerXl} maxWidth='xl'>
+            <img
+              className={classes.mingImage}
+              src={matches ? MobileMing03 : Ming03}
+              alt='Cheung Tat Ming 03'
+            />
             <Box
-              width='100%'
-              height={matches ? 4 : 8}
-              mt={1}
-              bgcolor='secondary.main'
-              className='section-five-text-one-line'
-            ></Box>
-          </Box>
-          <Box
-            className={classnames(classes.sectionText, classes.sectionFiveText)}
-            right='8%'
-            bottom='24%'
-            color='primary.contrastText'
-          >
-            卻能「提防」
+              className={classnames(
+                classes.sectionText,
+                classes.sectionFiveText
+              )}
+              left='8%'
+              bottom='47%'
+              color='primary.contrastText'
+            >
+              鼻咽癌不能「預防」
+              <Box
+                width='100%'
+                height={matches ? 4 : 8}
+                mt={1}
+                bgcolor='secondary.main'
+                className='section-five-text-one-line'
+              ></Box>
+            </Box>
             <Box
-              width='100%'
-              height={matches ? 4 : 8}
-              mt={1}
-              bgcolor='secondary.main'
-              className='section-five-text-two-line'
-            ></Box>
-          </Box>
+              className={classnames(
+                classes.sectionText,
+                classes.sectionFiveText
+              )}
+              right='8%'
+              bottom='24%'
+              color='primary.contrastText'
+            >
+              卻能「提防」
+              <Box
+                width='100%'
+                height={matches ? 4 : 8}
+                mt={1}
+                bgcolor='secondary.main'
+                className='section-five-text-two-line'
+              ></Box>
+            </Box>
+          </Container>
         </Box>
         <Box
           className={classnames(classes.sectionSix, 'section-six')}
@@ -806,7 +820,11 @@ const App = () => {
                   鼻咽癌與感冒相似的徵狀包括：
                 </Box>
               </Typography>
-              <Box display='flex' mt={2} className='symptom-card-wrapper'>
+              <Box
+                display='flex'
+                mt={matches ? 2 : 1.5}
+                className='symptom-card-wrapper'
+              >
                 {symptoms()}
               </Box>
               <Typography component='div'>
