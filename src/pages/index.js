@@ -44,7 +44,10 @@ const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
       // fontFamily: 'Noto Sans CJK TC !important',
-      fontFamily: theme.typography.body1.fontFamily,
+
+      // fontFamily: theme.typography.body1.fontFamily,
+      fontFamily:
+        "-apple-system, BlinkMacSystemFont,'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell','Fira Sans', 'Droid Sans', 'Helvetica Neue',sans-serif",
       overflowX: 'hidden',
     },
     sectionOne: {
