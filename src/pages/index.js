@@ -782,7 +782,8 @@ const App = () => {
         </Box>
         <Box
           className={classnames(classes.sectionSix, 'section-six')}
-          py={matches ? 4 : 10}
+          pt={matches ? 4 : 10}
+          pb={matches ? 10 : 15}
         >
           <Container maxWidth='md'>
             <Box display='flex' flexDirection='column' alignItems='center'>

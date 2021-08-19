@@ -37,6 +37,13 @@ const useStyles = makeStyles((theme) =>
       perspective: 1000,
       cursor: 'pointer',
       transition: 'transform 0.7s ease-in-out',
+      fontSize: theme.spacing(4),
+      [theme.breakpoints.down('md')]: {
+        fontSize: theme.typography.h5.fontSize,
+      },
+      [theme.breakpoints.down('sm')]: {
+        fontSize: theme.typography.h6.fontSize,
+      },
       [theme.breakpoints.only('xs')]: {
         width: '56vw',
         maxWidth: theme.spacing(26.25),
@@ -263,7 +270,6 @@ const FlipCardsSwiper = () => {
                 })}
               ></Box>
               <Box
-                fontSize={matches ? 'h6.fontSize' : '32px'}
                 fontWeight='fontWeightBold'
                 color='secondary.main'
                 m={0}
@@ -277,7 +283,6 @@ const FlipCardsSwiper = () => {
                 alt={card.label}
               />
               <Box
-                fontSize={matches ? 'h6.fontSize' : '32px'}
                 fontWeight='fontWeightBold'
                 color='primary.light'
                 m={0}
