@@ -15,7 +15,7 @@ const Annotate = () => {
       <Typography component='div'>
         <Box
           color='text.disabled'
-          fontSize={matches ? 'caption.fontSize' : 'overline.fontSize'}
+          fontSize={matches ? '10px' : 'overline.fontSize'}
           fontWeight='fontWeightLight'
           style={{
             wordBreak: 'break-word',

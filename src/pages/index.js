@@ -63,10 +63,10 @@ const useStyles = makeStyles((theme) =>
       justifyContent: 'center',
     },
     sectionOneInfo: {
-      left: theme.spacing(2),
+      left: theme.spacing(3),
       bottom: theme.spacing(35),
       zIndex: 4,
-      lineHeight: 2,
+      lineHeight: 1.5,
       fontWeight: '600',
       [theme.breakpoints.only('xs')]: {
         lineHeight: 1.4,
@@ -89,12 +89,12 @@ const useStyles = makeStyles((theme) =>
       right: 0,
       textAlign: 'center',
       zIndex: 4,
-      bottom: theme.spacing(10),
-      fontSize: theme.typography.h1.fontSize,
+      bottom: theme.spacing(8),
+      fontSize: theme.spacing(15),
       fontWeight: 'lighter',
       [theme.breakpoints.down('sm')]: {
-        fontSize: theme.typography.h3.fontSize,
-        bottom: theme.spacing(2.25),
+        fontSize: theme.spacing(8.5),
+        bottom: theme.spacing(3),
       },
     },
     circle: {
@@ -173,14 +173,20 @@ const useStyles = makeStyles((theme) =>
       width: '100%',
     },
     sectionText: {
-      fontSize: theme.typography.h3.fontSize,
+      fontSize: theme.spacing(6),
       fontWeight: 'bolder',
       zIndex: 2,
       position: 'absolute',
       overflow: 'hidden',
       [theme.breakpoints.down('sm')]: {
-        fontSize: theme.typography.h6.fontSize,
+        fontSize: theme.typography.h5.fontSize,
         letterSpacing: 2,
+      },
+    },
+    sectionFiveText: {
+      fontSize: theme.spacing(7),
+      [theme.breakpoints.down('sm')]: {
+        fontSize: theme.spacing(2.125),
       },
     },
     symptomIcon: {
@@ -210,17 +216,21 @@ const useStyles = makeStyles((theme) =>
       backgroundPositionX: 'right',
     },
     buttonRoot: {
-      maxWidth: theme.spacing(37),
-      borderRadius: theme.spacing(1),
+      maxWidth: theme.spacing(47),
+      borderRadius: theme.spacing(2),
       color: theme.palette.primary.light,
       borderColor: theme.palette.primary.light,
-      fontSize: theme.typography.h6.fontSize,
+      fontSize: theme.spacing(3.5),
       fontWeight: 'bolder',
-      marginRight: theme.spacing(2),
+      marginRight: theme.spacing(4),
+      padding: theme.spacing(3, 0),
+      borderWidth: 2,
       [theme.breakpoints.only('xs')]: {
         maxWidth: '100%',
         marginBottom: theme.spacing(2),
         marginRight: 0,
+        fontSize: theme.typography.h6.fontSize,
+        padding: theme.spacing(2.5, 0),
       },
     },
     buttonOutlined: {
@@ -235,6 +245,10 @@ const useStyles = makeStyles((theme) =>
     imageIcon: {
       height: '100%',
       display: 'block',
+    },
+    container: {
+      boxSizing: 'content-box',
+      width: 'auto',
     },
   })
 )
@@ -539,7 +553,7 @@ const App = () => {
               component='div'
             >
               <Box
-                fontSize='h6.fontSize'
+                fontSize='h5.fontSize'
                 color='primary.contrastText'
                 letterSpacing='1px'
               >
@@ -549,11 +563,11 @@ const App = () => {
                 <br />
                 早期鼻咽癌存活率：
                 {matches ? (
-                  <Box fontSize='h5.fontSize' component='div' fontWeight='600'>
+                  <Box fontSize='h4.fontSize' component='div' fontWeight='600'>
                     90%+
                   </Box>
                 ) : (
-                  <Box fontSize='h5.fontSize' component='span'>
+                  <Box fontSize='h4.fontSize' component='span'>
                     90%+
                   </Box>
                 )}
@@ -593,11 +607,11 @@ const App = () => {
         </Box>
         <Box
           className={classnames(classes.sectionTwo, 'section-two')}
-          pb={matches ? 7.5 : 15}
-          pt={matches ? 3 : 6}
+          pb={matches ? 3 : 15}
+          pt={matches ? 2 : 6}
         >
           <Box
-            mb={matches ? 3 : 6}
+            mb={matches ? 2 : 8}
             className={classes.arrowButton}
             onClick={() =>
               gsap.to(window, { duration: 1, scrollTo: `.section-two` })
@@ -614,13 +628,13 @@ const App = () => {
               alt='arrow'
             />
           </Box>
-          <Container maxWidth='sm'>
+          <Container className={classes.container} maxWidth='sm'>
             <Box
-              fontSize='subtitle1.fontSize'
+              fontSize={matches ? 'body1.fontSize' : 'h6.fontSize'}
               fontWeight='fontWeightLight'
               color='primary.contrastText'
               component='p'
-              lineHeight={2}
+              lineHeight={matches ? 1.5 : 2}
             >
               根據世界衛生組織2018年的數據顯示，香港鼻咽癌發病率是世界主要城市的5-6倍¹。
               <br />
@@ -691,46 +705,42 @@ const App = () => {
         </Box>
         <Box
           className={classnames(classes.sectionFour, 'section-four')}
-          py={matches ? 0 : 7}
+          py={matches ? 3 : 10}
         >
-          <Container maxWidth='sm'>
+          <Container className={classes.container} maxWidth='sm'>
             <Box
-              fontSize={matches ? 'h6.fontSize' : 'h5.fontSize'}
+              fontSize={matches ? 'h6.fontSize' : '28px'}
               fontWeight='fontWeightBold'
               color='primary.contrastText'
-              component='h5'
             >
-              鼻咽癌又稱「廣東癌」
+              鼻咽癌又稱「廣東癌」 二萬名人士參與 核心臨床學術研究
             </Box>
             <Box
-              fontSize='body2.fontSize'
+              fontSize={matches ? 'body2.fontSize' : 'h6.fontSize'}
               fontWeight='fontWeightLight'
-              lineHeight={2}
+              lineHeight={matches ? 1.5 : 2}
               color='primary.contrastText'
-              mt={matches ? 3 : 4}
-              component='p'
+              mt={3}
             >
               鼻咽癌的高發地區為東南亞和南中國。當中在香港、廣東和廣西的發病率特別高，因此也被稱為「廣東癌」。本港每年有六百至八百宗鼻咽癌病例，因此鼻咽癌是不可忽視的十大癌症之一，它更是過去十年間45-64歲男士五大常見癌症之一²。
             </Box>
           </Container>
-          <Box>
-            <Box
-              fontSize={matches ? 'h6.fontSize' : 'h4.fontSize'}
-              fontWeight='fontWeightBold'
-              color='primary.contrastText'
-              component='h4'
-              textAlign='center'
-            >
-              齊來認清真相!
-            </Box>
-            <Box
-              className='flip-cards-container'
-              display='flex'
-              ref={flipCardsContainerRef}
-            >
-              {/* <FlipCards></FlipCards> */}
-              <FlipCardsSwiper></FlipCardsSwiper>
-            </Box>
+          <Box
+            fontSize={matches ? 'h6.fontSize' : '40px'}
+            fontWeight='fontWeightBold'
+            color='primary.contrastText'
+            textAlign='center'
+            mt={matches ? 8 : 10}
+            mb={matches ? 3 : 6}
+          >
+            齊來認清真相!
+          </Box>
+          <Box
+            className='flip-cards-container'
+            display='flex'
+            ref={flipCardsContainerRef}
+          >
+            <FlipCardsSwiper></FlipCardsSwiper>
           </Box>
         </Box>
         <Box className={classnames(classes.sectionFive, 'section-five')}>
@@ -741,8 +751,8 @@ const App = () => {
           />
           <Box
             className={classnames(classes.sectionText, classes.sectionFiveText)}
-            left='13%'
-            bottom='48%'
+            left='8%'
+            bottom='47%'
             color='primary.contrastText'
           >
             鼻咽癌不能「預防」
@@ -756,7 +766,7 @@ const App = () => {
           </Box>
           <Box
             className={classnames(classes.sectionText, classes.sectionFiveText)}
-            right='10%'
+            right='8%'
             bottom='24%'
             color='primary.contrastText'
           >
@@ -778,7 +788,7 @@ const App = () => {
             <Box display='flex' flexDirection='column' alignItems='center'>
               <Typography component='div'>
                 <Box
-                  fontSize='body1.fontSize'
+                  fontSize={matches ? 'body2.fontSize' : 'h6.fontSize'}
                   fontWeight='fontWeightLight'
                   textAlign={matches ? 'left' : 'center'}
                   color='primary.contrastText'
@@ -786,7 +796,7 @@ const App = () => {
                   鼻咽癌的症狀容易與傷風感冒混淆而令人忽略，80%患者在初診時已是晚期⁷。
                 </Box>
                 <Box
-                  fontSize={matches ? 'h6.fontSize' : 'h5.fontSize'}
+                  fontSize={matches ? 'h6.fontSize' : '32px'}
                   fontWeight='fontWeightBold'
                   color='primary.contrastText'
                   textAlign={matches ? 'left' : 'center'}
@@ -800,7 +810,7 @@ const App = () => {
               </Box>
               <Typography component='div'>
                 <Box
-                  fontSize={matches ? 'h6.fontSize' : 'h5.fontSize'}
+                  fontSize={matches ? 'h6.fontSize' : '32px'}
                   fontWeight='fontWeightBold'
                   color='primary.contrastText'
                   textAlign={matches ? 'left' : 'center'}
@@ -809,12 +819,13 @@ const App = () => {
                   怎樣才能「提防」患癌？
                 </Box>
                 <Box
-                  fontSize='body1.fontSize'
+                  fontSize={matches ? 'body2.fontSize' : 'h6.fontSize'}
                   fontWeight='fontWeightLight'
                   textAlign={matches ? 'left' : 'center'}
                   color='primary.contrastText'
-                  lineHeight={matches ? 1.5 : 3}
+                  lineHeight={1.5}
                   mt={matches ? 2 : 3}
+                  mb={matches ? 3 : 8}
                 >
                   研究顯示，進行早期鼻咽癌篩查能有效找出「隱形」患者，
                   儘早接受適當治療，
@@ -824,23 +835,21 @@ const App = () => {
               </Typography>
               <Box
                 className={classes.serviceWrapper}
-                py={matches ? 2 : 10}
-                pb={matches ? 6 : 10}
-                px={matches ? 2 : 8}
-                mt={8}
-                my={matches ? 2 : 0}
+                pt={matches ? 2 : 8}
+                pb={matches ? 6.5 : 10}
+                px={matches ? 2 : 12.75}
                 bgcolor='background.paper'
               >
                 <Typography component='div'>
                   <Box
-                    fontSize={matches ? 'h6.fontSize' : 'h4.fontSize'}
+                    fontSize={matches ? 'h6.fontSize' : '44px'}
                     fontWeight='fontWeightBold'
                     color='text.secondary'
                   >
                     Take2 Prophecy™
                   </Box>
                   <Box
-                    fontSize={matches ? 'h6.fontSize' : 'h4.fontSize'}
+                    fontSize={matches ? 'h6.fontSize' : '44px'}
                     fontWeight='fontWeightBold'
                     color='background.default'
                   >
@@ -879,7 +888,7 @@ const App = () => {
           <Box
             bgcolor='primary.main'
             color='primary.contrastText'
-            fontSize={matches ? 'h6.fontSize' : 'h5.fontSize'}
+            fontSize={matches ? 'h6.fontSize' : '36px'}
             fontWeight='fontWeightBold'
             py={matches ? 2 : 4}
             className={classnames(classes.footerTitle)}
@@ -890,20 +899,17 @@ const App = () => {
             <Container maxWidth='lg'>
               <Typography component='div'>
                 <Box
-                  fontSize={matches ? 'h6.fontSize' : 'h5.fontSize'}
+                  fontSize={matches ? 'body1.fontSize' : '28px'}
                   fontWeight='fontWeightBold'
                   color='text.hint'
+                  lineHeight={1.5}
                 >
                   要掌握健康，就要立即行動！
                   <br />
                   歡迎透過下列方式與我們聯絡：
                 </Box>
               </Typography>
-              <Box
-                width='100%'
-                display={matches ? 'block' : 'flex'}
-                my={matches ? 2 : 4}
-              >
+              <Box width='100%' display={matches ? 'block' : 'flex'} my={4}>
                 <Button
                   classes={{
                     root: classes.buttonRoot,
@@ -968,9 +974,7 @@ const App = () => {
               </Box>
               <Typography component='div'>
                 <Box
-                  fontSize={
-                    matches ? 'subtitle2.fontSize' : 'subtitle1.fontSize'
-                  }
+                  fontSize={matches ? 'body1.fontSize' : 'h6.fontSize'}
                   fontWeight={matches ? 'normal' : 'fontWeightBold'}
                   color='primary.light'
                   lineHeight={matches ? 2 : 3}
@@ -978,9 +982,9 @@ const App = () => {
                   聯絡資料
                 </Box>
                 <Box
-                  fontSize='overline.fontSize'
+                  fontSize={matches ? 'caption.fontSize' : 'body1.fontSize'}
                   fontWeight={matches ? 'normal' : 'fontWeightBold'}
-                  lineHeight={2}
+                  lineHeight={1.5}
                   color='primary.light'
                 >
                   電話: (852) 3613 0536

@@ -263,7 +263,7 @@ const FlipCardsSwiper = () => {
                 })}
               ></Box>
               <Box
-                fontSize={matches ? 'body1.fontSize' : 'h5.fontSize'}
+                fontSize={matches ? 'h6.fontSize' : '32px'}
                 fontWeight='fontWeightBold'
                 color='secondary.main'
                 m={0}
@@ -277,7 +277,7 @@ const FlipCardsSwiper = () => {
                 alt={card.label}
               />
               <Box
-                fontSize={matches ? 'body1.fontSize' : 'h5.fontSize'}
+                fontSize={matches ? 'h6.fontSize' : '32px'}
                 fontWeight='fontWeightBold'
                 color='primary.light'
                 m={0}

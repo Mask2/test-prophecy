@@ -36,6 +36,7 @@ const useStyles = makeStyles((theme) =>
       },
     },
     logoContainer: {
+      cursor: 'pointer',
       height: '100%',
       width: theme.spacing(70),
       background:
@@ -77,7 +78,10 @@ const useStyles = makeStyles((theme) =>
       top: '0 !important',
       right: 0,
       left: 'auto !important',
+      fontSize: theme.typography.h6.fontSize,
+      fontWeight: 'lighter',
       [theme.breakpoints.only('xs')]: {
+        fontSize: theme.typography.body1.fontSize,
         maxWidth: theme.spacing(31.5),
         padding: theme.spacing(2),
         paddingTop: theme.spacing(8.5),
@@ -88,8 +92,10 @@ const useStyles = makeStyles((theme) =>
       minHeight: theme.spacing(9),
       borderBottom: '1px solid #86BDDA',
       justifyContent: 'center',
+      width: theme.spacing(44.25),
       [theme.breakpoints.only('xs')]: {
         minHeight: theme.spacing(6),
+        minWidth: theme.spacing(27.5),
         whiteSpace: 'normal',
       },
     },
@@ -150,16 +156,14 @@ const Header = (props) => {
           gsap.to(window, { duration: 1, scrollTo: `.${menu.id}` })
         }
       >
-        <Typography variant='body1' component='div'>
-          <Box
-            className={classnames({
-              [classes.activeSection]: props.active === menu.id,
-            })}
-            textAlign='center'
-          >
-            {menu.label}
-          </Box>
-        </Typography>
+        <Box
+          className={classnames({
+            [classes.activeSection]: props.active === menu.id,
+          })}
+          textAlign='center'
+        >
+          {menu.label}
+        </Box>
       </MenuItem>
     ))
 
@@ -169,7 +173,12 @@ const Header = (props) => {
 
   return (
     <Box className={classnames('root', classes.root)}>
-      <Box className={classes.logoContainer}>
+      <Box
+        className={classes.logoContainer}
+        onClick={() =>
+          gsap.to(window, { duration: 1, scrollTo: `.section-one` })
+        }
+      >
         <img className={classes.logo} src={Logo} alt='take2 logo' />
       </Box>
       <IconButton
