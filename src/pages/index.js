@@ -280,7 +280,7 @@ const App = () => {
   const updateActiveSection = (sectionName) => {
     ScrollTrigger.create({
       trigger: q(`.${sectionName}`),
-      start: 'top center',
+      start: 'top 2px',
       onEnter: () => setActiveSection(sectionName),
       onEnterBack: () => setActiveSection(sectionName),
       // markers: true,
@@ -289,8 +289,6 @@ const App = () => {
 
   // section one parallax motion
   useLayoutEffect(() => {
-    console.timeStamp()
-
     // section one parallax motion
     gsap.to(q('.section-one-info'), {
       ease: 'none',
@@ -473,21 +471,6 @@ const App = () => {
     })
     return () => ScrollTrigger.kill()
   }, [])
-
-  // // section two arrow motion
-  // useLayoutEffect(() => {}, [])
-
-  // // section three text motion
-  // useLayoutEffect(() => {}, [])
-
-  // // section five text motion
-  // useLayoutEffect(() => {}, [])
-
-  // // section six symptoms fade in motion
-  // useLayoutEffect(() => {}, [])
-
-  // // section six services fade in motion
-  // useLayoutEffect(() => {}, [])
 
   const symptoms = (params) =>
     symptomListData.map((symptom) => (
