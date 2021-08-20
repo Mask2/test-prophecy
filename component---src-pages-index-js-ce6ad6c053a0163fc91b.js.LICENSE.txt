@@ -24,6 +24,11 @@
  * @author: Jack Doyle, jack@greensock.com
 */
 
+/**
+* @link https://github.com/gajus/sister for the canonical source repository
+* @license https://github.com/gajus/sister/blob/master/LICENSE BSD 3-Clause
+*/
+
 /** @license React v17.0.2
  * react-is.production.min.js
  *
