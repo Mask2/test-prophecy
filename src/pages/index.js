@@ -262,8 +262,14 @@ const useStyles = makeStyles((theme) =>
         backgroundColor: theme.palette.primary.light,
       },
     },
-    iconRoot: {
+    iconSizeLarge: {
       textAlign: 'center',
+      '& :first-child': {
+        fontSize: theme.spacing(5),
+        [theme.breakpoints.only('xs')]: {
+          fontSize: theme.spacing(4),
+        },
+      },
     },
     imageIcon: {
       height: '100%',
@@ -910,12 +916,13 @@ const App = () => {
                   classes={{
                     root: classes.buttonRoot,
                     outlined: classes.buttonOutlined,
+                    iconSizeLarge: classes.iconSizeLarge,
                   }}
                   size='large'
                   variant='outlined'
                   fullWidth
                   startIcon={
-                    <Icon classes={{ root: classes.iconRoot }}>
+                    <Icon>
                       <img
                         className={classes.imageIcon}
                         src={IconCalendar}
@@ -931,12 +938,13 @@ const App = () => {
                   classes={{
                     root: classes.buttonRoot,
                     outlined: classes.buttonOutlined,
+                    iconSizeLarge: classes.iconSizeLarge,
                   }}
                   size='large'
                   variant='outlined'
                   fullWidth
                   startIcon={
-                    <Icon classes={{ root: classes.iconRoot }}>
+                    <Icon>
                       <img
                         className={classes.imageIcon}
                         src={IconFavorite}
@@ -952,11 +960,12 @@ const App = () => {
                   classes={{
                     root: classes.buttonRoot,
                     outlined: classes.buttonOutlined,
+                    iconSizeLarge: classes.iconSizeLarge,
                   }}
                   size='large'
                   variant='outlined'
                   startIcon={
-                    <Icon classes={{ root: classes.iconRoot }}>
+                    <Icon>
                       <img
                         className={classes.imageIcon}
                         src={IconLocation}
