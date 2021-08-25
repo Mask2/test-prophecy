@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme) =>
       background: theme.palette.background.main,
       position: 'relative',
       [theme.breakpoints.only('xs')]: {
-        height: '140vw',
+        height: theme.spacing(70),
       },
     },
     sectionOneContainer: {
@@ -65,7 +65,7 @@ const useStyles = makeStyles((theme) =>
     },
     sectionOneInfo: {
       left: theme.spacing(6),
-      bottom: theme.spacing(35),
+      top: `${theme.spacing(45)}px !important`,
       zIndex: 4,
       lineHeight: 1.5,
       fontWeight: '600',
@@ -73,6 +73,7 @@ const useStyles = makeStyles((theme) =>
         lineHeight: 1.4,
         fontWeight: '500',
         left: theme.spacing(2.5),
+        top: `${theme.spacing(41.25)}px !important`,
       },
     },
     sectionOneImg: {
@@ -82,7 +83,7 @@ const useStyles = makeStyles((theme) =>
       display: 'block',
       maxHeight: '100%',
       [theme.breakpoints.only('xs')]: {
-        width: '100%',
+        width: 'auto',
       },
     },
     sectionOneTitle: {
@@ -94,8 +95,9 @@ const useStyles = makeStyles((theme) =>
       fontSize: theme.spacing(15),
       fontWeight: 'lighter',
       [theme.breakpoints.down('sm')]: {
-        fontSize: theme.spacing(8.5),
+        fontSize: theme.spacing(5.5),
         bottom: theme.spacing(3),
+        fontWeight: 'light',
       },
     },
     circle: {
@@ -286,14 +288,6 @@ const useStyles = makeStyles((theme) =>
   })
 )
 
-// const sectionList = [
-//   'section-one',
-//   'section-two',
-//   'section-three',
-//   'section-six',
-//   'section-seven',
-// ]
-
 const App = () => {
   const classes = useStyles()
   const theme = useTheme()
@@ -322,7 +316,7 @@ const App = () => {
       ease: 'none',
       scrollTrigger: {
         trigger: q('.section-one-info'),
-        start: 'top center',
+        start: 'top bottom',
         end: 'bottom top',
         pin: true,
         scrub: true,
@@ -541,7 +535,7 @@ const App = () => {
               component='div'
             >
               <Box
-                fontSize='h5.fontSize'
+                fontSize={matches ? '18px' : 'h5.fontSize'}
                 color='primary.contrastText'
                 letterSpacing='1px'
               >
@@ -551,7 +545,7 @@ const App = () => {
                 <br />
                 早期鼻咽癌存活率：
                 {matches ? (
-                  <Box fontSize='h4.fontSize' component='div' fontWeight='600'>
+                  <Box fontSize='32px' component='div' fontWeight='600'>
                     90%+
                   </Box>
                 ) : (

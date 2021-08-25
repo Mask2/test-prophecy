@@ -98,6 +98,7 @@ const useStyles = makeStyles((theme) =>
       justifyContent: 'center',
       width: theme.spacing(44.25),
       [theme.breakpoints.only('xs')]: {
+        width: 'auto',
         minHeight: theme.spacing(6),
         minWidth: theme.spacing(27.5),
         whiteSpace: 'normal',
@@ -113,6 +114,7 @@ const useStyles = makeStyles((theme) =>
       top: theme.spacing(3) - 3,
       zIndex: theme.zIndex.tooltip,
       [theme.breakpoints.only('xs')]: {
+        top: theme.spacing(1) - 1,
         right: theme.spacing(2),
       },
     },
