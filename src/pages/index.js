@@ -71,6 +71,7 @@ const useStyles = makeStyles((theme) =>
         backgroundImage: `url(${MobileMing01}),${theme.palette.background.main}`,
         height: '150vw',
         maxHeight: '100vh',
+        minHeight: 'auto',
       },
     },
     sectionOneContainer: {
@@ -91,6 +92,40 @@ const useStyles = makeStyles((theme) =>
         fontWeight: '500',
         left: theme.spacing(2.5),
         top: `${theme.spacing(41.25)}px !important`,
+      },
+    },
+    sectionOneText01: {
+      position: 'absolute',
+      width: '76%',
+      bottom: '11%',
+      marginLeft: '-1%',
+      [theme.breakpoints.only('xs')]: {
+        width: '100%',
+        bottom: '35%',
+        left: '-4%',
+        marginLeft: 0,
+      },
+    },
+    sectionOneText02: {
+      position: 'absolute',
+      width: '110%',
+      bottom: '-1%',
+      left: '-1%',
+      [theme.breakpoints.only('xs')]: {
+        width: '100%',
+        left: '-6%',
+        bottom: '1%',
+      },
+    },
+    sectionOneText03: {
+      position: 'absolute',
+      width: theme.spacing(51),
+      top: '37%',
+      right: '51%',
+      [theme.breakpoints.only('xs')]: {
+        width: '53%',
+        top: '32%',
+        left: '-6%',
       },
     },
     sectionOneImg: {
@@ -332,12 +367,12 @@ const App = () => {
   // section one parallax motion
   useLayoutEffect(() => {
     // section one parallax motion
-    gsap.to(q('.section-one-info'), {
+    gsap.to(q('.section-one-text-03'), {
       ease: 'none',
       scrollTrigger: {
-        trigger: q('.section-one-info'),
-        start: 'top bottom',
-        end: 'bottom top',
+        trigger: q('.section-one-text-03'),
+        start: `top 20%`,
+        end: 'bottom -50%',
         pin: true,
         scrub: true,
         pinSpacing: false,
@@ -546,6 +581,24 @@ const App = () => {
       <Box className={classes.root}>
         <Box className={classnames(classes.sectionOne, 'section-one')}>
           <Container className={classes.sectionOneContainer} maxWidth='lg'>
+            <img
+              className={classnames(
+                classes.sectionOneText03,
+                'section-one-text-03'
+              )}
+              src={matches ? MobileSectionOneText03 : SectionOneText03}
+              alt='Cheung Tat Ming Info'
+            />
+            <img
+              className={classes.sectionOneText02}
+              src={matches ? MobileSectionOneText02 : SectionOneText02}
+              alt='Take2 Prophecy'
+            />
+            <img
+              className={classes.sectionOneText01}
+              src={matches ? MobileSectionOneText01 : SectionOneText01}
+              alt='Go Live Again'
+            />
             {/* <Typography
               className={classnames(
                 classes.sectionMotion,
