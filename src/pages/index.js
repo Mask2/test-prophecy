@@ -285,6 +285,9 @@ const useStyles = makeStyles((theme) =>
       padding: 0,
       position: 'relative',
     },
+    sup: {
+      fontSize: theme.typography.caption.fontSize,
+    },
   })
 )
 
@@ -618,7 +621,8 @@ const App = () => {
               component='p'
               lineHeight={matches ? 1.5 : 2}
             >
-              根據世界衛生組織2018年的數據顯示，香港鼻咽癌發病率是世界主要城市的5-6倍¹。
+              根據世界衛生組織2018年的數據顯示，香港鼻咽癌發病率是全球平均的5-6倍
+              <sup className={classes.sup}>1,2</sup>。
               <br />
               {matches && <br />}
               其實不論年紀、性別及背景，任何人士都有機會患上鼻咽癌。
@@ -627,10 +631,11 @@ const App = () => {
               作為鼻咽癌康復者兼香港著名喜劇演員，張達明先生曾因忽略身體警號而延誤求醫。
               <br />
               {matches && <br />}
-              想掌握健康，即使不幸患癌都能積極開展第二人生?
+              想掌握健康，就要定期接受篩查。
               <br />
               {matches && <br />}
-              觀看以下影片，由達明親述進行「早期鼻咽癌篩查」的重要性！
+              即使不幸患癌都能積極開展第二人生?
+              觀看以下影片，聽聽達明親述他的第二人生及進行「早期鼻咽癌篩查」的重要！
             </Box>
             <Box mt={matches ? 3 : 8}>
               <YouTube
@@ -699,7 +704,7 @@ const App = () => {
               fontWeight='fontWeightBold'
               color='primary.contrastText'
             >
-              鼻咽癌又稱「廣東癌」 二萬名人士參與 核心臨床學術研究
+              鼻咽癌又稱「廣東癌」
             </Box>
             <Box
               fontSize={matches ? 'body2.fontSize' : 'h6.fontSize'}
@@ -708,7 +713,8 @@ const App = () => {
               color='primary.contrastText'
               mt={3}
             >
-              鼻咽癌的高發地區為東南亞和南中國。當中在香港、廣東和廣西的發病率特別高，因此也被稱為「廣東癌」。本港每年有六百至八百宗鼻咽癌病例，因此鼻咽癌是不可忽視的十大癌症之一，它更是過去十年間45-64歲男士五大常見癌症之一²。
+              鼻咽癌的高發地區為東南亞和南中國。當中香港、廣東和廣西的發病率特別高，因此也被稱為「廣東癌」。鼻咽癌是不可忽視的十大癌症之一，本港每年有六百至八百宗鼻咽癌病例，它更是過去十年間45-64歲男士五大常見癌症之一
+              <sup className={classes.sup}>3</sup>。
             </Box>
           </Container>
           <Box
@@ -719,7 +725,7 @@ const App = () => {
             mt={matches ? 8 : 10}
             mb={matches ? 3 : 6}
           >
-            齊來認清真相!
+            齊來認清真相！
           </Box>
           <Box className='flip-cards-container' display='flex'>
             <FlipCardsSwiper></FlipCardsSwiper>
@@ -784,7 +790,8 @@ const App = () => {
                   textAlign={matches ? 'left' : 'center'}
                   color='primary.contrastText'
                 >
-                  鼻咽癌的症狀容易與傷風感冒混淆而令人忽略，80%患者在初診時已是晚期⁷。
+                  鼻咽癌的徵狀容易與傷風感冒混淆而令人忽略，80%患者在初診時已是晚期
+                  <sup className={classes.sup}>7</sup>。
                 </Box>
                 <Box
                   fontSize={matches ? 'h6.fontSize' : '32px'}
@@ -822,10 +829,9 @@ const App = () => {
                   mt={matches ? 2 : 3}
                   mb={matches ? 3 : 8}
                 >
-                  研究顯示，進行早期鼻咽癌篩查能有效找出「隱形」患者，
-                  儘早接受適當治療，
+                  研究顯示，進行早期鼻咽癌篩查能有效找出「隱形」患者，儘早展開適當治療，
                   <br />
-                  令患者存活率可高達9成⁸。
+                  令患者存活率可高達9成<sup className={classes.sup}>8</sup>。
                 </Box>
               </Typography>
               <Box
@@ -968,7 +974,7 @@ const App = () => {
                     </Icon>
                   }
                 >
-                  成為會員。
+                  成為會員<sup className={classes.sup}>10</sup>。
                 </Button> */}
               </Box>
               <Typography component='div'>

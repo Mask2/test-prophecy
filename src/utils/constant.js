@@ -55,7 +55,7 @@ export const cardListData = [
   {
     label: '年輕',
     icon: Question01,
-    question: '就無有怕？',
+    question: '就不怕？？',
     answer: AnswerO1,
   },
   {
@@ -73,7 +73,7 @@ export const cardListData = [
   {
     label: '鼻咽癌病微',
     icon: Question04,
-    question: '一睇就知？',
+    question: '一目了然？',
     answer: AnswerO4,
   },
   {
@@ -110,42 +110,42 @@ export const serviceListData = [
 export const annotateListData = [
   {
     content:
-      'Centre for Health Protection, Department of Health, HKSAR, “Nasopharyngeal Cancer” (Available at https://www.chp.gov.hk/en/healthtopics/content/25/54.html. Accessed 23 July 2021.) and Global Cancer Observatory, World Health Organisation, “Nasopharynx” Fact Sheet. (Available at https://gco.iarc.fr/today/data/factsheets/cancers/4-Nasopharynx-fact-sheet.pdf. Accessed 23 July 2021.)',
+      '“Nasopharyngeal Cancer.” Centre for Health Protection, Department of Health, The Government of the Hong Kong Special Administrative Region, 2021, www.chp.gov.hk/en/healthtopics/content/25/54.html, accessed 23 July 2021',
   },
   {
     content:
-      'Hong Kong Cancer Registry. 2010-2018 Hong Kong Cancer Facts. Available at https://www3.ha.org.hk/cancereg/tc/facts.html, Accessed 12 July 2021',
+      'Bray, F., et al. “Global Cancer Statistics 2018: GLOBOCAN Estimates of Incidence and Mortality Worldwide for 36 Cancers in 185 Countries.” CA: A Cancer Journal for Clinicians, vol. 68, no. 6, 2018, pp. 394-424.',
   },
   {
     content:
-      '2018 年香港癌症統計概覽, https://www3.ha.org.hk/cancereg/pdf/overview/Overview%20of%20HK%20Cancer%20Stat%202018_tc.pdf, Accessed 24 June 2021',
+      'Hong Kong Cancer Registry. Hong Kong Hospital Authority, www3.ha.org.hk/cancereg/. Accessed 23 May 2021.',
   },
   {
     content:
-      'HK01, 癌者治療後易出現口腔副作用　四成受訪者感口腔有鐵鏽味, 12 May 2021.',
+      'Overview of Hong Kong Cancer Statistics of 2018. Hong Kong Hospital Authority, October 2020.',
   },
   {
     content:
-      'Hong Kong Cancer Registry. 2009-2018 Hong Kong Cancer Facts. Available at https://www3.ha.org.hk/cancereg/tc/facts.html, Accessed 12 July 2021',
+      '“癌者治療後易出現口腔副作用，四成受訪者感口腔有鐵鏽味.” HK01, 2021, www.hk01.com/18%E5%8D%80%E6%96%B0%E8%81%9E/623584/%E7%99%8C%E8%80%85%E6%B2%BB%E7%99%82%E5%BE%8C%E6%98%93%E5%87%BA%E7%8F%BE%E5%8F%A3%E8%85%94%E5%89%AF%E4%BD%9C%E7%94%A8-%E5%9B%9B%E6%88%90%E5%8F%97%E8%A8%AA%E8%80%85%E6%84%9F%E5%8F%A3%E8%85%94%E6%9C%89%E9%90%B5%E9%8F%BD%E5%91%B3',
   },
   {
     content:
-      'Chua MLK, Wee JTS, Hui EP, Chan ATC. Nasopharyngeal carcinoma. The Lancet. 2016;387(10022):1012-1024. doi:10.1016/s0140-6736(15)00055-0.',
+      'Chua, Melvin L. K., et al. “Nasopharyngeal Carcinoma.” The Lancet, vol. 387, no. 10022, 2016, pp. 1012–24.',
   },
   {
     content:
-      'Chan KCA, Woo JKS, King A, et al. Analysis of Plasma Epstein–Barr Virus DNA to Screen for Nasopharyngeal Cancer. N Engl J Med. 2017;377(6):513-522. doi:10.1056/NEJMoa1701717.',
+      'Chan, K. C. Allen, et al. “Analysis of Plasma Epstein–Barr Virus DNA to Screen for Nasopharyngeal Cancer.” New England Journal of Medicine, vol. 377, no. 6, 2017, pp. 513–22.',
   },
   {
     content:
-      'Hong Kong Cancer Fund. Cancer Booklets. Understanding Nasopharyngeal Cancer. URL: https://www.cancer-fund.org/wp-content/uploads/2019/02/NPC-Apr19E-Web.pdf. Accessed on 17 Jun 2021.',
+      '認識癌症：鼻咽癌. Hong Kong Cancer Fund, 2021, www.cancer-fund.org/wp-content/uploads/2021/03/NPC-20C-Revamp-Web_s.pdf.',
   },
   {
     content:
-      'Lam WKJ, Jiang P, Chan KCA, et al. Sequencing-based counting and size profiling of plasma Epstein–Barr virus DNA enhance population screening of nasopharyngeal carcinoma. Proc Natl Acad Sci U S A. 2018;115(22):E5115-E5124. doi:10.1073/pnas.1804184115.',
+      'Lam, W. K. Jacky, et al. “Sequencing-Based Counting and Size Profiling of Plasma Epstein–Barr Virus DNA Enhance Population Screening of Nasopharyngeal Carcinoma.” Proceedings of the National Academy of Sciences, vol. 115, no. 22, 2018, pp. E5115–24.',
   },
   {
     content:
-      '一經登記，閣下將可免費成為永久會員，享受我們的Take2 Extra Care健康管理計劃轄下一切服務，包括線上/線下即時查詢、健康資訊等。',
+      '一經登記，閣下將可免費成為永久會員，享用我們的Take2 Extra Care健康管理計劃轄下一切服務，包括線上/線下即時查詢、接收健康資訊等。',
   },
 ]
