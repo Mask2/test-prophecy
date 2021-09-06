@@ -17,6 +17,13 @@ import Ming03 from '../images/ming_03.png'
 import MobileMing01 from '../images/mobile_ming_01.png'
 import MobileMing02 from '../images/mobile_ming_02.png'
 import MobileMing03 from '../images/mobile_ming_03.png'
+import SectionOneText01 from '../images/section_one_text_01.png'
+import SectionOneText02 from '../images/section_one_text_02.png'
+import SectionOneText03 from '../images/section_one_text_03.png'
+import MobileSectionOneText01 from '../images/mobile_section_one_text_01.png'
+import MobileSectionOneText02 from '../images/mobile_section_one_text_02.png'
+import MobileSectionOneText03 from '../images/mobile_section_one_text_03.png'
+
 import IconCalendar from '../images/svg/icon_calendar.svg'
 import IconFavorite from '../images/svg/icon_favorite.svg'
 // import IconLocation from '../images/svg/icon_location.svg'
@@ -49,11 +56,21 @@ const useStyles = makeStyles((theme) =>
       overflowX: 'hidden',
     },
     sectionOne: {
-      height: theme.spacing(90),
-      background: theme.palette.background.main,
+      minHeight: theme.spacing(90),
+      maxHeight: theme.spacing(122.5),
+      height: '100vh',
+      backgroundImage: `url(${Ming01}),${theme.palette.background.main}`,
+      backgroundRepeat: 'no-repeat',
+      backgroundSize: 'cover',
+      backgroundPosition: 'center',
+      [theme.breakpoints.up('xl')]: {
+        backgroundSize: 'contain',
+      },
       position: 'relative',
       [theme.breakpoints.only('xs')]: {
-        height: theme.spacing(70),
+        backgroundImage: `url(${MobileMing01}),${theme.palette.background.main}`,
+        height: '150vw',
+        maxHeight: '100vh',
       },
     },
     sectionOneContainer: {
@@ -326,24 +343,24 @@ const App = () => {
         pinSpacing: false,
       },
     })
-    gsap.to(q('.section-one-circle-one,.section-one-circle-two'), {
-      y: -400,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: q('.section-one'),
-        start: 'top top',
-        scrub: true,
-      },
-    })
-    gsap.to(q('.section-one-ming'), {
-      y: 400,
-      ease: 'none',
-      scrollTrigger: {
-        trigger: q('.section-one'),
-        scrub: true,
-        start: 'top top',
-      },
-    })
+    // gsap.to(q('.section-one-circle-one,.section-one-circle-two'), {
+    //   y: -400,
+    //   ease: 'none',
+    //   scrollTrigger: {
+    //     trigger: q('.section-one'),
+    //     start: 'top top',
+    //     scrub: true,
+    //   },
+    // })
+    // gsap.to(q('.section-one-ming'), {
+    //   y: 400,
+    //   ease: 'none',
+    //   scrollTrigger: {
+    //     trigger: q('.section-one'),
+    //     scrub: true,
+    //     start: 'top top',
+    //   },
+    // })
     menuListData.forEach((menuItem) => {
       updateActiveSection(menuItem.id)
     })
@@ -529,7 +546,7 @@ const App = () => {
       <Box className={classes.root}>
         <Box className={classnames(classes.sectionOne, 'section-one')}>
           <Container className={classes.sectionOneContainer} maxWidth='lg'>
-            <Typography
+            {/* <Typography
               className={classnames(
                 classes.sectionMotion,
                 classes.sectionOneInfo,
@@ -557,8 +574,8 @@ const App = () => {
                   </Box>
                 )}
               </Box>
-            </Typography>
-            <Box
+            </Typography> */}
+            {/* <Box
               className={classnames(
                 classes.sectionMotion,
                 classes.circle,
@@ -573,13 +590,13 @@ const App = () => {
                 classes.circleTwo,
                 'section-one-circle-two'
               )}
-            ></Box>
-            <img
+            ></Box> */}
+            {/* <img
               className={classnames(classes.sectionOneImg, 'section-one-ming')}
               src={matches ? MobileMing01 : Ming01}
               alt='Cheung Tat Ming 01'
-            />
-            <Box
+            /> */}
+            {/* <Box
               className={classnames(
                 classes.sectionMotion,
                 classes.sectionOneTitle
@@ -587,7 +604,7 @@ const App = () => {
               color='primary.contrastText'
             >
               GO LIVE AGAIN
-            </Box>
+            </Box> */}
           </Container>
         </Box>
         <Box
