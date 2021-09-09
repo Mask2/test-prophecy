@@ -110,31 +110,31 @@ export const serviceListData = [
 export const annotateListData = [
   {
     content:
-      '“Nasopharyngeal Cancer.” Centre for Health Protection, Department of Health, The Government of the Hong Kong Special Administrative Region, 2021, www.chp.gov.hk/en/healthtopics/content/25/54.html, accessed 23 July 2021',
+      '“Nasopharyngeal Cancer.” <i>Centre for Health Protection, Department of Health, The Government of the Hong Kong Special Administrative Region,</i> 2021, www.chp.gov.hk/en/healthtopics/content/25/54.html, accessed 23 July 2021',
   },
   {
     content:
-      'Bray, F., et al. “Global Cancer Statistics 2018: GLOBOCAN Estimates of Incidence and Mortality Worldwide for 36 Cancers in 185 Countries.” CA: A Cancer Journal for Clinicians, vol. 68, no. 6, 2018, pp. 394-424.',
+      'Bray, F., et al. “Global Cancer Statistics 2018: GLOBOCAN Estimates of Incidence and Mortality Worldwide for 36 Cancers in 185 Countries.” <i>CA: A Cancer Journal for Clinicians,</i> vol. 68, no. 6, 2018, pp. 394-424.',
   },
   {
     content:
-      'Hong Kong Cancer Registry. Hong Kong Hospital Authority, www3.ha.org.hk/cancereg/. Accessed 23 May 2021.',
+      '<i>Hong Kong Cancer Registry.</i> Hong Kong Hospital Authority, www3.ha.org.hk/cancereg/. Accessed 23 May 2021.',
   },
   {
     content:
-      'Overview of Hong Kong Cancer Statistics of 2018. Hong Kong Hospital Authority, October 2020.',
+      '<i>Overview of Hong Kong Cancer Statistics of 2018.</i> Hong Kong Hospital Authority, October 2020.',
   },
   {
     content:
-      '“癌者治療後易出現口腔副作用，四成受訪者感口腔有鐵鏽味.” HK01, 2021, www.hk01.com/18%E5%8D%80%E6%96%B0%E8%81%9E/623584/%E7%99%8C%E8%80%85%E6%B2%BB%E7%99%82%E5%BE%8C%E6%98%93%E5%87%BA%E7%8F%BE%E5%8F%A3%E8%85%94%E5%89%AF%E4%BD%9C%E7%94%A8-%E5%9B%9B%E6%88%90%E5%8F%97%E8%A8%AA%E8%80%85%E6%84%9F%E5%8F%A3%E8%85%94%E6%9C%89%E9%90%B5%E9%8F%BD%E5%91%B3',
+      '“癌者治療後易出現口腔副作用，四成受訪者感口腔有鐵鏽味.” <i>HK01,</i> 2021, www.hk01.com/18%E5%8D%80%E6%96%B0%E8%81%9E/623584/%E7%99%8C%E8%80%85%E6%B2%BB%E7%99%82%E5%BE%8C%E6%98%93%E5%87%BA%E7%8F%BE%E5%8F%A3%E8%85%94%E5%89%AF%E4%BD%9C%E7%94%A8-%E5%9B%9B%E6%88%90%E5%8F%97%E8%A8%AA%E8%80%85%E6%84%9F%E5%8F%A3%E8%85%94%E6%9C%89%E9%90%B5%E9%8F%BD%E5%91%B3',
   },
   {
     content:
-      'Chua, Melvin L. K., et al. “Nasopharyngeal Carcinoma.” The Lancet, vol. 387, no. 10022, 2016, pp. 1012–24.',
+      'Chua, Melvin L. K., et al. “Nasopharyngeal Carcinoma.” <i>The Lancet</i>, vol. 387, no. 10022, 2016, pp. 1012–24.',
   },
   {
     content:
-      'Chan, K. C. Allen, et al. “Analysis of Plasma Epstein–Barr Virus DNA to Screen for Nasopharyngeal Cancer.” New England Journal of Medicine, vol. 377, no. 6, 2017, pp. 513–22.',
+      'Chan, K. C. Allen, et al. “Analysis of Plasma Epstein–Barr Virus DNA to Screen for Nasopharyngeal Cancer.” <i>New England Journal of Medicine,</i> vol. 377, no. 6, 2017, pp. 513–22.',
   },
   {
     content:
@@ -142,7 +142,7 @@ export const annotateListData = [
   },
   {
     content:
-      'Lam, W. K. Jacky, et al. “Sequencing-Based Counting and Size Profiling of Plasma Epstein–Barr Virus DNA Enhance Population Screening of Nasopharyngeal Carcinoma.” Proceedings of the National Academy of Sciences, vol. 115, no. 22, 2018, pp. E5115–24.',
+      'Lam, W. K. Jacky, et al. “Sequencing-Based Counting and Size Profiling of Plasma Epstein–Barr Virus DNA Enhance Population Screening of Nasopharyngeal Carcinoma.” <i>Proceedings of the National Academy of Sciences,</i> vol. 115, no. 22, 2018, pp. E5115–24.',
   },
   {
     content:

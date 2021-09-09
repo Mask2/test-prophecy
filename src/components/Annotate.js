@@ -24,7 +24,7 @@ const Annotate = () => {
           {annotateListData.map((annotate, index) => (
             <Box key={index} mb={1.5} display='flex'>
               <Box flexShrink={0} pr={2}>{`${index + 1}.`}</Box>
-              {annotate.content}
+              <div dangerouslySetInnerHTML={{ __html: annotate.content }}></div>
             </Box>
           ))}
         </Box>
