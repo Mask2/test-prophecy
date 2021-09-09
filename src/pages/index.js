@@ -848,7 +848,7 @@ const App = () => {
           </Container>
         </Box>
         <Box
-          className={classnames(classes.sectionSix, 'section-six')}
+          className={classnames(classes.sectionSix)}
           pt={matches ? 4 : 10}
           pb={matches ? 10 : 15}
         >
@@ -906,7 +906,7 @@ const App = () => {
                 </Box>
               </Typography>
               <Box
-                className={classes.serviceWrapper}
+                className={classnames(classes.serviceWrapper, 'section-six')}
                 pt={matches ? 2 : 8}
                 pb={matches ? 6.5 : 10}
                 px={matches ? 2 : 12.75}
