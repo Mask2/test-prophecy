@@ -14,30 +14,40 @@ export default function HTML(props) {
         <script
           dangerouslySetInnerHTML={{
             __html: `
-            var _gaq = _gaq || [];
-            _gaq.push(['_setAccount', 'UA-169031438-1']);
-            _gaq.push(['_trackPageview']);
-            
-            (function() {
-                var ga = document.createElement('script');
-                ga.type = 'text/javascript';
-                ga.async = true;
-                ga.src = ('https:' == document.location.protocol ? 'https://ssl': 'http://www') + '.google-analytics.com/ga.js';
-                var s = document.getElementsByTagName('script')[0];
-                s.parentNode.insertBefore(ga, s);
-            })();
-              `,
+            var _gaq = _gaq || []
+            _gaq.push(['_setAccount', 'UA-169031438-1'])
+            _gaq.push(['_trackPageview'])
+          
+            ;(function () {
+              var ga = document.createElement('script')
+              ga.type = 'text/javascript'
+              ga.async = true
+              ga.src =
+                ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') +
+                '.google-analytics.com/ga.js'
+              var s = document.getElementsByTagName('script')[0]
+              s.parentNode.insertBefore(ga, s)
+            })()
+            `,
           }}
         />
         {/* Google Tag Manager */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
-            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-            'https:/ / www.googletagmanager.com / gtm.js ? id = '+i+dl;f.parentNode.insertBefore(j,f);
-            })(window,document,'script ','dataLayer ','GTM - TK5V677 ');
+            (function (w, d, s, l, i) {
+              w[l] = w[l] || []
+              w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js',
+              })
+              var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : ''
+              j.async = true
+              j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
+              f.parentNode.insertBefore(j, f)
+            })(window, document, 'script', 'dataLayer', 'GTM-TK5V677');
               `,
           }}
         />
@@ -53,52 +63,44 @@ export default function HTML(props) {
             __html: `
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
-            gtag('js ', new Date());
+            gtag('js', new Date());
            
-            gtag('config ', 'AW - 339029822 ');`,
+            gtag('config', 'AW-339029822');
+            `,
           }}
         />
         {/* Facebook Pixel Code */}
         <script
           dangerouslySetInnerHTML={{
             __html: `
-            !function(f,b,e,v,n,t,s)
- 
- 
- 
-            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-            
-            
-            
-            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-            
-            
-            
-            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-            
-            
-            
-            n.queue=[];t=b.createElement(e);t.async=!0;
-            
-            
-            
-            t.src=v;s=b.getElementsByTagName(e)[0];
-            
-            
-            
-            s.parentNode.insertBefore(t,s)}(window,document,'script',
-            
-            
-            
-            'https://connect.facebook.net/en_US/fbevents.js');
-            
-            
-            
-            fbq('init', '437103407310894');
-            
-            
-            
-            fbq('track', 'PageView');
+            !(function (f, b, e, v, n, t, s) {
+              if (f.fbq) return
+              n = f.fbq = function () {
+                n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+              }
+          
+              if (!f._fbq) f._fbq = n
+              n.push = n
+              n.loaded = !0
+              n.version = '2.0'
+          
+              n.queue = []
+              t = b.createElement(e)
+              t.async = !0
+          
+              t.src = v
+              s = b.getElementsByTagName(e)[0]
+          
+              s.parentNode.insertBefore(t, s)
+            })(
+              window,
+              document,
+              'script',
+          
+              'https://connect.facebook.net/en_US/fbevents.js'
+            )
+            fbq('init', '437103407310894')
+            fbq('track', 'PageView')
               `,
           }}
         />
@@ -120,32 +122,33 @@ export default function HTML(props) {
         <script
           dangerouslySetInnerHTML={{
             __html: `
-            window.fbAsyncInit = function() {
+            window.fbAsyncInit = function () {
               FB.init({
-                  appId: '{your-app-id}',
-                  cookie: true,
-                  xfbml: true,
-                  version: '{api-version}'
-              });
-              FB.AppEvents.logPageView();
-          };
-          (function(d, s, id) {
-              var js, fjs = d.getElementsByTagName(s)[0];
+                appId: '{your-app-id}',
+                cookie: true,
+                xfbml: true,
+                version: '{api-version}',
+              })
+              FB.AppEvents.logPageView()
+            }
+            ;(function (d, s, id) {
+              var js,
+                fjs = d.getElementsByTagName(s)[0]
               if (d.getElementById(id)) {
-                  return;
+                return
               }
-              js = d.createElement(s);
-              js.id = id;
-              js.src = "https://connect.facebook.net/en_US/sdk.js";
-              fjs.parentNode.insertBefore(js, fjs);
-          } (document, 'script', 'facebook-jssdk'));           
-              `,
+              js = d.createElement(s)
+              js.id = id
+              js.src = 'https://connect.facebook.net/en_US/sdk.js'
+              fjs.parentNode.insertBefore(js, fjs)
+            })(document, 'script', 'facebook-jssdk')      
+            `,
           }}
         />
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
-            src='https:/ / www.googletagmanager.com / ns.html ? id = GTM - TK5V677 '
+            src='https://www.googletagmanager.com/ns.html?id=GTM-TK5V677'
             height='0'
             width='0'
             style={{
@@ -169,19 +172,27 @@ export default function HTML(props) {
             __html: `
             (function () {
               var options = {
-              facebook: "108844407395103", // Facebook page ID
-              whatsapp: "+(852)53770823", // WhatsApp number
-               call_to_action: "Message us", // Call to action
-              button_color: "#4FCE5D", // Color of button
-              position: "right", // Position may be 'right' or 'left'
-              order: "facebook,whatsapp", // Order of buttons
-              pre_filled_message: "Halo, I want to know more about Prophecy Test! ", // WhatsApp pre-filled message
-              };
-              var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
-              var s = document.createElement('script'); s.type = 'text/javascript'; s.async = true; s.src = url + '/widget-send-button/js/init.js';
-              s.onload = function () { WhWidgetSendButton.init(host, proto, options); };
-              var x = document.getElementsByTagName('script')[0]; x.parentNode.insertBefore(s, x);
-              })();
+                facebook: '108844407395103', // Facebook page ID
+                whatsapp: '+(852)53770823', // WhatsApp number
+                call_to_action: 'Message us', // Call to action
+                button_color: '#4FCE5D', // Color of button
+                position: 'right', // Position may be 'right' or 'left'
+                order: 'facebook,whatsapp', // Order of buttons
+                pre_filled_message: 'Halo, I want to know more about Prophecy Test! ', // WhatsApp pre-filled message
+              }
+              var proto = document.location.protocol,
+                host = 'getbutton.io',
+                url = proto + '//static.' + host
+              var s = document.createElement('script')
+              s.type = 'text/javascript'
+              s.async = true
+              s.src = url + '/widget-send-button/js/init.js'
+              s.onload = function () {
+                WhWidgetSendButton.init(host, proto, options)
+              }
+              var x = document.getElementsByTagName('script')[0]
+              x.parentNode.insertBefore(s, x)
+            })()
             `,
           }}
         />
