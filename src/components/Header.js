@@ -4,7 +4,7 @@ import Box from '@material-ui/core/Box'
 import IconButton from '@material-ui/core/IconButton'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
-// import Typography from '@material-ui/core/Typography'
+import Link from '@material-ui/core/Link'
 import classnames from 'classnames'
 
 import Logo from '../images/logo.png'
@@ -182,11 +182,13 @@ const Header = (props) => {
       <Container className={classes.container} maxWidth='xl'>
         <Box
           className={classes.logoContainer}
-          onClick={() =>
-            gsap.to(window, { duration: 1, scrollTo: `.section-one` })
-          }
+          // onClick={() =>
+          //   gsap.to(window, { duration: 1, scrollTo: `.section-one` })
+          // }
         >
-          <img className={classes.logo} src={Logo} alt='take2 logo' />
+          <Link href='https://take2health.net'>
+            <img className={classes.logo} src={Logo} alt='take2 logo' />
+          </Link>
         </Box>
         <IconButton
           className={classes.navButton}

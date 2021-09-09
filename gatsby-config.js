@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://www.yourdomain.tld',
-    title: 'campaign-test',
+    siteUrl: 'https://take2health.net',
+    title: 'campaign-page',
   },
   pathPrefix: '/test-prophecy',
   // assetPrefix: `https://mask2.github.io`,

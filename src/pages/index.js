@@ -7,6 +7,7 @@ import Icon from '@material-ui/core/Icon'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
+import Link from '@material-ui/core/Link'
 
 import YouTube from 'react-youtube'
 import classnames from 'classnames'
@@ -367,17 +368,17 @@ const App = () => {
   // section one parallax motion
   useLayoutEffect(() => {
     // section one parallax motion
-    gsap.to(q('.section-one-text-03'), {
-      ease: 'none',
-      scrollTrigger: {
-        trigger: q('.section-one-text-03'),
-        start: `top 20%`,
-        end: 'bottom -50%',
-        pin: true,
-        scrub: true,
-        pinSpacing: false,
-      },
-    })
+    // gsap.to(q('.section-one-text-03'), {
+    //   ease: 'none',
+    //   scrollTrigger: {
+    //     trigger: q('.section-one-text-03'),
+    //     start: `top 20%`,
+    //     end: 'bottom -50%',
+    //     pin: true,
+    //     scrub: true,
+    //     pinSpacing: false,
+    //   },
+    // })
     // gsap.to(q('.section-one-circle-one,.section-one-circle-two'), {
     //   y: -400,
     //   ease: 'none',
@@ -704,7 +705,7 @@ const App = () => {
               想掌握健康，就要定期接受篩查。
               <br />
               {matches && <br />}
-              即使不幸患癌都能積極開展第二人生?
+              即使不幸患癌都能積極開展第二人生？
               觀看以下影片，聽聽達明親述他的第二人生及進行「早期鼻咽癌篩查」的重要！
             </Box>
             <Box mt={matches ? 3 : 8}>
@@ -965,7 +966,7 @@ const App = () => {
             py={matches ? 2 : 4}
             className={classnames(classes.footerTitle)}
           >
-            <Container maxWidth='lg'>聯繫我們</Container>
+            <Container maxWidth='lg'>聯絡我們</Container>
           </Box>
           <Box py={matches ? 4 : 6} pb={matches ? 6 : 10}>
             <Container maxWidth='lg'>
@@ -1068,7 +1069,11 @@ const App = () => {
                   <br />
                   Facebook: Take2 Health
                   <br />
-                  網站: take2health.net
+                  <Link href='https://take2health.net'>
+                    <Box component='span' color='primary.light'>
+                      返回官網
+                    </Box>
+                  </Link>
                 </Box>
               </Typography>
               <Box
