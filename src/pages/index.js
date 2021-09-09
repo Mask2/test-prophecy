@@ -23,7 +23,6 @@ import SectionOneText02 from '../images/section_one_text_02.png'
 import SectionOneText03 from '../images/section_one_text_03.png'
 import MobileSectionOneText01 from '../images/mobile_section_one_text_01.png'
 import MobileSectionOneText02 from '../images/mobile_section_one_text_02.png'
-import MobileSectionOneText03 from '../images/mobile_section_one_text_03.png'
 
 import IconCalendar from '../images/svg/icon_calendar.svg'
 import IconFavorite from '../images/svg/icon_favorite.svg'
@@ -120,13 +119,13 @@ const useStyles = makeStyles((theme) =>
     },
     sectionOneText03: {
       position: 'absolute',
-      width: theme.spacing(51),
-      top: '37%',
-      right: '51%',
+      width: '20%',
+      top: '39%',
+      right: '58%',
       [theme.breakpoints.only('xs')]: {
-        width: '53%',
-        top: '32%',
-        left: '-6%',
+        width: '46%',
+        top: '33%',
+        left: '-2%',
       },
     },
     sectionOneImg: {
@@ -587,7 +586,7 @@ const App = () => {
                 classes.sectionOneText03,
                 'section-one-text-03'
               )}
-              src={matches ? MobileSectionOneText03 : SectionOneText03}
+              src={SectionOneText03}
               alt='Cheung Tat Ming Info'
             />
             <img
