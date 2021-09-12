@@ -100,7 +100,7 @@ export default function HTML(props) {
               'https://connect.facebook.net/en_US/fbevents.js'
             )
             fbq('init', '437103407310894')
-            fbq('track', 'PageView')
+            // fbq('track', 'PageView')
               `,
           }}
         />
