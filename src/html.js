@@ -109,7 +109,7 @@ export default function HTML(props) {
             
             
             
-            fbq('track', 'PageView');           
+            // fbq('track', 'PageView');           
               `,
           }}
         />
