@@ -70,7 +70,7 @@ export default function HTML(props) {
           }}
         />
         {/* Facebook Pixel Code */}
-        {/* <script
+        <script
           dangerouslySetInnerHTML={{
             __html: `
             !function(f,b,e,v,n,t,s)
@@ -112,7 +112,7 @@ export default function HTML(props) {
             fbq('track', 'PageView');           
               `,
           }}
-        /> */}
+        />
         <noscript>
           <img
             height='1'

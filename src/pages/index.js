@@ -956,7 +956,7 @@ const App = () => {
             </Box>
           </Container>
         </Box>
-        <footer className='section-seven'>
+        <Box className='section-seven'>
           <Box
             bgcolor='primary.main'
             color='primary.contrastText'
@@ -1083,7 +1083,7 @@ const App = () => {
               <Annotate></Annotate>
             </Container>
           </Box>
-        </footer>
+        </Box>
       </Box>
     </div>
   )
