@@ -55,7 +55,7 @@ export const cardListData = [
   {
     label: '年輕',
     icon: Question01,
-    question: '就不怕？？',
+    question: '就不怕？',
     answer: AnswerO1,
   },
   {
