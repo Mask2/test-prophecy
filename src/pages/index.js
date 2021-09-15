@@ -39,6 +39,12 @@ import {
   menuListData,
   symptomListData,
   serviceListData,
+  WHATS_APP_LINK,
+  FACEBOOK_LINK,
+  E_HEALTH_LINK,
+  ADDRESS_LINK,
+  SERVICE_PHONE,
+  SERVICE_EMAIL,
 } from '../utils/constant'
 import Annotate from '../components/Annotate'
 import { gsap, ScrollTrigger } from '../utils/initGsap'
@@ -56,15 +62,15 @@ const useStyles = makeStyles((theme) =>
       overflowX: 'hidden',
     },
     sectionOne: {
-      minHeight: theme.spacing(85),
+      // minHeight: theme.spacing(90),
       maxHeight: theme.spacing(122.5),
-      height: '80vh',
+      height: `calc(100vh - ${theme.spacing(13)}px)`,
       backgroundImage: `url(${Ming01}),${theme.palette.background.main}`,
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
       [theme.breakpoints.up('xl')]: {
-        backgroundSize: 'contain',
+        // backgroundSize: 'contain',
       },
       position: 'relative',
       [theme.breakpoints.only('xs')]: {
@@ -1007,7 +1013,7 @@ const App = () => {
                       />
                     </Icon>
                   }
-                  href='https://api.whatsapp.com/send/?phone=85253770823&text=Halo%2C+I+want+to+know+more+about+Prophecy+Test%21+&app_absent=0'
+                  href={WHATS_APP_LINK}
                 >
                   立即查詢／預約
                 </Button>
@@ -1029,7 +1035,7 @@ const App = () => {
                       />
                     </Icon>
                   }
-                  href='https://take2health.net/%e7%af%a9%e6%9f%a5%e6%9c%8d%e5%8b%99%e8%a6%86%e8%93%8b%e9%bb%9e/'
+                  href={ADDRESS_LINK}
                 >
                   查看篩查服務點
                 </Button>
@@ -1069,25 +1075,25 @@ const App = () => {
                   lineHeight={1.5}
                   color='primary.light'
                 >
-                  <Link href='tel:(852) 3613 0536'>
+                  <Link href={`tel:${SERVICE_PHONE}`}>
                     <Box component='span' color='primary.light'>
-                      電話:(852) 3613 0536
+                      電話:{SERVICE_PHONE}
                     </Box>
                   </Link>
                   <br />
-                  <Link href='mailto:customer.support@take2.health'>
+                  <Link href={`mailto:${SERVICE_EMAIL}`}>
                     <Box component='span' color='primary.light'>
-                      電郵: customer.support@take2.health
+                      電郵: {SERVICE_EMAIL}
                     </Box>
                   </Link>
                   <br />
-                  <Link href='https://www.facebook.com/take2health.ltd'>
+                  <Link href={FACEBOOK_LINK}>
                     <Box component='span' color='primary.light'>
                       Facebook: Take2 Health
                     </Box>
                   </Link>
                   <br />
-                  <Link href='https://take2health.net'>
+                  <Link href={E_HEALTH_LINK}>
                     <Box component='span' color='primary.light'>
                       返回官網
                     </Box>

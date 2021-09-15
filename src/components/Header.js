@@ -154,24 +154,34 @@ const Header = (props) => {
   }, [])
 
   const MenuList = () =>
-    menuListData.map((menu) => (
-      <MenuItem
-        classes={{ root: classes.menuItem }}
-        key={menu.label}
-        onClick={() =>
-          gsap.to(window, { duration: 1, scrollTo: `.${menu.id}` })
-        }
-      >
-        <Box
-          className={classnames({
-            [classes.activeSection]: props.active === menu.id,
-          })}
-          textAlign='center'
+    menuListData.map((menu) =>
+      menu.href ? (
+        <MenuItem classes={{ root: classes.menuItem }} key={menu.label}>
+          <Link href={menu.href}>
+            <Box textAlign='center' color='primary.main'>
+              {menu.label}
+            </Box>
+          </Link>
+        </MenuItem>
+      ) : (
+        <MenuItem
+          classes={{ root: classes.menuItem }}
+          key={menu.label}
+          onClick={() =>
+            gsap.to(window, { duration: 1, scrollTo: `.${menu.id}` })
+          }
         >
-          {menu.label}
-        </Box>
-      </MenuItem>
-    ))
+          <Box
+            className={classnames({
+              [classes.activeSection]: props.active === menu.id,
+            })}
+            textAlign='center'
+          >
+            {menu.label}
+          </Box>
+        </MenuItem>
+      )
+    )
 
   const handleClose = () => {
     setAnchorEl(null)
