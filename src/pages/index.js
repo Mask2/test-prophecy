@@ -56,9 +56,9 @@ const useStyles = makeStyles((theme) =>
       overflowX: 'hidden',
     },
     sectionOne: {
-      minHeight: theme.spacing(90),
+      minHeight: theme.spacing(85),
       maxHeight: theme.spacing(122.5),
-      height: '100vh',
+      height: '80vh',
       backgroundImage: `url(${Ming01}),${theme.palette.background.main}`,
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
@@ -339,6 +339,13 @@ const useStyles = makeStyles((theme) =>
     },
     sup: {
       fontSize: theme.typography.caption.fontSize,
+    },
+    videoWrapper: {
+      position: 'absolute',
+      left: 0,
+      top: 0,
+      width: '100%',
+      height: '100%',
     },
   })
 )
@@ -900,7 +907,7 @@ const App = () => {
                   mb={matches ? 3 : 8}
                 >
                   研究顯示，進行早期鼻咽癌篩查能有效找出「隱形」患者，儘早展開適當治療，
-                  <br />
+                  {!matches && <br />}
                   令患者存活率可高達9成<sup className={classes.sup}>8</sup>。
                 </Box>
               </Typography>
@@ -1002,7 +1009,7 @@ const App = () => {
                   }
                   href='https://api.whatsapp.com/send/?phone=85253770823&text=Halo%2C+I+want+to+know+more+about+Prophecy+Test%21+&app_absent=0'
                 >
-                  立即預約
+                  立即查詢／預約
                 </Button>
                 <Button
                   classes={{
@@ -1024,7 +1031,7 @@ const App = () => {
                   }
                   href='https://take2health.net/%e7%af%a9%e6%9f%a5%e6%9c%8d%e5%8b%99%e8%a6%86%e8%93%8b%e9%bb%9e/'
                 >
-                  查看服務覆蓋點
+                  查看篩查服務點
                 </Button>
                 {/* <Button
                   classes={{
@@ -1062,11 +1069,23 @@ const App = () => {
                   lineHeight={1.5}
                   color='primary.light'
                 >
-                  電話: (852) 3613 0536
+                  <Link href='tel:(852) 3613 0536'>
+                    <Box component='span' color='primary.light'>
+                      電話:(852) 3613 0536
+                    </Box>
+                  </Link>
                   <br />
-                  電郵: customer.support@take2.health
+                  <Link href='mailto:customer.support@take2.health'>
+                    <Box component='span' color='primary.light'>
+                      電郵: customer.support@take2.health
+                    </Box>
+                  </Link>
                   <br />
-                  Facebook: Take2 Health
+                  <Link href='https://www.facebook.com/take2health.ltd'>
+                    <Box component='span' color='primary.light'>
+                      Facebook: Take2 Health
+                    </Box>
+                  </Link>
                   <br />
                   <Link href='https://take2health.net'>
                     <Box component='span' color='primary.light'>

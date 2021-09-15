@@ -38,11 +38,11 @@ export const menuListData = [
     id: 'section-six',
   },
   {
-    label: '立即預約',
+    label: '立即查詢／預約',
     id: 'section-seven',
   },
   {
-    label: '查看服務覆蓋點',
+    label: '查看篩查服務點',
     id: 'section-seven',
   },
   {
@@ -72,15 +72,15 @@ export const cardListData = [
   },
   {
     label: '鼻咽癌病微',
-    icon: Question04,
+    icon: Question05,
     question: '一目了然？',
-    answer: AnswerO4,
+    answer: AnswerO5,
   },
   {
     label: '飲食習慣',
-    icon: Question05,
+    icon: Question04,
     question: '都能引致鼻咽癌？',
-    answer: AnswerO5,
+    answer: AnswerO4,
   },
 ]
 
