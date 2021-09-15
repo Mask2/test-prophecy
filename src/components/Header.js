@@ -8,7 +8,7 @@ import Link from '@material-ui/core/Link'
 import classnames from 'classnames'
 
 import Logo from '../images/logo.png'
-import { menuListData } from '../utils/constant'
+import { menuListData, E_HEALTH_LINK } from '../utils/constant'
 import IconMenu from '../images/icon_menu.png'
 import IconClose from '../images/icon_close.png'
 import { gsap, ScrollTrigger } from '../utils/initGsap'
@@ -158,7 +158,7 @@ const Header = (props) => {
       menu.href ? (
         <MenuItem classes={{ root: classes.menuItem }} key={menu.label}>
           <Link href={menu.href}>
-            <Box textAlign='center' color='primary.main'>
+            <Box textAlign='center' color='primary.light'>
               {menu.label}
             </Box>
           </Link>
@@ -196,7 +196,7 @@ const Header = (props) => {
           //   gsap.to(window, { duration: 1, scrollTo: `.section-one` })
           // }
         >
-          <Link href='https://take2health.net'>
+          <Link href={E_HEALTH_LINK}>
             <img className={classes.logo} src={Logo} alt='take2 logo' />
           </Link>
         </Box>
