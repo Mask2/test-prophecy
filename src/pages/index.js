@@ -64,7 +64,7 @@ const useStyles = makeStyles((theme) =>
     sectionOne: {
       // minHeight: theme.spacing(90),
       maxHeight: theme.spacing(122.5),
-      height: `calc(100vh - ${theme.spacing(13)}px)`,
+      height: `calc(100vh - ${theme.spacing(8)}px)`,
       backgroundImage: `url(${Ming01}),${theme.palette.background.main}`,
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
@@ -76,7 +76,7 @@ const useStyles = makeStyles((theme) =>
       [theme.breakpoints.only('xs')]: {
         backgroundImage: `url(${MobileMing01}),${theme.palette.background.main}`,
         height: '150vw',
-        maxHeight: '100vh',
+        maxHeight: `calc(100vh - ${theme.spacing(8)}px)`,
         minHeight: 'auto',
       },
     },
@@ -130,7 +130,7 @@ const useStyles = makeStyles((theme) =>
       right: '58%',
       [theme.breakpoints.only('xs')]: {
         width: '46%',
-        top: '33%',
+        top: '30%',
         left: '-2%',
       },
     },
@@ -206,6 +206,7 @@ const useStyles = makeStyles((theme) =>
       flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
+      marginTop: theme.spacing(-2),
     },
     sectionThree: {
       background: theme.palette.background.main,
@@ -676,13 +677,13 @@ const App = () => {
         <Box
           className={classnames(classes.sectionTwo, 'section-two')}
           pb={matches ? 3 : 15}
-          pt={matches ? 2 : 6}
+          pt={2}
         >
           <Box
             mb={matches ? 2 : 8}
             className={classes.arrowButton}
             onClick={() =>
-              gsap.to(window, { duration: 1, scrollTo: `.section-two` })
+              gsap.to(window, { duration: 0.6, scrollTo: `.section-two` })
             }
           >
             <img
@@ -1014,6 +1015,7 @@ const App = () => {
                     </Icon>
                   }
                   href={WHATS_APP_LINK}
+                  target='_blank'
                 >
                   立即查詢／預約
                 </Button>
@@ -1036,6 +1038,7 @@ const App = () => {
                     </Icon>
                   }
                   href={ADDRESS_LINK}
+                  target='_blank'
                 >
                   查看篩查服務點
                 </Button>
@@ -1087,13 +1090,13 @@ const App = () => {
                     </Box>
                   </Link>
                   <br />
-                  <Link href={FACEBOOK_LINK}>
+                  <Link href={FACEBOOK_LINK} target='_blank'>
                     <Box component='span' color='primary.light'>
                       Facebook: Take2 Health
                     </Box>
                   </Link>
                   <br />
-                  <Link href={E_HEALTH_LINK}>
+                  <Link href={E_HEALTH_LINK} target='_blank'>
                     <Box component='span' color='primary.light'>
                       返回官網
                     </Box>

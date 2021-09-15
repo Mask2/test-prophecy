@@ -157,8 +157,8 @@ const Header = (props) => {
     menuListData.map((menu) =>
       menu.href ? (
         <MenuItem classes={{ root: classes.menuItem }} key={menu.label}>
-          <Link href={menu.href}>
-            <Box textAlign='center' color='primary.light'>
+          <Link href={menu.href} target='_blank'>
+            <Box textAlign='center' color='text.primary'>
               {menu.label}
             </Box>
           </Link>
@@ -196,7 +196,7 @@ const Header = (props) => {
           //   gsap.to(window, { duration: 1, scrollTo: `.section-one` })
           // }
         >
-          <Link href={E_HEALTH_LINK}>
+          <Link href={E_HEALTH_LINK} target='_blank'>
             <img className={classes.logo} src={Logo} alt='take2 logo' />
           </Link>
         </Box>
