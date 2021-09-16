@@ -1097,7 +1097,12 @@ const App = () => {
                   </Link>
                   <br />
                   <Link href={E_HEALTH_LINK} target='_blank'>
-                    <Box component='span' color='primary.light'>
+                    <Box
+                      display='inline-block'
+                      mt={2}
+                      fontSize={matches ? 'body1.fontSize' : 'h6.fontSize'}
+                      color='primary.light'
+                    >
                       返回官網
                     </Box>
                   </Link>
