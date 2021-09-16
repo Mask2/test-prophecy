@@ -354,6 +354,9 @@ const useStyles = makeStyles((theme) =>
       width: '100%',
       height: '100%',
     },
+    textUnderline: {
+      textDecoration: 'underline',
+    },
   })
 )
 
@@ -1099,6 +1102,7 @@ const App = () => {
                   <Box mt={2}>
                     <Link href={E_HEALTH_LINK} target='_blank'>
                       <Box
+                        className={classes.textUnderline}
                         component='span'
                         fontSize={matches ? 'body1.fontSize' : 'h6.fontSize'}
                         color='primary.light'
