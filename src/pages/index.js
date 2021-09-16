@@ -1096,16 +1096,17 @@ const App = () => {
                     </Box>
                   </Link>
                   <br />
-                  <Link href={E_HEALTH_LINK} target='_blank'>
-                    <Box
-                      display='inline-block'
-                      mt={2}
-                      fontSize={matches ? 'body1.fontSize' : 'h6.fontSize'}
-                      color='primary.light'
-                    >
-                      返回官網
-                    </Box>
-                  </Link>
+                  <Box mt={2}>
+                    <Link href={E_HEALTH_LINK} target='_blank'>
+                      <Box
+                        component='span'
+                        fontSize={matches ? 'body1.fontSize' : 'h6.fontSize'}
+                        color='primary.light'
+                      >
+                        返回官網
+                      </Box>
+                    </Link>
+                  </Box>
                 </Box>
               </Typography>
               <Box
