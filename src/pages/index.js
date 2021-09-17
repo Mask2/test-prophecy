@@ -12,12 +12,12 @@ import Link from '@material-ui/core/Link'
 import YouTube from 'react-youtube'
 import classnames from 'classnames'
 
-import Ming01 from '../images/ming_01.png'
-import Ming02 from '../images/ming_02.png'
-import Ming03 from '../images/ming_03.png'
-import MobileMing01 from '../images/mobile_ming_01.png'
-import MobileMing02 from '../images/mobile_ming_02.png'
-import MobileMing03 from '../images/mobile_ming_03.png'
+import Ming01 from '../images/ming_01.jpg'
+import Ming02 from '../images/ming_02.jpg'
+import Ming03 from '../images/ming_03.jpg'
+import MobileMing01 from '../images/mobile_ming_01.jpg'
+import MobileMing02 from '../images/mobile_ming_02.jpg'
+import MobileMing03 from '../images/mobile_ming_03.jpg'
 import SectionOneText01 from '../images/section_one_text_01.png'
 import SectionOneText02 from '../images/section_one_text_02.png'
 import SectionOneText03 from '../images/section_one_text_03.png'
@@ -26,7 +26,7 @@ import MobileSectionOneText02 from '../images/mobile_section_one_text_02.png'
 
 import IconCalendar from '../images/svg/icon_calendar.svg'
 import IconFavorite from '../images/svg/icon_favorite.svg'
-// import IconLocation from '../images/svg/icon_location.svg'
+import IconLocation from '../images/svg/icon_location.svg'
 // import TemVideo from '../images/tem_video.png'
 import LineDots from '../images/bg_line_dots.png'
 import WaveDots from '../images/bg_wave_dots.png'
@@ -311,12 +311,18 @@ const useStyles = makeStyles((theme) =>
       marginRight: theme.spacing(4),
       padding: theme.spacing(3, 0),
       borderWidth: 2,
+      [theme.breakpoints.down('md')]: {
+        padding: theme.spacing(2.5, 0),
+        fontSize: theme.spacing(2.5),
+      },
+      [theme.breakpoints.down('sm')]: {
+        fontSize: theme.spacing(2),
+      },
       [theme.breakpoints.only('xs')]: {
         maxWidth: '100%',
-        marginBottom: theme.spacing(2),
         marginRight: 0,
         fontSize: theme.typography.h6.fontSize,
-        padding: theme.spacing(2.5, 0),
+        marginBottom: theme.spacing(2),
       },
     },
     buttonOutlined: {
@@ -329,7 +335,7 @@ const useStyles = makeStyles((theme) =>
       textAlign: 'center',
       '& :first-child': {
         fontSize: theme.spacing(5),
-        [theme.breakpoints.only('xs')]: {
+        [theme.breakpoints.down('md')]: {
           fontSize: theme.spacing(4),
         },
       },
@@ -1041,8 +1047,8 @@ const App = () => {
                     <Icon>
                       <img
                         className={classes.imageIcon}
-                        src={IconFavorite}
-                        alt='favorite'
+                        src={IconLocation}
+                        alt='location'
                       />
                     </Icon>
                   }
@@ -1051,7 +1057,7 @@ const App = () => {
                 >
                   查看篩查服務點
                 </Button>
-                {/* <Button
+                <Button
                   classes={{
                     root: classes.buttonRoot,
                     outlined: classes.buttonOutlined,
@@ -1059,18 +1065,21 @@ const App = () => {
                   }}
                   size='large'
                   variant='outlined'
+                  fullWidth
                   startIcon={
                     <Icon>
                       <img
                         className={classes.imageIcon}
-                        src={IconLocation}
-                        alt='location'
+                        src={IconFavorite}
+                        alt='favorite'
                       />
                     </Icon>
                   }
+                  href={E_HEALTH_LINK}
+                  target='_blank'
                 >
-                  成為會員<sup className={classes.sup}>10</sup>。
-                </Button> */}
+                  立即登記領取優惠<sup className={classes.sup}>10</sup>。
+                </Button>
               </Box>
               <Typography component='div'>
                 <Box
