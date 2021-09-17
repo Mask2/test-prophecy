@@ -1002,6 +1002,8 @@ const App = () => {
               </Typography>
               <Box width='100%' display={matches ? 'block' : 'flex'} my={4}>
                 <Button
+                  // Id for Google Analytics Event Tracking
+                  id='jlzGxd'
                   classes={{
                     root: classes.buttonRoot,
                     outlined: classes.buttonOutlined,
@@ -1025,6 +1027,8 @@ const App = () => {
                   立即查詢／預約
                 </Button>
                 <Button
+                  // Id for Google Analytics Event Tracking
+                  id='qzjKcj'
                   classes={{
                     root: classes.buttonRoot,
                     outlined: classes.buttonOutlined,
