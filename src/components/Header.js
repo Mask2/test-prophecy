@@ -156,10 +156,15 @@ const Header = (props) => {
   }, [])
 
   const MenuList = () =>
-    menuListData.map((menu) =>
+    menuListData.map((menu, index) =>
       menu.href ? (
         <MenuItem classes={{ root: classes.menuItem }} key={menu.label}>
-          <Link href={menu.href} target='_blank'>
+          <Link
+            // Id for Google Analytics Event Tracking
+            id={index === 5 ? 'jdiCeq' : 'djsZkeq'}
+            href={menu.href}
+            target='_blank'
+          >
             <Box textAlign='center' color='text.primary'>
               {menu.label}
             </Box>
