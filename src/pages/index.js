@@ -126,11 +126,13 @@ const useStyles = makeStyles((theme) =>
     sectionOneText03: {
       position: 'absolute',
       width: '20%',
-      top: '39%',
+      // top: '39%',
       right: '58%',
+      bottom: theme.spacing(46),
       [theme.breakpoints.only('xs')]: {
         width: '46%',
-        top: '30%',
+        // top: '30%',
+        bottom: '58%',
         left: '-2%',
       },
     },

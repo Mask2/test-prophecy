@@ -44,11 +44,13 @@ const useStyles = makeStyles((theme) =>
       height: '100%',
       width: theme.spacing(70),
       background:
-        'linear-gradient(90deg, #F5FBFC 0%, rgba(255, 255, 255, 0) 100%)',
+        'linear-gradient(90deg, #F5FBFC 180px, rgba(255, 255, 255, 0) 100%)',
       display: 'flex',
       alignItems: 'center',
       [theme.breakpoints.only('xs')]: {
         width: theme.spacing(32.5),
+        background:
+          'linear-gradient(90deg, #F5FBFC 104px, rgba(255, 255, 255, 0) 100%)',
       },
     },
     logo: {
