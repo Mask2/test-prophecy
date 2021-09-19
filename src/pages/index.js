@@ -308,7 +308,6 @@ const useStyles = makeStyles((theme) =>
       borderColor: theme.palette.primary.light,
       fontSize: theme.spacing(3.5),
       fontWeight: 'bolder',
-      marginRight: theme.spacing(4),
       padding: theme.spacing(3, 0),
       borderWidth: 2,
       [theme.breakpoints.down('md')]: {
@@ -320,9 +319,16 @@ const useStyles = makeStyles((theme) =>
       },
       [theme.breakpoints.only('xs')]: {
         maxWidth: '100%',
-        marginRight: 0,
         fontSize: theme.typography.h6.fontSize,
         marginBottom: theme.spacing(2),
+      },
+    },
+    buttonRootMargin: {
+      marginLeft: theme.spacing(2),
+      marginRight: theme.spacing(2),
+      [theme.breakpoints.only('xs')]: {
+        marginLeft: 0,
+        marginRight: 0,
       },
     },
     buttonOutlined: {
@@ -1006,7 +1012,12 @@ const App = () => {
                   歡迎透過下列方式與我們聯絡：
                 </Box>
               </Typography>
-              <Box width='100%' display={matches ? 'block' : 'flex'} my={4}>
+              <Box
+                width='100%'
+                display={matches ? 'block' : 'flex'}
+                justifyContent='space-around'
+                my={4}
+              >
                 <Button
                   // Id for Google Analytics Event Tracking
                   id='jlzGxd'
@@ -1040,6 +1051,7 @@ const App = () => {
                     outlined: classes.buttonOutlined,
                     iconSizeLarge: classes.iconSizeLarge,
                   }}
+                  className={classes.buttonRootMargin}
                   size='large'
                   variant='outlined'
                   fullWidth
