@@ -1015,7 +1015,7 @@ const App = () => {
               <Box
                 width='100%'
                 display={matches ? 'block' : 'flex'}
-                justifyContent='space-around'
+                justifyContent='space-between'
                 my={4}
               >
                 <Button
