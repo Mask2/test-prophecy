@@ -84,7 +84,7 @@ export const cardListData = [
     answer: AnswerO3,
   },
   {
-    label: '鼻咽癌病微',
+    label: '鼻咽癌病徵',
     icon: Question05,
     question: '一目了然？',
     answer: AnswerO5,

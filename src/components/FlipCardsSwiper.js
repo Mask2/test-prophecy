@@ -4,7 +4,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery'
 import Box from '@material-ui/core/Box'
 import classnames from 'classnames'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import SwiperCore, { Pagination, Navigation } from 'swiper/core'
+import SwiperCore, { Autoplay, Pagination, Navigation } from 'swiper/core'
 
 import 'swiper/swiper-bundle.min.css'
 import 'swiper/components/pagination/pagination.min.css'
@@ -14,7 +14,7 @@ import IconArrow from '../images/svg/icon_arrow.svg'
 import { gsap } from '../utils/initGsap'
 import Container from '@material-ui/core/Container'
 
-SwiperCore.use([Pagination, Navigation])
+SwiperCore.use([Autoplay, Pagination, Navigation])
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -232,6 +232,10 @@ const FlipCardsSwiper = () => {
       <Swiper
         spaceBetween={matches ? '-40%' : '-13%'}
         slidesPerView={matches ? 1 : 3}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
         pagination={{ clickable: true }}
         navigation
         grabCursor

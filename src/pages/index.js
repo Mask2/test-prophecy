@@ -360,6 +360,7 @@ const useStyles = makeStyles((theme) =>
     },
     sup: {
       fontSize: theme.typography.caption.fontSize,
+      marginBottom: 'auto',
     },
     videoWrapper: {
       position: 'absolute',
@@ -1090,7 +1091,7 @@ const App = () => {
                   href={E_HEALTH_LINK}
                   target='_blank'
                 >
-                  立即登記領取優惠<sup className={classes.sup}>10</sup>。
+                  立即登記領取優惠<sup className={classes.sup}>10</sup>
                 </Button>
               </Box>
               <Typography component='div'>
