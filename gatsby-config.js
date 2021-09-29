@@ -3,7 +3,8 @@ module.exports = {
     title: 'Campaign Page',
     titleTemplate: '%s · Take2 Health',
     description: 'Campaign Page for Take2 Health',
-    url: 'https://take2health.net', // No trailing slash allowed!
+    url: 'https://take2health.net',
+    siteUrl: 'https://take2health.net', // No trailing slash allowed!
     image: '/images/favicon.ico', // Path to your image you placed in the 'static' folder
     twitterUsername: '',
   },
