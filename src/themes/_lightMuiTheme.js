@@ -12,7 +12,22 @@ const theme = createTheme({
       xl: 1920,
     },
   },
-  overrides: {},
+  overrides: {
+    MuiTableCell: {
+      root: {
+        fontSize: '14px',
+        borderBottom: 'none',
+      },
+      head: {
+        color: '#000000',
+        background: 'rgb(208, 206, 206)',
+        fontWeight: 'bold',
+      },
+      body: {
+        color: '#000000',
+      },
+    },
+  },
   palette: {
     type: 'light',
     primary: {

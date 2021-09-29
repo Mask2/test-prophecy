@@ -18,8 +18,7 @@ import Symptom03 from '../images/svg/symptom_03.svg'
 
 export const WHATS_APP_LINK =
   'https://api.whatsapp.com/send/?phone=85253770823&text=Halo%2C+I+want+to+know+more+about+Prophecy+Test%21+&app_absent=0'
-export const ADDRESS_LINK =
-  'https://take2health.net/%e7%af%a9%e6%9f%a5%e6%9c%8d%e5%8b%99%e8%a6%86%e8%93%8b%e9%bb%9e/'
+export const ADDRESS_LINK = '/zh/service-location'
 export const FACEBOOK_LINK = 'https://www.facebook.com/take2health.ltd'
 export const E_HEALTH_LINK = 'https://take2health.net'
 

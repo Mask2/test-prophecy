@@ -1,6 +1,13 @@
 import * as React from 'react'
+import { makeStyles } from '@material-ui/core/styles'
 import { Link } from 'gatsby'
-
+const useStyles = makeStyles((theme) => {
+  return {
+    mainColor: {
+      color: theme.palette.primary.main,
+    },
+  }
+})
 // styles
 const pageStyles = {
   color: '#232129',
@@ -26,10 +33,13 @@ const codeStyles = {
 
 // markup
 const NotFoundPage = () => {
+  const classes = useStyles()
   return (
     <main style={pageStyles}>
       <title>Not found</title>
-      <h1 style={headingStyles}>Page not found</h1>
+      <h1 className={classes.mainColor} style={headingStyles}>
+        Page not found
+      </h1>
       <p style={paragraphStyles}>
         Sorry{' '}
         <span role='img' aria-label='Pensive emoji'>
@@ -45,7 +55,10 @@ const NotFoundPage = () => {
           </>
         ) : null}
         <br />
-        <Link to='/'>Go home</Link>.
+        <Link className={classes.mainColor} to='/whats-new/campaign'>
+          Go To Take2 Health
+        </Link>
+        .
       </p>
     </main>
   )
