@@ -324,8 +324,8 @@ const useStyles = makeStyles((theme) =>
       },
     },
     buttonRootMargin: {
-      marginLeft: theme.spacing(2),
-      marginRight: theme.spacing(2),
+      marginLeft: theme.spacing(4),
+      // marginRight: theme.spacing(2),
       [theme.breakpoints.only('xs')]: {
         marginLeft: 0,
         marginRight: 0,
@@ -1016,7 +1016,7 @@ const App = () => {
               <Box
                 width='100%'
                 display={matches ? 'block' : 'flex'}
-                justifyContent='space-between'
+                // justifyContent='space-between'
                 my={4}
               >
                 <Button
@@ -1070,7 +1070,7 @@ const App = () => {
                 >
                   查看篩查服務點
                 </Button>
-                <Button
+                {/* <Button
                   classes={{
                     root: classes.buttonRoot,
                     outlined: classes.buttonOutlined,
@@ -1092,7 +1092,7 @@ const App = () => {
                   target='_blank'
                 >
                   立即登記領取優惠<sup className={classes.sup}>10</sup>
-                </Button>
+                </Button> */}
               </Box>
               <Typography component='div'>
                 <Box
@@ -1127,7 +1127,7 @@ const App = () => {
                     </Box>
                   </Link>
                   <br />
-                  <Box mt={2}>
+                  {/* <Box mt={2}>
                     <Link href={E_HEALTH_LINK} target='_blank'>
                       <Box
                         className={classes.textUnderline}
@@ -1138,7 +1138,7 @@ const App = () => {
                         返回官網
                       </Box>
                     </Link>
-                  </Box>
+                  </Box> */}
                 </Box>
               </Typography>
               <Box
