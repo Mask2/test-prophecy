@@ -56,6 +56,11 @@ export default function ServiceLocation() {
 
   return (
     <TableContainer className={classes.root} component={Paper}>
+      <Box mb={2}>
+        <Link href={E_HEALTH_LINK} target='_blank'>
+          <img className={classes.logo} src={Logo} alt='take2 logo' />
+        </Link>
+      </Box>
       <Typography component='div'>
         <Box
           textAlign='center'
@@ -64,22 +69,17 @@ export default function ServiceLocation() {
           fontWeight='bold'
           my={3}
         >
-          篩查服務覆蓋點
+          篩查服務點
         </Box>
         <Box
           textAlign='center'
           fontSize='body1.fontSize'
           fontWeight='lighter'
-          mb={2}
+          mb={3}
         >
           (包括醫院﹑診所或醫務中心)**請向醫護人員查詢**
         </Box>
       </Typography>
-      <Box mb={3}>
-        <Link href={E_HEALTH_LINK} target='_blank'>
-          <img className={classes.logo} src={Logo} alt='take2 logo' />
-        </Link>
-      </Box>
       <Box className={classes.tableScrollContainer}>
         <Table
           className={classes.table}
