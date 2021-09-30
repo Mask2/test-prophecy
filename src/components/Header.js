@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) =>
       },
     },
     logoContainer: {
-      cursor: 'pointer',
+      // cursor: 'pointer',
       height: '100%',
       width: theme.spacing(70),
       background:
@@ -158,18 +158,19 @@ const Header = (props) => {
   const MenuList = () =>
     menuListData.map((menu, index) =>
       menu.href ? (
-        <MenuItem classes={{ root: classes.menuItem }} key={menu.label}>
-          <Link
-            // Id for Google Analytics Event Tracking
-            id={index === 5 ? 'jdiCeq' : 'djsZkeq'}
-            href={menu.href}
-            target='_blank'
-          >
+        <Link
+          // Id for Google Analytics Event Tracking
+          id={index === 5 ? 'jdiCeq' : 'djsZkeq'}
+          href={menu.href}
+          target='_blank'
+          key={menu.label}
+        >
+          <MenuItem classes={{ root: classes.menuItem }}>
             <Box textAlign='center' color='text.primary'>
               {menu.label}
             </Box>
-          </Link>
-        </MenuItem>
+          </MenuItem>
+        </Link>
       ) : (
         <MenuItem
           classes={{ root: classes.menuItem }}
@@ -203,9 +204,9 @@ const Header = (props) => {
           //   gsap.to(window, { duration: 1, scrollTo: `.section-one` })
           // }
         >
-          <Link href={E_HEALTH_LINK} target='_blank'>
-            <img className={classes.logo} src={Logo} alt='take2 logo' />
-          </Link>
+          {/* <Link href={E_HEALTH_LINK} target='_blank'> */}
+          <img className={classes.logo} src={Logo} alt='take2 logo' />
+          {/* </Link> */}
         </Box>
         <IconButton
           className={classes.navButton}
