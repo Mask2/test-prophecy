@@ -8,7 +8,10 @@ import Link from '@material-ui/core/Link'
 import classnames from 'classnames'
 
 import Logo from '../images/logo.png'
-import { menuListData, E_HEALTH_LINK } from '../utils/constant'
+import {
+  menuListData,
+  // E_HEALTH_LINK
+} from '../utils/constant'
 import IconMenu from '../images/icon_menu.png'
 import IconClose from '../images/icon_close.png'
 import { gsap, ScrollTrigger } from '../utils/initGsap'

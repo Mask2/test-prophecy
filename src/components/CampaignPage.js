@@ -25,7 +25,7 @@ import MobileSectionOneText01 from '../images/mobile_section_one_text_01.png'
 import MobileSectionOneText02 from '../images/mobile_section_one_text_02.png'
 
 import IconCalendar from '../images/svg/icon_calendar.svg'
-import IconFavorite from '../images/svg/icon_favorite.svg'
+// import IconFavorite from '../images/svg/icon_favorite.svg'
 import IconLocation from '../images/svg/icon_location.svg'
 // import TemVideo from '../images/tem_video.png'
 import LineDots from '../images/bg_line_dots.png'
@@ -44,7 +44,7 @@ import {
   serviceListData,
   WHATS_APP_LINK,
   FACEBOOK_LINK,
-  E_HEALTH_LINK,
+  // E_HEALTH_LINK,
   ADDRESS_LINK,
   SERVICE_PHONE,
   SERVICE_EMAIL,
