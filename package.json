@@ -11,11 +11,10 @@
     "develop": "gatsby develop",
     "start": "gatsby develop",
     "build": "gatsby build",
-    "build:dev": "gatsby build --prefix-paths",
     "serve": "gatsby serve --prefix-paths",
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 0",
-    "deploy": "gatsby build:dev --prefix-paths && gh-pages -d public -r https://$GH_TOKEN@github.com/Mask2/github-pages-demo.git"
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public -r https://$GH_TOKEN@github.com/Mask2/github-pages-demo.git"
   },
   "dependencies": {
     "@material-ui/core": "^4.12.2",
