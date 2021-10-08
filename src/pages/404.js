@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import { Link } from 'gatsby'
+import { E_HEALTH_LINK } from '../utils/constant'
 const useStyles = makeStyles((theme) => {
   return {
     mainColor: {
@@ -55,7 +56,7 @@ const NotFoundPage = () => {
           </>
         ) : null}
         <br />
-        <Link className={classes.mainColor} to='/whats-new/campaign'>
+        <Link className={classes.mainColor} to={E_HEALTH_LINK}>
           Go To Take2 Health
         </Link>
         .

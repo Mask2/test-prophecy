@@ -12,29 +12,31 @@ import Link from '@material-ui/core/Link'
 import YouTube from 'react-youtube'
 import classnames from 'classnames'
 
-import Ming01 from '../images/ming_01.jpg'
-import Ming02 from '../images/ming_02.jpg'
-import Ming03 from '../images/ming_03.jpg'
-import MobileMing01 from '../images/mobile_ming_01.jpg'
-import MobileMing02 from '../images/mobile_ming_02.jpg'
-import MobileMing03 from '../images/mobile_ming_03.jpg'
-import SectionOneText01 from '../images/section_one_text_01.png'
-import SectionOneText02 from '../images/section_one_text_02.png'
-import SectionOneText03 from '../images/section_one_text_03.png'
-import MobileSectionOneText01 from '../images/mobile_section_one_text_01.png'
-import MobileSectionOneText02 from '../images/mobile_section_one_text_02.png'
+import Ming01 from '../../images/ming_01.jpg'
+import Ming02 from '../../images/ming_02.jpg'
+import Ming03 from '../../images/ming_03.jpg'
+import MobileMing01 from '../../images/mobile_ming_01.jpg'
+import MobileMing02 from '../../images/mobile_ming_02.jpg'
+import MobileMing03 from '../../images/mobile_ming_03.jpg'
+import SectionOneText01 from '../../images/section_one_text_01.png'
+import SectionOneText02 from '../../images/section_one_text_02.png'
+import SectionOneText03 from '../../images/section_one_text_03.png'
+import MobileSectionOneText01 from '../../images/mobile_section_one_text_01.png'
+import MobileSectionOneText02 from '../../images/mobile_section_one_text_02.png'
 
-import IconCalendar from '../images/svg/icon_calendar.svg'
-import IconFavorite from '../images/svg/icon_favorite.svg'
-import IconLocation from '../images/svg/icon_location.svg'
+import IconCalendar from '../../images/svg/icon_calendar.svg'
+import IconFavorite from '../../images/svg/icon_favorite.svg'
+import IconLocation from '../../images/svg/icon_location.svg'
 // import TemVideo from '../images/tem_video.png'
-import LineDots from '../images/bg_line_dots.png'
-import WaveDots from '../images/bg_wave_dots.png'
-import CellTop from '../images/bg_cell_top.png'
-import CellBottom from '../images/bg_cell_bottom.png'
-import IconArrow from '../images/svg/icon_arrow.svg'
-import Header from '../components/Header'
-import Seo from '../components/Seo'
+import LineDots from '../../images/bg_line_dots.png'
+import WaveDots from '../../images/bg_wave_dots.png'
+import CellTop from '../../images/bg_cell_top.png'
+import CellBottom from '../../images/bg_cell_bottom.png'
+import IconArrow from '../../images/svg/icon_arrow.svg'
+import Header from '../../components/Header'
+import Seo from '../../components/Seo'
+import Annotate from '../../components/Annotate'
+import FlipCardsSwiper from '../../components/FlipCardsSwiper'
 
 import {
   menuListData,
@@ -46,11 +48,8 @@ import {
   ADDRESS_LINK,
   SERVICE_PHONE,
   SERVICE_EMAIL,
-} from '../utils/constant'
-import Annotate from '../components/Annotate'
-import { gsap, ScrollTrigger } from '../utils/initGsap'
-
-import FlipCardsSwiper from '../components/FlipCardsSwiper'
+} from '../../utils/constant'
+import { gsap, ScrollTrigger } from '../../utils/initGsap'
 
 const useStyles = makeStyles((theme) =>
   createStyles({
