@@ -4,7 +4,7 @@ import Typography from '@material-ui/core/Typography'
 import Box from '@material-ui/core/Box'
 import Link from '@material-ui/core/Link'
 import ConsumptionVoucherBanner from '../../images/consumption_voucher_landing_page_banner.jpg'
-import Clinic01 from '../../images/clinic_icon_01.png'
+// import Clinic01 from '../../images/clinic_icon_01.png'
 import Clinic02 from '../../images/clinic_icon_02.png'
 import Clinic03 from '../../images/clinic_icon_03.png'
 
@@ -63,7 +63,7 @@ const ConsumptionVoucher = () => {
             Sequencing)，來分析血漿中人類和EB病毒的DNA與鼻咽癌相關之特徵，能有效識別出早期鼻咽癌患者。
             <Box my={3}>
               Take2
-              Health聯乘三大醫療集團推出消費券限時優惠，除專享折扣優惠，更有機會獲得高達$30,000的禮品！
+              Health聯乘三大醫療集團推出消費券限時優惠，除尊享折扣優惠，更有機會獲得高達$30,000的禮品！
             </Box>
           </Box>
           <Box my={4}>
