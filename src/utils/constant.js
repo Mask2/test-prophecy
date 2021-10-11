@@ -21,7 +21,7 @@ export const WHATS_APP_LINK =
 export const ADDRESS_LINK = '/zh/service-location/'
 export const FACEBOOK_LINK = 'https://www.facebook.com/take2health.ltd'
 export const E_HEALTH_LINK = '/whats-new/campaign/'
-
+export const CONSUMPTION_VOUCHER_LINK = '/promotions/consumption-voucher'
 export const SERVICE_PHONE = '(852) 3613 0536'
 export const SERVICE_EMAIL = 'customer.support@take2.health'
 
@@ -156,8 +156,8 @@ export const annotateListData = [
     content:
       'Lam, W. K. Jacky, et al. “Sequencing-Based Counting and Size Profiling of Plasma Epstein–Barr Virus DNA Enhance Population Screening of Nasopharyngeal Carcinoma.” <i>Proceedings of the National Academy of Sciences,</i> vol. 115, no. 22, 2018, pp. E5115–24.',
   },
-  // {
-  //   content:
-  //     '一經登記，閣下將可免費成為永久會員，享用我們的Take2 Extra Care會員計劃轄下一切服務，包括線上/線下即時查詢、接收健康資訊等。',
-  // },
+  {
+    content:
+      '一經登記，閣下將可免費成為永久會員，享用我們的Take2 Extra Care會員計劃轄下一切服務，包括線上/線下即時查詢、接收健康資訊等。',
+  },
 ]
