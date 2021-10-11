@@ -8,7 +8,7 @@ module.exports = {
     image: '/images/favicon.ico', // Path to your image you placed in the 'static' folder
     twitterUsername: '',
   },
-  pathPrefix: '/test-prophecy',
+  pathPrefix: '/',
   // assetPrefix: `https://mask2.github.io`,
   plugins: [
     'gatsby-plugin-image',
