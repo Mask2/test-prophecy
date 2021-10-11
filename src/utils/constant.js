@@ -18,10 +18,11 @@ import Symptom03 from '../images/svg/symptom_03.svg'
 
 export const WHATS_APP_LINK =
   'https://api.whatsapp.com/send/?phone=85253770823&text=Halo%2C+I+want+to+know+more+about+Prophecy+Test%21+&app_absent=0'
-export const ADDRESS_LINK = '/zh/service-location/'
+export const ADDRESS_LINK = '/test-prophecy/zh/service-location/'
 export const FACEBOOK_LINK = 'https://www.facebook.com/take2health.ltd'
-export const E_HEALTH_LINK = '/whats-new/campaign/'
-export const CONSUMPTION_VOUCHER_LINK = '/promotions/consumption-voucher'
+export const E_HEALTH_LINK = '/test-prophecy/whats-new/campaign/'
+export const CONSUMPTION_VOUCHER_LINK =
+  '/test-prophecy/promotions/consumption-voucher'
 export const SERVICE_PHONE = '(852) 3613 0536'
 export const SERVICE_EMAIL = 'customer.support@take2.health'
 
