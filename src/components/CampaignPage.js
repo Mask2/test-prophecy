@@ -1020,30 +1020,6 @@ const CampaignPage = () => {
                 // justifyContent='space-between'
                 my={4}
               >
-                {/* <Button
-                  classes={{
-                    root: classes.buttonRoot,
-                    outlined: classes.buttonOutlined,
-                    iconSizeLarge: classes.iconSizeLarge,
-                  }}
-                  className={classes.buttonRootMargin}
-                  size='large'
-                  variant='outlined'
-                  fullWidth
-                  startIcon={
-                    <Icon>
-                      <img
-                        className={classes.imageIcon}
-                        src={IconFavorite}
-                        alt='favorite'
-                      />
-                    </Icon>
-                  }
-                  href={E_HEALTH_LINK}
-                  target='_blank'
-                >
-                  獨家優惠 立即預約<sup className={classes.sup}>10</sup>
-                </Button> */}
                 <Button
                   // Id for Google Analytics Event Tracking
                   id='jlzGxd'
@@ -1067,7 +1043,7 @@ const CampaignPage = () => {
                   href={WHATS_APP_LINK}
                   target='_blank'
                 >
-                  一般查詢
+                  立即查詢／預約
                 </Button>
                 <Button
                   // Id for Google Analytics Event Tracking
@@ -1095,6 +1071,30 @@ const CampaignPage = () => {
                 >
                   查看篩查服務點
                 </Button>
+                {/* <Button
+                  classes={{
+                    root: classes.buttonRoot,
+                    outlined: classes.buttonOutlined,
+                    iconSizeLarge: classes.iconSizeLarge,
+                  }}
+                  className={classes.buttonRootMargin}
+                  size='large'
+                  variant='outlined'
+                  fullWidth
+                  startIcon={
+                    <Icon>
+                      <img
+                        className={classes.imageIcon}
+                        src={IconFavorite}
+                        alt='favorite'
+                      />
+                    </Icon>
+                  }
+                  href={CONSUMPTION_VOUCHER_LINK}
+                  target='_blank'
+                >
+                  立即登記領取優惠<sup className={classes.sup}>10</sup>
+                </Button> */}
               </Box>
               <Typography component='div'>
                 <Box

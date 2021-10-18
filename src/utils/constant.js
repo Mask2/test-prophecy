@@ -21,6 +21,7 @@ export const WHATS_APP_LINK =
 export const ADDRESS_LINK = '/zh/service-location/'
 export const FACEBOOK_LINK = 'https://www.facebook.com/take2health.ltd'
 export const E_HEALTH_LINK = '/whats-new/campaign/'
+export const CONSUMPTION_VOUCHER_LINK = '/zh/promotions/consumption-voucher'
 export const SERVICE_PHONE = '(852) 3613 0536'
 export const SERVICE_EMAIL = 'customer.support@take2.health'
 
@@ -46,7 +47,7 @@ export const menuListData = [
     id: 'section-six',
   },
   {
-    label: '一般查詢',
+    label: '立即查詢／預約',
     id: 'section-seven',
     href: WHATS_APP_LINK,
   },
