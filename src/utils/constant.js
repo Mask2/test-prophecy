@@ -15,12 +15,13 @@ import Service04 from '../images/service_04.png'
 import Service05 from '../images/service_05.png'
 import Symptom02 from '../images/svg/symptom_02.svg'
 import Symptom03 from '../images/svg/symptom_03.svg'
+import { WhatsApp } from '@material-ui/icons'
 
 export const WHATS_APP_LINK =
   'https://api.whatsapp.com/send/?phone=85253770823&text=Halo%2C+I+want+to+know+more+about+Prophecy+Test%21+&app_absent=0'
 export const ADDRESS_LINK = '/zh/service-location/'
 export const FACEBOOK_LINK = 'https://www.facebook.com/take2health.ltd'
-export const E_HEALTH_LINK = '/whats-new/campaign/'
+export const E_HEALTH_LINK = 'https://take2health.net/health-platform/'
 export const CONSUMPTION_VOUCHER_LINK = '/zh/promotions/consumption-voucher'
 export const SERVICE_PHONE = '(852) 3613 0536'
 export const SERVICE_EMAIL = 'customer.support@take2.health'
@@ -47,9 +48,9 @@ export const menuListData = [
     id: 'section-six',
   },
   {
-    label: '立即查詢／預約',
+    label: '獨家優惠 立即預約',
     id: 'section-seven',
-    href: WHATS_APP_LINK,
+    href: E_HEALTH_LINK,
   },
   {
     label: '查看篩查服務點',
@@ -57,9 +58,9 @@ export const menuListData = [
     href: ADDRESS_LINK,
   },
   {
-    label: '聯絡我們',
+    label: '一般查詢',
     id: 'section-seven',
-    href: '',
+    href: WHATS_APP_LINK,
   },
 ]
 
