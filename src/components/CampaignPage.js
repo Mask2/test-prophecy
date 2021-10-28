@@ -1041,8 +1041,8 @@ const CampaignPage = () => {
                   href={E_HEALTH_LINK}
                   target='_blank'
                 >
-                  獨家優惠 立即預約
-                  {/* <sup className={classes.sup}>10</sup> */}
+                  獨家優惠 立即登記
+                  <sup className={classes.sup}>10</sup>
                 </Button>
                 <Button
                   // Id for Google Analytics Event Tracking
@@ -1068,7 +1068,7 @@ const CampaignPage = () => {
                   href={WHATS_APP_LINK}
                   target='_blank'
                 >
-                  一般查詢
+                  立即查詢／預約
                 </Button>
                 <Button
                   // Id for Google Analytics Event Tracking

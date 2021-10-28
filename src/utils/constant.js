@@ -48,7 +48,7 @@ export const menuListData = [
     id: 'section-six',
   },
   {
-    label: '獨家優惠 立即預約',
+    label: '獨家優惠 立即登記',
     id: 'section-seven',
     href: E_HEALTH_LINK,
   },
@@ -58,7 +58,7 @@ export const menuListData = [
     href: ADDRESS_LINK,
   },
   {
-    label: '一般查詢',
+    label: '立即查詢／預約',
     id: 'section-seven',
     href: WHATS_APP_LINK,
   },
@@ -157,8 +157,8 @@ export const annotateListData = [
     content:
       'Lam, W. K. Jacky, et al. “Sequencing-Based Counting and Size Profiling of Plasma Epstein–Barr Virus DNA Enhance Population Screening of Nasopharyngeal Carcinoma.” <i>Proceedings of the National Academy of Sciences,</i> vol. 115, no. 22, 2018, pp. E5115–24.',
   },
-  // {
-  //   content:
-  //     '一經登記，閣下將可免費成為永久會員，享用我們的Take2 Extra Care會員計劃轄下一切服務，包括線上/線下即時查詢、接收健康資訊等。',
-  // },
+  {
+    content:
+      '一經登記，閣下將可免費成為永久會員，享用我們的Take2 Extra Care會員計劃轄下一切服務，包括線上/線下即時查詢、接收健康資訊等。',
+  },
 ]
