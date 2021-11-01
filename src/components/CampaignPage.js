@@ -335,6 +335,9 @@ const useStyles = makeStyles((theme) =>
       '&:hover': {
         color: theme.palette.secondary.light,
         backgroundColor: theme.palette.primary.light,
+        '&:after': {
+          color: theme.palette.primary.light,
+        },
       },
     },
     iconSizeLarge: {
@@ -371,6 +374,25 @@ const useStyles = makeStyles((theme) =>
     },
     textUnderline: {
       textDecoration: 'underline',
+    },
+    withHelpText: {
+      [theme.breakpoints.down('xs')]: {
+        marginBottom: theme.spacing(4),
+      },
+      '&:after': {
+        content: '"*先登記成為會員，再選定診所及時間，即可查看並使用優惠"',
+        position: 'absolute',
+        bottom: theme.spacing(-2.5),
+        left: 0,
+        fontSize: theme.typography.overline.fontSize,
+        lineHeight: 1.2,
+        [theme.breakpoints.down('md')]: {
+          bottom: theme.spacing(-4),
+        },
+        [theme.breakpoints.down('xs')]: {
+          bottom: theme.spacing(-2.5),
+        },
+      },
     },
   })
 )
@@ -1021,6 +1043,7 @@ const CampaignPage = () => {
                 my={4}
               >
                 <Button
+                  className={classes.withHelpText}
                   classes={{
                     root: classes.buttonRoot,
                     outlined: classes.buttonOutlined,
@@ -1041,8 +1064,12 @@ const CampaignPage = () => {
                   href={E_HEALTH_LINK}
                   target='_blank'
                 >
-                  獨家優惠 立即登記
-                  <sup className={classes.sup}>10</sup>
+                  會員獨家
+                  <Box color='secondary.main' component='span'>
+                    85折
+                  </Box>
+                  &nbsp;立即預約*
+                  {/* <sup className={classes.sup}></sup> */}
                 </Button>
                 <Button
                   // Id for Google Analytics Event Tracking
@@ -1068,7 +1095,7 @@ const CampaignPage = () => {
                   href={WHATS_APP_LINK}
                   target='_blank'
                 >
-                  立即查詢／預約
+                  服務查詢
                 </Button>
                 <Button
                   // Id for Google Analytics Event Tracking
