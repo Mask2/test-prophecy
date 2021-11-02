@@ -48,9 +48,10 @@ export const menuListData = [
     id: 'section-six',
   },
   {
-    label: '會員獨家85折 立即預約*',
+    label: '會員獨家85折 立即預約',
     id: 'section-seven',
     href: E_HEALTH_LINK,
+    withSup: true,
   },
   {
     label: '查看篩查服務點',

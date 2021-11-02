@@ -382,16 +382,24 @@ const useStyles = makeStyles((theme) =>
       '&:after': {
         content: '"*先登記成為會員，再選定診所及時間，即可查看並使用優惠"',
         position: 'absolute',
-        bottom: theme.spacing(-2.5),
+        bottom: theme.spacing(-6),
         left: 0,
         fontSize: theme.typography.overline.fontSize,
-        lineHeight: 1.2,
-        [theme.breakpoints.down('md')]: {
-          bottom: theme.spacing(-4),
+        lineHeight: 1,
+        fontSize: theme.typography.h6.fontSize,
+        [theme.breakpoints.down('sm')]: {
+          bottom: theme.spacing(-8),
         },
         [theme.breakpoints.down('xs')]: {
-          bottom: theme.spacing(-2.5),
+          bottom: theme.spacing(-3),
+          fontSize: theme.typography.body1.fontSize,
         },
+      },
+    },
+    btnWrapper: {
+      marginBottom: theme.spacing(6),
+      [theme.breakpoints.only('sm')]: {
+        marginBottom: theme.spacing(8),
       },
     },
   })
@@ -1040,7 +1048,8 @@ const CampaignPage = () => {
                 width='100%'
                 display={matches ? 'block' : 'flex'}
                 justifyContent='space-between'
-                my={4}
+                mt={4}
+                className={classes.btnWrapper}
               >
                 <Button
                   className={classes.withHelpText}
@@ -1068,8 +1077,8 @@ const CampaignPage = () => {
                   <Box color='secondary.main' component='span'>
                     85折
                   </Box>
-                  &nbsp;立即預約*
-                  {/* <sup className={classes.sup}></sup> */}
+                  &nbsp;立即預約
+                  <sup className={classes.sup}>*</sup>
                 </Button>
                 <Button
                   // Id for Google Analytics Event Tracking

@@ -131,6 +131,10 @@ const useStyles = makeStyles((theme) =>
       color: theme.palette.text.secondary,
       fontWeight: 'bolder',
     },
+    sup: {
+      fontSize: theme.typography.caption.fontSize,
+      marginBottom: 'auto',
+    },
   })
 )
 
@@ -166,11 +170,13 @@ const Header = (props) => {
           id={index === 5 ? 'jdiCeq' : 'djsZkeq'}
           href={menu.href}
           target='_blank'
+          underline='hover'
           key={menu.label}
         >
           <MenuItem classes={{ root: classes.menuItem }}>
             <Box textAlign='center' color='text.primary'>
               {menu.label}
+              {menu.withSup && <sup className={classes.sup}>*</sup>}
             </Box>
           </MenuItem>
         </Link>
