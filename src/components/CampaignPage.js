@@ -362,8 +362,11 @@ const useStyles = makeStyles((theme) =>
       position: 'relative',
     },
     sup: {
-      fontSize: theme.typography.caption.fontSize,
+      fontSize: theme.typography.h6.fontSize,
       marginBottom: 'auto',
+      [theme.breakpoints.down('xs')]: {
+        fontSize: theme.typography.body1.fontSize,
+      },
     },
     videoWrapper: {
       position: 'absolute',
@@ -384,7 +387,6 @@ const useStyles = makeStyles((theme) =>
         position: 'absolute',
         bottom: theme.spacing(-6),
         left: 0,
-        fontSize: theme.typography.overline.fontSize,
         lineHeight: 1,
         fontSize: theme.typography.h6.fontSize,
         [theme.breakpoints.down('sm')]: {
