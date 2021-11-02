@@ -385,15 +385,15 @@ const useStyles = makeStyles((theme) =>
       '&:after': {
         content: '"*先登記成為會員，再選定診所及時間，即可查看並使用優惠"',
         position: 'absolute',
-        bottom: theme.spacing(-6),
+        bottom: theme.spacing(-6.25),
         left: 0,
-        lineHeight: 1,
+        lineHeight: 1.2,
         fontSize: theme.typography.h6.fontSize,
         [theme.breakpoints.down('sm')]: {
-          bottom: theme.spacing(-8),
+          bottom: theme.spacing(-9.25),
         },
         [theme.breakpoints.down('xs')]: {
-          bottom: theme.spacing(-3),
+          bottom: theme.spacing(-3.25),
           fontSize: theme.typography.body1.fontSize,
         },
       },
