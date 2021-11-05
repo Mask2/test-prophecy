@@ -6,7 +6,7 @@ node_js:
 cache: yarn
 deploy:
   provider: script
-  script: yarn install && yarn run deploy
+  script: yarn clean && yarn install && yarn run deploy
   # entry to prevent Travis from doing git stash
   skip_cleanup: true
   on:
