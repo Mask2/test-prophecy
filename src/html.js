@@ -176,10 +176,12 @@ export default function HTML(props) {
       </body>
       <footer>
         {/* GetButton.io widget  */}
+
         <script
           dangerouslySetInnerHTML={{
             __html: `
             (function () {
+              if (window.location.href.includes('/rehealth-prevaccination-plans')) return
               var options = {
                   facebook: "100757495628023", // Facebook page ID
                   whatsapp: "+(852)53770823", // WhatsApp number
