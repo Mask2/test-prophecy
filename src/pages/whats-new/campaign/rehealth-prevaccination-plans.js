@@ -67,7 +67,9 @@ const RehealthPrevaccinationPlans = () => {
         <Box className={classes.header}>
           Take2 Health聯乘 re:HEALTH推出《接種疫苗前全面心臟功能體檢計劃》
           <Box className={classes.subHeader}>
-            {`期間限定、欲購從速！請即按<點擊查看優惠>以獲取更多測試詳情。`}
+            期間限定、欲購從速！
+            <br />
+            {`請即按<點擊查看優惠>以獲取更多測試詳情。`}
           </Box>
         </Box>
         <Link
@@ -91,10 +93,10 @@ const RehealthPrevaccinationPlans = () => {
           System，只需平臥放鬆即可收集心血管數據，得出是否有高血壓、中風或心臟衰竭等循環系統問題及提供全面心臟功能評估。Take2
           Prophecy™
           早期鼻咽癌篩查由頂尖大學研發，準確度高達97%，助你了解鼻咽健康狀態。
-          <Link
+          {/* <Link
             href='https://bit.ly/rehealthplatinumplan'
             target='_blank'
-          >{`<點擊查看優惠>`}</Link>
+          >{`<點擊查看優惠>`}</Link> */}
         </Box>
         <Link href='https://bit.ly/rehealthdiamondplan' target='_blank'>
           <Container className={classes.imageWrapper} maxWidth='sm'>
@@ -113,10 +115,10 @@ const RehealthPrevaccinationPlans = () => {
           適合30歲或以上、對心血管和鼻咽健康有更深入了解需求的人士。此計劃為有家族史、懷疑有心血管疾病或有鼻咽癌病徵等高風險人士提供全面而精確的篩查服務。利用電腦掃描冠狀動脈造影，有效協助診斷冠狀動脈病變；計劃包括Take2
           Prophecy™
           早期鼻咽癌篩查，準確度高達97%。完成檢查後，有醫生作專業分析和評估。{' '}
-          <Link
+          {/* <Link
             href='https://bit.ly/rehealthdiamondplan'
             target='_blank'
-          >{`<點擊查看優惠>`}</Link>
+          >{`<點擊查看優惠>`}</Link> */}
         </Box>
       </Typography>
     </Container>
