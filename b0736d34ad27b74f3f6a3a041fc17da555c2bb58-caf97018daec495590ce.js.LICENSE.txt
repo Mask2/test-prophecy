@@ -1,5 +1,5 @@
 /*!
- * GSAP 3.7.1
+ * GSAP 3.8.0
  * https://greensock.com
  *
  * @license Copyright 2008-2021, GreenSock. All rights reserved.
@@ -9,7 +9,7 @@
 */
 
 /*!
- * ScrollToPlugin 3.7.1
+ * ScrollToPlugin 3.8.0
  * https://greensock.com
  *
  * @license Copyright 2008-2021, GreenSock. All rights reserved.
