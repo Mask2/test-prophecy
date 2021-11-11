@@ -48,8 +48,11 @@ import {
   ADDRESS_LINK,
   SERVICE_PHONE,
   SERVICE_EMAIL,
+  postListData,
 } from '../utils/constant'
 import { gsap, ScrollTrigger } from '../utils/initGsap'
+import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket'
+import IconButton from '@material-ui/core/IconButton'
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -310,6 +313,7 @@ const useStyles = makeStyles((theme) =>
       fontWeight: 'bolder',
       padding: theme.spacing(3, 0),
       borderWidth: 2,
+      backgroundColor: theme.palette.background.paper,
       [theme.breakpoints.down('md')]: {
         padding: theme.spacing(2.5, 0),
         fontSize: theme.spacing(2.5),
@@ -399,10 +403,29 @@ const useStyles = makeStyles((theme) =>
       },
     },
     btnWrapper: {
-      marginBottom: theme.spacing(6),
+      marginBottom: theme.spacing(4),
       [theme.breakpoints.only('sm')]: {
         marginBottom: theme.spacing(8),
       },
+    },
+    shopBtn: {
+      position: 'fixed',
+      zIndex: theme.zIndex.snackbar,
+      left: theme.spacing(3),
+      bottom: theme.spacing(3),
+      backgroundColor: theme.palette.background.paper,
+      boxShadow: theme.shadows[4],
+      transition: `background-color ease 0.3s`,
+      '&:hover': {
+        backgroundColor: theme.palette.grey[100],
+      },
+    },
+    postLink: {
+      fontSize: theme.typography.body1.fontSize,
+      marginBottom: theme.spacing(2),
+      color: theme.palette.primary.contrastText,
+      textDecoration: 'underline',
+      fontWeight: theme.typography.fontWeightLight,
     },
   })
 )
@@ -641,6 +664,15 @@ const CampaignPage = () => {
 
   return (
     <div ref={el}>
+      <IconButton
+        className={classes.shopBtn}
+        aria-label='show button'
+        href={E_HEALTH_LINK}
+        target='_blank'
+        variant='contain'
+      >
+        <ShoppingBasketIcon color='secondary'></ShoppingBasketIcon>
+      </IconButton>
       <Seo></Seo>
       <Header active={activeSection}>{activeSection}</Header>
       <Box className={classes.root}>
@@ -914,7 +946,7 @@ const CampaignPage = () => {
         <Box
           className={classnames(classes.sectionSix)}
           pt={matches ? 4 : 10}
-          pb={matches ? 10 : 15}
+          pb={matches ? 8 : 12}
         >
           <Container maxWidth='md'>
             <Box display='flex' flexDirection='column' alignItems='center'>
@@ -1020,6 +1052,126 @@ const CampaignPage = () => {
               </Box>
             </Box>
           </Container>
+          <Container maxWidth='lg'>
+            <Box
+              fontSize={28}
+              fontWeight='fontWeightBold'
+              color='primary.light'
+              lineHeight={1.5}
+              pt={8}
+              pb={3}
+              textAlign='center'
+            >
+              要掌握健康，就要立即行動！
+            </Box>
+            <Box
+              width='100%'
+              display={matches ? 'block' : 'flex'}
+              justifyContent='space-between'
+              // className={classes.btnWrapper}
+            >
+              <Button
+                className={classes.withHelpText}
+                classes={{
+                  root: classes.buttonRoot,
+                  outlined: classes.buttonOutlined,
+                  iconSizeLarge: classes.iconSizeLarge,
+                }}
+                size='large'
+                variant='outlined'
+                fullWidth
+                startIcon={
+                  <Icon>
+                    <img
+                      className={classes.imageIcon}
+                      src={IconFavorite}
+                      alt='favorite'
+                    />
+                  </Icon>
+                }
+                href={E_HEALTH_LINK}
+                target='_blank'
+              >
+                獨家
+                <Box color='secondary.main' component='span'>
+                  85折
+                </Box>
+                &nbsp;立即預約
+                <sup className={classes.sup}>*</sup>
+              </Button>
+              <Button
+                // Id for Google Analytics Event Tracking
+                id='jlzGxd'
+                classes={{
+                  root: classes.buttonRoot,
+                  outlined: classes.buttonOutlined,
+                  iconSizeLarge: classes.iconSizeLarge,
+                }}
+                className={classes.buttonRootMargin}
+                size='large'
+                variant='outlined'
+                fullWidth
+                startIcon={
+                  <Icon>
+                    <img
+                      className={classes.imageIcon}
+                      src={IconCalendar}
+                      alt='calendar'
+                    />
+                  </Icon>
+                }
+                href={WHATS_APP_LINK}
+                target='_blank'
+              >
+                服務查詢
+              </Button>
+              <Button
+                // Id for Google Analytics Event Tracking
+                id='qzjKcj'
+                classes={{
+                  root: classes.buttonRoot,
+                  outlined: classes.buttonOutlined,
+                  iconSizeLarge: classes.iconSizeLarge,
+                }}
+                size='large'
+                variant='outlined'
+                fullWidth
+                startIcon={
+                  <Icon>
+                    <img
+                      className={classes.imageIcon}
+                      src={IconLocation}
+                      alt='location'
+                    />
+                  </Icon>
+                }
+                href={ADDRESS_LINK}
+                target='_blank'
+              >
+                查看篩查服務點
+              </Button>
+            </Box>
+          </Container>
+        </Box>
+        <Box className={classnames(classes.sectionFour)} py={matches ? 3 : 8}>
+          <Container className={classes.container} maxWidth='xs'>
+            <Box fontSize={28} color='primary.contrastText' textAlign='center'>
+              更多鼻咽癌相關的報道
+            </Box>
+            <Box mt={4}>
+              {postListData.map((post, index) => (
+                <Box key={index + '_' + post.url} mb={2}>
+                  <Link
+                    className={classes.postLink}
+                    href={post.url}
+                    target='_blank'
+                  >
+                    {post.title}
+                  </Link>
+                </Box>
+              ))}
+            </Box>
+          </Container>
         </Box>
         <Box className='section-seven'>
           <Box
@@ -1032,7 +1184,7 @@ const CampaignPage = () => {
           >
             <Container maxWidth='lg'>聯絡我們</Container>
           </Box>
-          <Box py={matches ? 4 : 6} pb={matches ? 6 : 10}>
+          <Box py={matches ? 4 : 6} pb={matches ? 8 : 12}>
             <Container maxWidth='lg'>
               <Typography component='div'>
                 <Box
@@ -1040,109 +1192,20 @@ const CampaignPage = () => {
                   fontWeight='fontWeightBold'
                   color='text.hint'
                   lineHeight={1.5}
+                  mb={2}
                 >
-                  要掌握健康，就要立即行動！
-                  <br />
                   歡迎透過下列方式與我們聯絡：
                 </Box>
               </Typography>
-              <Box
-                width='100%'
-                display={matches ? 'block' : 'flex'}
-                justifyContent='space-between'
-                mt={4}
-                className={classes.btnWrapper}
-              >
-                <Button
-                  className={classes.withHelpText}
-                  classes={{
-                    root: classes.buttonRoot,
-                    outlined: classes.buttonOutlined,
-                    iconSizeLarge: classes.iconSizeLarge,
-                  }}
-                  size='large'
-                  variant='outlined'
-                  fullWidth
-                  startIcon={
-                    <Icon>
-                      <img
-                        className={classes.imageIcon}
-                        src={IconFavorite}
-                        alt='favorite'
-                      />
-                    </Icon>
-                  }
-                  href={E_HEALTH_LINK}
-                  target='_blank'
-                >
-                  會員獨家
-                  <Box color='secondary.main' component='span'>
-                    85折
-                  </Box>
-                  &nbsp;立即預約
-                  <sup className={classes.sup}>*</sup>
-                </Button>
-                <Button
-                  // Id for Google Analytics Event Tracking
-                  id='jlzGxd'
-                  classes={{
-                    root: classes.buttonRoot,
-                    outlined: classes.buttonOutlined,
-                    iconSizeLarge: classes.iconSizeLarge,
-                  }}
-                  className={classes.buttonRootMargin}
-                  size='large'
-                  variant='outlined'
-                  fullWidth
-                  startIcon={
-                    <Icon>
-                      <img
-                        className={classes.imageIcon}
-                        src={IconCalendar}
-                        alt='calendar'
-                      />
-                    </Icon>
-                  }
-                  href={WHATS_APP_LINK}
-                  target='_blank'
-                >
-                  服務查詢
-                </Button>
-                <Button
-                  // Id for Google Analytics Event Tracking
-                  id='qzjKcj'
-                  classes={{
-                    root: classes.buttonRoot,
-                    outlined: classes.buttonOutlined,
-                    iconSizeLarge: classes.iconSizeLarge,
-                  }}
-                  size='large'
-                  variant='outlined'
-                  fullWidth
-                  startIcon={
-                    <Icon>
-                      <img
-                        className={classes.imageIcon}
-                        src={IconLocation}
-                        alt='location'
-                      />
-                    </Icon>
-                  }
-                  href={ADDRESS_LINK}
-                  target='_blank'
-                >
-                  查看篩查服務點
-                </Button>
-              </Box>
               <Typography component='div'>
-                <Box
+                {/* <Box
                   fontSize={matches ? 'body1.fontSize' : 'h6.fontSize'}
                   fontWeight={matches ? 'normal' : 'fontWeightBold'}
                   color='primary.light'
                   lineHeight={matches ? 2 : 3}
                 >
                   聯絡資料
-                </Box>
+                </Box> */}
                 <Box
                   fontSize={matches ? 'caption.fontSize' : 'body1.fontSize'}
                   fontWeight={matches ? 'normal' : 'fontWeightBold'}
