@@ -53,6 +53,7 @@ import {
 import { gsap, ScrollTrigger } from '../utils/initGsap'
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket'
 import IconButton from '@material-ui/core/IconButton'
+import Hidden from '@material-ui/core/Hidden'
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -384,23 +385,27 @@ const useStyles = makeStyles((theme) =>
     },
     withHelpText: {
       [theme.breakpoints.down('xs')]: {
-        marginBottom: theme.spacing(4),
+        marginBottom: theme.spacing(0),
       },
-      '&:after': {
-        content: '"*先登記成為會員，再選定診所及時間，即可查看並使用優惠"',
-        position: 'absolute',
-        bottom: theme.spacing(-6.25),
-        left: 0,
-        lineHeight: 1.2,
-        fontSize: theme.typography.h6.fontSize,
-        [theme.breakpoints.down('sm')]: {
-          bottom: theme.spacing(-9.25),
-        },
-        [theme.breakpoints.down('xs')]: {
-          bottom: theme.spacing(-3.25),
-          fontSize: theme.typography.body1.fontSize,
+      [theme.breakpoints.up('sm')]: {
+        '&:after': {
+          content: '"*先登記成為會員，再選定診所及時間，即可查看並使用優惠"',
+          position: 'absolute',
+          bottom: theme.spacing(-6.25),
+          left: 0,
+          lineHeight: 1.2,
+          fontSize: theme.typography.h6.fontSize,
+          [theme.breakpoints.down('sm')]: {
+            bottom: theme.spacing(-9.25),
+          },
         },
       },
+    },
+    buttonMarks: {
+      color: theme.palette.primary.light,
+      fontSize: theme.typography.body1.fontSize,
+      fontWeight: theme.typography.fontWeightBold,
+      marginBottom: theme.spacing(1),
     },
     btnWrapper: {
       marginBottom: theme.spacing(4),
@@ -1099,6 +1104,11 @@ const CampaignPage = () => {
                 &nbsp;立即預約
                 <sup className={classes.sup}>*</sup>
               </Button>
+              <Hidden smUp>
+                <Box className={classes.buttonMarks}>
+                  *先登記成為會員，再選定診所及時間，即可查看並使用優惠
+                </Box>
+              </Hidden>
               <Button
                 // Id for Google Analytics Event Tracking
                 id='jlzGxd'
