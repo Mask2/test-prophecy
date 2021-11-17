@@ -123,7 +123,7 @@ export const serviceListData = [
 export const postListData = [
   {
     title:
-      '【戰勝癌魔】80後瑜伽導師戰勝第三期鼻咽癌 感悟：「死過翻生 才明白活著多好」(醫·思維)',
+      '【戰勝癌魔】80後瑜伽導師克服第三期鼻咽癌 感悟：「死過翻生 才明白活著多好」(醫·思維)',
     url: 'https://medicalinspire.com/web/posts/72927/',
   },
   {
