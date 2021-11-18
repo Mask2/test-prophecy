@@ -448,6 +448,13 @@ const useStyles = makeStyles((theme) =>
       textDecoration: 'underline',
       fontWeight: theme.typography.fontWeightLight,
     },
+    tooltipPlacementLeft: {
+      backgroundColor: theme.palette.common.white,
+      border: '1px solid rgb(226, 226, 226)',
+      color: 'rgb(51, 51, 51)',
+      fontSize: 13,
+      boxShadow: 'rgb(0 0 0 / 20%) 2px 2px 5px',
+    },
   })
 )
 
@@ -670,11 +677,6 @@ const CampaignPage = () => {
           className='symptom-card'
         >
           <SymptomIcon className={classes.symptomIcon}></SymptomIcon>
-          {/* <img
-            className={classes.symptomIcon}
-            src={symptom.icon}
-            alt={symptom.label}
-          /> */}
           <Typography component='div'>
             <Box
               fontSize={matches ? 'body1.fontSize' : '32px'}
@@ -690,7 +692,13 @@ const CampaignPage = () => {
 
   return (
     <div ref={el}>
-      <ETooltip placement='left' title='網上預約優惠'>
+      <ETooltip
+        classes={{
+          tooltipPlacementLeft: classes.tooltipPlacementLeft,
+        }}
+        placement='left'
+        title='網上預約優惠'
+      >
         <IconButton
           className={classes.shopBtn}
           aria-label='show button'
