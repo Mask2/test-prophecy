@@ -3,7 +3,6 @@ import { makeStyles, createStyles, useTheme } from '@material-ui/core/styles'
 import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
 import Button from '@material-ui/core/Button'
-import Icon from '@material-ui/core/Icon'
 import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
@@ -33,7 +32,7 @@ import Header from './Header'
 import Seo from './Seo'
 import Annotate from './Annotate'
 import FlipCardsSwiper from './FlipCardsSwiper'
-import ETooltip from './ETooltip'
+// import ETooltip from './ETooltip'
 
 import {
   menuListData,
@@ -448,12 +447,20 @@ const useStyles = makeStyles((theme) =>
       textDecoration: 'underline',
       fontWeight: theme.typography.fontWeightLight,
     },
-    tooltipPlacementLeft: {
-      backgroundColor: theme.palette.common.white,
-      border: '1px solid rgb(226, 226, 226)',
-      color: 'rgb(51, 51, 51)',
+    shopBtnTooltip: {
+      position: 'absolute',
+      backgroundColor: theme.palette.secondary.main,
+      color: theme.palette.secondary.contrastText,
       fontSize: 13,
       boxShadow: 'rgb(0 0 0 / 20%) 2px 2px 5px',
+      right: `calc(100% + ${theme.spacing(4)}px)`,
+      whiteSpace: 'nowrap',
+      height: theme.spacing(3.5),
+      padding: theme.spacing(0, 1.25),
+      display: 'flex',
+      alignItems: 'center',
+      borderRadius: theme.spacing(0.5),
+      top: `calc(50% - ${theme.spacing(3.5 / 2)}px)`,
     },
   })
 )
@@ -692,23 +699,24 @@ const CampaignPage = () => {
 
   return (
     <div ref={el}>
-      <ETooltip
+      {/* <ETooltip
         classes={{
           tooltipPlacementLeft: classes.tooltipPlacementLeft,
         }}
         placement='left'
         title='網上預約優惠'
       >
-        <IconButton
-          className={classes.shopBtn}
-          aria-label='show button'
-          href={E_HEALTH_LINK}
-          target='_blank'
-          variant='contain'
-        >
-          <ShoppingBasketIcon color='secondary'></ShoppingBasketIcon>
-        </IconButton>
-      </ETooltip>
+      </ETooltip> */}
+      <IconButton
+        className={classes.shopBtn}
+        aria-label='show button'
+        href={E_HEALTH_LINK}
+        target='_blank'
+        variant='contain'
+      >
+        <ShoppingBasketIcon color='secondary'></ShoppingBasketIcon>
+        <Box className={classes.shopBtnTooltip}>網上預約優惠</Box>
+      </IconButton>
       <Seo></Seo>
       <Header active={activeSection}>{activeSection}</Header>
       <Box className={classes.root}>
