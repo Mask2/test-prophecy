@@ -10,7 +10,7 @@ import 'swiper/swiper-bundle.min.css'
 import 'swiper/components/pagination/pagination.min.css'
 import 'swiper/components/navigation/navigation.min.css'
 import { cardListData } from '../utils/constant'
-import IconArrow from '../images/svg/icon_arrow.svg'
+import IconArrow from '../images/icon_arrow.png'
 import { gsap } from '../utils/initGsap'
 import Container from '@material-ui/core/Container'
 
@@ -74,6 +74,7 @@ const useStyles = makeStyles((theme) =>
     },
     questionIcon: {
       width: '60%',
+      height: 'auto',
       display: 'block',
     },
     answerWrapper: {
@@ -249,52 +250,52 @@ const FlipCardsSwiper = () => {
           setActiveSlide(swiper.realIndex)
         }}
       >
-        {cardListData.map((card, index) => (
-          <SwiperSlide className={classes.swiperSlide} key={card.label}>
-            <Box
-              className={classnames(classes.questionWrapper, 'flip-card', {
-                [classes.slideHover]: fakeActive(index),
-              })}
-            >
-              <Box className={classes.questionContent}>
-                <Box
-                  className={classnames(classes.cover, {
-                    [classes.hideCover]: fakeActive(index),
-                  })}
-                ></Box>
-                <Box
-                  fontWeight='fontWeightBold'
-                  color='secondary.main'
-                  m={0}
-                  mt={matches ? 1.5 : 4}
-                >
-                  {card.label}
+        {cardListData.map((card, index) => {
+          const CardIcon = card.icon
+
+          return (
+            <SwiperSlide className={classes.swiperSlide} key={card.label}>
+              <Box
+                className={classnames(classes.questionWrapper, 'flip-card', {
+                  [classes.slideHover]: fakeActive(index),
+                })}
+              >
+                <Box className={classes.questionContent}>
+                  <Box
+                    className={classnames(classes.cover, {
+                      [classes.hideCover]: fakeActive(index),
+                    })}
+                  ></Box>
+                  <Box
+                    fontWeight='fontWeightBold'
+                    color='secondary.main'
+                    m={0}
+                    mt={matches ? 1.5 : 4}
+                  >
+                    {card.label}
+                  </Box>
+                  <CardIcon className={classes.questionIcon}></CardIcon>
+                  <Box
+                    fontWeight='fontWeightBold'
+                    color='primary.light'
+                    m={0}
+                    mt='auto'
+                    mb={matches ? 3 : 4}
+                  >
+                    {card.question}
+                  </Box>
                 </Box>
-                <img
-                  className={classes.questionIcon}
-                  src={card.icon}
-                  alt={card.label}
-                />
-                <Box
-                  fontWeight='fontWeightBold'
-                  color='primary.light'
-                  m={0}
-                  mt='auto'
-                  mb={matches ? 3 : 4}
-                >
-                  {card.question}
+                <Box className={classes.answerWrapper}>
+                  <img
+                    className={classes.answerImg}
+                    src={card.answer}
+                    alt={card.label}
+                  />
                 </Box>
               </Box>
-              <Box className={classes.answerWrapper}>
-                <img
-                  className={classes.answerImg}
-                  src={card.answer}
-                  alt={card.label}
-                />
-              </Box>
-            </Box>
-          </SwiperSlide>
-        ))}
+            </SwiperSlide>
+          )
+        })}
       </Swiper>
     </Container>
   )

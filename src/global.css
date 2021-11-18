@@ -1,3 +1,9 @@
 body {
   margin: 0;
 }
+div[id^='gb-widget'] {
+  bottom: 86px !important;
+}
+div[id^='gb-widget'] > a {
+  display: none;
+}

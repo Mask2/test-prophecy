@@ -8,10 +8,8 @@ import Typography from '@material-ui/core/Typography'
 import Grid from '@material-ui/core/Grid'
 import useMediaQuery from '@material-ui/core/useMediaQuery'
 import Link from '@material-ui/core/Link'
-
 import YouTube from 'react-youtube'
 import classnames from 'classnames'
-
 import Ming01 from '../images/ming_01.jpg'
 import Ming02 from '../images/ming_02.jpg'
 import Ming03 from '../images/ming_03.jpg'
@@ -23,11 +21,9 @@ import SectionOneText02 from '../images/section_one_text_02.png'
 import SectionOneText03 from '../images/section_one_text_03.png'
 import MobileSectionOneText01 from '../images/mobile_section_one_text_01.png'
 import MobileSectionOneText02 from '../images/mobile_section_one_text_02.png'
-
 import IconCalendar from '../images/svg/icon_calendar.svg'
 import IconFavorite from '../images/svg/icon_favorite.svg'
 import IconLocation from '../images/svg/icon_location.svg'
-// import TemVideo from '../images/tem_video.png'
 import LineDots from '../images/bg_line_dots.png'
 import WaveDots from '../images/bg_wave_dots.png'
 import CellTop from '../images/bg_cell_top.png'
@@ -37,6 +33,7 @@ import Header from './Header'
 import Seo from './Seo'
 import Annotate from './Annotate'
 import FlipCardsSwiper from './FlipCardsSwiper'
+import ETooltip from './ETooltip'
 
 import {
   menuListData,
@@ -205,6 +202,7 @@ const useStyles = makeStyles((theme) =>
     arrow: {
       display: 'block',
       width: theme.spacing(4),
+      height: theme.spacing(4),
     },
     arrowButton: {
       cursor: 'pointer',
@@ -282,6 +280,7 @@ const useStyles = makeStyles((theme) =>
     symptomIcon: {
       display: 'block',
       width: theme.spacing(35.75),
+      height: 'auto',
       [theme.breakpoints.only('xs')]: {
         width: theme.spacing(12.5),
       },
@@ -337,11 +336,15 @@ const useStyles = makeStyles((theme) =>
       },
     },
     buttonOutlined: {
+      transition: 'color ease 0.3s',
+      '& path': {
+        transition: 'fill ease 0.3s',
+      },
       '&:hover': {
         color: theme.palette.secondary.light,
-        backgroundColor: theme.palette.primary.light,
-        '&:after': {
-          color: theme.palette.primary.light,
+        backgroundColor: theme.palette.background.default,
+        '& path': {
+          fill: theme.palette.primary.light,
         },
       },
     },
@@ -357,6 +360,18 @@ const useStyles = makeStyles((theme) =>
     imageIcon: {
       height: '100%',
       display: 'block',
+    },
+    startIcon: {
+      marginRight: theme.spacing(0.5),
+      '& svg': {
+        width: theme.spacing(5),
+        height: theme.spacing(5),
+        // marginRight: theme.spacing(0.125),
+        [theme.breakpoints.down('xs')]: {
+          width: theme.spacing(4),
+          height: theme.spacing(4),
+        },
+      },
     },
     container: {
       boxSizing: 'content-box',
@@ -394,6 +409,7 @@ const useStyles = makeStyles((theme) =>
           bottom: theme.spacing(-6.25),
           left: 0,
           lineHeight: 1.2,
+          color: theme.palette.background.default,
           fontSize: theme.typography.h6.fontSize,
           [theme.breakpoints.down('sm')]: {
             bottom: theme.spacing(-9.25),
@@ -402,7 +418,7 @@ const useStyles = makeStyles((theme) =>
       },
     },
     buttonMarks: {
-      color: theme.palette.primary.light,
+      color: theme.palette.background.default,
       fontSize: theme.typography.body1.fontSize,
       fontWeight: theme.typography.fontWeightBold,
       marginBottom: theme.spacing(1),
@@ -416,8 +432,8 @@ const useStyles = makeStyles((theme) =>
     shopBtn: {
       position: 'fixed',
       zIndex: theme.zIndex.snackbar,
-      left: theme.spacing(3),
-      bottom: theme.spacing(3),
+      right: theme.spacing(3),
+      bottom: theme.spacing(2.75),
       backgroundColor: theme.palette.background.paper,
       boxShadow: theme.shadows[4],
       transition: `background-color ease 0.3s`,
@@ -642,42 +658,49 @@ const CampaignPage = () => {
   }, [])
 
   const symptoms = (params) =>
-    symptomListData.map((symptom) => (
-      <Box
-        display='flex'
-        flexDirection='column'
-        alignItems='center'
-        key={symptom.label}
-        className='symptom-card'
-      >
-        <img
-          className={classes.symptomIcon}
-          src={symptom.icon}
-          alt={symptom.label}
-        />
-        <Typography component='div'>
-          <Box
-            fontSize={matches ? 'body1.fontSize' : '32px'}
-            fontWeight='fontWeightBold'
-            color='text.primary'
-          >
-            {symptom.label}
-          </Box>
-        </Typography>
-      </Box>
-    ))
+    symptomListData.map((symptom) => {
+      const SymptomIcon = symptom.icon
+
+      return (
+        <Box
+          display='flex'
+          flexDirection='column'
+          alignItems='center'
+          key={symptom.label}
+          className='symptom-card'
+        >
+          <SymptomIcon className={classes.symptomIcon}></SymptomIcon>
+          {/* <img
+            className={classes.symptomIcon}
+            src={symptom.icon}
+            alt={symptom.label}
+          /> */}
+          <Typography component='div'>
+            <Box
+              fontSize={matches ? 'body1.fontSize' : '32px'}
+              fontWeight='fontWeightBold'
+              color='text.primary'
+            >
+              {symptom.label}
+            </Box>
+          </Typography>
+        </Box>
+      )
+    })
 
   return (
     <div ref={el}>
-      <IconButton
-        className={classes.shopBtn}
-        aria-label='show button'
-        href={E_HEALTH_LINK}
-        target='_blank'
-        variant='contain'
-      >
-        <ShoppingBasketIcon color='secondary'></ShoppingBasketIcon>
-      </IconButton>
+      <ETooltip placement='left' title='網上預約優惠'>
+        <IconButton
+          className={classes.shopBtn}
+          aria-label='show button'
+          href={E_HEALTH_LINK}
+          target='_blank'
+          variant='contain'
+        >
+          <ShoppingBasketIcon color='secondary'></ShoppingBasketIcon>
+        </IconButton>
+      </ETooltip>
       <Seo></Seo>
       <Header active={activeSection}>{activeSection}</Header>
       <Box className={classes.root}>
@@ -774,7 +797,13 @@ const CampaignPage = () => {
               gsap.to(window, { duration: 0.6, scrollTo: `.section-two` })
             }
           >
-            <img
+            <IconArrow
+              className={classnames(classes.arrow, 'arrow-one')}
+            ></IconArrow>
+            <IconArrow
+              className={classnames(classes.arrow, 'arrow-two')}
+            ></IconArrow>
+            {/* <img
               className={classnames(classes.arrow, 'arrow-one')}
               src={IconArrow}
               alt='arrow'
@@ -783,7 +812,7 @@ const CampaignPage = () => {
               className={classnames(classes.arrow, 'arrow-two')}
               src={IconArrow}
               alt='arrow'
-            />
+            /> */}
           </Box>
           <Container className={classes.container} maxWidth='sm'>
             <Box
@@ -816,6 +845,93 @@ const CampaignPage = () => {
                   width: '100%',
                 }}
               />
+            </Box>
+          </Container>
+          <Container maxWidth='lg'>
+            {/* <Box
+              fontSize={28}
+              fontWeight='fontWeightBold'
+              color='primary.light'
+              lineHeight={1.5}
+              pt={8}
+              pb={3}
+              textAlign='center'
+            >
+              要掌握健康，就要立即行動！
+            </Box> */}
+            <Box
+              width='100%'
+              display={matches ? 'block' : 'flex'}
+              justifyContent='space-between'
+              pt={6}
+              // className={classes.btnWrapper}
+            >
+              <Button
+                className={classes.withHelpText}
+                classes={{
+                  root: classes.buttonRoot,
+                  outlined: classes.buttonOutlined,
+                  iconSizeLarge: classes.iconSizeLarge,
+                  startIcon: classes.startIcon,
+                }}
+                size='large'
+                variant='outlined'
+                fullWidth
+                startIcon={<IconFavorite></IconFavorite>}
+                href={E_HEALTH_LINK}
+                target='_blank'
+              >
+                獨家
+                <Box color='secondary.main' component='span'>
+                  85折
+                </Box>
+                &nbsp;立即預約
+                <sup className={classes.sup}>*</sup>
+              </Button>
+              <Hidden smUp>
+                <Box className={classes.buttonMarks}>
+                  *先登記成為會員，再選定診所及時間，即可查看並使用優惠
+                </Box>
+              </Hidden>
+              <Button
+                // Id for Google Analytics Event Tracking
+                id='jlzGxd'
+                classes={{
+                  root: classes.buttonRoot,
+                  outlined: classes.buttonOutlined,
+                  iconSizeLarge: classes.iconSizeLarge,
+                  startIcon: classes.startIcon,
+                }}
+                className={classes.buttonRootMargin}
+                size='large'
+                variant='outlined'
+                fullWidth
+                startIcon={<IconCalendar></IconCalendar>}
+                href={WHATS_APP_LINK}
+                target='_blank'
+              >
+                服務查詢
+              </Button>
+              <Button
+                // Id for Google Analytics Event Tracking
+                id='qzjKcj'
+                classes={{
+                  root: classes.buttonRoot,
+                  outlined: classes.buttonOutlined,
+                  iconSizeLarge: classes.iconSizeLarge,
+                  startIcon: classes.startIcon,
+                }}
+                size='large'
+                variant='outlined'
+                fullWidth
+                startIcon={
+                  <IconLocation className={classes.btnIcon}></IconLocation>
+                }
+                href={ADDRESS_LINK}
+                target='_blank'
+              >
+                查看篩查服務點
+              </Button>
             </Box>
           </Container>
         </Box>
@@ -1055,111 +1171,6 @@ const CampaignPage = () => {
                   </Box>
                 </Typography>
               </Box>
-            </Box>
-          </Container>
-          <Container maxWidth='lg'>
-            <Box
-              fontSize={28}
-              fontWeight='fontWeightBold'
-              color='primary.light'
-              lineHeight={1.5}
-              pt={8}
-              pb={3}
-              textAlign='center'
-            >
-              要掌握健康，就要立即行動！
-            </Box>
-            <Box
-              width='100%'
-              display={matches ? 'block' : 'flex'}
-              justifyContent='space-between'
-              // className={classes.btnWrapper}
-            >
-              <Button
-                className={classes.withHelpText}
-                classes={{
-                  root: classes.buttonRoot,
-                  outlined: classes.buttonOutlined,
-                  iconSizeLarge: classes.iconSizeLarge,
-                }}
-                size='large'
-                variant='outlined'
-                fullWidth
-                startIcon={
-                  <Icon>
-                    <img
-                      className={classes.imageIcon}
-                      src={IconFavorite}
-                      alt='favorite'
-                    />
-                  </Icon>
-                }
-                href={E_HEALTH_LINK}
-                target='_blank'
-              >
-                獨家
-                <Box color='secondary.main' component='span'>
-                  85折
-                </Box>
-                &nbsp;立即預約
-                <sup className={classes.sup}>*</sup>
-              </Button>
-              <Hidden smUp>
-                <Box className={classes.buttonMarks}>
-                  *先登記成為會員，再選定診所及時間，即可查看並使用優惠
-                </Box>
-              </Hidden>
-              <Button
-                // Id for Google Analytics Event Tracking
-                id='jlzGxd'
-                classes={{
-                  root: classes.buttonRoot,
-                  outlined: classes.buttonOutlined,
-                  iconSizeLarge: classes.iconSizeLarge,
-                }}
-                className={classes.buttonRootMargin}
-                size='large'
-                variant='outlined'
-                fullWidth
-                startIcon={
-                  <Icon>
-                    <img
-                      className={classes.imageIcon}
-                      src={IconCalendar}
-                      alt='calendar'
-                    />
-                  </Icon>
-                }
-                href={WHATS_APP_LINK}
-                target='_blank'
-              >
-                服務查詢
-              </Button>
-              <Button
-                // Id for Google Analytics Event Tracking
-                id='qzjKcj'
-                classes={{
-                  root: classes.buttonRoot,
-                  outlined: classes.buttonOutlined,
-                  iconSizeLarge: classes.iconSizeLarge,
-                }}
-                size='large'
-                variant='outlined'
-                fullWidth
-                startIcon={
-                  <Icon>
-                    <img
-                      className={classes.imageIcon}
-                      src={IconLocation}
-                      alt='location'
-                    />
-                  </Icon>
-                }
-                href={ADDRESS_LINK}
-                target='_blank'
-              >
-                查看篩查服務點
-              </Button>
             </Box>
           </Container>
         </Box>
