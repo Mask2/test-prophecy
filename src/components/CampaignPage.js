@@ -453,7 +453,7 @@ const useStyles = makeStyles((theme) =>
       color: theme.palette.secondary.contrastText,
       fontSize: 13,
       boxShadow: 'rgb(0 0 0 / 20%) 2px 2px 5px',
-      right: `calc(100% + ${theme.spacing(4)}px)`,
+      right: `calc(100% + ${theme.spacing(1.75)}px)`,
       whiteSpace: 'nowrap',
       height: theme.spacing(3.5),
       padding: theme.spacing(0, 1.25),
