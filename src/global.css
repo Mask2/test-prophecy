@@ -4,6 +4,6 @@ body {
 div[id^='gb-widget'] {
   bottom: 86px !important;
 }
-div[id^='gb-widget'] > a {
+div[id^='gb-widget'] > div > a {
   display: none;
 }

@@ -397,7 +397,7 @@ const useStyles = makeStyles((theme) =>
     textUnderline: {
       textDecoration: 'underline',
     },
-    withHelpText: {
+    withHelpText01: {
       [theme.breakpoints.down('xs')]: {
         marginBottom: theme.spacing(0),
       },
@@ -412,6 +412,25 @@ const useStyles = makeStyles((theme) =>
           fontSize: theme.typography.h6.fontSize,
           [theme.breakpoints.down('sm')]: {
             bottom: theme.spacing(-9.25),
+          },
+        },
+      },
+    },
+    withHelpText02: {
+      [theme.breakpoints.down('xs')]: {
+        marginBottom: theme.spacing(0),
+      },
+      [theme.breakpoints.up('sm')]: {
+        '&:after': {
+          content: '"你亦可致電(852) 3613 0536查詢。"',
+          position: 'absolute',
+          bottom: theme.spacing(-3.25),
+          left: 0,
+          lineHeight: 1.2,
+          color: theme.palette.background.default,
+          fontSize: theme.typography.h6.fontSize,
+          [theme.breakpoints.down('md')]: {
+            bottom: theme.spacing(-6.25),
           },
         },
       },
@@ -883,7 +902,7 @@ const CampaignPage = () => {
               // className={classes.btnWrapper}
             >
               <Button
-                className={classes.withHelpText}
+                className={classes.withHelpText01}
                 classes={{
                   root: classes.buttonRoot,
                   outlined: classes.buttonOutlined,
@@ -912,13 +931,16 @@ const CampaignPage = () => {
               <Button
                 // Id for Google Analytics Event Tracking
                 id='jlzGxd'
+                className={classnames(
+                  classes.buttonRootMargin,
+                  classes.withHelpText02
+                )}
                 classes={{
                   root: classes.buttonRoot,
                   outlined: classes.buttonOutlined,
                   iconSizeLarge: classes.iconSizeLarge,
                   startIcon: classes.startIcon,
                 }}
-                className={classes.buttonRootMargin}
                 size='large'
                 variant='outlined'
                 fullWidth
@@ -928,6 +950,11 @@ const CampaignPage = () => {
               >
                 服務查詢
               </Button>
+              <Hidden smUp>
+                <Box className={classes.buttonMarks}>
+                  你亦可致電(852) 3613 0536查詢。
+                </Box>
+              </Hidden>
               <Button
                 // Id for Google Analytics Event Tracking
                 id='qzjKcj'
