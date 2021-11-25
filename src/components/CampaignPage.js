@@ -347,6 +347,19 @@ const useStyles = makeStyles((theme) =>
         },
       },
     },
+    secButtonOutlined: {
+      transition: 'color ease 0.3s',
+      '& path': {
+        transition: 'fill ease 0.3s',
+      },
+      '&:hover': {
+        color: theme.palette.secondary.light,
+        backgroundColor: theme.palette.primary.light,
+      },
+      '&:after': {
+        color: `${theme.palette.primary.light} !important`,
+      },
+    },
     iconSizeLarge: {
       textAlign: 'center',
       '& :first-child': {
@@ -416,8 +429,33 @@ const useStyles = makeStyles((theme) =>
         },
       },
     },
+    secWithHelpText: {
+      [theme.breakpoints.down('xs')]: {
+        marginBottom: theme.spacing(0),
+      },
+      [theme.breakpoints.up('sm')]: {
+        '&:after': {
+          content: '"*先登記成為會員，再選定診所及時間，即可查看並使用優惠"',
+          position: 'absolute',
+          bottom: theme.spacing(-6.25),
+          left: 0,
+          lineHeight: 1.2,
+          color: theme.palette.primary.light,
+          fontSize: theme.typography.h6.fontSize,
+          [theme.breakpoints.down('sm')]: {
+            bottom: theme.spacing(-9.25),
+          },
+        },
+      },
+    },
     buttonMarks: {
       color: theme.palette.background.default,
+      fontSize: theme.typography.body1.fontSize,
+      fontWeight: theme.typography.fontWeightBold,
+      marginBottom: theme.spacing(1),
+    },
+    secButtonMarks: {
+      color: theme.palette.primary.light,
       fontSize: theme.typography.body1.fontSize,
       fontWeight: theme.typography.fontWeightBold,
       marginBottom: theme.spacing(1),
@@ -1187,6 +1225,92 @@ const CampaignPage = () => {
                   </Box>
                 </Typography>
               </Box>
+            </Box>
+          </Container>
+          <Container maxWidth='lg'>
+            <Box
+              fontSize={28}
+              fontWeight='fontWeightBold'
+              color='primary.light'
+              lineHeight={1.5}
+              pt={8}
+              pb={3}
+              textAlign='center'
+            >
+              要掌握健康，就要立即行動！
+            </Box>
+            <Box
+              width='100%'
+              display={matches ? 'block' : 'flex'}
+              justifyContent='space-between'
+              // className={classes.btnWrapper}
+            >
+              <Button
+                className={classes.withHelpText}
+                classes={{
+                  root: classes.buttonRoot,
+                  outlined: classes.secButtonOutlined,
+                  iconSizeLarge: classes.iconSizeLarge,
+                  startIcon: classes.startIcon,
+                }}
+                size='large'
+                variant='outlined'
+                fullWidth
+                startIcon={<IconFavorite></IconFavorite>}
+                href={E_HEALTH_LINK}
+                target='_blank'
+              >
+                獨家
+                <Box color='secondary.main' component='span'>
+                  85折
+                </Box>
+                &nbsp;立即預約
+                <sup className={classes.sup}>*</sup>
+              </Button>
+              <Hidden smUp>
+                <Box className={classes.secButtonMarks}>
+                  *先登記成為會員，再選定診所及時間，即可查看並使用優惠
+                </Box>
+              </Hidden>
+              <Button
+                // Id for Google Analytics Event Tracking
+                id='jlzGxd'
+                classes={{
+                  root: classes.buttonRoot,
+                  outlined: classes.secButtonOutlined,
+                  iconSizeLarge: classes.iconSizeLarge,
+                  startIcon: classes.startIcon,
+                }}
+                className={classes.buttonRootMargin}
+                size='large'
+                variant='outlined'
+                fullWidth
+                startIcon={<IconCalendar></IconCalendar>}
+                href={WHATS_APP_LINK}
+                target='_blank'
+              >
+                服務查詢
+              </Button>
+              <Button
+                // Id for Google Analytics Event Tracking
+                id='qzjKcj'
+                classes={{
+                  root: classes.buttonRoot,
+                  outlined: classes.secButtonOutlined,
+                  iconSizeLarge: classes.iconSizeLarge,
+                  startIcon: classes.startIcon,
+                }}
+                size='large'
+                variant='outlined'
+                fullWidth
+                startIcon={
+                  <IconLocation className={classes.btnIcon}></IconLocation>
+                }
+                href={ADDRESS_LINK}
+                target='_blank'
+              >
+                查看篩查服務點
+              </Button>
             </Box>
           </Container>
         </Box>
