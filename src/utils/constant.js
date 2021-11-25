@@ -16,9 +16,8 @@ import Service05 from '../images/service_05.png'
 import Symptom02 from '../images/svg/symptom_02.svg'
 import Symptom03 from '../images/svg/symptom_03.svg'
 
-// export const WHATS_APP_LINK =
-//   'https://api.whatsapp.com/send/?phone=85253770823&text=Halo%2C+I+want+to+know+more+about+Prophecy+Test%21+&app_absent=0'
-export const WHATS_APP_LINK = 'https://www.facebook.com/take2health.ltd'
+export const WHATS_APP_LINK =
+  'https://api.whatsapp.com/send/?phone=85253770823&text=Halo%2C+I+want+to+know+more+about+Prophecy+Test%21+&app_absent=0'
 export const ADDRESS_LINK = '/zh/service-location/'
 export const FACEBOOK_LINK = 'https://www.facebook.com/take2health.ltd'
 export const E_HEALTH_LINK = 'https://take2health.net/health-platform/'

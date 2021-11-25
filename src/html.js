@@ -184,11 +184,11 @@ export default function HTML(props) {
               if (window.location.href.includes('/rehealth-prevaccination-plans')) return
               var options = {
                   facebook: "100757495628023", // Facebook page ID
-                  // whatsapp: "+(852)53770823", // WhatsApp number
+                  whatsapp: "+(852)53770823", // WhatsApp number
                   call_to_action: "Message us", // Call to action
                   button_color: "#4FCE5D", // Color of button
                   position: "right", // Position may be 'right' or 'left'
-                  // order: "facebook,whatsapp", // Order of buttons
+                  order: "facebook,whatsapp", // Order of buttons
                   pre_filled_message: "Halo, I want to know more about Prophecy Test! ", // WhatsApp pre-filled message
               };
               var proto = document.location.protocol, host = "getbutton.io", url = proto + "//static." + host;
