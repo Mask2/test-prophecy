@@ -32,7 +32,6 @@ import Header from './Header'
 import Seo from './Seo'
 import Annotate from './Annotate'
 import FlipCardsSwiper from './FlipCardsSwiper'
-// import ETooltip from './ETooltip'
 
 import {
   menuListData,
@@ -45,6 +44,7 @@ import {
   SERVICE_PHONE,
   SERVICE_EMAIL,
   postListData,
+  caseListData,
 } from '../utils/constant'
 import { gsap, ScrollTrigger } from '../utils/initGsap'
 import ShoppingBasketIcon from '@material-ui/icons/ShoppingBasket'
@@ -500,6 +500,28 @@ const useStyles = makeStyles((theme) =>
       borderRadius: theme.spacing(0.5),
       top: `calc(50% - ${theme.spacing(3.5 / 2)}px)`,
     },
+    caseTitle: {
+      fontSize: theme.typography.h4.fontSize,
+      color: theme.palette.primary.contrastText,
+      marginTop: theme.spacing(4),
+      marginBottom: theme.spacing(3),
+      textAlign: 'center',
+      [theme.breakpoints.down('xs')]: {
+        fontSize: theme.typography.h5.fontSize,
+      },
+    },
+    caseWrapper: {
+      display: 'flex',
+      margin: theme.spacing(2, 0),
+      justifyContent: 'space-between',
+    },
+    caseItem: {
+      width: `calc(50% - ${theme.spacing(2)}px)`,
+      '& img': {
+        display: 'block',
+        width: '100%',
+      },
+    },
   })
 )
 
@@ -901,6 +923,24 @@ const CampaignPage = () => {
               />
             </Box>
           </Container>
+          <Box px={2}>
+            <Container disableGutters maxWidth='md'>
+              <Box className={classes.caseTitle}>真實個案分享</Box>
+              <Box className={classes.caseWrapper}>
+                {caseListData.map((item, index) => (
+                  <Link
+                    className={classes.caseItem}
+                    key={index}
+                    href={item.href}
+                    target='_blank'
+                  >
+                    <img src={item.image} alt='case male image' />
+                  </Link>
+                ))}
+              </Box>
+            </Container>
+          </Box>
+
           <Container maxWidth='lg'>
             {/* <Box
               fontSize={28}
