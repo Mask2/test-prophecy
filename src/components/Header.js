@@ -140,6 +140,7 @@ const useStyles = makeStyles((theme) =>
     },
     promoWrapper: {
       display: 'flex',
+      fontWeight: theme.typography.fontWeightBold,
       fontSize: theme.typography.body1.fontSize,
       color: theme.palette.secondary.main,
       alignItems: 'center',
@@ -163,7 +164,6 @@ const useStyles = makeStyles((theme) =>
       cursor: 'pointer',
     },
     promoCode: {
-      fontWeight: theme.typography.fontWeightBold,
       padding: theme.spacing(0.5, 1),
       [theme.breakpoints.down('xs')]: {
         padding: theme.spacing(0.5),

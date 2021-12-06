@@ -409,9 +409,9 @@ const useStyles = makeStyles((theme) =>
       fontSize: theme.typography.h6.fontSize,
       color: theme.palette.background.default,
       fontWeight: theme.typography.fontWeightBold,
-      width: `calc((100% - ${theme.spacing(8)}px) / 3)`,
-      maxWidth: theme.spacing(47),
-      [theme.breakpoints.down('sm')]: {
+      // width: `calc((100% - ${theme.spacing(8)}px) / 3)`,
+      // maxWidth: theme.spacing(47),
+      [theme.breakpoints.down('md')]: {
         fontSize: theme.typography.body1.fontSize,
       },
       [theme.breakpoints.down('xs')]: {
@@ -424,9 +424,9 @@ const useStyles = makeStyles((theme) =>
       fontSize: theme.typography.h6.fontSize,
       color: theme.palette.primary.light,
       fontWeight: theme.typography.fontWeightBold,
-      width: `calc((100% - ${theme.spacing(8)}px) / 3)`,
-      maxWidth: theme.spacing(47),
-      [theme.breakpoints.down('sm')]: {
+      // width: `calc((100% - ${theme.spacing(8)}px) / 3)`,
+      // maxWidth: theme.spacing(47),
+      [theme.breakpoints.down('md')]: {
         fontSize: theme.typography.body1.fontSize,
       },
       [theme.breakpoints.down('xs')]: {
@@ -964,11 +964,14 @@ const CampaignPage = () => {
               </Button>
               <Hidden smUp>
                 <Box className={classes.buttonMarks}>
-                  *先登記成為會員，在付款頁面
-                  <Box component='span' color='secondary.main'>
-                    輸入聖誕優惠碼XB1688
+                  *先登記成為會員，在付款頁面輸入
+                  <br />
+                  <Box color='secondary.main' component='span'>
+                    聖誕優惠碼XB1688
                   </Box>
-                  即享優惠價$1,688 (原價$2,200)
+                  即享優惠價$1,688
+                  <br />
+                  (原價$2,200)
                 </Box>
               </Hidden>
               <Button
@@ -1013,11 +1016,14 @@ const CampaignPage = () => {
             </Box>
             <Hidden xsDown>
               <Box className={classes.buttonMarks}>
-                *先登記成為會員，在付款頁面
-                <Box component='span' color='secondary.main'>
-                  輸入聖誕優惠碼XB1688
+                *先登記成為會員，在付款頁面輸入
+                <br />
+                <Box color='secondary.main' component='span'>
+                  聖誕優惠碼XB1688
                 </Box>
-                即享優惠價$1,688 (原價$2,200)
+                即享優惠價$1,688
+                <br />
+                (原價$2,200)
               </Box>
             </Hidden>
           </Container>
@@ -1303,11 +1309,14 @@ const CampaignPage = () => {
               </Button>
               <Hidden smUp>
                 <Box className={classes.secButtonMarks}>
-                  *先登記成為會員，在付款頁面
+                  *先登記成為會員，在付款頁面輸入
+                  <br />
                   <Box color='secondary.main' component='span'>
-                    輸入聖誕優惠碼XB1688
+                    聖誕優惠碼XB1688
                   </Box>
-                  即享優惠價$1,688 (原價$2,200)
+                  即享優惠價$1,688
+                  <br />
+                  (原價$2,200)
                 </Box>
               </Hidden>
               <Button
@@ -1352,11 +1361,14 @@ const CampaignPage = () => {
             </Box>
             <Hidden xsDown>
               <Box className={classes.secButtonMarks}>
-                *先登記成為會員，在付款頁面
+                *先登記成為會員，在付款頁面輸入
+                <br />
                 <Box color='secondary.main' component='span'>
-                  輸入聖誕優惠碼XB1688
+                  聖誕優惠碼XB1688
                 </Box>
-                即享優惠價$1,688 (原價$2,200)
+                即享優惠價$1,688
+                <br />
+                (原價$2,200)
               </Box>
             </Hidden>
           </Container>
