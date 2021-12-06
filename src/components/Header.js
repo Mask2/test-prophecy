@@ -6,6 +6,8 @@ import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
 import Link from '@material-ui/core/Link'
 import classnames from 'classnames'
+import { CopyToClipboard } from 'react-copy-to-clipboard'
+import Snackbar from '@material-ui/core/Snackbar'
 
 import Logo from '../images/logo.png'
 import {
@@ -29,6 +31,7 @@ const useStyles = makeStyles((theme) =>
         height: 40,
       },
       zIndex: theme.zIndex.appBar,
+      backgroundColor: theme.palette.background.paper,
     },
     container: {
       padding: 0,
@@ -45,16 +48,16 @@ const useStyles = makeStyles((theme) =>
     logoContainer: {
       // cursor: 'pointer',
       height: '100%',
-      width: theme.spacing(70),
-      background:
-        'linear-gradient(90deg, #F5FBFC 180px, rgba(255, 255, 255, 0) 100%)',
+      // width: theme.spacing(70),
+      // background:
+      //   'linear-gradient(90deg, #F5FBFC 180px, rgba(255, 255, 255, 0) 100%)',
       display: 'flex',
       alignItems: 'center',
-      [theme.breakpoints.only('xs')]: {
-        width: theme.spacing(32.5),
-        background:
-          'linear-gradient(90deg, #F5FBFC 104px, rgba(255, 255, 255, 0) 100%)',
-      },
+      // [theme.breakpoints.only('xs')]: {
+      //   width: theme.spacing(32.5),
+      //   background:
+      //     'linear-gradient(90deg, #F5FBFC 104px, rgba(255, 255, 255, 0) 100%)',
+      // },
     },
     logo: {
       display: 'block',
@@ -135,32 +138,76 @@ const useStyles = makeStyles((theme) =>
       fontSize: theme.typography.caption.fontSize,
       marginBottom: 'auto',
     },
+    promoWrapper: {
+      display: 'flex',
+      fontSize: theme.typography.body1.fontSize,
+      color: theme.palette.secondary.main,
+      alignItems: 'center',
+      marginLeft: 'auto',
+      marginRight: theme.spacing(2),
+      [theme.breakpoints.down('sm')]: {
+        fontSize: theme.typography.body2.fontSize,
+      },
+      [theme.breakpoints.down('xs')]: {
+        fontSize: theme.typography.caption.fontSize,
+        marginRight: theme.spacing(1),
+      },
+    },
+    promoLabel: {
+      marginRight: theme.spacing(0.5),
+    },
+    promoBtn: {
+      display: 'flex',
+      border: `1px solid ${theme.palette.secondary.main}`,
+      backgroundColor: theme.palette.background.paper,
+      cursor: 'pointer',
+    },
+    promoCode: {
+      fontWeight: theme.typography.fontWeightBold,
+      padding: theme.spacing(0.5, 1),
+      [theme.breakpoints.down('xs')]: {
+        padding: theme.spacing(0.5),
+      },
+    },
+    promoCopy: {
+      backgroundColor: theme.palette.secondary.main,
+      color: theme.palette.secondary.contrastText,
+      padding: theme.spacing(0.5, 2),
+      [theme.breakpoints.down('xs')]: {
+        padding: theme.spacing(0.5, 1),
+      },
+    },
+    snackbar: {
+      backgroundColor: theme.palette.success.main,
+      color: theme.palette.secondary.contrastText,
+    },
   })
 )
 
 const Header = (props) => {
   const classes = useStyles()
   const [anchorEl, setAnchorEl] = useState(null)
+  const [showCopyAlert, setShowCopyAlert] = useState(false)
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget)
   }
 
-  useEffect(() => {
-    const showAnim = gsap
-      .from('.root', {
-        yPercent: -100,
-        paused: true,
-        duration: 0.1,
-      })
-      .progress(1)
-    ScrollTrigger.create({
-      start: 'top top',
-      end: 99999,
-      onUpdate: (self) => {
-        self.direction === -1 ? showAnim.play() : showAnim.reverse()
-      },
-    })
-  }, [])
+  // useEffect(() => {
+  //   const showAnim = gsap
+  //     .from('.root', {
+  //       yPercent: -100,
+  //       paused: true,
+  //       duration: 0.1,
+  //     })
+  //     .progress(1)
+  //   ScrollTrigger.create({
+  //     start: 'top top',
+  //     end: 99999,
+  //     onUpdate: (self) => {
+  //       self.direction === -1 ? showAnim.play() : showAnim.reverse()
+  //     },
+  //   })
+  // }, [])
 
   const MenuList = () =>
     menuListData.map((menu, index) =>
@@ -204,55 +251,85 @@ const Header = (props) => {
     setAnchorEl(null)
   }
 
+  const handleSnackBarClose = () => setShowCopyAlert(false)
+  const handleSnackBarOpen = () => setShowCopyAlert(true)
+
   return (
-    <Box className={classnames('root', classes.root)}>
-      <Container className={classes.container} maxWidth='xl'>
-        <Box
-          className={classes.logoContainer}
-          // onClick={() =>
-          //   gsap.to(window, { duration: 1, scrollTo: `.section-one` })
-          // }
-        >
-          {/* <Link href={E_HEALTH_LINK} target='_blank'> */}
-          <img className={classes.logo} src={Logo} alt='take2 logo' />
-          {/* </Link> */}
-        </Box>
-        <IconButton
-          className={classes.navButton}
-          aria-label='menu'
-          aria-haspopup='true'
-          onClick={handleClick}
-          size='small'
-          classes={{ root: classes.iconButton }}
-        >
-          <img className={classes.menuIcon} src={IconMenu} alt='menu' />
-        </IconButton>
-        <Menu
-          id='simple-menu'
-          anchorEl={anchorEl}
-          keepMounted
-          open={Boolean(anchorEl)}
-          onClose={handleClose}
-          classes={{ paper: classes.menuPaper }}
-          getContentAnchorEl={null}
-          anchorOrigin={{
-            vertical: 'top',
-            horizontal: 'center',
-          }}
-        >
-          {anchorEl && (
-            <IconButton
-              className={classes.closeButton}
-              size='small'
-              onClick={handleClose}
-            >
-              <img className={classes.closeIcon} src={IconClose} alt='close' />
-            </IconButton>
-          )}
-          {MenuList()}
-        </Menu>
-      </Container>
-    </Box>
+    <>
+      <Snackbar
+        open={showCopyAlert}
+        autoHideDuration={3000}
+        onClose={handleSnackBarClose}
+        anchorOrigin={{ vertical: 'top', horizontal: 'center' }}
+        message='優惠碼複製成功！'
+        ContentProps={{
+          classes: {
+            root: classes.snackbar,
+          },
+        }}
+      ></Snackbar>
+      <Box className={classnames('root', classes.root)}>
+        <Container className={classes.container} maxWidth='xl'>
+          <Box
+            className={classes.logoContainer}
+            // onClick={() =>
+            //   gsap.to(window, { duration: 1, scrollTo: `.section-one` })
+            // }
+          >
+            {/* <Link href={E_HEALTH_LINK} target='_blank'> */}
+            <img className={classes.logo} src={Logo} alt='take2 logo' />
+            {/* </Link> */}
+          </Box>
+          <CopyToClipboard text='XB1688' onCopy={handleSnackBarOpen}>
+            <Box className={classes.promoWrapper}>
+              <Box className={classes.promoLabel}>限時聖誕優惠碼</Box>
+              <Box className={classes.promoBtn}>
+                <Box className={classes.promoCode}>XB1688</Box>
+                <Box className={classes.promoCopy}>複製</Box>
+              </Box>
+            </Box>
+          </CopyToClipboard>
+          <IconButton
+            className={classes.navButton}
+            aria-label='menu'
+            aria-haspopup='true'
+            onClick={handleClick}
+            size='small'
+            classes={{ root: classes.iconButton }}
+          >
+            <img className={classes.menuIcon} src={IconMenu} alt='menu' />
+          </IconButton>
+          <Menu
+            id='simple-menu'
+            anchorEl={anchorEl}
+            keepMounted
+            open={Boolean(anchorEl)}
+            onClose={handleClose}
+            classes={{ paper: classes.menuPaper }}
+            getContentAnchorEl={null}
+            anchorOrigin={{
+              vertical: 'top',
+              horizontal: 'center',
+            }}
+          >
+            {anchorEl && (
+              <IconButton
+                className={classes.closeButton}
+                size='small'
+                onClick={handleClose}
+              >
+                <img
+                  className={classes.closeIcon}
+                  src={IconClose}
+                  alt='close'
+                />
+              </IconButton>
+            )}
+            {MenuList()}
+          </Menu>
+        </Container>
+      </Box>
+    </>
   )
 }
 

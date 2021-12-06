@@ -54,11 +54,6 @@ import Hidden from '@material-ui/core/Hidden'
 const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
-      // fontFamily: 'Noto Sans CJK TC !important',
-
-      // fontFamily: theme.typography.body1.fontFamily,
-      fontFamily:
-        "-apple-system, BlinkMacSystemFont,'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell','Fira Sans', 'Droid Sans', 'Helvetica Neue',sans-serif",
       overflowX: 'hidden',
     },
     sectionOne: {
@@ -410,55 +405,35 @@ const useStyles = makeStyles((theme) =>
     textUnderline: {
       textDecoration: 'underline',
     },
-    withHelpText: {
-      [theme.breakpoints.down('xs')]: {
-        marginBottom: theme.spacing(0),
-      },
-      [theme.breakpoints.up('sm')]: {
-        '&:after': {
-          content: '"*先登記成為會員，再選定診所及時間，即可查看並使用優惠"',
-          position: 'absolute',
-          bottom: theme.spacing(-6.25),
-          left: 0,
-          lineHeight: 1.2,
-          color: theme.palette.background.default,
-          fontSize: theme.typography.h6.fontSize,
-          [theme.breakpoints.down('sm')]: {
-            bottom: theme.spacing(-9.25),
-          },
-        },
-      },
-    },
-    secWithHelpText: {
-      [theme.breakpoints.down('xs')]: {
-        marginBottom: theme.spacing(0),
-      },
-      [theme.breakpoints.up('sm')]: {
-        '&:after': {
-          content: '"*先登記成為會員，再選定診所及時間，即可查看並使用優惠"',
-          position: 'absolute',
-          bottom: theme.spacing(-6.25),
-          left: 0,
-          lineHeight: 1.2,
-          color: theme.palette.primary.light,
-          fontSize: theme.typography.h6.fontSize,
-          [theme.breakpoints.down('sm')]: {
-            bottom: theme.spacing(-9.25),
-          },
-        },
-      },
-    },
     buttonMarks: {
+      fontSize: theme.typography.h6.fontSize,
       color: theme.palette.background.default,
-      fontSize: theme.typography.body1.fontSize,
       fontWeight: theme.typography.fontWeightBold,
-      marginBottom: theme.spacing(1),
+      width: `calc((100% - ${theme.spacing(8)}px) / 3)`,
+      maxWidth: theme.spacing(47),
+      [theme.breakpoints.down('sm')]: {
+        fontSize: theme.typography.body1.fontSize,
+      },
+      [theme.breakpoints.down('xs')]: {
+        marginTop: theme.spacing(-2),
+        marginBottom: theme.spacing(2),
+        width: `100%`,
+      },
     },
     secButtonMarks: {
+      fontSize: theme.typography.h6.fontSize,
       color: theme.palette.primary.light,
-      fontSize: theme.typography.body1.fontSize,
       fontWeight: theme.typography.fontWeightBold,
-      marginBottom: theme.spacing(1),
+      width: `calc((100% - ${theme.spacing(8)}px) / 3)`,
+      maxWidth: theme.spacing(47),
+      [theme.breakpoints.down('sm')]: {
+        fontSize: theme.typography.body1.fontSize,
+      },
+      [theme.breakpoints.down('xs')]: {
+        marginTop: theme.spacing(-2),
+        marginBottom: theme.spacing(2),
+        width: `100%`,
+      },
     },
     btnWrapper: {
       marginBottom: theme.spacing(4),
@@ -493,11 +468,11 @@ const useStyles = makeStyles((theme) =>
       boxShadow: 'rgb(0 0 0 / 20%) 2px 2px 5px',
       right: `calc(100% + ${theme.spacing(1.75)}px)`,
       whiteSpace: 'nowrap',
-      height: theme.spacing(3.5),
-      padding: theme.spacing(0, 1.25),
+      height: theme.spacing(5),
+      padding: theme.spacing(0, 1.5),
       display: 'flex',
       alignItems: 'center',
-      borderRadius: theme.spacing(0.5),
+      borderRadius: theme.spacing(1),
       top: `calc(50% - ${theme.spacing(3.5 / 2)}px)`,
     },
     caseTitle: {
@@ -775,7 +750,11 @@ const CampaignPage = () => {
         variant='contain'
       >
         <ShoppingBasketIcon color='secondary'></ShoppingBasketIcon>
-        <Box className={classes.shopBtnTooltip}>網上預約優惠</Box>
+        <Box className={classes.shopBtnTooltip}>
+          網上預約
+          <br />
+          聖誕優惠碼XB1688
+        </Box>
       </IconButton>
       <Seo></Seo>
       <Header active={activeSection}>{activeSection}</Header>
@@ -961,7 +940,7 @@ const CampaignPage = () => {
               // className={classes.btnWrapper}
             >
               <Button
-                className={classes.withHelpText}
+                // className={classes.withHelpText}
                 classes={{
                   root: classes.buttonRoot,
                   outlined: classes.buttonOutlined,
@@ -975,16 +954,21 @@ const CampaignPage = () => {
                 href={E_HEALTH_LINK}
                 target='_blank'
               >
-                獨家
+                {/* 獨家
                 <Box color='secondary.main' component='span'>
                   85折
                 </Box>
-                &nbsp;立即預約
+                &nbsp; */}
+                立即預約
                 <sup className={classes.sup}>*</sup>
               </Button>
               <Hidden smUp>
                 <Box className={classes.buttonMarks}>
-                  *先登記成為會員，再選定診所及時間，即可查看並使用優惠
+                  *先登記成為會員，在付款頁面
+                  <Box component='span' color='secondary.main'>
+                    輸入聖誕優惠碼XB1688
+                  </Box>
+                  即享優惠價$1,688 (原價$2,200)
                 </Box>
               </Hidden>
               <Button
@@ -1027,6 +1011,15 @@ const CampaignPage = () => {
                 查看篩查服務點
               </Button>
             </Box>
+            <Hidden xsDown>
+              <Box className={classes.buttonMarks}>
+                *先登記成為會員，在付款頁面
+                <Box component='span' color='secondary.main'>
+                  輸入聖誕優惠碼XB1688
+                </Box>
+                即享優惠價$1,688 (原價$2,200)
+              </Box>
+            </Hidden>
           </Container>
         </Box>
         <Box className={classnames(classes.sectionThree, 'section-three')}>
@@ -1286,7 +1279,7 @@ const CampaignPage = () => {
               // className={classes.btnWrapper}
             >
               <Button
-                className={classes.withHelpText}
+                // className={classes.withHelpText}
                 classes={{
                   root: classes.buttonRoot,
                   outlined: classes.secButtonOutlined,
@@ -1300,16 +1293,21 @@ const CampaignPage = () => {
                 href={E_HEALTH_LINK}
                 target='_blank'
               >
-                獨家
+                {/* 獨家
                 <Box color='secondary.main' component='span'>
                   85折
                 </Box>
-                &nbsp;立即預約
+                &nbsp; */}
+                立即預約
                 <sup className={classes.sup}>*</sup>
               </Button>
               <Hidden smUp>
                 <Box className={classes.secButtonMarks}>
-                  *先登記成為會員，再選定診所及時間，即可查看並使用優惠
+                  *先登記成為會員，在付款頁面
+                  <Box color='secondary.main' component='span'>
+                    輸入聖誕優惠碼XB1688
+                  </Box>
+                  即享優惠價$1,688 (原價$2,200)
                 </Box>
               </Hidden>
               <Button
@@ -1352,6 +1350,15 @@ const CampaignPage = () => {
                 查看篩查服務點
               </Button>
             </Box>
+            <Hidden xsDown>
+              <Box className={classes.secButtonMarks}>
+                *先登記成為會員，在付款頁面
+                <Box color='secondary.main' component='span'>
+                  輸入聖誕優惠碼XB1688
+                </Box>
+                即享優惠價$1,688 (原價$2,200)
+              </Box>
+            </Hidden>
           </Container>
         </Box>
         <Box className={classnames(classes.sectionFour)} py={matches ? 3 : 8}>

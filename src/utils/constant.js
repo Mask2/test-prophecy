@@ -49,7 +49,7 @@ export const menuListData = [
     id: 'section-six',
   },
   {
-    label: '獨家85折 立即預約',
+    label: '立即預約',
     id: 'section-seven',
     href: E_HEALTH_LINK,
     withSup: true,
