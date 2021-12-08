@@ -15,8 +15,10 @@ import Service04 from '../images/service_04.png'
 import Service05 from '../images/service_05.png'
 import Symptom02 from '../images/svg/symptom_02.svg'
 import Symptom03 from '../images/svg/symptom_03.svg'
-import CaseFemaleImg from '../images/case_female.jpg'
-import CaseMaleImg from '../images/case_male.jpg'
+// import CaseFemaleImg from '../images/case_female.jpg'
+// import CaseMaleImg from '../images/case_male.jpg'
+import CaseFemaleGif from '../images/gif/case_female.gif'
+import CaseMaleGif from '../images/gif/case_male.gif'
 
 export const WHATS_APP_LINK =
   'https://api.whatsapp.com/send/?phone=85253770823&text=Halo%2C+I+want+to+know+more+about+Prophecy+Test%21+&app_absent=0'
@@ -117,11 +119,11 @@ export const symptomListData = [
 export const caseListData = [
   {
     href: 'https://skypost.ulifestyle.com.hk/article/3000256/抗癌勇士｜45歲港男不煙不酒患晚期鼻咽癌%20%20%20%20歷6次化療7周電療抗癌半年康復｜附鼻咽癌5大先兆',
-    image: CaseMaleImg,
+    image: CaseMaleGif,
   },
   {
     href: 'https://medicalinspire.com/web/posts/72927/【戰勝癌魔】80後瑜伽導師戰勝第三期鼻咽癌-感悟：「死過翻生」才明白活著多好/',
-    image: CaseFemaleImg,
+    image: CaseFemaleGif,
   },
 ]
 
