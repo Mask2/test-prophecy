@@ -903,7 +903,7 @@ const CampaignPage = () => {
             </Box>
           </Container>
           <Box px={2}>
-            <Container disableGutters maxWidth='md'>
+            <Container disableGutters maxWidth='sm'>
               <Box className={classes.caseTitle}>真實個案分享</Box>
               <Box className={classes.caseWrapper}>
                 {caseListData.map((item, index) => (
