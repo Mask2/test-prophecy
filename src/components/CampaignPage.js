@@ -1268,7 +1268,7 @@ const CampaignPage = () => {
           </Container>
           <Container maxWidth='lg'>
             <Box
-              fontSize={28}
+              fontSize={matches ? 24 : 28}
               fontWeight='fontWeightBold'
               color='primary.light'
               lineHeight={1.5}
