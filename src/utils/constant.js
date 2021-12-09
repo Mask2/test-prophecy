@@ -17,7 +17,7 @@ import Symptom02 from '../images/svg/symptom_02.svg'
 import Symptom03 from '../images/svg/symptom_03.svg'
 // import CaseFemaleImg from '../images/case_female.jpg'
 // import CaseMaleImg from '../images/case_male.jpg'
-import CaseFemaleGif from '../images/gif/case_female.gif'
+import CaseFemaleGif from '../images/gif/case_female_02.gif'
 import CaseMaleGif from '../images/gif/case_male.gif'
 
 export const WHATS_APP_LINK =
