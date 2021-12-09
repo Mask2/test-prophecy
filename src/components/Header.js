@@ -8,16 +8,13 @@ import Link from '@material-ui/core/Link'
 import classnames from 'classnames'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 import Snackbar from '@material-ui/core/Snackbar'
-
 import Logo from '../images/logo.png'
-import {
-  menuListData,
-  // E_HEALTH_LINK
-} from '../utils/constant'
+import { menuListData } from '../utils/constant'
 import IconMenu from '../images/icon_menu.png'
 import IconClose from '../images/icon_close.png'
 import { gsap, ScrollTrigger } from '../utils/initGsap'
 import Container from '@material-ui/core/Container'
+import Hidden from '@material-ui/core/Hidden'
 
 const useStyles = makeStyles((theme) =>
   createStyles({
@@ -114,7 +111,7 @@ const useStyles = makeStyles((theme) =>
     },
     menuIcon: {
       display: 'block',
-      width: theme.spacing(4),
+      width: theme.spacing(5),
     },
     closeButton: {
       position: 'fixed',
@@ -128,7 +125,7 @@ const useStyles = makeStyles((theme) =>
     },
     closeIcon: {
       display: 'block',
-      width: theme.spacing(4),
+      width: theme.spacing(5),
     },
     activeSection: {
       color: theme.palette.text.secondary,
@@ -141,16 +138,23 @@ const useStyles = makeStyles((theme) =>
     promoWrapper: {
       display: 'flex',
       fontWeight: theme.typography.fontWeightBold,
-      fontSize: theme.typography.body1.fontSize,
+      fontSize: theme.typography.h6.fontSize,
       color: theme.palette.secondary.main,
       alignItems: 'center',
       marginLeft: 'auto',
       marginRight: theme.spacing(2),
       [theme.breakpoints.down('sm')]: {
-        fontSize: theme.typography.body2.fontSize,
+        fontSize: theme.typography.body1.fontSize,
+        marginRight: theme.spacing(1),
       },
-      [theme.breakpoints.down('xs')]: {
-        fontSize: theme.typography.caption.fontSize,
+    },
+    promoMobileWrapper: {
+      marginLeft: 'auto',
+      color: theme.palette.secondary.main,
+      textAlign: 'left',
+      fontWeight: theme.typography.fontWeightBold,
+      [theme.breakpoints.down('sm')]: {
+        fontSize: theme.typography.body1.fontSize,
         marginRight: theme.spacing(1),
       },
     },
@@ -162,6 +166,9 @@ const useStyles = makeStyles((theme) =>
       border: `1px solid ${theme.palette.secondary.main}`,
       backgroundColor: theme.palette.background.paper,
       cursor: 'pointer',
+      [theme.breakpoints.down('sm')]: {
+        fontSize: theme.typography.body2.fontSize,
+      },
     },
     promoCode: {
       padding: theme.spacing(0.5, 1),
@@ -280,15 +287,33 @@ const Header = (props) => {
             <img className={classes.logo} src={Logo} alt='take2 logo' />
             {/* </Link> */}
           </Box>
-          <CopyToClipboard text='XB1688' onCopy={handleSnackBarOpen}>
+          <Hidden xsDown>
             <Box className={classes.promoWrapper}>
-              <Box className={classes.promoLabel}>限時聖誕優惠碼</Box>
-              <Box className={classes.promoBtn}>
-                <Box className={classes.promoCode}>XB1688</Box>
-                <Box className={classes.promoCopy}>複製</Box>
+              <Box className={classes.promoLabel}>
+                限時聖誕優惠價$1,688(原價$2,200) 優惠碼
+              </Box>
+              <CopyToClipboard text='XB1688' onCopy={handleSnackBarOpen}>
+                <Box className={classes.promoBtn}>
+                  <Box className={classes.promoCode}>XB1688</Box>
+                  <Box className={classes.promoCopy}>複製</Box>
+                </Box>
+              </CopyToClipboard>
+            </Box>
+          </Hidden>
+          <Hidden smUp>
+            <Box className={classes.promoMobileWrapper}>
+              <Box className={classes.promoLabel}>限時聖誕優惠價$1,688</Box>
+              <Box className={classes.promoWrapper}>
+                <Box className={classes.promoLabel}>優惠碼</Box>
+                <CopyToClipboard text='XB1688' onCopy={handleSnackBarOpen}>
+                  <Box className={classes.promoBtn}>
+                    <Box className={classes.promoCode}>XB1688</Box>
+                    <Box className={classes.promoCopy}>複製</Box>
+                  </Box>
+                </CopyToClipboard>
               </Box>
             </Box>
-          </CopyToClipboard>
+          </Hidden>
           <IconButton
             className={classes.navButton}
             aria-label='menu'
