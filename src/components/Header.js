@@ -60,6 +60,9 @@ const useStyles = makeStyles((theme) =>
       display: 'block',
       height: theme.spacing(5),
       paddingLeft: theme.spacing(6),
+      [theme.breakpoints.down('md')]: {
+        paddingLeft: theme.spacing(4),
+      },
       [theme.breakpoints.only('xs')]: {
         paddingLeft: theme.spacing(2),
         height: theme.spacing(3.25),
@@ -73,6 +76,9 @@ const useStyles = makeStyles((theme) =>
     iconButton: {
       background: theme.palette.grey[100],
       marginRight: theme.spacing(6),
+      [theme.breakpoints.down('md')]: {
+        marginRight: theme.spacing(4),
+      },
       flexShrink: 0,
       [theme.breakpoints.only('xs')]: {
         marginRight: theme.spacing(2),
@@ -138,13 +144,16 @@ const useStyles = makeStyles((theme) =>
     promoWrapper: {
       display: 'flex',
       fontWeight: theme.typography.fontWeightBold,
-      fontSize: theme.typography.h6.fontSize,
+      fontSize: theme.typography.h4.fontSize,
       color: theme.palette.secondary.main,
       alignItems: 'center',
       marginLeft: 'auto',
       marginRight: theme.spacing(2),
+      [theme.breakpoints.down('md')]: {
+        fontSize: theme.typography.h5.fontSize,
+      },
       [theme.breakpoints.down('sm')]: {
-        fontSize: theme.typography.body1.fontSize,
+        fontSize: theme.typography.h6.fontSize,
         marginRight: theme.spacing(1),
       },
     },
