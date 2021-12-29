@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { makeStyles, createStyles } from '@material-ui/core/styles'
 import Box from '@material-ui/core/Box'
 import IconButton from '@material-ui/core/IconButton'
@@ -12,7 +12,7 @@ import Logo from '../images/logo.png'
 import { menuListData } from '../utils/constant'
 import IconMenu from '../images/icon_menu.png'
 import IconClose from '../images/icon_close.png'
-import { gsap, ScrollTrigger } from '../utils/initGsap'
+import { gsap } from '../utils/initGsap'
 import Container from '@material-ui/core/Container'
 import Hidden from '@material-ui/core/Hidden'
 
@@ -43,18 +43,9 @@ const useStyles = makeStyles((theme) =>
       },
     },
     logoContainer: {
-      // cursor: 'pointer',
       height: '100%',
-      // width: theme.spacing(70),
-      // background:
-      //   'linear-gradient(90deg, #F5FBFC 180px, rgba(255, 255, 255, 0) 100%)',
       display: 'flex',
       alignItems: 'center',
-      // [theme.breakpoints.only('xs')]: {
-      //   width: theme.spacing(32.5),
-      //   background:
-      //     'linear-gradient(90deg, #F5FBFC 104px, rgba(255, 255, 255, 0) 100%)',
-      // },
     },
     logo: {
       display: 'block',
@@ -64,7 +55,7 @@ const useStyles = makeStyles((theme) =>
         paddingLeft: theme.spacing(4),
       },
       [theme.breakpoints.only('xs')]: {
-        paddingLeft: theme.spacing(2),
+        paddingLeft: theme.spacing(1),
         height: theme.spacing(3.25),
       },
     },
@@ -153,8 +144,8 @@ const useStyles = makeStyles((theme) =>
         fontSize: theme.typography.h5.fontSize,
       },
       [theme.breakpoints.down('sm')]: {
-        fontSize: theme.typography.h6.fontSize,
-        marginRight: theme.spacing(1),
+        fontSize: theme.typography.body1.fontSize,
+        marginRight: 0,
       },
     },
     promoMobileWrapper: {
@@ -162,13 +153,17 @@ const useStyles = makeStyles((theme) =>
       color: theme.palette.secondary.main,
       textAlign: 'left',
       fontWeight: theme.typography.fontWeightBold,
+      overflow: 'hidden',
       [theme.breakpoints.down('sm')]: {
-        fontSize: theme.typography.body1.fontSize,
-        marginRight: theme.spacing(1),
+        fontSize: theme.typography.caption.fontSize,
+        // marginRight: theme.spacing(1),
       },
     },
     promoLabel: {
       marginRight: theme.spacing(0.5),
+      whiteSpace: 'nowrap',
+      textOverflow: 'ellipsis',
+      overflow: 'hidden',
     },
     promoBtn: {
       display: 'flex',
@@ -190,7 +185,7 @@ const useStyles = makeStyles((theme) =>
       color: theme.palette.secondary.contrastText,
       padding: theme.spacing(0.5, 2),
       [theme.breakpoints.down('xs')]: {
-        padding: theme.spacing(0.5, 1),
+        padding: theme.spacing(0.5),
       },
     },
     snackbar: {
@@ -207,23 +202,6 @@ const Header = (props) => {
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget)
   }
-
-  // useEffect(() => {
-  //   const showAnim = gsap
-  //     .from('.root', {
-  //       yPercent: -100,
-  //       paused: true,
-  //       duration: 0.1,
-  //     })
-  //     .progress(1)
-  //   ScrollTrigger.create({
-  //     start: 'top top',
-  //     end: 99999,
-  //     onUpdate: (self) => {
-  //       self.direction === -1 ? showAnim.play() : showAnim.reverse()
-  //     },
-  //   })
-  // }, [])
 
   const MenuList = () =>
     menuListData.map((menu, index) =>
@@ -286,24 +264,17 @@ const Header = (props) => {
       ></Snackbar>
       <Box className={classnames('root', classes.root)}>
         <Container className={classes.container} maxWidth='xl'>
-          <Box
-            className={classes.logoContainer}
-            // onClick={() =>
-            //   gsap.to(window, { duration: 1, scrollTo: `.section-one` })
-            // }
-          >
-            {/* <Link href={E_HEALTH_LINK} target='_blank'> */}
+          <Box className={classes.logoContainer}>
             <img className={classes.logo} src={Logo} alt='take2 logo' />
-            {/* </Link> */}
           </Box>
           <Hidden xsDown>
             <Box className={classes.promoWrapper}>
               <Box className={classes.promoLabel}>
-                限時聖誕優惠價$1,688(原價$2,200) 優惠碼
+                會員迎新優惠價$1,870(原價$2,200)優惠碼
               </Box>
-              <CopyToClipboard text='XB1688' onCopy={handleSnackBarOpen}>
+              <CopyToClipboard text='NEW330' onCopy={handleSnackBarOpen}>
                 <Box className={classes.promoBtn}>
-                  <Box className={classes.promoCode}>XB1688</Box>
+                  <Box className={classes.promoCode}>NEW330</Box>
                   <Box className={classes.promoCopy}>複製</Box>
                 </Box>
               </CopyToClipboard>
@@ -311,12 +282,14 @@ const Header = (props) => {
           </Hidden>
           <Hidden smUp>
             <Box className={classes.promoMobileWrapper}>
-              <Box className={classes.promoLabel}>限時聖誕優惠價$1,688</Box>
+              <Box className={classes.promoLabel}>
+                會員迎新優惠價$1,870(原價$2,200)
+              </Box>
               <Box className={classes.promoWrapper}>
                 <Box className={classes.promoLabel}>優惠碼</Box>
-                <CopyToClipboard text='XB1688' onCopy={handleSnackBarOpen}>
+                <CopyToClipboard text='NEW330' onCopy={handleSnackBarOpen}>
                   <Box className={classes.promoBtn}>
-                    <Box className={classes.promoCode}>XB1688</Box>
+                    <Box className={classes.promoCode}>NEW330</Box>
                     <Box className={classes.promoCopy}>複製</Box>
                   </Box>
                 </CopyToClipboard>

@@ -57,16 +57,12 @@ const useStyles = makeStyles((theme) =>
       overflowX: 'hidden',
     },
     sectionOne: {
-      // minHeight: theme.spacing(90),
       maxHeight: theme.spacing(122.5),
       height: `calc(100vh - ${theme.spacing(8)}px)`,
       backgroundImage: `url(${Ming01}),${theme.palette.background.main}`,
       backgroundRepeat: 'no-repeat',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
-      [theme.breakpoints.up('xl')]: {
-        // backgroundSize: 'contain',
-      },
       position: 'relative',
       [theme.breakpoints.only('xs')]: {
         backgroundImage: `url(${MobileMing01}),${theme.palette.background.main}`,
@@ -409,8 +405,7 @@ const useStyles = makeStyles((theme) =>
       fontSize: theme.typography.h6.fontSize,
       color: theme.palette.background.default,
       fontWeight: theme.typography.fontWeightBold,
-      // width: `calc((100% - ${theme.spacing(8)}px) / 3)`,
-      // maxWidth: theme.spacing(47),
+
       [theme.breakpoints.down('md')]: {
         fontSize: theme.typography.body1.fontSize,
       },
@@ -424,8 +419,7 @@ const useStyles = makeStyles((theme) =>
       fontSize: theme.typography.h6.fontSize,
       color: theme.palette.primary.light,
       fontWeight: theme.typography.fontWeightBold,
-      // width: `calc((100% - ${theme.spacing(8)}px) / 3)`,
-      // maxWidth: theme.spacing(47),
+
       [theme.breakpoints.down('md')]: {
         fontSize: theme.typography.body1.fontSize,
       },
@@ -523,36 +517,6 @@ const CampaignPage = () => {
 
   // section one parallax motion
   useLayoutEffect(() => {
-    // section one parallax motion
-    // gsap.to(q('.section-one-text-03'), {
-    //   ease: 'none',
-    //   scrollTrigger: {
-    //     trigger: q('.section-one-text-03'),
-    //     start: `top 20%`,
-    //     end: 'bottom -50%',
-    //     pin: true,
-    //     scrub: true,
-    //     pinSpacing: false,
-    //   },
-    // })
-    // gsap.to(q('.section-one-circle-one,.section-one-circle-two'), {
-    //   y: -400,
-    //   ease: 'none',
-    //   scrollTrigger: {
-    //     trigger: q('.section-one'),
-    //     start: 'top top',
-    //     scrub: true,
-    //   },
-    // })
-    // gsap.to(q('.section-one-ming'), {
-    //   y: 400,
-    //   ease: 'none',
-    //   scrollTrigger: {
-    //     trigger: q('.section-one'),
-    //     scrub: true,
-    //     start: 'top top',
-    //   },
-    // })
     menuListData.forEach((menuItem) => {
       updateActiveSection(menuItem.id)
     })
@@ -649,8 +613,6 @@ const CampaignPage = () => {
       start: 'top 40%',
       toggleActions: 'play none none none',
       once: true,
-      // scrub: true,
-      // markers: true,
     })
     // section five text motion
     t3.current = gsap.timeline()
@@ -673,8 +635,6 @@ const CampaignPage = () => {
       animation: t3.current,
       toggleActions: 'play none none none',
       once: true,
-      // scrub: true,
-      // markers: true,
     })
     // section six symptoms fade in motion
     const symptomsFadeIn = gsap.fromTo(
@@ -734,14 +694,6 @@ const CampaignPage = () => {
 
   return (
     <div ref={el}>
-      {/* <ETooltip
-        classes={{
-          tooltipPlacementLeft: classes.tooltipPlacementLeft,
-        }}
-        placement='left'
-        title='網上預約優惠'
-      >
-      </ETooltip> */}
       <IconButton
         className={classes.shopBtn}
         aria-label='show button'
@@ -753,7 +705,7 @@ const CampaignPage = () => {
         <Box className={classes.shopBtnTooltip}>
           網上預約
           <br />
-          聖誕優惠碼XB1688
+          迎新優惠碼NEW330
         </Box>
       </IconButton>
       <Seo></Seo>
@@ -779,65 +731,6 @@ const CampaignPage = () => {
               src={matches ? MobileSectionOneText01 : SectionOneText01}
               alt='Go Live Again'
             />
-            {/* <Typography
-              className={classnames(
-                classes.sectionMotion,
-                classes.sectionOneInfo,
-                'section-one-info'
-              )}
-              component='div'
-            >
-              <Box
-                fontSize={matches ? '18px' : 'h5.fontSize'}
-                color='primary.contrastText'
-                letterSpacing='1px'
-              >
-                張達明
-                <br />
-                「鼻咽癌康復者」
-                <br />
-                早期鼻咽癌存活率：
-                {matches ? (
-                  <Box fontSize='32px' component='div' fontWeight='600'>
-                    90%+
-                  </Box>
-                ) : (
-                  <Box fontSize='h4.fontSize' component='span'>
-                    90%+
-                  </Box>
-                )}
-              </Box>
-            </Typography> */}
-            {/* <Box
-              className={classnames(
-                classes.sectionMotion,
-                classes.circle,
-                classes.circleOne,
-                'section-one-circle-one'
-              )}
-            ></Box>
-            <Box
-              className={classnames(
-                classes.sectionMotion,
-                classes.circle,
-                classes.circleTwo,
-                'section-one-circle-two'
-              )}
-            ></Box> */}
-            {/* <img
-              className={classnames(classes.sectionOneImg, 'section-one-ming')}
-              src={matches ? MobileMing01 : Ming01}
-              alt='Cheung Tat Ming 01'
-            /> */}
-            {/* <Box
-              className={classnames(
-                classes.sectionMotion,
-                classes.sectionOneTitle
-              )}
-              color='primary.contrastText'
-            >
-              GO LIVE AGAIN
-            </Box> */}
           </Container>
         </Box>
         <Box
@@ -858,16 +751,6 @@ const CampaignPage = () => {
             <IconArrow
               className={classnames(classes.arrow, 'arrow-two')}
             ></IconArrow>
-            {/* <img
-              className={classnames(classes.arrow, 'arrow-one')}
-              src={IconArrow}
-              alt='arrow'
-            />
-            <img
-              className={classnames(classes.arrow, 'arrow-two')}
-              src={IconArrow}
-              alt='arrow'
-            /> */}
           </Box>
           <Container className={classes.container} maxWidth='sm'>
             <Box
@@ -921,26 +804,13 @@ const CampaignPage = () => {
           </Box>
 
           <Container maxWidth='lg'>
-            {/* <Box
-              fontSize={28}
-              fontWeight='fontWeightBold'
-              color='primary.light'
-              lineHeight={1.5}
-              pt={8}
-              pb={3}
-              textAlign='center'
-            >
-              要掌握健康，就要立即行動！
-            </Box> */}
             <Box
               width='100%'
               display={matches ? 'block' : 'flex'}
               justifyContent='space-between'
               pt={6}
-              // className={classes.btnWrapper}
             >
               <Button
-                // className={classes.withHelpText}
                 classes={{
                   root: classes.buttonRoot,
                   outlined: classes.buttonOutlined,
@@ -954,11 +824,6 @@ const CampaignPage = () => {
                 href={E_HEALTH_LINK}
                 target='_blank'
               >
-                {/* 獨家
-                <Box color='secondary.main' component='span'>
-                  85折
-                </Box>
-                &nbsp; */}
                 立即預約
                 <sup className={classes.sup}>*</sup>
               </Button>
@@ -967,9 +832,9 @@ const CampaignPage = () => {
                   *先登記成為會員，在付款頁面輸入
                   <br />
                   <Box color='secondary.main' component='span'>
-                    聖誕優惠碼XB1688
+                    迎新優惠碼NEW330
                   </Box>
-                  即享優惠價$1,688
+                  即享優惠價$1,870
                   <br />
                   (原價$2,200)
                 </Box>
@@ -1019,9 +884,9 @@ const CampaignPage = () => {
                 *先登記成為會員，在付款頁面輸入
                 <br />
                 <Box color='secondary.main' component='span'>
-                  聖誕優惠碼XB1688
+                  迎新優惠碼NEW330
                 </Box>
-                即享優惠價$1,688
+                即享優惠價$1,870
                 <br />
                 (原價$2,200)
               </Box>
@@ -1299,11 +1164,6 @@ const CampaignPage = () => {
                 href={E_HEALTH_LINK}
                 target='_blank'
               >
-                {/* 獨家
-                <Box color='secondary.main' component='span'>
-                  85折
-                </Box>
-                &nbsp; */}
                 立即預約
                 <sup className={classes.sup}>*</sup>
               </Button>
@@ -1312,9 +1172,9 @@ const CampaignPage = () => {
                   *先登記成為會員，在付款頁面輸入
                   <br />
                   <Box color='secondary.main' component='span'>
-                    聖誕優惠碼XB1688
+                    迎新優惠碼NEW330
                   </Box>
-                  即享優惠價$1,688
+                  即享優惠價$1,870
                   <br />
                   (原價$2,200)
                 </Box>
@@ -1364,9 +1224,9 @@ const CampaignPage = () => {
                 *先登記成為會員，在付款頁面輸入
                 <br />
                 <Box color='secondary.main' component='span'>
-                  聖誕優惠碼XB1688
+                  迎新優惠碼NEW330
                 </Box>
-                即享優惠價$1,688
+                即享優惠價$1,870
                 <br />
                 (原價$2,200)
               </Box>
@@ -1450,18 +1310,6 @@ const CampaignPage = () => {
                     </Box>
                   </Link>
                   <br />
-                  {/* <Box mt={2}>
-                    <Link href={E_HEALTH_LINK} target='_blank'>
-                      <Box
-                        className={classes.textUnderline}
-                        component='span'
-                        fontSize={matches ? 'body1.fontSize' : 'h6.fontSize'}
-                        color='primary.light'
-                      >
-                        返回官網
-                      </Box>
-                    </Link>
-                  </Box> */}
                 </Box>
               </Typography>
               <Box
